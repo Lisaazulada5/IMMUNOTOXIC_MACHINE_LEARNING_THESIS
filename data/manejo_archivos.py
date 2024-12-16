@@ -5,15 +5,16 @@ import pandas as pd
 import os
 import pandas as pd
 
-def leer_csv(ruta, sep=';'):
-    """
-    Lee un archivo CSV y lo retorna como un DataFrame.
-    """
-    try:
-        return pd.read_csv(ruta, sep=sep)
-    except FileNotFoundError:
-        print(f"El archivo {ruta} no existe.")
-        return pd.DataFrame()
+def leer_csv(ruta, sep=';', encoding='utf-8'):
+    delimitadores_posibles = [';', ',', '\t']
+    for sep in delimitadores_posibles:
+        try:
+            return pd.read_csv(ruta, sep=sep, encoding=encoding)
+        except pd.errors.ParserError:
+            continue
+        except UnicodeDecodeError:
+            return pd.read_csv(ruta, sep=sep, encoding='ISO-8859-1')
+    return pd.DataFrame()
 
 def guardar_csv(df, ruta, append=False, sep=';'):
     """
