@@ -29,14 +29,6 @@ else:
 import os
 import pandas as pd
 
-# Funciones para leer y guardar CSV
-def leer_csv(path):
-    return pd.read_csv(path)
-
-def guardar_csv(df, path, append=False):
-    # Si append es True, los datos se agregan al archivo existente
-    mode = 'a' if append else 'w'
-    df.to_csv(path, mode=mode, header=not os.path.exists(path), index=False)
 
 # Ruta de los archivos
 input_path = 'data/smiles_all_concatened_iupac_pubchem.csv'
@@ -100,11 +92,18 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
+df = leer_csv('data/KF3CT_HDF3CGF_concatenados.csv')
+print(df)
+
+from modules.procesamiento.limpieza_datos import limpiar_dtxsid
+
+a = limpiar_dtxsid(df, 'DTXSID')
+
+print(a)
 
 
-# Rutas de los archivos
-hdf3cgf_file = 'data/KF3CT_HDF3CGF_concatenados.csv'
-output_file = 'data/smiles_KF3CT_HDF3CGF_concatenados.csv'
+
+
 
 
 

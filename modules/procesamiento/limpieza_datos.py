@@ -24,10 +24,23 @@ def verificar_conflictos(df):
 
     return conflictos
 
+from data.manejo_archivos import leer_csv
+
+
 def limpiar_dtxsid(df, columna):
     """
-    Limpia la columna DTXSID para que tenga el formato correcto, eliminando URLs.
+    Limpia los valores en la columna especificada, dejando solo el DTXSID de las URLs.
     """
-    # Extrae únicamente el DTXSID usando una expresión regular
-    df[columna] = df[columna].str.extract(r'(DTXSID\d+)', expand=False)
+    # Asegurarse de que la columna sea de tipo cadena
+    df[columna] = df[columna].astype(str)
+
+    # Reemplazar cualquier cosa antes de 'DTXSID' (incluido el mismo) por una cadena vacía
+    df[columna] = df[columna].str.replace(r'.*?(DTXSID\d+)', r'\1', regex=True)
+
+    # Reemplazar los valores nulos con 'Desconocido' si no se encuentra el DTXSID
+    df[columna].fillna('Desconocido', inplace=True)
+
+    # Revisamos si se extrajo correctamente el DTXSID
+    print(f"Valores después de la limpieza: {df[columna].head()}")
+
     return df

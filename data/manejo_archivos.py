@@ -3,39 +3,17 @@ import pandas as pd
 
 import pandas as pd
 import os
+import pandas as pd
 
-
-def leer_csv(ruta, delimitador=';', encoding='utf-8'):
+def leer_csv(ruta, sep=';'):
     """
-    Lee un archivo CSV con un delimitador específico y maneja inconsistencias en el archivo.
-    Retorna un DataFrame.
+    Lee un archivo CSV y lo retorna como un DataFrame.
     """
     try:
-        # Intenta leer el archivo directamente con el delimitador proporcionado
-        return pd.read_csv(ruta, sep=delimitador, encoding=encoding, error_bad_lines=False, warn_bad_lines=True)
-    except pd.errors.ParserError:
-        print(f"ParserError al leer {ruta} con delimitador '{delimitador}'. Intentando corregir...")
-
-        # Si hay errores, intenta detectar automáticamente el delimitador
-        try:
-            import csv
-            with open(ruta, 'r', encoding=encoding) as file:
-                dialect = csv.Sniffer().sniff(file.read(2048))
-                file.seek(0)  # Reinicia el puntero del archivo
-                print(f"Delimitador detectado automáticamente: '{dialect.delimiter}'")
-                return pd.read_csv(ruta, sep=dialect.delimiter, encoding=encoding, error_bad_lines=False)
-        except Exception as e:
-            print(f"No se pudo detectar automáticamente el delimitador: {e}")
-
-    except UnicodeDecodeError:
-        print(f"Error de codificación al leer {ruta}. Probando con 'ISO-8859-1'.")
-        try:
-            return pd.read_csv(ruta, sep=delimitador, encoding='ISO-8859-1', error_bad_lines=False)
-        except Exception as e:
-            print(f"No se pudo leer el archivo con ISO-8859-1: {e}")
-
-    print(f"El archivo {ruta} no pudo ser leído correctamente.")
-    return pd.DataFrame()  # Retorna un DataFrame vacío si falla
+        return pd.read_csv(ruta, sep=sep)
+    except FileNotFoundError:
+        print(f"El archivo {ruta} no existe.")
+        return pd.DataFrame()
 
 def guardar_csv(df, ruta, append=False, sep=';'):
     """
