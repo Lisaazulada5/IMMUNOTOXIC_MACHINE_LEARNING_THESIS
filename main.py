@@ -141,10 +141,40 @@ else:
 """
 Se urealiza merge para que queden los SMILES REVISADOS
 """
+a = 'data/merge_ATS_SMILES.csv'
+if not os.path.exists(output_path):
+    df2 = leer_csv('data/ATS_CLASIFICACION.csv')
+    df1 = leer_csv('data/smiles_all_concatened_iupac_smiles.csv')
+    merge_datasets(df1, df2, columna_clave='DTXSID', sep=';', archivo_salida=a)
+    print(f"Archivo generado: {a}")
+else:
+    print(f"El archivo {a} ya existe. No se ha procesado de nuevo.")
 
-df1 = leer_csv('data/ATS_CLASIFICACION.csv')
-df2 = leer_csv('data/smiles_all_concatened_iupac_smiles.csv')
-merge_datasets(df1, df2, columna_clave='DTXSID', sep=';', archivo_salida='data/merge_ATS_SMILES.csv')
+"""
+Ahora del archivo resultante se generan dos dataframe, uno con SMILES y otro con las sustancias que no tienen SMILES
+"""
+import pandas as pd
+
+# Leer el archivo CSV
+
+df = leer_csv('data/merge_ATS_SMILES.csv')
+# Dividir los DataFrames según la columna 'SMILES'
+df_sin_smiles = df[df['SMILES'].isna()]
+df_con_smiles = df[df['SMILES'].notna()]
+
+# Verificar los tamaños de los DataFrames
+print(f"Filas sin SMILES: {df_sin_smiles.shape[0]}")
+print(f"Filas con SMILES: {df_con_smiles.shape[0]}")
+
+# Guardar los DataFrames resultantes (opcional)
+ruta1 = 'data/sin_smiles.csv'
+ruta2 = 'data/con_smiles.csv'
+if not os.path.exists(ruta1):
+    guardar_csv(df_sin_smiles, ruta1)
+    guardar_csv(df_con_smiles, ruta2)
+    print(f"Archivo generado: {ruta1}")
+else:
+    print(f"El archivo {ruta1} ya existe. No se ha procesado de nuevo.")
 
 
 
