@@ -44,3 +44,38 @@ def limpiar_dtxsid(df, columna):
     print(f"Valores después de la limpieza: {df[columna].head()}")
 
     return df
+
+from data.manejo_archivos import merge_datasets
+def agregar_columna_ats(df):
+    """
+    Calcula el ATS (Aggregate Toxicity Score) y lo agrega como una columna al DataFrame.
+    """
+    DTXSID_ACTIVE = pd.DataFrame(df[df['HIT CALL'] == 'Active'].groupby('DTXSID').size())
+    print(DTXSID_ACTIVE)
+
+    DTXSID_TOTAL = pd.DataFrame(df.groupby('DTXSID').size())
+    print(DTXSID_TOTAL)
+
+    ATS = DTXSID_ACTIVE/DTXSID_TOTAL
+    ATS = ATS.fillna(0)
+    ATS = pd.DataFrame(ATS).reset_index()
+    print(ATS)
+
+
+    merge_datasets(df, ATS, columna_clave='DTXSID', sep=';', archivo_salida=output_path)
+
+
+
+   # DF = df_by_DXTSID.groupby('HIT CALL')
+   # print(DF)
+
+
+
+
+
+
+
+
+
+
+

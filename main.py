@@ -93,7 +93,7 @@ else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 df = leer_csv('data/KF3CT_HDF3CGF_concatenados.csv')
-print(df)
+#print(df)
 
 from modules.procesamiento.limpieza_datos import limpiar_dtxsid
 
@@ -109,7 +109,23 @@ df_kf3ct = a.iloc[:, :9]
 #se verifican si hay datos que sean activos e inactivos a la vez
 from modules.procesamiento.limpieza_datos import verificar_conflictos
 
-verificar_conflictos(df_kf3ct)
+verificar_conflictos(df_kf3ct) #se evidencian que todas las sustancias pueden dar un hit call tanto activo, como inactivo.
+
+"""
+Se adiciona la columna ATS para la clasificación del potencial inmunotóxico
+"""
+
+from modules.procesamiento.limpieza_datos import agregar_columna_ats
+
+output_path = 'data/ATS.csv'
+if not os.path.exists(output_path):
+    agregar_columna_ats(df_kf3ct) # crea una columna ATS
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+
+
 
 
 
