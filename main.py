@@ -124,6 +124,29 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
+"""
+Se realiza la nueva clasificación de activo e inactivo con base en el ATS
+"""
+df = leer_csv('data/ATS.csv')
+print(df)
+from modules.procesamiento.limpieza_datos import clasificar_ats
+df = clasificar_ats(df)
+output_path = 'data/ATS_CLASIFICACION.csv'
+if not os.path.exists(output_path):
+    guardar_csv(df, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+Se urealiza merge para que queden los SMILES REVISADOS
+"""
+
+df1 = leer_csv('data/ATS_CLASIFICACION.csv')
+df2 = leer_csv('data/smiles_all_concatened_iupac_smiles.csv')
+merge_datasets(df1, df2, columna_clave='DTXSID', sep=';', archivo_salida='data/merge_ATS_SMILES.csv')
+
+
 
 
 

@@ -64,10 +64,30 @@ def agregar_columna_ats(df):
 
     merge_datasets(df, ATS, columna_clave='DTXSID', sep=';', archivo_salida=output_path)
 
+from data.manejo_archivos import guardar_csv
 
 
-   # DF = df_by_DXTSID.groupby('HIT CALL')
-   # print(DF)
+def clasificar_ats(df, columna_ats='ATS'):
+    """
+    Clasifica los valores de ATS en 'Activo' o 'Inactivo' y agrega una columna nueva 'Clasificación_ATS'.
+
+    Args:
+        df (pd.DataFrame): El DataFrame que contiene la columna ATS.
+        columna_ats (str): Nombre de la columna que contiene los valores ATS.
+
+    Returns:
+        pd.DataFrame: DataFrame con la columna 'Clasificación_ATS' agregada.
+    """
+    if columna_ats not in df.columns:
+        raise ValueError(f"La columna '{columna_ats}' no existe en el DataFrame.")
+
+    # Crear la nueva columna con base en la condición
+    df['Clasificacion_ATS'] = df[columna_ats].apply(lambda x: 'Activo' if x >= 0.15 else 'Inactivo')
+    return df
+
+
+
+
 
 
 
