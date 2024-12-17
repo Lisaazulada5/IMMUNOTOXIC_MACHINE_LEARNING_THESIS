@@ -153,7 +153,6 @@ else:
 """
 Ahora del archivo resultante se generan dos dataframe, uno con SMILES y otro con las sustancias que no tienen SMILES
 """
-import pandas as pd
 
 # Leer el archivo CSV
 
@@ -175,6 +174,53 @@ if not os.path.exists(ruta1):
     print(f"Archivo generado: {ruta1}")
 else:
     print(f"El archivo {ruta1} ya existe. No se ha procesado de nuevo.")
+
+"""
+Revisar el archivo sin smiles a ver si puedo obtener dichos SMILES
+"""
+
+"""
+from modules.procesamiento.validar_smiles import obtener_smiles_pubchem
+df = leer_csv(ruta1)
+a = 'data/smiles_pubchem'
+df = obtener_smiles_pubchem(df, columna_dtxsid='DTXSID')
+print(df['SMILES'])
+guardar_csv(df, a)
+"""
+import pandas as pd
+
+
+def convertir_texto_a_csv(input_file, output_file, delimiter="\t", encoding="utf-8"):
+    """
+    Convierte un archivo de texto a un archivo CSV.
+
+    Parámetros:
+    input_file: str - Ruta del archivo de texto de entrada.
+    output_file: str - Ruta donde se guardará el archivo CSV.
+    delimiter: str - Delimitador utilizado en el archivo de texto (default: tabulación).
+    encoding: str - Codificación del archivo de texto (default: utf-8).
+
+    Retorna:
+    None - Guarda el archivo convertido como CSV.
+    """
+    try:
+        # Leer el archivo de texto en un DataFrame
+        df = pd.read_csv(input_file, delimiter=delimiter, encoding=encoding)
+
+        # Guardar el DataFrame en formato CSV
+        df.to_csv(output_file, index=False, encoding=encoding)
+
+        print(f"Archivo convertido y guardado como: {output_file}")
+    except Exception as e:
+        print(f"Error al convertir el archivo: {e}")
+
+
+# Ejemplo de uso
+input_file = "data/smiles_pubchem"  # Ruta del archivo de texto
+output_file = "data/archivo.csv"  # Ruta del archivo CSV de salida
+convertir_texto_a_csv(input_file, output_file, delimiter="\t")
+
+
 
 
 
