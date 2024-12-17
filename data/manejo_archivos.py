@@ -63,6 +63,49 @@ def concatenar_archivos_en_uno(folder_path, output_path, append=False):
         print(f"Archivo combinado guardado en: {output_path}")
     else:
         print("No se han leído archivos válidos. Verifica los formatos y delimitadores.")
+"""
+JOIN
+"""
+# manejo_archivos.py
+
+import pandas as pd
+
+
+def merge_datasets(df_smiles, df_kf3ct, columna_clave='DTXSID', sep=';', archivo_salida='data/merged_file.csv'):
+    """
+    Realiza un merge entre dos DataFrames, utilizando una columna clave y asegurando que el tamaño del DataFrame resultante
+    sea el de df_smiles.
+
+    Parámetros:
+    df_smiles: DataFrame - El DataFrame con los SMILES.
+    df_kf3ct: DataFrame - El DataFrame con los datos adicionales a añadir.
+    columna_clave: str - El nombre de la columna en común para hacer el merge (default es 'DTXSID').
+    sep: str - El delimitador para los archivos CSV (default es ';').
+    archivo_salida: str - Ruta del archivo donde se guardará el resultado final.
+
+    Retorna:
+    DataFrame - El DataFrame resultante del merge.
+    """
+    try:
+        # Asegurarse de que la columna clave sea de tipo string
+        df_smiles[columna_clave] = df_smiles[columna_clave].astype(str)
+        df_kf3ct[columna_clave] = df_kf3ct[columna_clave].astype(str)
+
+        # Realizar el merge con un left join para mantener el tamaño de df_smiles
+        df_merged = pd.merge(df_smiles, df_kf3ct, on=columna_clave, how='right')
+
+        # Guardar el DataFrame resultante en un archivo CSV
+        df_merged.to_csv(archivo_salida, index=False, sep=sep)
+
+        # Imprimir tamaño del DataFrame final para verificar
+        print(f"Merge completado. Tamaño del DataFrame resultante: {df_merged.shape}")
+
+        return df_merged
+
+    except Exception as e:
+        print(f"Error al realizar el merge: {e}")
+        return None
+
 
 """
 la cague
@@ -77,4 +120,30 @@ def separar_por_estado(df, columna_estado):
     print(inactivos)
     return activos, inactivos
 
+
+import pandas as pd
+
+
+def dividir_por_smiles(df, columna_smiles='SMILES'):
+    """
+    Divide un DataFrame en dos según si la columna SMILES está vacía o no.
+
+    Parámetros:
+        df (pd.DataFrame): DataFrame de entrada.
+        columna_smiles (str): Nombre de la columna a evaluar. Por defecto es 'SMILES'.
+
+    Retorna:
+        df_con_smiles (pd.DataFrame): DataFrame con filas donde la columna SMILES tiene datos.
+        df_sin_smiles (pd.DataFrame): DataFrame con filas donde la columna SMILES está vacía.
+    """
+    # Filtrar filas donde la columna SMILES no está vacía
+    df_con_smiles = df[df[columna_smiles].notna() & (df[columna_smiles] != '')]
+
+    # Filtrar filas donde la columna SMILES está vacía
+    df_sin_smiles = df[df[columna_smiles].isna() | (df[columna_smiles] == '')]
+
+    guardar_csv(df_sin_smiles, 'data/df_sin_smiles.csv')
+    guardar_csv(df_con_smiles, 'data/df_con_smiles.csv')
+
+    return df_con_smiles, df_sin_smiles
 

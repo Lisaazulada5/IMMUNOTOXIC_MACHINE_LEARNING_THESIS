@@ -99,12 +99,17 @@ from modules.procesamiento.limpieza_datos import limpiar_dtxsid
 
 a = limpiar_dtxsid(df, 'DTXSID')
 
-print(a)
+#print(a)
 
+from data.manejo_archivos import merge_datasets
 
+df_smiles = leer_csv('data/smiles_all_concatened_iupac_smiles.csv')
+df_kf3ct = a.iloc[:, :9]
 
+#se verifican si hay datos que sean activos e inactivos a la vez
+from modules.procesamiento.limpieza_datos import verificar_conflictos
 
-
+verificar_conflictos(df_kf3ct)
 
 
 

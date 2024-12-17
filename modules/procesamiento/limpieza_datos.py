@@ -14,7 +14,7 @@ def verificar_conflictos(df):
     """
     # Filtrar conflictos de HIT CALL
     conflictos = df[df.duplicated(subset=['DTXSID'], keep=False) &
-                    df['HIT CALL'].isin(['active', 'inactive'])]
+                    df['HIT CALL'].isin(['Active', 'Inactive'])]
 
     if not conflictos.empty:
         print("Se encontraron conflictos:")
