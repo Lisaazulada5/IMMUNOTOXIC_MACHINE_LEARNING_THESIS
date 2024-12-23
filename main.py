@@ -182,12 +182,29 @@ Revisar el archivo sin smiles a ver si puedo obtener dichos SMILES
 
 from modules.procesamiento.validar_smiles import obtener_smiles_pubchem
 df = leer_csv(ruta1)
-a = 'data/smiles_pubchem.csv'
-df = obtener_smiles_pubchem(df, columna_dtxsid='DTXSID')
-print(df['SMILES'])
-guardar_csv(df, a)
+a = 'data/con_smiles/smiles_pubchem.csv'
+if not os.path.exists(a):
+    df = obtener_smiles_pubchem(df, columna_dtxsid='DTXSID')
+    guardar_csv(df, a)
+    print(f"Archivo generado: {a}")
+else:
+    print(f"El archivo {a} ya existe. No se ha procesado de nuevo.")
 
-import pandas as pd
+"""
+Unir los smiles encontrados con los demás datos
+"""
+
+df = leer_csv('data/con_smiles/smiles_pubchem.csv')
+#print(df[df['SMILES'] != '0'])
+df_no_vacios = df[df['SMILES'] != '0']
+print(df_no_vacios)
+a = 'data/df_no_vacios.csv'
+if not os.path.exists(a):
+    guardar_csv(df_no_vacios, a)
+    print(f"Archivo generado: {a}")
+else:
+    print(f"El archivo {a} ya existe. No se ha procesado de nuevo.")
+
 
 
 """
