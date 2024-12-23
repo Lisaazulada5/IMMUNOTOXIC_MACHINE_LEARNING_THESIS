@@ -179,19 +179,20 @@ else:
 Revisar el archivo sin smiles a ver si puedo obtener dichos SMILES
 """
 
-"""
+
 from modules.procesamiento.validar_smiles import obtener_smiles_pubchem
 df = leer_csv(ruta1)
-a = 'data/smiles_pubchem'
+a = 'data/smiles_pubchem.csv'
 df = obtener_smiles_pubchem(df, columna_dtxsid='DTXSID')
 print(df['SMILES'])
 guardar_csv(df, a)
-"""
+
 import pandas as pd
 
 
+"""
 def convertir_texto_a_csv(input_file, output_file, delimiter="\t", encoding="utf-8"):
-    """
+    
     Convierte un archivo de texto a un archivo CSV.
 
     Parámetros:
@@ -203,6 +204,7 @@ def convertir_texto_a_csv(input_file, output_file, delimiter="\t", encoding="utf
     Retorna:
     None - Guarda el archivo convertido como CSV.
     """
+"""
     try:
         # Leer el archivo de texto en un DataFrame
         df = pd.read_csv(input_file, delimiter=delimiter, encoding=encoding)
@@ -219,12 +221,4 @@ def convertir_texto_a_csv(input_file, output_file, delimiter="\t", encoding="utf
 input_file = "data/smiles_pubchem"  # Ruta del archivo de texto
 output_file = "data/archivo.csv"  # Ruta del archivo CSV de salida
 convertir_texto_a_csv(input_file, output_file, delimiter="\t")
-
-
-
-
-
-
-
-
-
+"""
