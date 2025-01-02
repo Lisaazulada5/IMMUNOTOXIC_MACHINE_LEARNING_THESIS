@@ -1,7 +1,7 @@
 import pandas as pd
 from modules.procesamiento.validar_smiles import obtener_iupac_desde_pubchem
 from data.manejo_archivos import leer_csv, guardar_csv
-from modules.procesamiento.obtener_iupac_desde_smiles_rdkit import  obtener_iupac_desde_smiles
+from modules.procesamiento.obtener_iupac_desde_smiles_rdkit import obtener_iupac_desde_smiles
 import os
 import pandas as pd
 from modules.procesamiento.validar_smiles import obtener_iupac_desde_pubchem
@@ -29,7 +29,6 @@ else:
 import os
 import pandas as pd
 
-
 # Ruta de los archivos
 input_path = 'data/smiles_all_concatened_iupac_pubchem.csv'
 output_path = 'data/smiles_all_concatened_iupac_smiles.csv'
@@ -54,7 +53,7 @@ else:
 
 # Concatenar los DF de los ensayos
 
-from data.manejo_archivos import  concatenar_archivos_en_uno
+from data.manejo_archivos import concatenar_archivos_en_uno
 
 folder_path = 'data/HDF3CGF'
 output_path = 'data/HDF3CGF_concatenados.csv'
@@ -93,23 +92,24 @@ else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 df = leer_csv('data/KF3CT_HDF3CGF_concatenados.csv')
-#print(df)
+# print(df)
 
 from modules.procesamiento.limpieza_datos import limpiar_dtxsid
 
 a = limpiar_dtxsid(df, 'DTXSID')
 
-#print(a)
+# print(a)
 
 from data.manejo_archivos import merge_datasets
 
 df_smiles = leer_csv('data/smiles_all_concatened_iupac_smiles.csv')
 df_kf3ct = a.iloc[:, :9]
 
-#se verifican si hay datos que sean activos e inactivos a la vez
+# se verifican si hay datos que sean activos e inactivos a la vez
 from modules.procesamiento.limpieza_datos import verificar_conflictos
 
-verificar_conflictos(df_kf3ct) #se evidencian que todas las sustancias pueden dar un hit call tanto activo, como inactivo.
+verificar_conflictos(
+    df_kf3ct)  # se evidencian que todas las sustancias pueden dar un hit call tanto activo, como inactivo.
 
 """
 Se adiciona la columna ATS para la clasificación del potencial inmunotóxico
@@ -119,7 +119,7 @@ from modules.procesamiento.limpieza_datos import agregar_columna_ats
 
 output_path = 'data/ATS.csv'
 if not os.path.exists(output_path):
-    agregar_columna_ats(df_kf3ct) # crea una columna ATS
+    agregar_columna_ats(df_kf3ct)  # crea una columna ATS
     print(f"Archivo generado: {output_path}")
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
@@ -130,6 +130,7 @@ Se realiza la nueva clasificación de activo e inactivo con base en el ATS
 df = leer_csv('data/ATS.csv')
 print(df)
 from modules.procesamiento.limpieza_datos import clasificar_ats
+
 df = clasificar_ats(df)
 output_path = 'data/ATS_CLASIFICACION.csv'
 if not os.path.exists(output_path):
@@ -179,8 +180,8 @@ else:
 Revisar el archivo sin smiles a ver si puedo obtener dichos SMILES
 """
 
-
 from modules.procesamiento.validar_smiles import obtener_smiles_pubchem
+
 df = leer_csv(ruta1)
 a = 'data/con_smiles/smiles_pubchem.csv'
 if not os.path.exists(a):
@@ -195,7 +196,7 @@ Unir los smiles encontrados con los demás datos
 """
 
 df = leer_csv('data/con_smiles/smiles_pubchem.csv')
-#print(df[df['SMILES'] != '0'])
+# print(df[df['SMILES'] != '0'])
 df_no_vacios = df[df['SMILES'] != '0']
 print(df_no_vacios)
 a = 'data/df_no_vacios.csv'
@@ -205,7 +206,9 @@ if not os.path.exists(a):
 else:
     print(f"El archivo {a} ya existe. No se ha procesado de nuevo.")
 
-
+"""
+Concatenar los SMILES descargados de coptox y los SMILES encontrados en pubchem
+"""
 
 """
 def convertir_texto_a_csv(input_file, output_file, delimiter="\t", encoding="utf-8"):
@@ -239,3 +242,97 @@ input_file = "data/smiles_pubchem"  # Ruta del archivo de texto
 output_file = "data/archivo.csv"  # Ruta del archivo CSV de salida
 convertir_texto_a_csv(input_file, output_file, delimiter="\t")
 """
+folder_path = 'data/con_smiles/concatenar_smiles_pubchem'
+output_path = 'data/smiles_comptox_smiles_pubchem.csv'
+# Verificar si el archivo de salida ya existe
+if not os.path.exists(output_path):
+    ## Usar la función
+    concatenar_archivos_en_uno(folder_path, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+
+"""
+Voy a hacer la validacion de los nombre IUPAC para el nuevo conjunto de datos
+"""
+df = leer_csv('data/smiles_comptox_smiles_pubchem.csv')
+# Filtrar filas donde iupac_name e iupac_name_SMILES están vacías
+df_filas_vacias = df[(df['iupac_name'].isna() | (df['iupac_name'] == '')) &
+                     (df['iupac_name_SMILES'].isna() | (df['iupac_name_SMILES'] == ''))]
+"""
+# Aplicar las funciones de forma iterativa para llenar los datos faltantes
+for index, row in df_filas_vacias.iterrows():
+    DTXSID = row['DTXSID']
+    if DTXSID:  # Solo proceder si hay SMILES
+        iupac_name = obtener_iupac_desde_pubchem(DTXSID)  # Usar tu función para buscar en PubChem
+# Actualizar el dataframe original con los valores encontrados
+df = df.loc[index, 'iupac_name'] = iupac_name
+guardar_csv(df, 'data/smiles_comptox_smiles_pubchem_iupac_name.csv')
+"""
+
+import pandas as pd
+
+# Diccionario para almacenar los resultados ya obtenidos
+iupac_cache = {}
+
+# Función para guardar el DataFrame en un archivo CSV
+
+# Iterar sobre las filas del DataFrame
+input_path = 'data/smiles_all_concatened.csv'
+output_path = 'data/smiles_comptox_smiles_pubchem_iupac_name.csv'
+
+# Verificar si el archivo de salida ya existe
+if not os.path.exists(output_path):
+    for index, row in df_filas_vacias.iterrows():
+        DTXSID = row['DTXSID']
+        if DTXSID:  # Solo proceder si hay un valor en DTXSID
+            if DTXSID not in iupac_cache:
+                # Si no está en el caché, buscar y almacenar el resultado
+                iupac_name = obtener_iupac_desde_pubchem(DTXSID)
+                iupac_cache[DTXSID] = iupac_name
+            else:
+                # Si ya está en el caché, reutilizar el resultado
+                iupac_name = iupac_cache[DTXSID]
+            # Actualizar el DataFrame original con el valor encontrado
+            df.loc[index, 'iupac_name'] = iupac_name
+
+# Guardar el DataFrame actualizado en un archivo CSV
+#guardar_csv(df, 'data/smiles_comptox_smiles_pubchem_iupac_name.csv')
+
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""Ahora se revisan si los nombres IUPAC generados con SMILES"""
+
+
+df = leer_csv('data/smiles_comptox_smiles_pubchem_iupac_name.csv')
+# Filtrar filas donde iupac_name_SMILES e iupac_name_SMILES están vacías
+df_filas_vacias = df[(df['iupac_name_SMILES'].isna() | (df['iupac_name_SMILES'] == ''))]
+
+input_path = 'data/smiles_comptox_smiles_pubchem_iupac_name.csv'
+output_path = 'data/smiles_comptox_smiles_pubchem_iupac_name_smiles_name.csv'
+
+# Verificar si el archivo de salida ya existe
+if not os.path.exists(output_path):
+    for index, row in df_filas_vacias.iterrows():
+        SMILES = row['SMILES']
+        if SMILES:  # Solo proceder si hay un valor en DTXSID
+            if SMILES not in iupac_cache:
+                # Si no está en el caché, buscar y almacenar el resultado
+                iupac_name_SMILES = obtener_iupac_desde_smiles(SMILES)
+                iupac_cache[SMILES] = iupac_name_SMILES
+            else:
+                # Si ya está en el caché, reutilizar el resultado
+                iupac_name_SMILES = iupac_cache[SMILES]
+            # Actualizar el DataFrame original con el valor encontrado
+            df.loc[index, 'iupac_name_SMILES'] = iupac_name_SMILES
+
+# Guardar el DataFrame actualizado en un archivo CSV
+    guardar_csv(df, 'data/smiles_comptox_smiles_pubchem_iupac_name_smiles_name.csv')
+
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
