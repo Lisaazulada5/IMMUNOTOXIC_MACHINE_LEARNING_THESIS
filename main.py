@@ -212,7 +212,7 @@ Concatenar los SMILES descargados de coptox y los SMILES encontrados en pubchem
 
 """
 def convertir_texto_a_csv(input_file, output_file, delimiter="\t", encoding="utf-8"):
-    
+
     Convierte un archivo de texto a un archivo CSV.
 
     Parámetros:
@@ -251,7 +251,6 @@ if not os.path.exists(output_path):
     print(f"Archivo generado: {output_path}")
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
-
 
 """
 Voy a hacer la validacion de los nombre IUPAC para el nuevo conjunto de datos
@@ -297,15 +296,14 @@ if not os.path.exists(output_path):
             # Actualizar el DataFrame original con el valor encontrado
             df.loc[index, 'iupac_name'] = iupac_name
 
-# Guardar el DataFrame actualizado en un archivo CSV
-#guardar_csv(df, 'data/smiles_comptox_smiles_pubchem_iupac_name.csv')
+    # Guardar el DataFrame actualizado en un archivo CSV
+    guardar_csv(df, 'data/smiles_comptox_smiles_pubchem_iupac_name.csv')
 
     print(f"Archivo generado: {output_path}")
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """Ahora se revisan si los nombres IUPAC generados con SMILES"""
-
 
 df = leer_csv('data/smiles_comptox_smiles_pubchem_iupac_name.csv')
 # Filtrar filas donde iupac_name_SMILES e iupac_name_SMILES están vacías
@@ -329,10 +327,29 @@ if not os.path.exists(output_path):
             # Actualizar el DataFrame original con el valor encontrado
             df.loc[index, 'iupac_name_SMILES'] = iupac_name_SMILES
 
-# Guardar el DataFrame actualizado en un archivo CSV
+    # Guardar el DataFrame actualizado en un archivo CSV
     guardar_csv(df, 'data/smiles_comptox_smiles_pubchem_iupac_name_smiles_name.csv')
 
     print(f"Archivo generado: {output_path}")
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

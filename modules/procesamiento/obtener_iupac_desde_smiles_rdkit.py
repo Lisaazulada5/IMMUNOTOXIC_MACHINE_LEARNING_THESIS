@@ -13,3 +13,4 @@ def obtener_iupac_desde_smiles(smiles):
         print(f"Error con SMILES {smiles}: {e}")
         return 'Error'
 
+
