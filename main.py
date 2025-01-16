@@ -334,8 +334,43 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
+"""
+CALCULO DE DESCRIPTORES MOLECULARES
+"""
 
+from modules.procesamiento.calculo_descriptores_moleculares import convertir_smiles_a_smarts
 
+df = leer_csv('data/smiles_comptox_smiles_pubchem_iupac_name_smiles_name.csv')
+output_path = 'data/SMARTS.csv'
+
+if not os.path.exists(output_path):
+    df = convertir_smiles_a_smarts(df)
+    guardar_csv(df, 'data/SMARTS.csv')
+
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+VERIFICACIÓN DE CALCULO DE TODOS LOS SMARTS
+"""
+
+df = leer_csv('data/SMARTS.csv')
+
+#print(df['SMARTS'].isnull().value_counts())
+
+"""
+CALCULO DE LOS DESCRIPTORES MOLECULARES
+"""
+#Calculo del LogP
+
+from modules.procesamiento.calculo_descriptores_moleculares import calcular_logp_crippen
+
+# Aplicar la función a la columna "SMILES" y crear una nueva columna "LogP"
+df["LogP"] = df["SMILES"].apply(calcular_logp_crippen)
+
+# Mostrar el DataFrame resultante
+print(df)
 
 
 

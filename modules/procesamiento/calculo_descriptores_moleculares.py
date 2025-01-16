@@ -2,6 +2,9 @@ from rdkit import Chem
 from rdkit.Chem import Crippen
 from rdkit import Chem
 from rdkit.Chem import Descriptors
+import pandas as pd
+from rdkit import Chem
+from rdkit.Chem import Crippen
 
 
 from rdkit import Chem
@@ -74,7 +77,6 @@ def calcular_descriptores(smiles):
             carboxilo,
             hidroxilo,
         ]
-
     except Exception as e:
         print(f"Error procesando SMILES {smiles}: {e}")
         return [None] * 8
@@ -94,3 +96,22 @@ def calcular_logp(smiles):
     except Exception as e:
         print(f"Error procesando SMILES {smiles}: {e}")
         return None
+
+import pandas as pd
+from rdkit import Chem
+from rdkit.Chem import Crippen
+
+# Ejemplo de DataFrame con una columna SMILES
+
+# Función para calcular el LogP
+def calcular_logp_crippen(smiles):
+    try:
+        mol = Chem.MolFromSmiles(smiles)
+        if mol is None:
+            return None  # Devuelve None si el SMILES no es válido
+        return Crippen.MolLogP(mol)
+    except Exception as e:
+        print(f"Error procesando SMILES {smiles}: {e}")
+        return None
+
+
