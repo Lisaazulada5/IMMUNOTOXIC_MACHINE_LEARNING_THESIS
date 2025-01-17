@@ -355,7 +355,7 @@ else:
 VERIFICACIÓN DE CALCULO DE TODOS LOS SMARTS
 """
 
-df = leer_csv('data/SMARTS.csv')
+df = leer_csv('data/Analisis_univariado_dataset.csv')
 
 #print(df['SMARTS'].isnull().value_counts())
 
@@ -369,8 +369,105 @@ from modules.procesamiento.calculo_descriptores_moleculares import calcular_logp
 # Aplicar la función a la columna "SMILES" y crear una nueva columna "LogP"
 df["LogP"] = df["SMILES"].apply(calcular_logp_crippen)
 
+df_estadistico = df
+
 # Mostrar el DataFrame resultante
-print(df)
+print(df["LogP"].isnull().value_counts())
+
+"""
+SE REALIZA EL ANÁLISIS UNIVARIADO DE LA VARIABLE
+"""
+logP_univariado = df['LogP'].describe()
+print(logP_univariado)
+
+"""
+Encontrando a qué SMILES corresponde el valor minimo
+"""
+fila_minima = df.loc[df['LogP'].idxmin()]
+
+# Extrae el SMILES y el valor más bajo de LogP
+smiles_min = fila_minima['INPUT']
+logp_min = fila_minima['LogP']
+
+print(f"El valor más bajo de LogP es {logp_min}, correspondiente a la sustancia: {smiles_min}")
+
+"""
+Encuentra a qué valor corresponde el valor máximo de LogP
+"""
+
+# Encuentra la fila con el valor más alto de LogP
+fila_maxima = df.loc[df['LogP'].idxmax()]
+
+# Extrae el SMILES y el valor más alto de LogP
+smiles_max = fila_maxima['INPUT']
+logp_max = fila_maxima['LogP']
+
+print(f"El valor más alto de LogP es {logp_max}, correspondiente a la sustancia: {smiles_max}")
+
+"""
+Graficamos esta variable
+"""
+
+from modules.procesamiento.graficas import graficar_y_guardar_variable_continua
+
+output_path = 'data/graficas/univariado_logP.png'
+
+if not os.path.exists(output_path):
+    graficar_y_guardar_variable_continua(df, 'LogP', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+DETECTAR LOS OUTLIERS
+"""
+df = df_estadistico
+
+from modules.procesamiento.analisis_estadistico import detectar_outliers
+
+outliers = detectar_outliers(df, 'LogP')
+outliers = pd.DataFrame(outliers)
+output_path = 'data/outliers.csv'
+if not os.path.exists(output_path):
+    guardar_csv(outliers, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+ANALISIS DE LOGP Y CLASIFICACIÓN ATS
+"""
+
+# Estadísticas descriptivas agrupadas
+estadisticas = df.groupby('Clasificacion_ATS')['LogP'].describe()
+#guardar_csv(estadisticas, 'data/estadisticas.csv')
+print(estadisticas)
+
+"""
+Boxplot: Una gráfica de cajas te permite comparar visualmente la distribución de LogP entre los dos grupos.
+"""
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+from modules.procesamiento.graficas import graficar_y_guardar_boxplot
+output_path = 'data/graficas/boxplot_LogP_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_boxplot(df, 'Clasificacion_ATS', 'LogP', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+#sns.boxplot(data=df, x='Clasificacion_ATS', y='LogP', palette='pastel')
+#plt.title("Distribución de LogP por Clasificación ATS")
+#plt.show()
+
+
+
+
+
+
+
+
 
 
 

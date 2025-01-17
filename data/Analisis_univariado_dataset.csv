@@ -1,0 +1,1703 @@
+INPUT;SMILES;Clasificacion_ATS
+Fosthiazate;CCOP(=O)(SC(C)CC)N1CCSC1=O;Inactivo
+Deisopropylatrazine;CCNC1=NC(N)=NC(Cl)=N1;Inactivo
+3:3 Fluorotelomer carboxylic acid;OC(=O)CCC(F)(F)C(F)(F)C(F)(F)F;Inactivo
+3-(Perfluoro-3-methylbutyl)-1,2-propenoxide;FC(F)(F)C(F)(C(F)(F)F)C(F)(F)C(F)(F)CC1CO1;Inactivo
+Perfluorononanoyl chloride;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(Cl)=O;Activo
+1H,1H,11H,11H-Perfluorotetraethylene glycol;OCC(F)(F)OC(F)(F)C(F)(F)OC(F)(F)C(F)(F)OC(F)(F)CO;Activo
+2-Amino-5-nitrobenzonitrile;NC1=C(C=C(C=C1)[N+]([O-])=O)C#N;Inactivo
+Fluorescein;OC1=CC2=C(C=C1)C1(OC(=O)C3=C1C=CC=C3)C1=C(O2)C=C(O)C=C1;Inactivo
+Aldicarb;CNC(=O)ON=CC(C)(C)SC;Inactivo
+2,6-Diaminopyridine;NC1=CC=CC(N)=N1;Inactivo
+Triethyl citrate;CCOC(=O)CC(O)(CC(=O)OCC)C(=O)OCC;Inactivo
+4-Pentylaniline;CCCCCC1=CC=C(N)C=C1;Activo
+Fenoxaprop-(2S)-ethyl;CCOC(=O)[C@H](C)OC1=CC=C(OC2=NC3=C(O2)C=C(Cl)C=C3)C=C1;Activo
+o-(Chloroacetylcarbamoyl)fumagillol;CO[C@@H]1[C@@H](CC[C@]2(CO2)[C@H]1[C@@]1(C)O[C@@H]1CC=C(C)C)OC(=O)NC(=O)CCl;Activo
+3,5,5-Trimethylhexyl acetate;CC(CCOC(C)=O)CC(C)(C)C;Inactivo
+Sodium hexyldecyl sulfate;[Na+].CCCCCCCCCCCCCCCCOS([O-])(=O)=O;Activo
+Triethylene glycol bis(3-tert-butyl-4-hydroxy-5-methylphenyl)propionate;CC1=CC(CCC(=O)OCCOCCOCCOC(=O)CCC2=CC(C)=C(O)C(=C2)C(C)(C)C)=CC(=C1O)C(C)(C)C;Inactivo
+2-(Trifluoromethoxy)ethyl trifluoromethanesulfonate;FC(F)(F)OCCOS(=O)(=O)C(F)(F)F;Inactivo
+Ethyl decanoate;CCCCCCCCCC(=O)OCC;Activo
+Tetradonium bromide;[Br-].CCCCCCCCCCCCCC[N+](C)(C)C;Activo
+2-Phenylethyl phenylacetate;O=C(CC1=CC=CC=C1)OCCC1=CC=CC=C1;Inactivo
+Propylsilanetriyl triacetate;CCC[Si](OC(C)=O)(OC(C)=O)OC(C)=O;Inactivo
+2-Butyloctan-1-ol;CCCCCCC(CO)CCCC;Activo
+2,6-Di-tert-butyl-4-[(dimethylamino)methyl]phenol;CN(C)CC1=CC(=C(O)C(=C1)C(C)(C)C)C(C)(C)C;Activo
+Cerivastatin sodium;[Na+].COCC1=C(C2=CC=C(F)C=C2)C(\C=C\[C@@H](O)C[C@@H](O)CC([O-])=O)=C(N=C1C(C)C)C(C)C;Activo
+(-)-Ambroxide;C[C@@]12CC[C@H]3C(C)(C)CCC[C@]3(C)[C@H]1CCO2;Activo
+N-Methylacetamide;CNC(C)=O;Inactivo
+Darbufelone mesylate;CS(O)(=O)=O.CC(C)(C)C1=CC(\C=C2/SC(=N)NC2=O)=CC(=C1O)C(C)(C)C;Activo
+CI-1018;CC1=CC2=C3N(CC2)C(=O)[C@H](NC(=O)C2=CC=NC=C2)N=C(C2=CC=CC=C2)C3=C1;Activo
+UK-416244;CSC1=CC=C(OC2=CC=C(C=C2CN(C)C)S(N)(=O)=O)C=C1C;Inactivo
+3-((1-(Aminomethyl)cyclohexyl)methyl)-1,2,4-oxadiazol-5(2H)-one dihydrochloride;Cl.NCC1(CC2=NOC(=O)N2)CCCCC1;Inactivo
+CP-863187;CC(C)C1=NN=C2C=CC(=CN12)C1=C(N=CO1)C1=CC(F)=CC=C1F;Activo
+Zenarestat;OC(=O)CN1C(=O)N(CC2=CC=C(Br)C=C2F)C(=O)C2=C1C=C(Cl)C=C2;Inactivo
+SB413217A;Cl.CC1=NC(=NO1)C1=CC2=C(CCN(CCC3CCC(CC3)NC(=O)\C=C\C3=CC=C(F)C=C3)CC2)C=C1;Inactivo
+MK-578;CCN1N=C(CC2=CC=CC=C2)C=C1C1CCN(C[C@H]2C[C@@H](C[C@@H]2C2=CC=CC(F)=C2)N(C)[C@H](C(C)C)C(O)=O)CC1;Inactivo
+AVE5638;NCC1=CC=CC(=C1)C1CCN(CC1)C(=O)C1=CC=C(O1)C#CC1=CC=CC=C1F;Activo
+AVE9423;OC(=O)C1=CC=CC=C1N1C=C(C(O)=O)C(=O)C2=C1C=C(Cl)C(NC1=C(F)C=C(F)C=C1Cl)=C2;Inactivo
+AVE6324;Cl.CCOC(=O)O[C@H](C)OC(=O)C1=CC=C2N(CC3=NOC(=C3)C3=CC=C(Cl)S3)C(=CC2=C1)C(=O)NC1CCN(CC1)C(C)C;Activo
+3-Chloro-2-((3R)-5-chloro-1-(2,4-dimethoxybenzyl)-3-methyl-2-oxo-2,3-dihydro-1H-indol-3-yl)-N-ethyl-N-(3-pyridinylmethyl)benzamide hydrochloride (1:1);Cl.CCN(CC1=CC=CN=C1)C(=O)C1=CC=CC(Cl)=C1[C@]1(C)C(=O)N(CC2=C(OC)C=C(OC)C=C2)C2=CC=C(Cl)C=C12;Activo
+2-Norbornene-5,6-dicarboxylic anhydride;O=C1OC(=O)C2C3CC(C=C3)C12;Inactivo
+Tri-n-octyl trimellitate;CCCCCCCCOC(=O)C1=CC=C(C(=O)OCCCCCCCC)C(=C1)C(=O)OCCCCCCCC;Inactivo
+Butyryl-n-trihexylcitrate;CCCCCCOC(=O)CC(CC(=O)OCCCCCC)(OC(=O)CCC)C(=O)OCCCCCC;Inactivo
+Dioctyl sebacate;CCCCCCCCOC(=O)CCCCCCCCC(=O)OCCCCCCCC;Inactivo
+Hexane-1,6-diyl dibenzoate;O=C(OCCCCCCOC(=O)C1=CC=CC=C1)C1=CC=CC=C1;Inactivo
+Dibenzothiophene;S1C2=C(C=CC=C2)C2=C1C=CC=C2;Inactivo
+Enterolactone;OC1=CC(C[C@H]2COC(=O)[C@@H]2CC2=CC(O)=CC=C2)=CC=C1;Inactivo
+PharmaGSID_48505;CC1=C2N=C(C3=CC=CC=C3Cl)C3=C(NC2=NN1)C=CC(=C3)[N+]([O-])=O;Activo
+PharmaGSID_48507;Cl.CN1C(=O)C=C(OC2=C(F)C=C(F)C=C2)C2=C1N=C(NCC(C)(C)O)N=C2;Activo
+PharmaGSID_48509;CCCN(C1CCN(CC1)C(=O)C1CCNCC1)[C@@H]1CCC2=C(C1)C=C(OC)C=C2;Inactivo
+Perfluorooctane;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Perfluorooctanoyl fluoride;FC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Pentafluoropropionamide;NC(=O)C(F)(F)C(F)(F)F;Inactivo
+1H,1H,5H-Perfluoropentanol;OCC(F)(F)C(F)(F)C(F)(F)C(F)F;Inactivo
+Hexafluoroglutaryl chloride;FC(F)(C(Cl)=O)C(F)(F)C(F)(F)C(Cl)=O;Inactivo
+Perfluoro-2,5-dimethyl-3,6-dioxanonanoic acid;OC(=O)C(F)(OC(F)(F)C(F)(OC(F)(F)C(F)(F)C(F)(F)F)C(F)(F)F)C(F)(F)F;Inactivo
+2-Amino-5-nitrophenol;NC1=C(O)C=C(C=C1)[N+]([O-])=O;Inactivo
+o-Aminoazotoluene;CC1=CC=CC=C1N=NC1=CC(C)=C(N)C=C1;Activo
+Sodium benzoate;[Na+].[O-]C(=O)C1=CC=CC=C1;Inactivo
+6-Phenyl-1,3,5-triazine-2,4-diamine;NC1=NC(=NC(N)=N1)C1=CC=CC=C1;Inactivo
+Benzotrichloride;ClC(Cl)(Cl)C1=CC=CC=C1;Inactivo
+Boric acid (H3BO3);OB(O)O;Inactivo
+4-(1,1-Dimethylethyl)phenol;CC(C)(C)C1=CC=C(O)C=C1;Inactivo
+2-Methoxy-5-methylaniline;COC1=CC=C(C)C=C1N;Inactivo
+1,4-Dichlorobenzene;ClC1=CC=C(Cl)C=C1;Inactivo
+3,3'-Dichlorobenzidine dihydrochloride;Cl.Cl.NC1=CC=C(C=C1Cl)C1=CC(Cl)=C(N)C=C1;Activo
+2,4-Dichlorophenol;OC1=C(Cl)C=C(Cl)C=C1;Inactivo
+C.I. Disperse Black 6 dihydrochloride;Cl.Cl.COC1=CC(=CC=C1N)C1=CC=C(N)C(OC)=C1;Activo
+7,12-Dimethylbenz(a)anthracene;CC1=C2C=CC=CC2=C(C)C2=C3C=CC=CC3=CC=C12;Activo
+Dimethylcarbamoyl chloride;CN(C)C(Cl)=O;Inactivo
+Endosulfan;ClC1=C(Cl)C2(Cl)C3COS(=O)OCC3C1(Cl)C2(Cl)Cl;Activo
+Furfural;O=CC1=CC=CO1;Inactivo
+4-Hexylresorcinol;CCCCCCC1=C(O)C=C(O)C=C1;Activo
+Kepone;ClC12C(=O)C3(Cl)C4(Cl)C1(Cl)C1(Cl)C2(Cl)C3(Cl)C4(Cl)C1(Cl)Cl;Activo
+2-Mercaptobenzothiazole;SC1=NC2=C(S1)C=CC=C2;Inactivo
+Methyl parathion;COP(=S)(OC)OC1=CC=C(C=C1)[N+]([O-])=O;Activo
+(-)-Nicotine;CN1CCC[C@H]1C1=CN=CC=C1;Inactivo
+Nicotinic acid;OC(=O)C1=CC=CN=C1;Inactivo
+Picloram;NC1=C(Cl)C(Cl)=NC(C(O)=O)=C1Cl;Inactivo
+Piperazine;C1CNCCN1;Inactivo
+Piperonyl butoxide;CCCCOCCOCCOCC1=CC2=C(OCO2)C=C1CCC;Activo
+Retinol palmitate;CCCCCCCCCCCCCCCC(=O)OC\C=C(/C)\C=C\C=C(/C)\C=C\C1=C(C)CCCC1(C)C;Activo
+Tetraethylthiuram disulfide;CCN(CC)C(=S)SSC(=S)N(CC)CC;Activo
+Trichloroacetic acid;OC(=O)C(Cl)(Cl)Cl;Inactivo
+Musk Xylene;CC1=C(C(=C(C(C)=C1[N+]([O-])=O)[N+]([O-])=O)C(C)(C)C)[N+]([O-])=O;Activo
+Triphenyltin hydroxide;O[Sn](C1=CC=CC=C1)(C1=CC=CC=C1)C1=CC=CC=C1;Activo
+C.I. Acid Yellow 23;C1=CC(=CC=C1N=NC2=C(NN(C2=O)C3=CC=C(C=C3)S(=O)(=O)[O-])C(=O)[O-])S(=O)(=O)[O-].[Na+].[Na+].[Na+] ;Inactivo
+6,10-Dimethyl-5,9-undecadiene-2-one;CC(C)=CCCC(C)=CCCC(C)=O;Inactivo
+Quinoline;C1=CC2=C(C=C1)N=CC=C2;Inactivo
+2-Butanone oxime;CCC(C)=NO;Inactivo
+2-Chloroethanol;OCCCl;Inactivo
+Triphenyl phosphate;O=P(OC1=CC=CC=C1)(OC1=CC=CC=C1)OC1=CC=CC=C1;Activo
+Di-n-octyl phthalate;CCCCCCCCOC(=O)C1=C(C=CC=C1)C(=O)OCCCCCCCC;Inactivo
+4,6-Dinitro-o-cresol;CC1=C(O)C(=CC(=C1)[N+]([O-])=O)[N+]([O-])=O;Activo
+n-Undecyl cyanide;CCCCCCCCCCCC#N;Activo
+Alachlor;CCC1=CC=CC(CC)=C1N(COC)C(=O)CCl;Activo
+Methomyl;CNC(=O)ON=C(C)SC;Inactivo
+2,2,3,3-Tetrafluoropropyl acrylate;FC(F)C(F)(F)COC(=O)C=C;Activo
+D-Mannitol;OC[C@@H](O)[C@@H](O)[C@H](O)[C@H](O)CO;Inactivo
+Dicyclohexylcarbodiimide;C1CCC(CC1)N=C=NC1CCCCC1;Activo
+Stavudine;CC1=CN([C@@H]2O[C@H](CO)C=C2)C(=O)NC1=O;Inactivo
+Ametryn;CCNC1=NC(SC)=NC(NC(C)C)=N1;Inactivo
+Cyanazine;CCNC1=NC(NC(C)(C)C#N)=NC(Cl)=N1;Inactivo
+Cyclohexylamine;NC1CCCCC1;Inactivo
+Cypermethrin;CC1(C)C(C=C(Cl)Cl)C1C(=O)OC(C#N)C1=CC=CC(OC2=CC=CC=C2)=C1;Inactivo
+Diethyl sulfate;CCOS(=O)(=O)OCC;Inactivo
+EPTC;CCCN(CCC)C(=O)SCC;Inactivo
+2-Butoxyethanol;CCCCOCCO;Inactivo
+Thifensulfuron methyl;COC(=O)C1=C(C=CS1)S(=O)(=O)NC(=O)NC1=NC(C)=NC(OC)=N1;Inactivo
+Heptachlor epoxide B;[H][C@]12[C@@H]3O[C@@H]3[C@H](Cl)[C@@]1([H])[C@@]1(Cl)C(Cl)=C(Cl)C2(Cl)C1(Cl)Cl;Inactivo
+1,1-Dimethylpiperidinium chloride;[Cl-].C[N+]1(C)CCCCC1;Inactivo
+Tribufos;CCCCSP(=O)(SCCCC)SCCCC;Activo
+Naled;COP(=O)(OC)OC(Br)C(Cl)(Cl)Br;Activo
+Phosalone;CCOP(=S)(OCC)SCN1C(=O)OC2=CC(Cl)=CC=C12;Activo
+Thiophanate-methyl;COC(=O)NC(=S)NC1=C(NC(=S)NC(=O)OC)C=CC=C1;Inactivo
+Diethylene glycol dimethyl ether;COCCOCCOC;Inactivo
+Citral diethyl acetal;CCOC(OCC)C=C(C)CCC=C(C)C;Activo
+Dicumyl peroxide;CC(C)(OOC(C)(C)C1=CC=CC=C1)C1=CC=CC=C1;Activo
+N-Ethylaniline;CCNC1=CC=CC=C1;Inactivo
+2-Ethylhexyl diphenyl phosphate;CCCCC(CC)COP(=O)(OC1=CC=CC=C1)OC1=CC=CC=C1;Activo
+Octinoxate;CCCCC(CC)COC(=O)C=CC1=CC=C(OC)C=C1;Activo
+N-Isopropyl-N'-phenyl-p-phenylenediamine;CC(C)NC1=CC=C(NC2=CC=CC=C2)C=C1;Activo
+Malachite green;[Cl-].CN(C)C1=CC=C(C=C1)C(C1=CC=CC=C1)=C1C=CC(C=C1)=[N+](C)C;Activo
+Octhilinone;CCCCCCCCN1SC=CC1=O;Activo
+Sodium dodecyl sulfate;[Na+].CCCCCCCCCCCCOS([O-])(=O)=O;Activo
+Sodium 2-mercaptobenzothiolate;[Na+].[S-]C1=NC2=CC=CC=C2S1;Inactivo
+3,3',5,5'-Tetrabromobisphenol A;CC(C)(C1=CC(Br)=C(O)C(Br)=C1)C1=CC(Br)=C(O)C(Br)=C1;Activo
+2-Methylaniline;CC1=C(N)C=CC=C1;Inactivo
+D&C Violet 2;CC1=CC=C(NC2=C3C(=O)C4=C(C=CC=C4)C(=O)C3=C(O)C=C2)C=C1;Inactivo
+3-Pyridinecarbonitrile;N#CC1=CN=CC=C1;Inactivo
+3-Methylaniline;CC1=CC(N)=CC=C1;Inactivo
+Dodecyltrimethylammonium chloride;[Cl-].CCCCCCCCCCCC[N+](C)(C)C;Activo
+N,N,N-Trimethyloctadecan-1-aminium chloride;[Cl-].CCCCCCCCCCCCCCCCCC[N+](C)(C)C;Activo
+N,N-Dimethyldodecan-1-amine;CCCCCCCCCCCCN(C)C;Inactivo
+2-Hexyloxyethanol;CCCCCCOCCO;Inactivo
+Bis(2-ethylhexyl) phosphate;CCCCC(CC)COP(O)(=O)OCC(CC)CCCC;Activo
+Pentyl acetate;CCCCCOC(C)=O;Inactivo
+Sodium benzenethiolate;[Na+].[S-]C1=CC=CC=C1;Inactivo
+Azacyclotridecan-2-one;O=C1CCCCCCCCCCCN1;Inactivo
+2-(2H-Benzotriazol-2-yl)-4-methylphenol;CC1=CC(N2N=C3C=CC=CC3=N2)=C(O)C=C1;Inactivo
+2,2,4-Trimethyl-1,3-pentanediol diisobutyrate;CC(C)C(OC(=O)C(C)C)C(C)(C)COC(=O)C(C)C;Inactivo
+2-Ethylhexyl nitrate;CCCCC(CC)CO[N+]([O-])=O;Activo
+Silica;O=[Si]=O;Inactivo
+3-Amino-9-ethylcarbazole;CCN1C2=C(C=CC=C2)C2=C1C=CC(N)=C2;Activo
+Methyl trans-styryl ketone;CC(=O)\C=C\C1=CC=CC=C1;Inactivo
+Clomazone;CC1(C)CON(CC2=C(Cl)C=CC=C2)C1=O;Inactivo
+Cyprodinil;CC1=NC(NC2=CC=CC=C2)=NC(=C1)C1CC1;Activo
+Tebupirimfos;CCOP(=S)(OC(C)C)OC1=CN=C(N=C1)C(C)(C)C;Activo
+Temephos;COP(=S)(OC)OC1=CC=C(SC2=CC=C(OP(=S)(OC)OC)C=C2)C=C1;Activo
+Thiazopyr;COC(=O)C1=C(CC(C)C)C(C2=NCCS2)=C(N=C1C(F)F)C(F)(F)F;Inactivo
+1,3,5-Triethylhexahydro-s-triazine;CCN1CN(CC)CN(CC)C1;Inactivo
+Acibenzolar-S-methyl;CSC(=O)C1=CC=CC2=C1SN=N2;Inactivo
+Pirimicarb;CN(C)C(=O)OC1=C(C)C(C)=NC(=N1)N(C)C;Inactivo
+Pyriproxyfen;CC(COC1=CC=C(OC2=CC=CC=C2)C=C1)OC1=NC=CC=C1;Inactivo
+Rimsulfuron;CCS(=O)(=O)C1=CC=CN=C1S(=O)(=O)NC(=O)NC1=NC(OC)=CC(OC)=N1;Inactivo
+N-Ethylperfluorooctanesulfonamide;CCNS(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+Indoxacarb;COC(=O)N(C(=O)N1CO[C@]2(CC3=C(C=CC(Cl)=C3)C2=N1)C(=O)OC)C1=CC=C(OC(F)(F)F)C=C1;Activo
+17-Methyltestosterone;C[C@]1(O)CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@]4(C)[C@H]3CC[C@]12C;Inactivo
+Raloxifene hydrochloride;Cl.OC1=CC=C(C=C1)C1=C(C(=O)C2=CC=C(OCCN3CCCCC3)C=C2)C2=CC=C(O)C=C2S1;Activo
+Tamoxifen;CC\C(=C(/C1=CC=CC=C1)C1=CC=C(OCCN(C)C)C=C1)C1=CC=CC=C1;Activo
+Prodiamine;CCCN(CCC)C1=C(C(N)=C(C=C1[N+]([O-])=O)C(F)(F)F)[N+]([O-])=O;Activo
+Spiroxamine;CCCN(CC)CC1COC2(CCC(CC2)C(C)(C)C)O1;Activo
+Oxytetracycline;CN(C)[C@H]1[C@@H]2[C@@H](O)[C@H]3C(=C(O)[C@]2(O)C(=O)C(C(N)=O)=C1O)C(=O)C1=C(C=CC=C1O)[C@@]3(C)O;Activo
+gamma-Cyhalothrin;CC1(C)[C@@H](\C=C(/Cl)C(F)(F)F)[C@H]1C(=O)O[C@H](C#N)C1=CC=CC(OC2=CC=CC=C2)=C1;Inactivo
+Cyhalofop-butyl;CCCCOC(=O)[C@@H](C)OC1=CC=C(OC2=C(F)C=C(C=C2)C#N)C=C1;Inactivo
+Forchlorfenuron;ClC1=NC=CC(NC(=O)NC2=CC=CC=C2)=C1;Inactivo
+N-Vanillylnonanamide;CCCCCCCCC(=O)NCC1=CC(OC)=C(O)C=C1;Inactivo
+Tralkoxydim;CCON=C(CC)C1=C(O)CC(CC1=O)C1=C(C)C=C(C)C=C1C;Inactivo
+S-Methoprene;COC(C)(C)CCC[C@H](C)C\C=C\C(\C)=C\C(=O)OC(C)C;Activo
+Pregnenolone;[H][C@@]12CC[C@H](C(C)=O)[C@@]1(C)CC[C@@]1([H])[C@@]2([H])CC=C2C[C@@H](O)CC[C@]12C;Inactivo
+Triphenylsilanol;O[Si](C1=CC=CC=C1)(C1=CC=CC=C1)C1=CC=CC=C1;Activo
+Perfluoroheptanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Metolachlor ESA;CCC1=CC=CC(C)=C1N(C(C)COC)C(=O)CS(O)(=O)=O;Inactivo
+1H,1H-Heptafluorobutyl epoxide;FC(F)(F)C(F)(F)C(F)(F)CC1CO1;Activo
+1H,1H-Perfluoroheptylamine;NCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+3-(Perfluorooctyl)propanol;OCCCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+3-(Perfluoro-2-butyl)propane-1,2-diol;OCC(O)CC(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+1-Hydroxypyrene;OC1=C2C=CC3=CC=CC4=CC=C(C=C1)C2=C34;Activo
+3-Phenoxybenzoic acid;OC(=O)C1=CC(OC2=CC=CC=C2)=CC=C1;Inactivo
+Chlorpyrifos oxon;CCOP(=O)(OCC)OC1=NC(Cl)=C(Cl)C=C1Cl;Activo
+5-Methyl-1H-benzotriazole;CC1=CC2=C(NN=N2)C=C1;Inactivo
+Neopentyl glycol dibenzoate;CC(C)(COC(=O)C1=CC=CC=C1)COC(=O)C1=CC=CC=C1;Activo
+Nitric acid, calcium salt (2:1);[Ca++].[O-][N+]([O-])=O.[O-][N+]([O-])=O;Inactivo
+Ethyl heptanoate;CCCCCCC(=O)OCC;Inactivo
+tert-Butylacrylamide;CC(C)(C)NC(=O)C=C;Inactivo
+Sucralose;OC[C@H]1O[C@H](O[C@]2(CCl)O[C@H](CCl)[C@@H](O)[C@@H]2O)[C@H](O)[C@@H](O)[C@H]1Cl;Inactivo
+Triamcinolone;[H][C@@]12C[C@@H](O)[C@](O)(C(=O)CO)[C@@]1(C)C[C@H](O)[C@@]1(F)[C@@]2([H])CCC2=CC(=O)C=C[C@]12C;Activo
+Allyl 3-chloro-2-hydroxypropyl ether;OC(CCl)COCC=C;Inactivo
+2-Hexyl-1-decanol;CCCCCCCCC(CO)CCCCCC;Activo
+3-Methyl-4,6-di-tert-butylphenol;CC1=C(C=C(C(O)=C1)C(C)(C)C)C(C)(C)C;Activo
+4-Chloro-2-methylaniline;CC1=C(N)C=CC(Cl)=C1;Inactivo
+Dibutyl decanedioate;CCCCOC(=O)CCCCCCCCC(=O)OCCCC;Inactivo
+Terbufos sulfone;CCOP(=S)(OCC)SCS(=O)(=O)C(C)(C)C;Inactivo
+Terbumeton;CCNC1=NC(OC)=NC(NC(C)(C)C)=N1;Inactivo
+Methyl phenylacetate;COC(=O)CC1=CC=CC=C1;Inactivo
+N-Butyldiethanolamine;CCCCN(CCO)CCO;Inactivo
+2-Chloro-N,N-dimethyl-3-oxobutanamide;CN(C)C(=O)C(Cl)C(C)=O;Activo
+(-)-Isolongifolene;CC1(C)[C@H]2CC[C@]3(C2)C1=CCCC3(C)C;Activo
+2,6,10-Trimethyl-2,6,10-triazaundecane;CN(C)CCCN(C)CCCN(C)C;Inactivo
+Glycidyl trimethylammonium chloride;[Cl-].C[N+](C)(C)CC1CO1;Inactivo
+4-Ethyloct-1-yn-3-ol;CCCCC(CC)C(O)C#C;Inactivo
+4,5-Dihydroxy-1,3-dimethylimidazolidin-2-one;CN1C(O)C(O)N(C)C1=O;Inactivo
+Ethenylsilanetriyl triacetate;CC(=O)O[Si](OC(C)=O)(OC(C)=O)C=C;Inactivo
+2-(2,6-Diisopropylphenyl)-5-hydroxy-1H-isoindole-1,3-dione;CC(C)C1=CC=CC(C(C)C)=C1N1C(=O)C2=C(C=C(O)C=C2)C1=O;Activo
+CP-612372;CC(C)(O)C1=CC=C(CNC(=O)C2=CC=CN=C2OC2=CC3=NON=C3C=C2)C=C1;Inactivo
+CP-728663;CC[C@H]1CC[C@H](NCC2=CC3=C(C=C2OC)[C@H]2C[C@H]2C(=O)N3C)[C@@H](N1)C1=CC=CC=C1;Inactivo
+PHA-00568487;O=C(N[C@H]1CN2CCC1CC2)C1=CC2=C(OCCO2)C=C1;Inactivo
+UK-333747;COCC1=NN=C(N1C1=C(Cl)C(Cl)=CC2=C1NC(=O)C(=O)N2)C1=C[N+]([O-])=CC=C1;Inactivo
+UK-343664;CCCOC1=C(C=C(C=C1)S(=O)(=O)N1CCN(CC)CC1)C1=NC2=C(CC)N(CC3=CC=CC=N3)N=C2C(=O)N1;Inactivo
+Farglitazar;CC1=C(CCOC2=CC=C(C[C@H](NC3=C(C=CC=C3)C(=O)C3=CC=CC=C3)C(O)=O)C=C2)N=C(O1)C1=CC=CC=C1;Activo
+GSK232420A;NC(=O)CN(CC(F)(F)F)C1=CC(=C(C=C1)C#N)C(F)(F)F;Inactivo
+Aplaviroc hydrochloride;Cl.CCCCN1C(=O)[C@H](NC(=O)C11CCN(CC2=CC=C(OC3=CC=C(C=C3)C(O)=O)C=C2)CC1)[C@H](O)C1CCCCC1;Activo
+SB202235;NC(=O)N(O)[C@@H]1COC2=C1C=CC(OCC1=CC=CC=C1)=C2;Inactivo
+SR58611;Cl.CCOC(=O)COC1=CC2=C(CCC(C2)NCC(O)C2=CC(Cl)=CC=C2)C=C1;Activo
+SSR150106;CCOC(=O)[C@@]1(OC2=CC=CC=C2[C@@H]1N)C1=CC=CC=C1;Activo
+SAR115740;FC1=CC=C2N(CC3=CC(F)=CC=C3)C(=CC2=C1)C(=O)NC1=CC=C2NC=CC2=C1;Activo
+SSR69071;COC1=CC2=C(C(=O)N(COC3=CC(=O)N4C=CC=C(OCCN5CCCCC5)C4=N3)S2(=O)=O)C(=C1)C(C)C;Activo
+Benzyloctyl adipate;CCCCC(CC)COC(=O)CCCCC(=O)OCC1=CC=CC=C1;Inactivo
+Cotinine;CN1[C@@H](CCC1=O)C1=CN=CC=C1;Inactivo
+1H,1H,2H,2H-Perfluorohexyl iodide;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)CCI;Inactivo
+3-Phenylprop-2-en-1-yl propanoate;CCC(=O)OCC=CC1=CC=CC=C1;Inactivo
+FR150011;CC(C)(C)C1=CSC(=N1)C1=CC2=C(O1)C=CC(OCC1=CC=CC=C1CC(O)=O)=C2;Activo
+PharmaGSID_48172;OC(=O)\C=C\C(O)=O.O=C1N(CCC2=NOC(=N2)C2=CC=C(CN3CCCCCC3)S2)C(=O)C2=C1C=CC=C2;Inactivo
+FR167356;CC1=C(C2=C(O1)C(NC(=O)C1=C(Cl)C=CC=C1Cl)=CC=C2)C(C)(C)O;Activo
+YM 218;OC(=O)\C=C\C(O)=O.CC1=C(C=CO1)C(=O)NC1=CC=C(C=C1)C(=O)N1CCC(F)(F)\C(=C/C(=O)N2CCC(CC2)N2CCCCC2)C2=C1C=CC=C2.CC1=C(C=CO1)C(=O)NC1=CC=C(C=C1)C(=O)N1CCC(F)(F)\C(=C/C(=O)N2CCC(CC2)N2CCCCC2)C2=C1C=CC=C2;Inactivo
+FR130739;[Na+].CCCCC1=NC2=CC=CN=C2N1CC1=CC=C(C=C1)C1=CC=CC=C1C1=NN=N[N-]1;Activo
+4:2 Fluorotelomer alcohol;OCCC(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+N-Methylperfluorooctanesulfonamide;CNS(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+2-(Perfluorobutyl)ethyl acrylate;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)CCOC(=O)C=C;Activo
+Triethoxy((perfluorohexyl)ethyl)silane;CCO[Si](CCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F)(OCC)OCC;Inactivo
+2-(Perfluorohexyl)ethylphosphonic acid;OP(O)(=O)CCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Acetaminophen;CC(=O)NC1=CC=C(O)C=C1;Inactivo
+C.I. Azoic Diazo Component 112;NC1=CC=C(C=C1)C1=CC=C(N)C=C1;Inactivo
+FD&C Blue No. 1;[Na+].[Na+].CCN(CC1=CC(=CC=C1)S([O-])(=O)=O)C1=CC=C(C=C1)C(=C1C=CC(C=C1)=[N+](CC)CC1=CC(=CC=C1)S([O-])(=O)=O)C1=C(C=CC=C1)S([O-])(=O)=O;Inactivo
+4-Methyl-2-tert-butylphenol;CC1=CC(=C(O)C=C1)C(C)(C)C;Activo
+Chloramben;NC1=C(Cl)C(=CC(Cl)=C1)C(O)=O;Inactivo
+Chloranil;ClC1=C(Cl)C(=O)C(Cl)=C(Cl)C1=O;Activo
+Chlorendic acid;OC(=O)C1C(C(O)=O)C2(Cl)C(Cl)=C(Cl)C1(Cl)C2(Cl)Cl;Inactivo
+Coumaphos;CCOP(=S)(OCC)OC1=CC2=C(C=C1)C(C)=C(Cl)C(=O)O2;Activo
+Propyzamide;CC(C)(NC(=O)C1=CC(Cl)=CC(Cl)=C1)C#C;Inactivo
+1-Amino-2,6-dichloro-4-nitrobenzene;NC1=C(Cl)C=C(C=C1Cl)[N+]([O-])=O;Activo
+Dichloroacetic acid;OC(=O)C(Cl)Cl;Inactivo
+Methadone hydrochloride;Cl.CCC(=O)C(CC(C)N(C)C)(C1=CC=CC=C1)C1=CC=CC=C1;Inactivo
+Dimethylaminoethanol;CN(C)CCO;Inactivo
+N,N-Dimethylaniline;CN(C)C1=CC=CC=C1;Inactivo
+5-Fluorouracil;FC1=CNC(=O)NC1=O;Inactivo
+Lindane;Cl[C@H]1[C@H](Cl)[C@@H](Cl)[C@@H](Cl)[C@H](Cl)[C@H]1Cl;Inactivo
+Hexachlorocyclopentadiene;ClC1=C(Cl)C(Cl)(Cl)C(Cl)=C1Cl;Activo
+Hydrochlorothiazide;NS(=O)(=O)C1=CC2=C(NCNS2(=O)=O)C=C1Cl;Inactivo
+6-Methyl-2-thiouracil;CC1=CC(=O)NC(=S)N1;Inactivo
+Bis(4-(dimethylamino)phenyl)methanone;CN(C)C1=CC=C(C=C1)C(=O)C1=CC=C(C=C1)N(C)C;Inactivo
+2-Naphthylamine;NC1=CC2=C(C=CC=C2)C=C1;Inactivo
+Nickel bis(dibutyldithiocarbamate);[Ni++].CCCCN(CCCC)C([S-])=S.CCCCN(CCCC)C([S-])=S;Inactivo
+N-Nitrosodibutylamine;CCCCN(CCCC)N=O;Inactivo
+N-Nitrosodiethylamine;CCN(CC)N=O;Inactivo
+Pentachloronitrobenzene;[O-][N+](=O)C1=C(Cl)C(Cl)=C(Cl)C(Cl)=C1Cl;Activo
+2-Phenylphenol;OC1=C(C=CC=C1)C1=CC=CC=C1;Inactivo
+Resorcinol;OC1=CC(O)=CC=C1;Inactivo
+Styrene oxide;C1OC1C1=CC=CC=C1;Inactivo
+Sucrose;OC[C@H]1O[C@@](CO)(O[C@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)[C@@H](O)[C@@H]1O;Inactivo
+2,4,6-Tris(tert-butyl)phenol;CC(C)(C)C1=CC(=C(O)C(=C1)C(C)(C)C)C(C)(C)C;Activo
+Vinylpyrrolidone;C=CN1CCCC1=O;Inactivo
+2-Bromobenzothiazole;BrC1=NC2=C(S1)C=CC=C2;Inactivo
+Dalapon;CC(Cl)(Cl)C(O)=O;Inactivo
+Heptanoic acid;CCCCCCC(O)=O;Inactivo
+Dibutyl 1,2-benzenedicarboxylate;CCCCOC(=O)C1=CC=CC=C1C(=O)OCCCC;Activo
+2,4-Dimethylphenol;CC1=CC(C)=C(O)C=C1;Inactivo
+Dibutyl adipate;CCCCOC(=O)CCCCC(=O)OCCCC;Inactivo
+2-(2-Ethoxyethoxy)ethanol;CCOCCOCCO;Inactivo
+1-Tridecanol;CCCCCCCCCCCCCO;Activo
+Dibenzofuran;O1C2=CC=CC=C2C2=C1C=CC=C2;Inactivo
+DEET;CCN(CC)C(=O)C1=CC=CC(C)=C1;Inactivo
+4-(2-Hydroxyethyl)morpholine;OCCN1CCOCC1;Inactivo
+Triphenylphosphine oxide;O=P(C1=CC=CC=C1)(C1=CC=CC=C1)C1=CC=CC=C1;Inactivo
+Pentachloropyridine;ClC1=NC(Cl)=C(Cl)C(Cl)=C1Cl;Inactivo
+Terbufos;CCOP(=S)(OCC)SCSC(C)(C)C;Inactivo
+2-(Butan-2-yl)phenol;CCC(C)C1=C(O)C=CC=C1;Inactivo
+meso-Hexestrol;CC[C@@H]([C@@H](CC)C1=CC=C(O)C=C1)C1=CC=C(O)C=C1;Activo
+3-Phenylphenol;OC1=CC=CC(=C1)C1=CC=CC=C1;Activo
+Danazol;C[C@]12CC[C@H]3[C@@H](CCC4=CC5=C(C[C@]34C)C=NO5)[C@@H]1CC[C@@]2(O)C#C;Activo
+Propantheline bromide;[Br-].CC(C)[N+](C)(CCOC(=O)C1C2=CC=CC=C2OC2=C1C=CC=C2)C(C)C;Inactivo
+Rofecoxib;CS(=O)(=O)C1=CC=C(C=C1)C1=C(C(=O)OC1)C1=CC=CC=C1;Inactivo
+Rosiglitazone maleate;OC(=O)\C=C/C(O)=O.CN(CCOC1=CC=C(CC2SC(=O)NC2=O)C=C1)C1=CC=CC=N1;Activo
+Ethion;CCOP(=S)(OCC)SCSP(=S)(OCC)OCC;Inactivo
+Linuron;CON(C)C(=O)NC1=CC=C(Cl)C(Cl)=C1;Inactivo
+Benzo(f)quinoline;C1=CC=C2C(C=CC3=C2C=CC=N3)=C1;Activo
+1,4-Butanediol;OCCCCO;Inactivo
+Chloroneb;COC1=CC(Cl)=C(OC)C=C1Cl;Inactivo
+4-Chloro-3-nitrobenzotrifluoride;[O-][N+](=O)C1=C(Cl)C=CC(=C1)C(F)(F)F;Inactivo
+Di-tert-butyl peroxide;CC(C)(C)OOC(C)(C)C;Inactivo
+Diethylenetriamine;NCCNCCN;Inactivo
+1,2-Dimethyl-4-nitrobenzene;CC1=CC=C(C=C1C)[N+]([O-])=O;Inactivo
+N,N-Dimethyl-N-benzyl-N-octadecylammonium chloride;[Cl-].CCCCCCCCCCCCCCCCCC[N+](C)(C)CC1=CC=CC=C1;Activo
+C.I. Disperse Red 60;NC1=C2C(=O)C3=C(C=CC=C3)C(=O)C2=C(O)C=C1OC1=CC=CC=C1;Activo
+Furfuryl alcohol;OCC1=CC=CO1;Inactivo
+Limonene dimercaptan;CC(CS)C1CCC(C)C(S)C1;Activo
+MEHP;CCCCC(CC)COC(=O)C1=CC=CC=C1C(O)=O;Activo
+Pentaerythritol triacrylate;OCC(COC(=O)C=C)(COC(=O)C=C)COC(=O)C=C;Activo
+N-Phenyl-1-naphthylamine;N(C1=CC=CC=C1)C1=C2C=CC=CC2=CC=C1;Activo
+Acetyl tributyl citrate;CCCCOC(=O)CC(CC(=O)OCCCC)(OC(C)=O)C(=O)OCCCC;Inactivo
+alpha-Terpinyl acetate;CC(=O)OC(C)(C)C1CCC(C)=CC1;Activo
+Symclosene;ClN1C(=O)N(Cl)C(=O)N(Cl)C1=O;Inactivo
+2-tert-Butylphenol;CC(C)(C)C1=C(O)C=CC=C1;Inactivo
+2-Tert-Butyl-5-methylphenol;CC1=CC(O)=C(C=C1)C(C)(C)C;Inactivo
+2-(Morpholin-4-yldithio)-1,3-benzothiazole;C1CN(CCO1)SSC1=NC2=C(S1)C=CC=C2;Activo
+2,4-Di-tert-butylphenol;CC(C)(C)C1=CC(=C(O)C=C1)C(C)(C)C;Activo
+1,4-Diisopropylbenzene;CC(C)C1=CC=C(C=C1)C(C)C;Activo
+4-Methyl-2-pentanol;CC(C)CC(C)O;Inactivo
+Methyl octanoate;CCCCCCCC(=O)OC;Inactivo
+Pentaerythritol;OCC(CO)(CO)CO;Inactivo
+Bis(2-ethylhexyl) maleate;CCCCC(CC)COC(=O)\C=C/C(=O)OCC(CC)CCCC;Inactivo
+4,4'-Bipyridine;C1=CC(=CC=N1)C1=CC=NC=C1;Inactivo
+Methyl isothiocyanate;CN=C=S;Inactivo
+2,3-Dihydro-2,2-dimethyl-7-benzofuranol;CC1(C)CC2=C(O1)C(O)=CC=C2;Inactivo
+4-Chlorobenzotrichloride;ClC1=CC=C(C=C1)C(Cl)(Cl)Cl;Inactivo
+1,1':3',1''-Terphenyl;C1=CC=C(C=C1)C1=CC(=CC=C1)C1=CC=CC=C1;Activo
+Triethoxyoctylsilane;CCCCCCCC[Si](OCC)(OCC)OCC;Activo
+Fenofibrate;CC(C)OC(=O)C(C)(C)OC1=CC=C(C=C1)C(=O)C1=CC=C(Cl)C=C1;Activo
+D&C Red 27;OC1=C(Br)C2=C(C=C1Br)C1(OC(=O)C3=C1C(Cl)=C(Cl)C(Cl)=C3Cl)C1=C(O2)C(Br)=C(O)C(Br)=C1;Activo
+Chinomethionate;CC1=CC2=NC3=C(SC(=O)S3)N=C2C=C1;Activo
+Chlorethoxyfos;CCOP(=S)(OCC)OC(Cl)C(Cl)(Cl)Cl;Activo
+Fenarimol;OC(C1=CC=C(Cl)C=C1)(C1=CN=CN=C1)C1=CC=CC=C1Cl;Activo
+Fenoxaprop-ethyl;CCOC(=O)C(C)OC1=CC=C(OC2=NC3=C(O2)C=C(Cl)C=C3)C=C1;Activo
+Fludioxonil;FC1(F)OC2=CC=CC(=C2O1)C1=CNC=C1C#N;Activo
+Triflumizole;CCCOC\C(=N/C1=C(C=C(Cl)C=C1)C(F)(F)F)N1C=CN=C1;Activo
+Triflusulfuron-methyl;COC(=O)C1=C(C(C)=CC=C1)S(=O)(=O)NC(=O)NC1=NC(=NC(OCC(F)(F)F)=N1)N(C)C;Inactivo
+Fenpyroximate (Z,E);CN1N=C(C)C(C=NOCC2=CC=C(C=C2)C(=O)OC(C)(C)C)=C1OC1=CC=CC=C1;Activo
+Flufenacet;CC(C)N(C(=O)COC1=NN=C(S1)C(F)(F)F)C1=CC=C(F)C=C1;Activo
+Flumiclorac-pentyl;CCCCCOC(=O)COC1=C(Cl)C=C(F)C(=C1)N1C(=O)C2=C(CCCC2)C1=O;Activo
+Fluthiacet-methyl;COC(=O)CSC1=C(Cl)C=C(F)C(=C1)N=C1SC(=O)N2CCCCN12;Inactivo
+Oxadixyl;COCC(=O)N(N1CCOC1=O)C1=C(C)C=CC=C1C;Inactivo
+Pymetrozine;CC1=NNC(=O)N(C1)\N=C\C1=CC=CN=C1;Inactivo
+Mevinphos;COC(=O)C=C(C)OP(=O)(OC)OC;Inactivo
+1,6-Dibromododecafluorohexane;FC(F)(Br)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)Br;Inactivo
+2-(Perfluorooctyl)ethanthiol;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)CCS;Inactivo
+Clothianidin;CN\C(NCC1=CN=C(Cl)S1)=N/[N+]([O-])=O;Inactivo
+Dimethenamid-P;COC[C@H](C)N(C(=O)CCl)C1=C(C)SC=C1C;Inactivo
+(S)-1-Anilino-4-methyl-2-methylthio-4-phenylimidazolin-5-one;CSC1=N[C@](C)(C(=O)N1NC1=CC=CC=C1)C1=CC=CC=C1;Inactivo
+Fluoxastrobin;CO\N=C(\C1=NOCCO1)C1=C(OC2=NC=NC(OC3=CC=CC=C3Cl)=C2F)C=CC=C1;Activo
+Fluroxypyr;NC1=C(Cl)C(F)=NC(OCC(O)=O)=C1Cl;Inactivo
+Iodosulfuron methyl ester sodium salt;[Na+].COC(=O)C1=C(C=C(I)C=C1)S(=O)(=O)[N-]C(=O)NC1=NC(OC)=NC(C)=N1;Inactivo
+Quinoxyfen;FC1=CC=C(OC2=CC=NC3=CC(Cl)=CC(Cl)=C23)C=C1;Activo
+Fenchlorphos;COP(=S)(OC)OC1=C(Cl)C=C(Cl)C(Cl)=C1;Activo
+Thiamethoxam;CN1COCN(CC2=CN=C(Cl)S2)C1=N[N+]([O-])=O;Inactivo
+N,N-Dimethyloctylamine;CCCCCCCCN(C)C;Inactivo
+3,3'-Diaminobenzidine;NC1=CC=C(C=C1N)C1=CC(N)=C(N)C=C1;Activo
+Bitertanol;CC(C)(C)C(O)C(OC1=CC=C(C=C1)C1=CC=CC=C1)N1C=NC=N1;Activo
+Perfluoro-3,6-dioxaoctane-1,8-dioic acid;OC(=O)C(F)(F)OC(F)(F)C(F)(F)OC(F)(F)C(O)=O;Inactivo
+4,4',4''-Ethane-1,1,1-triyltriphenol;CC(C1=CC=C(O)C=C1)(C1=CC=C(O)C=C1)C1=CC=C(O)C=C1;Activo
+4-Heptylphenol;CCCCCCCC1=CC=C(O)C=C1;Activo
+2-(Perfluorohexyl)ethanethiol;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)CCS;Inactivo
+Diethyl butanedioate;CCOC(=O)CCC(=O)OCC;Inactivo
+S-Bioallethrin;CC(C)=C[C@@H]1[C@@H](C(=O)O[C@H]2CC(=O)C(CC=C)=C2C)C1(C)C;Activo
+Metam-sodium hydrate;O.O.O.[Na+].CNC([S-])=S;Activo
+Diniconazole;CC(C)(C)C(O)C(=C/C1=C(Cl)C=C(Cl)C=C1)\N1C=NC=N1;Activo
+Triphenyltin chloride;Cl[Sn](C1=CC=CC=C1)(C1=CC=CC=C1)C1=CC=CC=C1;Activo
+2-Chloro-N-(hydroxymethyl)acetamide;OCNC(=O)CCl;Inactivo
+Benfuracarb;CCOC(=O)CCN(SN(C)C(=O)OC1=CC=CC2=C1OC(C)(C)C2)C(C)C;Activo
+Ethylhexadecyldimethylammonium bromide;[Br-].CCCCCCCCCCCCCCCC[N+](C)(C)CC;Activo
+2,3-Dihydroxynaphthalene;OC1=CC2=C(C=CC=C2)C=C1O;Inactivo
+1-(Perfluorohexyl)octane;CCCCCCCCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Dimethoxy(diphenyl)silane;CO[Si](OC)(C1=CC=CC=C1)C1=CC=CC=C1;Activo
+2-[(4-Hydroxyphenyl)methyl]phenol;OC1=CC=C(CC2=C(O)C=CC=C2)C=C1;Inactivo
+Tiratricol;OC(=O)CC1=CC(I)=C(OC2=CC(I)=C(O)C=C2)C(I)=C1;Activo
+Farnesyl acetate;CC(C)=CCCC(C)=CCCC(C)=CCOC(C)=O;Activo
+Besonprodil;FC1=CC=C(CC2CCN(CCS(=O)C3=CC=C4NC(=O)OC4=C3)CC2)C=C1;Inactivo
+CJ-013610;CS(O)(=O)=O.CC1=NC=CN1C1=CC=C(SC2=CC=CC(=C2)C2(CCOCC2)C(N)=O)C=C1;Activo
+CP-114271;CC(CC1=CC=C(OCC(O)=O)C=C1)NCC(O)C1=CSC(=N1)C(F)(F)F;Inactivo
+CP-409092;CNCC1=CC=C(NC(=O)C2=CNC3=C2C(=O)CCC3)C=C1;Inactivo
+CP-457677;CC(C)(O)C1=CC=C(CNC(=O)C2=CC=CN=C2OC2=CC=C(F)C=C2)C=C1;Inactivo
+CP-456773;CC(C)(O)C1=COC(=C1)S(=O)(=O)NC(=O)NC1=C2CCCC2=CC2=C1CCC2;Inactivo
+CJ-013790;NC(=O)N(O)[C@H]1C[C@@H](OC2=CC=CC(OC3=CC=C(F)C=C3)=C2)C=C1;Activo
+CP-608039;CNC(=O)[C@H]1O[C@H]([C@H](O)[C@@H]1N)N1C=NC2=C1N=CN=C2NCC1=CC(Cl)=CC=C1OCC1=CC(C)=NO1;Inactivo
+PD-0333941;CC1=C(CCOC2=CC=CC3=C2C=CN3CCC(O)=O)N=C(O1)C1=CC=CC=C1;Inactivo
+UK-156819;CC1=C(C2=C(C=CC=C2)N1CCCCC(O)=O)C1=CN=CC=C1;Inactivo
+SSR 240612;Cl.COC1=CC2=CC=C(C=C2C=C1)S(=O)(=O)N[C@H](CC(=O)N[C@H](CC1=CC=C(CN2[C@@H](C)CCC[C@H]2C)C=C1)C(=O)N(C)C(C)C)C1=CC2=C(OCO2)C=C1;Activo
+SSR 241586 HCl;Cl.CN(C)C(=O)C1(CCN(CC[C@]2(CN(CCO2)C(=O)C2=CC=CC=C2)C2=CC=C(Cl)C(Cl)=C2)CC1)N1CCCCC1;Activo
+Trelanserin;NC(=O)CN1C(=O)C=C(CCN2CCN(CC2)C2=NC=CC3=C2C=CS3)C2=C1C=C(F)C=C2;Inactivo
+Surinabant;CCC1=C(N(N=C1C(=O)NN1CCCCC1)C1=CC=C(Cl)C=C1Cl)C1=CC=C(Br)C=C1;Activo
+4-Bromophenyl 1,4-diazabicyclo(3.2.2)nonane-4-carboxylate;BrC1=CC=C(OC(=O)N2CCN3CCC2CC3)C=C1;Inactivo
+1H,1H,2H,2H-Perfluorooctyl iodide;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)CCI;Inactivo
+2,2,2-Trichloro-1-phenylethyl acetate;CC(=O)OC(C1=CC=CC=C1)C(Cl)(Cl)Cl;Inactivo
+2-Ethoxy-5-(1-propenyl)phenol;CCOC1=C(O)C=C(C=CC)C=C1;Inactivo
+FR 409;CC\C(=C/C(=N\O)/C(N)=O)C(C)[N+]([O-])=O;Inactivo
+Heptafluorobutyramide;NC(=O)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+2H,2H,3H,3H-Perfluorooctanoic acid;OC(=O)CCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+Ethyl pentafluoropropionyl acetate;CCOC(=O)CC(=O)C(F)(F)C(F)(F)F;Inactivo
+3,3-Bis(trifluoromethyl)-2-propenoic acid;OC(=O)C=C(C(F)(F)F)C(F)(F)F;Activo
+Perfluoro-1,4-diiodobutane;FC(F)(I)C(F)(F)C(F)(F)C(F)(F)I;Activo
+Azinphos-methyl;COP(=S)(OC)SCN1N=NC2=C(C=CC=C2)C1=O;Inactivo
+Benzyl butyl phthalate;CCCCOC(=O)C1=C(C=CC=C1)C(=O)OCC1=CC=CC=C1;Inactivo
+Dinoseb;CCC(C)C1=CC(=CC(=C1O)[N+]([O-])=O)[N+]([O-])=O;Activo
+Butylparaben;CCCCOC(=O)C1=CC=C(O)C=C1;Inactivo
+Citric acid;OC(=O)CC(O)(CC(O)=O)C(O)=O;Inactivo
+Clofibrate;CCOC(=O)C(C)(C)OC1=CC=C(Cl)C=C1;Inactivo
+1,2-Dibromoethane;BrCCBr;Inactivo
+Diethylstilbestrol;CC\C(=C(\CC)C1=CC=C(O)C=C1)C1=CC=C(O)C=C1;Activo
+Fluconazole;OC(CN1C=NC=N1)(CN1C=NC=N1)C1=C(F)C=C(F)C=C1;Inactivo
+Heptachlor;ClC1C=CC2C1C1(Cl)C(Cl)=C(Cl)C2(Cl)C1(Cl)Cl;Activo
+6-Methylquinoline;CC1=CC2=CC=CN=C2C=C1;Inactivo
+Busulfan;CS(=O)(=O)OCCCCOS(C)(=O)=O;Inactivo
+Nalidixic acid;CCN1C=C(C(O)=O)C(=O)C2=C1N=C(C)C=C2;Inactivo
+1,5-Naphthalenediamine;NC1=CC=CC2=C(N)C=CC=C12;Activo
+N,N'-Di-2-naphthyl-p-phenylenediamine;N(C1=CC=C(NC2=CC=C3C=CC=CC3=C2)C=C1)C1=CC=C2C=CC=CC2=C1;Inactivo
+5-Nitroacenaphthene;[O-][N+](=O)C1=CC=C2CCC3=CC=CC1=C23;Activo
+Nitrobenzene;[O-][N+](=O)C1=CC=CC=C1;Inactivo
+4-Nitrobenzoic acid;OC(=O)C1=CC=C(C=C1)[N+]([O-])=O;Inactivo
+(-)-Phenylephrine hydrochloride;Cl.CNC[C@H](O)C1=CC(O)=CC=C1;Inactivo
+2,4-Bis(isopropylamino)-6-chloro-1,3,5-triazine;CC(C)NC1=NC(NC(C)C)=NC(Cl)=N1;Inactivo
+2E,4E-Hexadienoic acid;C\C=C\C=C\C(O)=O;Inactivo
+Tolazamide;CC1=CC=C(C=C1)S(=O)(=O)NC(=O)NN1CCCCCC1;Inactivo
+1,3-Benzenedicarboxylic acid;OC(=O)C1=CC(=CC=C1)C(O)=O;Inactivo
+Nonanoic acid;CCCCCCCCC(O)=O;Inactivo
+Octanal;CCCCCCCC=O;Inactivo
+Octanoic acid;CCCCCCCC(O)=O;Inactivo
+2,2',6,6'-Tetrachlorobisphenol A;CC(C)(C1=CC(Cl)=C(O)C(Cl)=C1)C1=CC(Cl)=C(O)C(Cl)=C1;Activo
+Acenaphthene;C1CC2=C3C1=CC=CC3=CC=C2;Inactivo
+Diphenyl phthalate;O=C(OC1=CC=CC=C1)C1=CC=CC=C1C(=O)OC1=CC=CC=C1;Inactivo
+Diethanolamine;OCCNCCO;Inactivo
+Hexanedinitrile;N#CCCCCC#N;Inactivo
+Tributyl phosphate;CCCCOP(=O)(OCCCC)OCCCC;Inactivo
+Bromoxynil;OC1=C(Br)C=C(C=C1Br)C#N;Inactivo
+Progesterone;[H][C@@]12CC[C@H](C(C)=O)[C@@]1(C)CC[C@@]1([H])[C@@]2([H])CCC2=CC(=O)CC[C@]12C;Inactivo
+2,2'-Dihydroxy-4-methoxybenzophenone;COC1=CC=C(C(=O)C2=C(O)C=CC=C2)C(O)=C1;Inactivo
+2-Hydroxy-4-methoxybenzophenone;COC1=CC=C(C(=O)C2=CC=CC=C2)C(O)=C1;Inactivo
+Dimethyl phthalate;COC(=O)C1=C(C=CC=C1)C(=O)OC;Inactivo
+4-Cumylphenol;CC(C)(C1=CC=CC=C1)C1=CC=C(O)C=C1;Activo
+Aminopterin;NC1=NC2=C(N=C(CNC3=CC=C(C=C3)C(=O)N[C@@H](CCC(O)=O)C(O)=O)C=N2)C(N)=N1;Inactivo
+Retinol;C\C(=C/CO)\C=C\C=C(/C)\C=C\C1=C(C)CCCC1(C)C;Activo
+Benzo[e]pyrene;C1=CC2=C3C=CC=C4C=CC5=CC=CC(=C2C=C1)C5=C34;Activo
+Acenaphthylene;C1=CC2=C3C1=CC=CC3=CC=C2;Inactivo
+Triadimefon;CC(C)(C)C(=O)C(OC1=CC=C(Cl)C=C1)N1C=NC=N1;Inactivo
+Benfluralin;CCCCN(CC)C1=C(C=C(C=C1[N+]([O-])=O)C(F)(F)F)[N+]([O-])=O;Activo
+Fenamiphos;CCOP(=O)(NC(C)C)OC1=CC=C(SC)C(C)=C1;Inactivo
+Fluoranthene;C1=CC2=C(C=C1)C1=C3C2=CC=CC3=CC=C1;Inactivo
+Imazaquin;CC(C)C1(C)N=C(NC1=O)C1=NC2=C(C=CC=C2)C=C1C(O)=O;Inactivo
+3-(3,5-Dichlorophenyl)-N-(1-methylethyl)-2,4-dioxo-1-imidazolidinecarboxamide;CC(C)NC(=O)N1CC(=O)N(C1=O)C1=CC(Cl)=CC(Cl)=C1;Inactivo
+Flusilazole;C[Si](CN1C=NC=N1)(C1=CC=C(F)C=C1)C1=CC=C(F)C=C1;Inactivo
+Oxadiazon;CC(C)OC1=CC(N2N=C(OC2=O)C(C)(C)C)=C(Cl)C=C1Cl;Activo
+Imazethapyr;CCC1=CN=C(C2=NC(C)(C(C)C)C(=O)N2)C(=C1)C(O)=O;Inactivo
+Pyrene;C1=CC2=C3C(C=CC4=CC=CC(C=C2)=C34)=C1;Inactivo
+Tebuthiuron;CNC(=O)N(C)C1=NN=C(S1)C(C)(C)C;Inactivo
+Terbutryn;CCNC1=NC(SC)=NC(NC(C)(C)C)=N1;Inactivo
+2-[2-(2-Ethoxyethoxy)ethoxy]ethanol;CCOCCOCCOCCO;Inactivo
+3-Bromo-1-propanol;OCCCBr;Inactivo
+2-Chloropropyldimethylamine hydrochloride;Cl.CC(Cl)CN(C)C;Inactivo
+Cumene hydroperoxide;CC(C)(OO)C1=CC=CC=C1;Activo
+Dibromoacetonitrile;BrC(Br)C#N;Inactivo
+1,2-Dibromo-2,4-dicyanobutane;BrCC(Br)(CCC#N)C#N;Activo
+Diethylene glycol monomethyl ether;COCCOCCO;Inactivo
+C.I. Disperse Black 6;COC1=CC(=CC=C1N)C1=CC(OC)=C(N)C=C1;Inactivo
+Dimethyl glutarate;COC(=O)CCCC(=O)OC;Inactivo
+4,4'-Dioctyldiphenylamine;CCCCCCCCC1=CC=C(NC2=CC=C(CCCCCCCC)C=C2)C=C1;Inactivo
+1,3-Diphenylguanidine;N=C(NC1=CC=CC=C1)NC1=CC=CC=C1;Activo
+C.I. Disperse Blue 27;OCCC1=CC=C(NC2=CC=C(O)C3=C2C(=O)C2=C(C=CC(O)=C2C3=O)[N+]([O-])=O)C=C1;Activo
+Isopentyl alcohol;CC(C)CCO;Inactivo
+1,2-Phenylenediamine;NC1=C(N)C=CC=C1;Activo
+Triethylene glycol diacetate;CC(=O)OCCOCCOCCOC(C)=O;Inactivo
+Triethylene glycol bis(2-ethylhexanoate);CCCCC(CC)C(=O)OCCOCCOCCOC(=O)C(CC)CCCC;Inactivo
+p-Cymene;CC(C)C1=CC=C(C)C=C1;Inactivo
+Triacetin;CC(=O)OCC(COC(C)=O)OC(C)=O;Inactivo
+Bis(2-ethylhexyl) nonanedioate;CCCCC(CC)COC(=O)CCCCCCCC(=O)OCC(CC)CCCC;Inactivo
+Citronellol;CC(CCO)CCC=C(C)C;Inactivo
+(Z)-Nerol;CC(C)=CCC\C(C)=C/CO;Inactivo
+Bis[2-(2-butoxyethoxy)ethyl] adipate;CCCCOCCOCCOC(=O)CCCCC(=O)OCCOCCOCCCC;Inactivo
+Sodium 4-nitrophenolate;[Na+].[O-]C1=CC=C(C=C1)[N+]([O-])=O;Inactivo
+Cyclododecanone;O=C1CCCCCCCCCCC1;Inactivo
+Tributyltin chloride;CCCC[Sn](Cl)(CCCC)CCCC;Activo
+1,1,1-Trimethylolpropane trimethacrylate;CCC(COC(=O)C(C)=C)(COC(=O)C(C)=C)COC(=O)C(C)=C;Activo
+N,N-Dicyclohexyl-2-benzothiazolesulfenamide;C1CCC(CC1)N(SC1=NC2=C(S1)C=CC=C2)C1CCCCC1;Activo
+1,1-Methylenebis(4-isocyanatocyclohexane);O=C=NC1CCC(CC2CCC(CC2)N=C=O)CC1;Activo
+Tris(2-chloropropyl) phosphate;CC(Cl)COP(=O)(OCC(C)Cl)OCC(C)Cl;Inactivo
+Ethyltriacetoxysilane;CC[Si](OC(C)=O)(OC(C)=O)OC(C)=O;Inactivo
+3-Phenoxybenzaldehyde;O=CC1=CC(OC2=CC=CC=C2)=CC=C1;Inactivo
+7a-Ethyldihydro-1H,3H,5H-oxazolo(3,4-c)oxazole;CCC12COCN1COC2;Inactivo
+Benoxacor;CC1COC2=C(C=CC=C2)N1C(=O)C(Cl)Cl;Activo
+Triethylene glycol dimethacrylate;CC(=C)C(=O)OCCOCCOCCOC(=O)C(C)=C;Activo
+Perfluorodecanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+Perfluorohexanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Perfluorooctanesulfonic acid;OS(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+Bis(trichloromethyl)sulfone;ClC(Cl)(Cl)S(=O)(=O)C(Cl)(Cl)Cl;Activo
+Butralin;CCC(C)NC1=C(C=C(C=C1[N+]([O-])=O)C(C)(C)C)[N+]([O-])=O;Activo
+Profenofos;CCCSP(=O)(OCC)OC1=C(Cl)C=C(Br)C=C1;Activo
+Diiodomethyl 4-methylphenyl sulfone;CC1=CC=C(C=C1)S(=O)(=O)C(I)I;Activo
+Etridiazole;CCOC1=NC(=NS1)C(Cl)(Cl)Cl;Inactivo
+Fenhexamid;CC1(CCCCC1)C(=O)NC1=C(Cl)C(Cl)=C(O)C=C1;Inactivo
+Hexaflumuron;FC(F)C(F)(F)OC1=C(Cl)C=C(NC(=O)NC(=O)C2=C(F)C=CC=C2F)C=C1Cl;Inactivo
+Kinoprene;CC(C)CCCC(C)C\C=C\C(\C)=C\C(=O)OCC#C;Activo
+Methiocarb;CNC(=O)OC1=CC(C)=C(SC)C(C)=C1;Inactivo
+Methoxyfenozide;COC1=CC=CC(C(=O)NN(C(=O)C2=CC(C)=CC(C)=C2)C(C)(C)C)=C1C;Inactivo
+1H,1H,7H-Perfluoroheptyl 4-methylbenzenesulfonate;CC1=CC=C(C=C1)S(=O)(=O)OCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)F;Inactivo
+5,5-Dimethyl-3-(alpha,alpha,alpha-trifluoro-4-nitro-m-tolyl)hydantoin;CC1(C)NC(=O)N(C1=O)C1=CC(=C(C=C1)[N+]([O-])=O)C(F)(F)F;Inactivo
+Butachlor;CCCCOCN(C(=O)CCl)C1=C(CC)C=CC=C1CC;Activo
+Cinmethylin;CC(C)[C@]12CC[C@](C)(O1)[C@@H](C2)OCC1=C(C)C=CC=C1;Inactivo
+Clethodim;CCSC(C)CC1CC(O)=C(C(CC)=NOC\C=C\Cl)C(=O)C1;Inactivo
+Fluazifop-butyl;CCCCOC(=O)C(C)OC1=CC=C(OC2=CC=C(C=N2)C(F)(F)F)C=C1;Inactivo
+Flufenpyr-ethyl;CCOC(=O)COC1=CC(N2N=CC(=C(C)C2=O)C(F)(F)F)=C(F)C=C1Cl;Inactivo
+Imazamox;COCC1=CN=C(C2=NC(C)(C(C)C)C(=O)N2)C(=C1)C(O)=O;Inactivo
+Chloridazon;NC1=C(Cl)C(=O)N(N=C1)C1=CC=CC=C1;Inactivo
+1,3-Dibromo-5,5-dimethylhydantoin;CC1(C)N(Br)C(=O)N(Br)C1=O;Inactivo
+Levonorgestrel;[H][C@@]12CC[C@@](O)(C#C)[C@@]1(CC)CC[C@]1([H])[C@@]3([H])CCC(=O)C=C3CC[C@@]21[H];Inactivo
+Androsterone;[H][C@@]12CCC(=O)[C@@]1(C)CC[C@@]1([H])[C@@]2([H])CC[C@@]2([H])C[C@H](O)CC[C@]12C;Inactivo
+4-Hydroxytamoxifen;CCC(=C(C1=CC=C(O)C=C1)C1=CC=C(OCCN(C)C)C=C1)C1=CC=CC=C1;Activo
+Diclofenac sodium;[Na+].[O-]C(=O)CC1=C(NC2=C(Cl)C=CC=C2Cl)C=CC=C1;Inactivo
+Endosulfan sulfate;ClC1=C(Cl)C2(Cl)C3COS(=O)(=O)OCC3C1(Cl)C2(Cl)Cl;Inactivo
+Potassium perfluorobutanesulfonate;[K+].[O-]S(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Potassium perfluorohexanesulfonate;[K+].[O-]S(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+10-Undecen-1-al;C=CCCCCCCCCC=O;Inactivo
+2,2-Difluoroethyl triflate;FC(F)COS(=O)(=O)C(F)(F)F;Inactivo
+Perfluoro-3,6-dioxaheptanoic acid;OC(=O)C(F)(F)OC(F)(F)C(F)(F)OC(F)(F)F;Inactivo
+9-Chloro-perfluorononanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)Cl;Activo
+2,4-Dimethylpentan-3-one;CC(C)C(=O)C(C)C;Inactivo
+Perfluorooctanesulfonamide;NS(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+tris(Trifluoroethoxy)methane;FC(F)(F)COC(OCC(F)(F)F)OCC(F)(F)F;Inactivo
+1H,1H,8H,8H-Perfluorooctane-1,8-diol;OCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)CO;Inactivo
+4-Chlorobiphenyl;ClC1=CC=C(C=C1)C1=CC=CC=C1;Inactivo
+4-Cyclohexylcyclohexanol;OC1CCC(CC1)C1CCCCC1;Inactivo
+2,6-Dimethyl-4-tridecylmorpholine;CCCCCCCCCCCCCN1CC(C)OC(C)C1;Inactivo
+Benzylhexadecyldimethylammonium chloride;[Cl-].CCCCCCCCCCCCCCCC[N+](C)(C)CC1=CC=CC=C1;Activo
+C.I. Solvent Red 49;CCN(CC)C1=CC=C2C(OC3=CC(=CC=C3C22OC(=O)C3=CC=CC=C23)N(CC)CC)=C1;Inactivo
+Isopentyl butyrate;CCCC(=O)OCCC(C)C;Inactivo
+Propylbenzene;CCCC1=CC=CC=C1;Inactivo
+Sodium (2-pyridylthio)-N-oxide;[Na+].[O-][N+]1=C([S-])C=CC=C1;Activo
+Sucrose octaacetate;[H][C@]1(O[C@]2(COC(C)=O)O[C@H](COC(C)=O)[C@@H](OC(C)=O)[C@@H]2OC(C)=O)O[C@H](COC(C)=O)[C@@H](OC(C)=O)[C@H](OC(C)=O)[C@H]1OC(C)=O;Inactivo
+Pioglitazone hydrochloride;Cl.CCC1=CN=C(CCOC2=CC=C(CC3SC(=O)NC3=O)C=C2)C=C1;Inactivo
+2-(1-Chlorocyclopropyl)-1-(2-chlorophenyl)-3-(1H-1,2,4-triazol-1-yl)-2-propanol;OC(CN1C=NC=N1)(CC1=C(Cl)C=CC=C1)C1(Cl)CC1;Inactivo
+1,2-Diphenylethanedione;O=C(C(=O)C1=CC=CC=C1)C1=CC=CC=C1;Inactivo
+Ethenyl(triethoxy)silane;CCO[Si](OCC)(OCC)C=C;Inactivo
+1,3,5-Tribromo-2-(prop-2-en-1-yloxy)benzene;BrC1=CC(Br)=C(OCC=C)C(Br)=C1;Activo
+tert-Butylbenzene;CC(C)(C)C1=CC=CC=C1;Inactivo
+(2S,3S)-3-Methyl-2-(3-oxo-1,2-benzothiazol-2(3H)-yl)pentanoic acid;CC[C@H](C)[C@H](N1SC2=CC=CC=C2C1=O)C(O)=O;Inactivo
+PharmaGSID_47263;CCN1N=C(C)C2=C1C(=O)NCC(=N2)C1=CC=C(O)C=C1;Activo
+CP-471358;ONC(=O)C1(CCCC1)N(CCC(O)=O)S(=O)(=O)C1=CC=C(OC2=CC=C(F)C=C2)C=C1;Inactivo
+CP-642931;C[C@@H](O)C1=NC(=CC=N1)N1[C@@H](C)CN(C[C@H]1C)C1=NC(C)=NC(C)=N1;Inactivo
+SR125047;Cl.COC1=CC=CC(=C1)C1=C(Cl)C=C(\C=C/CN2CCCCCC2)C=C1;Activo
+Cariporide mesylate;CS(O)(=O)=O.CC(C)C1=CC=C(C=C1S(C)(=O)=O)C(=O)N=C(N)N;Inactivo
+SSR162369;FC1(F)C[C@@H](C#N)N(C1)C(=O)CNC1CC2CCC(C1)N2C1=NC=CC=N1;Inactivo
+SSR504734;FC(F)(F)C1=CC=CC(C(=O)N[C@H]([C@@H]2CCCCN2)C2=CC=CC=C2)=C1Cl;Activo
+Dexamethasone sodium phosphate;[Na+].[Na+].[H][C@@]12C[C@@H](C)[C@](O)(C(=O)COP([O-])([O-])=O)[C@@]1(C)C[C@H](O)[C@@]1(F)[C@@]2([H])CCC2=CC(=O)C=C[C@]12C;Activo
+2-(Perfluorohexyl)ethyl methacrylate;CC(=C)C(=O)OCCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Piragliatin;CS(=O)(=O)C1=CC=C(C=C1Cl)[C@@H](C[C@H]1CCC(=O)C1)C(=O)NC1=NC=CN=C1;Inactivo
+Perfluorotetradecanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Hexafluoroamylene glycol;OCC(F)(F)C(F)(F)C(F)(F)CO;Inactivo
+2H-Perfluoroisopropyl 2-fluoroacrylate;FC(=C)C(=O)OC(C(F)(F)F)C(F)(F)F;Inactivo
+((Perfluorooctyl)ethyl)phosphonic acid;OP(O)(=O)CCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+2,2,3,3,4,4,4-Heptafluorobutyl methacrylate;CC(=C)C(=O)OCC(F)(F)C(F)(F)C(F)(F)F;Inactivo
+(Heptafluorobutanoyl)pivaloylmethane;CC(C)(C)C(=O)CC(=O)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+3-(Perfluorohexyl)-1,2-epoxypropane;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)CC1CO1;Inactivo
+2-(Perfluorobutyl)-1-ethanesulfonic acid;OS(=O)(=O)CCC(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Ammonium perfluoro-2-methyl-3-oxahexanoate;[NH4+].[O-]C(=O)C(F)(OC(F)(F)C(F)(F)C(F)(F)F)C(F)(F)F;Inactivo
+Pentadecafluorooctanoyl chloride;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(Cl)=O;Inactivo
+Azathioprine;CN1C=NC(=C1SC1=NC=NC2=C1NC=N2)[N+]([O-])=O;Activo
+Biphenyl;C1=CC=C(C=C1)C1=CC=CC=C1;Inactivo
+Caprolactam;O=C1CCCCCN1;Inactivo
+Captafol;ClC(Cl)C(Cl)(Cl)SN1C(=O)C2CC=CCC2C1=O;Activo
+Carbazole;N1C2=CC=CC=C2C2=C1C=CC=C2;Inactivo
+[4-Chloro-6-(2,3-xylidino)-2-pyrimidinylthio]acetic acid;CC1=C(C)C(NC2=NC(SCC(O)=O)=NC(Cl)=C2)=CC=C1;Inactivo
+4'-(Chloroacetyl)acetanilide;CC(=O)NC1=CC=C(C=C1)C(=O)CCl;Activo
+Chlorpheniramine maleate;C[NH+](C)CCC(C1=CC=C(C=C1)Cl)C2=CC=CC=N2.C(=C\C(=O)[O-])\C(=O)O;Inactivo
+Dapsone;NC1=CC=C(C=C1)S(=O)(=O)C1=CC=C(N)C=C1;Inactivo
+p,p'-DDD;ClC(Cl)C(C1=CC=C(Cl)C=C1)C1=CC=C(Cl)C=C1;Activo
+DDT;ClC1=CC=C(C=C1)C(C1=CC=C(Cl)C=C1)C(Cl)(Cl)Cl;Activo
+2,4-Diaminotoluene;CC1=C(N)C=C(N)C=C1;Inactivo
+Perfluorooct-1-ene;FC(F)=C(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Dicofol;OC(C1=CC=C(Cl)C=C1)(C1=CC=C(Cl)C=C1)C(Cl)(Cl)Cl;Activo
+Chlorpyrifos;CCOP(=S)(OCC)OC1=NC(Cl)=C(Cl)C=C1Cl;Activo
+Diphenhydramine hydrochloride;Cl.CN(C)CCOC(C1=CC=CC=C1)C1=CC=CC=C1;Inactivo
+p,p'-Ethyl-DDD;CCC1=CC=C(C=C1)C(C(Cl)Cl)C1=CC=C(CC)C=C1;Activo
+Glycidol;OCC1CO1;Inactivo
+Iodoform;IC(I)I;Inactivo
+Malathion;CCOC(=O)CC(SP(=S)(OC)OC)C(=O)OCC;Inactivo
+Methimazole;CN1C=CNC1=S;Inactivo
+Methotrexate;CN(CC1=NC2=C(N=C1)N=C(N)N=C2N)C1=CC=C(C=C1)C(=O)N[C@@H](CCC(O)=O)C(O)=O;Inactivo
+2-Nitro-1,4-phenylenediamine;NC1=CC(=C(N)C=C1)[N+]([O-])=O;Inactivo
+C.I. Azoic Diazo Component 12;CC1=C(N)C=C(C=C1)[N+]([O-])=O;Inactivo
+N-Phenyl-2-naphthylamine;N(C1=CC=CC=C1)C1=CC=C2C=CC=CC2=C1;Activo
+C.I. Solvent Yellow 14;OC1=CC=C2C=CC=CC2=C1N=NC1=CC=CC=C1;Activo
+1,3-Benzenediamine;NC1=CC(N)=CC=C1;Inactivo
+Prednisone;C[C@]12CC(=O)[C@H]3[C@@H](CCC4=CC(=O)C=C[C@]34C)[C@@H]1CC[C@]2(O)C(=O)CO;Inactivo
+Quercetin;OC1=CC2=C(C(O)=C1)C(=O)C(O)=C(O2)C1=CC(O)=C(O)C=C1;Activo
+Simazine;CCNC1=NC(NCC)=NC(Cl)=N1;Inactivo
+Triethylene glycol;OCCOCCOCCO;Inactivo
+Trifluralin;CCCN(CCC)C1=C(C=C(C=C1[N+]([O-])=O)C(F)(F)F)[N+]([O-])=O;Activo
+Urea;NC(N)=O;Inactivo
+Lynestrenol;[H][C@@]12CC[C@@](O)(C#C)[C@@]1(C)CC[C@]1([H])[C@@]3([H])CCCC=C3CC[C@@]21[H];Activo
+Decanal;CCCCCCCCCC=O;Inactivo
+2,6-Di-tert-butyl-4-nitrophenol;CC(C)(C)C1=CC(=CC(=C1O)C(C)(C)C)[N+]([O-])=O;Activo
+4-Chloro-3-methylphenol;CC1=C(Cl)C=CC(O)=C1;Inactivo
+beta-Ionone;CC(=O)\C=C\C1=C(C)CCCC1(C)C;Inactivo
+N-Ethyl-3-methylaniline;CCNC1=CC(C)=CC=C1;Inactivo
+Cyclohexanol;OC1CCCCC1;Inactivo
+2-Chloro-4-nitroaniline;NC1=C(Cl)C=C(C=C1)[N+]([O-])=O;Inactivo
+Diphenylamine;N(C1=CC=CC=C1)C1=CC=CC=C1;Inactivo
+Bromacil;CCC(C)N1C(=O)NC(C)=C(Br)C1=O;Inactivo
+2-Tridecanone;CCCCCCCCCCCC(C)=O;Activo
+o,p'-DDE;ClC(Cl)=C(C1=CC=C(Cl)C=C1)C1=C(Cl)C=CC=C1;Activo
+Vinclozolin;CC1(OC(=O)N(C1=O)C1=CC(Cl)=CC(Cl)=C1)C=C;Inactivo
+Estrone;[H][C@@]12CCC(=O)[C@@]1(C)CC[C@]1([H])C3=C(CC[C@@]21[H])C=C(O)C=C3;Inactivo
+Fulvestrant;[H][C@@]12CC[C@H](O)[C@@]1(C)CC[C@]1([H])C3=C(C[C@@H](CCCCCCCCCS(=O)CCCC(F)(F)C(F)(F)F)[C@@]21[H])C=C(O)C=C3;Inactivo
+Bisphenol B;CCC(C)(C1=CC=C(O)C=C1)C1=CC=C(O)C=C1;Activo
+2,2'-Bisphenol F;OC1=C(CC2=C(O)C=CC=C2)C=CC=C1;Inactivo
+Metolachlor;CCC1=C(N(C(C)COC)C(=O)CCl)C(C)=CC=C1;Inactivo
+Propylparaben;CCCOC(=O)C1=CC=C(O)C=C1;Inactivo
+Methylparaben;COC(=O)C1=CC=C(O)C=C1;Inactivo
+Carbamazepine;NC(=O)N1C2=CC=CC=C2C=CC2=C1C=CC=C2;Inactivo
+Erythromycin;CC[C@H]1OC(=O)[C@H](C)[C@@H](O[C@H]2C[C@@](C)(OC)[C@@H](O)[C@H](C)O2)[C@H](C)[C@@H](O[C@@H]2O[C@H](C)C[C@@H]([C@H]2O)N(C)C)[C@](C)(O)C[C@@H](C)C(=O)[C@H](C)[C@@H](O)[C@]1(C)O;Inactivo
+Oxytetracycline dihydrate;O.O.CN(C)[C@H]1[C@@H]2[C@@H](O)[C@H]3C(=C(O)[C@]2(O)C(=O)C(C(N)=O)=C1O)C(=O)C1=C(C=CC=C1O)[C@@]3(C)O;Inactivo
+Dimethoxymethyl((perfluorohexyl)ethyl)silane;CO[Si](C)(CCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F)OC;Inactivo
+Pyridoxine;CC1=C(O)C(CO)=C(CO)C=N1;Inactivo
+Dicamba;COC1=C(Cl)C=CC(Cl)=C1C(O)=O;Inactivo
+3,4-Dimethylphenol;CC1=C(C)C=C(O)C=C1;Inactivo
+1,2-Dinitrobenzene;[O-][N+](=O)C1=C(C=CC=C1)[N+]([O-])=O;Activo
+1,6-Diisocyanatohexane;O=C=NCCCCCCN=C=O;Inactivo
+Hexazinone;CN(C)C1=NC(=O)N(C2CCCCC2)C(=O)N1C;Inactivo
+2-(4-Chloro-2-methylphenoxy)acetic acid;CC1=C(OCC(O)=O)C=CC(Cl)=C1;Inactivo
+Prochloraz;CCCN(CCOC1=C(Cl)C=C(Cl)C=C1Cl)C(=O)N1C=CN=C1;Activo
+Prometryn;CSC1=NC(NC(C)C)=NC(NC(C)C)=N1;Inactivo
+Propachlor;CC(C)N(C(=O)CCl)C1=CC=CC=C1;Activo
+Propargite;CC(C)(C)C1=CC=C(OC2CCCCC2OS(=O)OCC#C)C=C1;Activo
+2,4,5-Trichlorophenol;OC1=C(Cl)C=C(Cl)C(Cl)=C1;Activo
+Allura Red C.I.16035;[Na+].[Na+].COC1=C(C=C(C)C(=C1)S([O-])(=O)=O)N=NC1=C2C=CC(=CC2=CC=C1O)S([O-])(=O)=O;Inactivo
+Carbendazim;COC(=O)NC1=NC2=CC=CC=C2N1;Inactivo
+1,3-Dichloro-5,5-dimethylhydantoin;CC1(C)N(Cl)C(=O)N(Cl)C1=O;Inactivo
+Methyl 4-methylbenzoate;COC(=O)C1=CC=C(C)C=C1;Inactivo
+2-Nitrotoluene;CC1=CC=CC=C1[N+]([O-])=O;Inactivo
+Tributylamine;CCCCN(CCCC)CCCC;Inactivo
+Triclocarban;ClC1=CC=C(NC(=O)NC2=CC=C(Cl)C(Cl)=C2)C=C1;Activo
+Phosphoric acid, tris(3-methylphenyl) ester;CC1=CC=CC(OP(=O)(OC2=CC(C)=CC=C2)OC2=CC(C)=CC=C2)=C1;Activo
+Tris(2,3-epoxypropyl)isocyanurate;O=C1N(CC2CO2)C(=O)N(CC2CO2)C(=O)N1CC1CO1;Activo
+2-(Phenylmethylene)octanal;CCCCCCC(C=O)=CC1=CC=CC=C1;Activo
+Dodecyl 2-methylacrylate;CCCCCCCCCCCCOC(=O)C(C)=C;Inactivo
+1-Bromo-4-fluorobenzene;FC1=CC=C(Br)C=C1;Inactivo
+2,3-Dinitrotoluene;CC1=CC=CC(=C1[N+]([O-])=O)[N+]([O-])=O;Activo
+2,6-Dimethyl-2,4,6-octatriene;CC=C(C)C=CC=C(C)C;Activo
+1-Tetradecene;CCCCCCCCCCCCC=C;Inactivo
+2,3-Diaminotoluene;CC1=C(N)C(N)=CC=C1;Inactivo
+1,3-Bis(2-isocyanato-2-propyl)benzene;CC(C)(N=C=O)C1=CC(=CC=C1)C(C)(C)N=C=O;Inactivo
+1,2,5,6,9,10-Hexabromocyclododecane;BrC1CCC(Br)C(Br)CCC(Br)C(Br)CCC1Br;Activo
+Terbutylazine;CCNC1=NC(NC(C)(C)C)=NC(Cl)=N1;Inactivo
+O,O-Dimethyl phosphoramidothioate;COP(N)(=S)OC;Inactivo
+1-Hexadecanol;CCCCCCCCCCCCCCCCO;Inactivo
+Dichlormid;ClC(Cl)C(=O)N(CC=C)CC=C;Inactivo
+Dimethyl malonate;COC(=O)CC(=O)OC;Inactivo
+Potassium nitrate;[K+].[O-][N+]([O-])=O;Inactivo
+Resveratrol;OC1=CC=C(\C=C\C2=CC(O)=CC(O)=C2)C=C1;Activo
+Difenoconazole;CC1COC(CN2C=NC=N2)(O1)C1=C(Cl)C=C(OC2=CC=C(Cl)C=C2)C=C1;Activo
+Dimethenamid;COCC(C)N(C(=O)CCl)C1=C(C)SC=C1C;Inactivo
+Formetanate hydrochloride;Cl.CNC(=O)OC1=CC=CC(=C1)N=CN(C)C;Activo
+Phorate;CCOP(=S)(OCC)SCSCC;Inactivo
+Carfentrazone-ethyl;CCOC(=O)C(Cl)CC1=C(Cl)C=C(F)C(=C1)N1N=C(C)N(C(F)F)C1=O;Inactivo
+Trifloxystrobin;CO\N=C(\C(=O)OC)C1=CC=CC=C1CO\N=C(/C)C1=CC(=CC=C1)C(F)(F)F;Activo
+Ethoprop;CCCSP(=O)(OCC)SCCC;Inactivo
+Fenitrothion;COP(=S)(OC)OC1=CC=C(C(C)=C1)[N+]([O-])=O;Activo
+Flumetsulam;CC1=NC2=NC(=NN2C=C1)S(=O)(=O)NC1=C(F)C=CC=C1F;Inactivo
+Esfenvalerate;CC(C)[C@H](C(=O)O[C@H](C#N)C1=CC=CC(OC2=CC=CC=C2)=C1)C1=CC=C(Cl)C=C1;Inactivo
+Haloperidol;OC1(CCN(CCCC(=O)C2=CC=C(F)C=C2)CC1)C1=CC=C(Cl)C=C1;Inactivo
+5-Heptyldihydro-2(3H)-furanone;CCCCCCCC1CCC(=O)O1;Inactivo
+Oxasulfuron;CC1=CC(C)=NC(NC(=O)NS(=O)(=O)C2=C(C=CC=C2)C(=O)OC2COC2)=N1;Inactivo
+Diclosulam;CCOC1=NC(F)=CC2=NC(=NN12)S(=O)(=O)NC1=C(Cl)C=CC=C1Cl;Inactivo
+Fipronil;NC1=C(C(=NN1C1=C(Cl)C=C(C=C1Cl)C(F)(F)F)C#N)S(=O)C(F)(F)F;Inactivo
+Hexaconazole;CCCCC(O)(CN1C=NC=N1)C1=CC=C(Cl)C=C1Cl;Activo
+Orthosulfamuron;COC1=CC(OC)=NC(NC(=O)NS(=O)(=O)NC2=C(C=CC=C2)C(=O)N(C)C)=N1;Inactivo
+Prothioconazole;OC(CN1N=CNC1=S)(CC1=C(Cl)C=CC=C1)C1(Cl)CC1;Activo
+Tebufenozide;CCC1=CC=C(C=C1)C(=O)NN(C(=O)C1=CC(C)=CC(C)=C1)C(C)(C)C;Inactivo
+1,3-Dichloro-5-ethyl-5-methylhydantoin;CCC1(C)N(Cl)C(=O)N(Cl)C1=O;Inactivo
+trans-Permethrin;CC1(C)[C@H](C=C(Cl)Cl)[C@H]1C(=O)OCC1=CC=CC(OC2=CC=CC=C2)=C1;Inactivo
+N-Methyl-N-trimethylsilylheptafluorobutyramide;CN(C(=O)C(F)(F)C(F)(F)C(F)(F)F)[Si](C)(C)C;Inactivo
+3-(Perfluoroisopropyl)-2-propenoic acid;OC(=O)C=CC(F)(C(F)(F)F)C(F)(F)F;Inactivo
+1H,1H-Perfluoro-3,6,9-trioxadecan-1-ol;OCC(F)(F)OC(F)(F)C(F)(F)OC(F)(F)C(F)(F)OC(F)(F)F;Activo
+(3-Isocyanatopropyl)triethoxysilane;CCO[Si](CCCN=C=O)(OCC)OCC;Inactivo
+Tetrabutyl ethylidenebisphenol;CC(C1=C(O)C(=CC(=C1)C(C)(C)C)C(C)(C)C)C1=C(O)C(=CC(=C1)C(C)(C)C)C(C)(C)C;Inactivo
+Tetrabromobisphenol A bis(2-hydroxyethyl) ether;CC(C)(C1=CC(Br)=C(OCCO)C(Br)=C1)C1=CC(Br)=C(OCCO)C(Br)=C1;Activo
+Hexyl salicylate;CCCCCCOC(=O)C1=C(O)C=CC=C1;Activo
+Monobutyl phthalate;CCCCOC(=O)C1=C(C=CC=C1)C(O)=O;Inactivo
+Sodium pentachlorophenate;[Na+].[O-]C1=C(Cl)C(Cl)=C(Cl)C(Cl)=C1Cl;Activo
+Dinobuton;CCC(C)C1=CC(=CC(=C1OC(=O)OC(C)C)[N+]([O-])=O)[N+]([O-])=O;Activo
+Octyl gallate;CCCCCCCCOC(=O)C1=CC(O)=C(O)C(O)=C1;Activo
+Dimethyl maleate;COC(=O)\C=C/C(=O)OC;Inactivo
+4-Hydroxy-2,2,6,6-tetramethylpiperidin-1-yl)oxidanyl;"CC1(C)CC(O)CC(C)(C)N1[O]
+";Inactivo
+3-Methyl-3-penten-2-one;CC=C(C)C(C)=O;Inactivo
+Mepanipyrim;CC#CC1=CC(C)=NC(NC2=CC=CC=C2)=N1;Inactivo
+1-Dodecyl-2-pyrrolidinone;CCCCCCCCCCCCN1CCCC1=O;Activo
+Sodium myristyl sulfate;[Na+].CCCCCCCCCCCCCCOS([O-])(=O)=O;Activo
+Dimethyl sulfone;CS(C)(=O)=O;Inactivo
+Tetrabutylammonium bromide;[Br-].CCCC[N+](CCCC)(CCCC)CCCC;Inactivo
+Ethyl 4-chloro-3-oxobutanoate;CCOC(=O)CC(=O)CCl;Activo
+2-tert-Butyl-4-ethylphenol;CCC1=CC(=C(O)C=C1)C(C)(C)C;Activo
+Benzyl propanoate;CCC(=O)OCC1=CC=CC=C1;Inactivo
+Pitavastatin calcium;[Ca++].O[C@H](C[C@H](O)\C=C\C1=C(C2=CC=C(F)C=C2)C2=C(C=CC=C2)N=C1C1CC1)CC([O-])=O.O[C@H](C[C@H](O)\C=C\C1=C(C2=CC=C(F)C=C2)C2=C(C=CC=C2)N=C1C1CC1)CC([O-])=O;Activo
+Ingliforib;O[C@H]([C@H](CC1=CC=CC=C1)NC(=O)C1=CC2=CC(Cl)=CC=C2N1)C(=O)N1C[C@H](O)[C@H](O)C1;Inactivo
+CP-457920;CCOC1=NC2=C(NC=C(C(=O)NCC3=CC=CC=C3)C2=O)C=C1;Inactivo
+Enadoline;CN([C@H]1CC[C@@]2(CCCO2)C[C@@H]1N1CCCC1)C(=O)CC1=CC=CC2=C1C=CO2;Inactivo
+MK-547;[Na+].[Na+].CCCCC1=NC2=C(C=C1)[C@@H]([C@H]([C@@H]2C1=CC=C(OC)C=C1C[C@H](C)C([O-])=O)C([O-])=O)C1=CC2=C(OCO2)C=C1;Inactivo
+PharmaGSID_47333;CC1=NC=C(C=N1)[C@@H](CCCCCCC1=NC2=C(CCCN2)C=C1)CC(O)=O;Inactivo
+MK-812;OC(=O)CCC([O-])=O.CO[C@@H]1COCC[C@@H]1[NH2+][C@@H]1CC[C@](C1)(C(C)C)C(=O)N1CCC2=C(C1)C=C(C=N2)C(F)(F)F;Inactivo
+PharmaGSID_47337;[Na+].CCOC1=CC(=CC=C1)N1C=C(N=C1C1=CC=C(C)C=C1)C(=O)N1CCN(CC1)C1=CC2=CC=CC=C2C(=C1)C([O-])=O;Activo
+SR144190;Cl.CN(C)C(=O)NC1(CCN(CC[C@]2(CN(CCO2)C(=O)C2=CC=CC=C2)C2=CC(F)=C(F)C=C2)CC1)C1=CC=CC=C1;Inactivo
+AVE8923;Cl.CCCOC1=C(Br)C(C)=C(S1)C(=O)N1CCC(CC1)C1=CC(CN)=CC=C1F;Activo
+AVE3247;[Na+].[O-]C(=O)C1=CC=C2N(CC3=NOC(=C3)C3=CC=C(Cl)S3)C(=NC2=C1)C(=O)NC1CCN(CC1)C1CC1;Inactivo
+SAR377142;CC(O)=O.COCCOC1=NC=C2N(CC(=O)NC3=NC=C(Cl)C=C3)C(=CC2=C1)C(=O)NC1CCN(CC1)C(C)C;Inactivo
+SAR102779;OC(=O)CCC(O)=O.CC(=O)NC1(CCN(CC[C@]2(CN(C(=O)CO2)C2=CC=CC=C2)C2=CC=C(Cl)C(Cl)=C2)CC1)C1=CC=CC(F)=C1;Activo
+SAR 150640;Cl.CCOC(=O)C1=CC=C(C=C1)[C@H]1CC[C@@H](CC1)NC[C@H](O)COC1=CC=C(O)C(NS(C)(=O)=O)=C1;Activo
+2-Methylpyrazine;CC1=NC=CN=C1;Inactivo
+Dicyclohexyl disulfide;C1CCC(CC1)SSC1CCCCC1;Activo
+Ro 3280;COC1=C(NC2=NC3=C(C=N2)N(C)C(=O)C(F)(F)CN3C2CCCC2)C=CC(=C1)C(=O)NC1CCN(C)CC1;Activo
+PharmaGSID_48513;CN(C(=O)C(C)(C)C1=CC(=CC(=C1)C(F)(F)F)C(F)(F)F)C1=CN=C(C=C1C1=CC=C(F)C=C1C)N1CC[C@@H](O)[C@H]1CO;Activo
+PharmaGSID_48519;CN1C(=O)N(CC2=CN=C(NC3=CC4=C(OC(CO)CO4)C=C3)N=C12)C1=CC=CC=C1Br;Activo
+Quinalizarin;OC1=C(O)C2=C(C=C1)C(=O)C1=C(O)C=CC(O)=C1C2=O;Inactivo
+Perfluorohexanedioic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(O)=O;Inactivo
+Heptafluorobutyl iodide;FC(F)(F)C(F)(F)C(F)(F)CI;Inactivo
+3:1 Fluorotelomer alcohol;OCC(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Perfluorobutanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+1H,1H-Perfluorooctylamine;NCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Acrylamide;NC(=O)C=C;Inactivo
+Aspirin;CC(=O)OC1=C(C=CC=C1)C(O)=O;Inactivo
+Benzyl alcohol;OCC1=CC=CC=C1;Inactivo
+Clorophene;OC1=C(CC2=CC=CC=C2)C=C(Cl)C=C1;Activo
+1-Chloro-4-nitrobenzene;[O-][N+](=O)C1=CC=C(Cl)C=C1;Inactivo
+4-Chloro-1,2-diaminobenzene;NC1=C(N)C=C(Cl)C=C1;Activo
+N-Cyclohexyl-2-benzothiazolesulfenamide;C1CCC(CC1)NSC1=NC2=C(S1)C=CC=C2;Inactivo
+Cyproterone acetate;CC(=O)O[C@@]1(CC[C@H]2[C@@H]3C=C(Cl)C4=CC(=O)[C@@H]5C[C@@H]5[C@]4(C)[C@H]3CC[C@]12C)C(C)=O;Inactivo
+Cytembena;[Na+].COC1=CC=C(C=C1)C(=O)C(\Br)=C/C([O-])=O;Activo
+Dichlorvos;COP(=O)(OC)OC=C(Cl)Cl;Inactivo
+2,6-Dinitrotoluene;CC1=C(C=CC=C1[N+]([O-])=O)[N+]([O-])=O;Inactivo
+Sodium erythorbate;[Na+].OC[C@@H](O)[C@H]1OC(=O)C(O)=C1[O-];Inactivo
+17alpha-Ethinylestradiol;[H][C@@]12CC[C@@](O)(C#C)[C@@]1(C)CC[C@]1([H])C3=C(CC[C@@]21[H])C=C(O)C=C3;Inactivo
+4,5-Dihydro-2-mercaptoimidazole;S=C1NCCN1;Inactivo
+2-Ethyl-1-hexanol;CCCCC(CC)CO;Inactivo
+Di(2-ethylhexyl) phthalate;CCCCC(CC)COC(=O)C1=C(C=CC=C1)C(=O)OCC(CC)CCCC;Activo
+Gentian Violet;[Cl-].CN(C)C1=CC=C(C=C1)C(C1=CC=C(C=C1)N(C)C)=C1C=CC(C=C1)=[N+](C)C;Activo
+8-Hydroxyquinoline;OC1=CC=CC2=CC=CN=C12;Activo
+Ibuprofen;CC(C)CC1=CC=C(C=C1)C(C)C(O)=O;Inactivo
+Lovastatin;[H][C@]12[C@H](C[C@@H](C)C=C1C=C[C@H](C)[C@@H]2CC[C@@H]1C[C@@H](O)CC(=O)O1)OC(=O)[C@@H](C)CC;Activo
+Mercuric chloride;[Cl-].[Cl-].[Hg++];Activo
+Methidathion;COC1=NN(CSP(=S)(OC)OC)C(=O)S1;Inactivo
+Methyldopa sesquihydrate;O.O.O.C[C@](N)(CC1=CC=C(O)C(O)=C1)C(O)=O.C[C@](N)(CC1=CC=C(O)C(O)=C1)C(O)=O;Activo
+4,4'-Methylenebis(o-toluidine);CC1=C(N)C=CC(CC2=CC(C)=C(N)C=C2)=C1;Inactivo
+4,4'-Methylenebis(N,N-dimethylaniline);CN(C)C1=CC=C(CC2=CC=C(C=C2)N(C)C)C=C1;Inactivo
+Nitrofurazone;NC(=O)NN=CC1=CC=C(O1)[N+]([O-])=O;Inactivo
+Oxytetracycline hydrochloride;Cl.CN(C)[C@H]1[C@@H]2[C@@H](O)[C@H]3C(=C(O)[C@]2(O)C(=O)C(C(N)=O)=C1O)C(=O)C1=C(C=CC=C1O)[C@@]3(C)O;Inactivo
+Phenol;OC1=CC=CC=C1;Inactivo
+Phenothiazine;N1C2=CC=CC=C2SC2=C1C=CC=C2;Activo
+Gallic acid n-propyl ester;CCCOC(=O)C1=CC(O)=C(O)C(O)=C1;Activo
+6-Propyl-2-thiouracil;CCCC1=CC(=O)NC(=S)N1;Inactivo
+Saccharin;O=C1NS(=O)(=O)C2=C1C=CC=C2;Inactivo
+Bis(dimethylaminothiocarbonyl) disulfide;CN(C)C(=S)SSC(=S)N(C)C;Activo
+Theophylline;CN1C2=C(NC=N2)C(=O)N(C)C1=O;Inactivo
+2,4,6-Trichlorophenol;OC1=C(Cl)C=C(Cl)C=C1Cl;Inactivo
+2,4,5-Trichlorophenoxyacetic acid;OC(=O)COC1=C(Cl)C=C(Cl)C(Cl)=C1;Inactivo
+Tris(2-chloroethyl) phosphate;ClCCOP(=O)(OCCCl)OCCCl;Inactivo
+Tris(2,3-dibromopropyl) phosphate;BrCC(Br)COP(=O)(OCC(Br)CBr)OCC(Br)CBr;Inactivo
+L-Tryptophan;N[C@@H](CC1=CNC2=CC=CC=C12)C(O)=O;Inactivo
+2-Chlorophenol;OC1=CC=CC=C1Cl;Inactivo
+5,5-Dimethylhydantoin;CC1(C)NC(=O)NC1=O;Inactivo
+Tris(2-butoxyethyl) phosphate;CCCCOCCOP(=O)(OCCOCCCC)OCCOCCCC;Inactivo
+3-Nitrotoluene;CC1=CC(=CC=C1)[N+]([O-])=O;Inactivo
+N,N-Diethylethanolamine;CCN(CC)CCO;Inactivo
+2-Methyl-2,4-pentanediol;CC(O)CC(C)(C)O;Inactivo
+4-(Diethylamino)salicylaldehyde;CCN(CC)C1=CC=C(C=O)C(O)=C1;Inactivo
+2,6-Diisopropylaniline;CC(C)C1=CC=CC(C(C)C)=C1N;Inactivo
+Genistein;OC1=CC=C(C=C1)C1=COC2=C(C(O)=CC(O)=C2)C1=O;Activo
+Phenolphthalin;OC(=O)C1=C(C=CC=C1)C(C1=CC=C(O)C=C1)C1=CC=C(O)C=C1;Inactivo
+9H-Perfluorononanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)F;Inactivo
+Trichloro((perfluorohexyl)ethyl)silane;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)CC[Si](Cl)(Cl)Cl;Inactivo
+Mifepristone;[H][C@@]12CC[C@@](O)(C#CC)[C@@]1(C)C[C@]([H])(C1=CC=C(C=C1)N(C)C)C1=C3CCC(=O)C=C3CC[C@@]21[H];Activo
+Warfarin;CC(=O)CC(C1=CC=CC=C1)C1=C(O)C2=CC=CC=C2OC1=O;Inactivo
+4-Nitrotoluene;CC1=CC=C(C=C1)[N+]([O-])=O;Inactivo
+Pentamidine isethionate;OCCS(O)(=O)=O.OCCS(O)(=O)=O.NC(=N)C1=CC=C(OCCCCCOC2=CC=C(C=C2)C(N)=N)C=C1;Activo
+Indium arsenide;[As]#[In];Inactivo
+Amitraz;CN(C=NC1=C(C)C=C(C)C=C1)C=NC1=C(C)C=C(C)C=C1;Activo
+2-Anisidine;COC1=CC=CC=C1N;Inactivo
+Benomyl;CCCCNC(=O)N1C(NC(=O)OC)=NC2=C1C=CC=C2;Activo
+Benz(a)anthracene;C1=CC2=C(C=C1)C=C1C(C=CC3=C1C=CC=C3)=C2;Inactivo
+Carbosulfan;CCCCN(CCCC)SN(C)C(=O)OC1=C2OC(C)(C)CC2=CC=C1;Activo
+Bis(1-methylethyl) methylphosphonate;CC(C)OP(C)(=O)OC(C)C;Inactivo
+Dimethyl sulfate;COS(=O)(=O)OC;Inactivo
+3,3'-Dimethylbenzidine;CC1=CC(=CC=C1N)C1=CC=C(N)C(C)=C1;Inactivo
+delta-Hexachlorocyclohexane;Cl[C@H]1[C@H](Cl)[C@@H](Cl)[C@H](Cl)[C@H](Cl)[C@@H]1Cl;Inactivo
+2-Methoxyethanol;COCCO;Inactivo
+Napropamide;CCN(CC)C(=O)C(C)OC1=C2C=CC=CC2=CC=C1;Inactivo
+Phosmet;COP(=S)(OC)SCN1C(=O)C2=C(C=CC=C2)C1=O;Inactivo
+Tri-allate;CC(C)N(C(C)C)C(=O)SCC(Cl)=C(Cl)Cl;Activo
+Acetic acid;CC(O)=O;Inactivo
+4-tert-Butylcatechol;CC(C)(C)C1=CC(O)=C(O)C=C1;Activo
+Colchicine;COC1=CC2=C(C(OC)=C1OC)C1=CC=C(OC)C(=O)C=C1[C@H](CC2)NC(C)=O;Activo
+Cytarabine hydrochloride;Cl.NC1=NC(=O)N(C=C1)[C@@H]1O[C@H](CO)[C@@H](O)[C@@H]1O;Inactivo
+Dicyclohexyl phthalate;O=C(OC1CCCCC1)C1=C(C=CC=C1)C(=O)OC1CCCCC1;Activo
+Dicyclopentadiene;C1C=CC2C3CC(C=C3)C12;Inactivo
+Dimethyl phosphate;COP(O)(=O)OC;Inactivo
+Dimethyl succinate;COC(=O)CCC(=O)OC;Inactivo
+Methyleugenol;COC1=CC=C(CC=C)C=C1OC;Inactivo
+Methyl salicylate;COC(=O)C1=C(O)C=CC=C1;Inactivo
+Tris(2-chloroisopropyl)phosphate;CC(CCl)OP(=O)(OC(C)CCl)OC(C)CCl;Inactivo
+1,2-Diphenoxyethane;C(COC1=CC=CC=C1)OC1=CC=CC=C1;Inactivo
+Methyl dodecanoate;CCCCCCCCCCCC(=O)OC;Inactivo
+1-Dodecanol;CCCCCCCCCCCCO;Activo
+2-Naphthalenol;OC1=CC2=C(C=CC=C2)C=C1;Inactivo
+Perfluorooctanesulfonyl fluoride;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)S(F)(=O)=O;Inactivo
+2,3,5,6-Tetrachlorobenzene-1,4-dicarbonyl dichloride;ClC(=O)C1=C(Cl)C(Cl)=C(C(Cl)=O)C(Cl)=C1Cl;Inactivo
+Perfluorobutanesulfonic acid;OS(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Dipentyl phthalate;CCCCCOC(=O)C1=C(C=CC=C1)C(=O)OCCCCC;Activo
+Di-n-propylphthalate;CCCOC(=O)C1=C(C=CC=C1)C(=O)OCCC;Inactivo
+2,2-Dibromo-3-nitrilopropionamide;NC(=O)C(Br)(Br)C#N;Inactivo
+2,6-Dichlorobenzonitrile;ClC1=CC=CC(Cl)=C1C#N;Inactivo
+Imidacloprid;[O-][N+](=O)\N=C1/NCCN1CC1=CN=C(Cl)C=C1;Inactivo
+Triclosan;OC1=C(OC2=CC=C(Cl)C=C2Cl)C=CC(Cl)=C1;Activo
+1,2-Benzisothiazolin-3-one;O=C1NSC2=C1C=CC=C2;Activo
+Bifenazate;COC1=C(NNC(=O)OC(C)C)C=C(C=C1)C1=CC=CC=C1;Inactivo
+Pyridaben;CC(C)(C)N1N=CC(SCC2=CC=C(C=C2)C(C)(C)C)=C(Cl)C1=O;Activo
+Tefluthrin;CC1=C(F)C(F)=C(COC(=O)C2C(\C=C(/Cl)C(F)(F)F)C2(C)C)C(F)=C1F;Activo
+Cyclanilide;OC(=O)C1(CC1)C(=O)NC1=CC=C(Cl)C=C1Cl;Inactivo
+4-Nonylphenol;CCCCCCCCCC1=CC=C(O)C=C1;Activo
+Imazapic;CC(C)C1(C)NC(=NC1=O)C1=NC=C(C)C=C1C(O)=O;Inactivo
+Fluroxypyr-meptyl;CCCCCCC(C)OC(=O)COC1=NC(F)=C(Cl)C(N)=C1Cl;Activo
+Isoxaflutole;CS(=O)(=O)C1=C(C=CC(=C1)C(F)(F)F)C(=O)C1=C(ON=C1)C1CC1;Inactivo
+Novaluron;FC(OC(F)(F)F)C(F)(F)OC1=C(Cl)C=C(NC(=O)NC(=O)C2=C(F)C=CC=C2F)C=C1;Inactivo
+Cyfluthrin;CC1(C)C(C=C(Cl)Cl)C1C(=O)OC(C#N)C1=CC=C(F)C(OC2=CC=CC=C2)=C1;Activo
+1H,1H,10H,10H-Perfluorodecane-1,10-diol;OCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)CO;Activo
+Azinphos-ethyl;CCOP(=S)(OCC)SCN1N=NC2=CC=CC=C2C1=O;Inactivo
+Perfluoro-3,6,9-trioxatridecanoic acid;OC(=O)C(F)(F)OC(F)(F)C(F)(F)OC(F)(F)C(F)(F)OC(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+Diazoxon;CCOP(=O)(OCC)OC1=NC(=NC(C)=C1)C(C)C;Activo
+4,4'-(9H-Fluorene-9,9-diyl)diphenol;OC1=CC=C(C=C1)C1(C2=C(C=CC=C2)C2=C1C=CC=C2)C1=CC=C(O)C=C1;Activo
+4-Anilinophenol;OC1=CC=C(NC2=CC=CC=C2)C=C1;Activo
+Perfluoro-2-ethoxyethanesulfonic acid;OS(=O)(=O)C(F)(F)C(F)(F)OC(F)(F)C(F)(F)F;Inactivo
+1H,1H-Perfluorononylamine;NCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Perfluoro-3,6-dioxadecanoic acid;OC(=O)C(F)(F)OC(F)(F)C(F)(F)OC(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+Bis(1H,1H-perfluoropropyl)amine;FC(F)(F)C(F)(F)CNCC(F)(F)C(F)(F)F;Inactivo
+7:3 Fluorotelomer alcohol;OCCCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+Basic Blue 7;[Cl-].CCNC1=CC=C(C(C2=CC=C(C=C2)N(CC)CC)=C2C=CC(C=C2)=[N+](CC)CC)C2=C1C=CC=C2;Activo
+1,3-Bis(isocyanatomethyl)benzene;O=C=NCC1=CC(CN=C=O)=CC=C1;Inactivo
+Trimethoxyphenylsilane;CO[Si](OC)(OC)C1=CC=CC=C1;Inactivo
+1,4-Naphthoquinone;O=C1C=CC(=O)C2=C1C=CC=C2;Activo
+C.I. Solvent Orange 7;CC1=CC=C(N=NC2=C(O)C=CC3=CC=CC=C23)C(C)=C1;Activo
+2,2',4,4'-Tetrahydroxybenzophenone;OC1=CC(O)=C(C=C1)C(=O)C1=CC=C(O)C=C1O;Inactivo
+2-Isopropoxyphenol;CC(C)OC1=C(O)C=CC=C1;Inactivo
+Methyl linolenate;CC\C=C/C\C=C/C\C=C/CCCCCCCC(=O)OC;Activo
+Butam;CC(C)N(CC1=CC=CC=C1)C(=O)C(C)(C)C;Inactivo
+C.I. Direct Red 81 disodium salt;[Na+].[Na+].OC1=C(N=NC2=CC=C(C=C2)N=NC2=CC=C(C=C2)S([O-])(=O)=O)C(=CC2=CC(NC(=O)C3=CC=CC=C3)=CC=C12)S([O-])(=O)=O;Activo
+Methyl 2H,2H,3H,3H-perfluoroheptanoate;COC(=O)CCC(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Antioxidant 1098;CC(C)(C)C1=CC(CCC(=O)NCCCCCCNC(=O)CCC2=CC(=C(O)C(=C2)C(C)(C)C)C(C)(C)C)=CC(=C1O)C(C)(C)C;Inactivo
+3,7-Dimethyloctan-1-ol;CC(C)CCCC(C)CCO;Activo
+1-[3-(Triethoxysilyl)propyl]urea;CCO[Si](CCCNC(N)=O)(OCC)OCC;Inactivo
+Tetrabromophenolphthalein ethyl ester;CCOC(=O)C1=C(C=CC=C1)C(C1=CC(Br)=C(O)C(Br)=C1)=C1C=C(Br)C(=O)C(Br)=C1;Activo
+Tetraethylurea;CCN(CC)C(=O)N(CC)CC;Inactivo
+2-(Perfluorohexyl)ethanol;OCCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+Citric acid, triethyl ester, acetate;CCOC(=O)CC(CC(=O)OCC)(OC(C)=O)C(=O)OCC;Inactivo
+1,4-Bis(butylamino)anthracene-9,10-dione;CCCCNC1=CC=C(NCCCC)C2=C1C(=O)C1=C(C=CC=C1)C2=O;Inactivo
+Dibutyl azelate;CCCCOC(=O)CCCCCCCC(=O)OCCCC;Inactivo
+Mizolastine;CN(C1CCN(CC1)C1=NC2=C(C=CC=C2)N1CC1=CC=C(F)C=C1)C1=NC=CC(=O)N1;Inactivo
+Perfluorohexanesulfonamide;NS(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+Fandosentan potassium salt;[K+].CCC1=CC(=CC2=C1OCO2)C1=C(N(C2=CC=CC=C2C(F)(F)F)S(=O)(=O)C2=C1C=CC=C2)C([O-])=O;Inactivo
+CI-1044;NC1=CC2=C3N(CCC3=C1)C(=O)[C@H](NC(=O)C1=CC=CN=C1)N=C2C1=CC=CC=C1;Inactivo
+UK-373911;CN[C@H]1CC[C@@H](C2=CC=C(Cl)C(Cl)=C2)C2=CC=C(C=C12)S(N)(=O)=O;Activo
+CP-085958;O[C@@H]1[C@H](CC2=CC=CC(=C2)C(O)=O)COC2=C1C=C(OCC1=NC3=C(S1)C=CC(F)=C3)C=C2;Inactivo
+CP-422935;CS(O)(=O)=O.CCOC1=CC=CC(=C1)[C@]1(CC[C@H](C)CC1)N1CCN(CC1)C1=CC=CC=C1;Inactivo
+SB236057A;Cl.CCN1CCC2(COC3=C2C=C2N(CCC2=C3)C(=O)C2=CC=C(C=C2)C2=CC=C(C=C2C)C2=NN=C(C)O2)CC1;Activo
+SB243213A;Cl.CC1=CC2=C(C=C1C(F)(F)F)N(CC2)C(=O)NC1=CC=C(OC2=CC=CN=C2C)N=C1;Activo
+SB281832;OCC(CO)N1C=NC(=C1C1=CC=NC(OC2=CC=CC=C2)=N1)C1=CC=C(F)C=C1;Activo
+Potassium 5-carbamoyl-3-[5'-fluoro-2'-(2,2,3,3,3-pentafluoropropoxy)-3-biphenylyl]-1,2,4-triazol-1-ide hydrate (1:1:1);O.[K+].NC(=O)C1=NC(=N[N-]1)C1=CC=CC(=C1)C1=CC(F)=CC=C1OCC(F)(F)C(F)(F)F;Activo
+AVE3295;[Na+].CC[C@H](NC(=O)C1=C([N-]S(=O)(=O)C2=CC=CC3=CC=CN=C23)C=CC(F)=C1)C1=CC=CC=C1;Inactivo
+SSR161421;COC1=CC=C(C=C1)C(=O)NC1=NC2=C(C=CC=C2)C(NCC2=CC=CC=C2)=C1C#N;Inactivo
+AVE2865;OC(=O)C1CCN(CC1)C1=C(NC(=O)NC(=O)C2=CC(F)=C(F)C=C2Cl)C=C(F)C=C1;Inactivo
+Pentane-1,5-diyl dibenzoate;O=C(OCCCCCOC(=O)C1=CC=CC=C1)C1=CC=CC=C1;Inactivo
+Cyclohexylphenylketone;O=C(C1CCCCC1)C1=CC=CC=C1;Inactivo
+Tetrac;OC(=O)CC1=CC(I)=C(OC2=CC(I)=C(O)C(I)=C2)C(I)=C1;Activo
+PharmaGSID_48506;CS(=O)(=O)C1=CC=C(C=C1Cl)[C@@H](CC1CCCC1)C(=O)NC1=NC=CN=C1;Inactivo
+Vatalanib dihydrochloride;Cl.Cl.ClC1=CC=C(NC2=C3C=CC=CC3=C(CC3=CC=NC=C3)N=N2)C=C1;Activo
+Ximelagatran;CCOC(=O)CN[C@H](C1CCCCC1)C(=O)N1CC[C@H]1C(=O)NCC1=CC=C(C=C1)C(\N)=N\O;Inactivo
+2,2',3,4',5,5',6-Heptachlorobiphenyl;ClC1=CC(Cl)=C(C=C1Cl)C1=C(Cl)C(Cl)=CC(Cl)=C1Cl;Activo
+Argatroban monohydrate;O.C[C@@H]1CCN([C@H](C1)C(O)=O)C(=O)[C@H](CCCNC(N)=N)NS(=O)(=O)C1=CC=CC2=C1NC[C@H](C)C2;Inactivo
+1H,1H-Perfluorooctyl acrylate;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)COC(=O)C=C;Inactivo
+1-Iodopentadecafluoroheptane;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)I;Inactivo
+1H,1H,5H,5H-Perfluoro-1,5-pentanediol diacrylate;FC(F)(COC(=O)C=C)C(F)(F)C(F)(F)COC(=O)C=C;Activo
+11-H-Perfluoroundecanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)F;Activo
+2,2,3,3,4,4,5,5,6,6,7,7,8,8,8-Pentadecafluorooctyl methacrylate;CC(=C)C(=O)OCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+2-(Perfluorooctyl)ethyl acrylate;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)CCOC(=O)C=C;Activo
+1H,1H,2H-Perfluorocyclopentane;FC1CC(F)(F)C(F)(F)C1(F)F;Inactivo
+4H-Perfluorobutanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)F;Inactivo
+Perfluorooctanamide;NC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+2-Amino-4-nitrophenol;NC1=C(O)C=CC(=C1)[N+]([O-])=O;Inactivo
+2-Amino-5-nitro-1,3-thiazole;NC1=NC=C(S1)[N+]([O-])=O;Inactivo
+2-Aminoanthraquinone;NC1=CC=C2C(=O)C3=C(C=CC=C3)C(=O)C2=C1;Inactivo
+2,3-Benzofuran;O1C=CC2=C1C=CC=C2;Inactivo
+Benzoic acid;OC(=O)C1=CC=CC=C1;Inactivo
+1,4-Benzoquinone;O=C1C=CC(=O)C=C1;Activo
+1,2,3-Benzotriazole;N1N=NC2=C1C=CC=C2;Inactivo
+tert-Butylhydroquinone;CC(C)(C)C1=CC(O)=CC=C1O;Activo
+gamma-Butyrolactone;O=C1CCCO1;Inactivo
+Cadmium chloride;[Cl-].[Cl-].[Cd++];Activo
+Cyclohexanone;O=C1CCCCC1;Inactivo
+1,2-Dichlorobenzene;ClC1=C(Cl)C=CC=C1;Inactivo
+Dimethoxane;CC1CC(OC(C)=O)OC(C)O1;Inactivo
+N,N-Dimethylformamide;CN(C)C=O;Inactivo
+Endrin;ClC1=C(Cl)[C@]2(Cl)[C@@H]3[C@H]4C[C@H]([C@@H]5O[C@H]45)[C@@H]3[C@@]1(Cl)C2(Cl)Cl;Inactivo
+Hexachlorophene;OC1=C(CC2=C(Cl)C(Cl)=CC(Cl)=C2O)C(Cl)=C(Cl)C=C1Cl;Activo
+Methenamine;C1N2CN3CN1CN(C2)C3;Inactivo
+N-Methyl-2-pyrrolidone;CN1CCCC1=O;Inactivo
+Nitrilotriacetic acid;OC(=O)CN(CC(O)=O)CC(O)=O;Inactivo
+N-Nitrosodiphenylamine;O=NN(C1=CC=CC=C1)C1=CC=CC=C1;Inactivo
+N-Nitrosodi-n-propylamine;CCCN(CCC)N=O;Inactivo
+Oxamyl;CNC(=O)ON=C(SC)C(=O)N(C)C;Inactivo
+Rifampicin;CO[C@H]1\C=C\O[C@@]2(C)OC3=C(C2=O)C2=C(C(O)=C3C)C(O)=C(NC(=O)\C(C)=C/C=C/[C@H](C)[C@H](O)[C@@H](C)[C@@H](O)[C@@H](C)[C@H](OC(C)=O)[C@@H]1C)C(\C=N\N1CCN(C)CC1)=C2O;Inactivo
+Rotenone;[H][C@@]12COC3=C(C=C(OC)C(OC)=C3)[C@]1([H])C(=O)C1=CC=C3O[C@H](CC3=C1O2)C(C)=C;Activo
+1,2,4-Trimethylbenzene;CC1=CC(C)=C(C)C=C1;Inactivo
+C.I. Disperse Yellow 3;CC(=O)NC1=CC=C(C=C1)N=NC1=C(O)C=CC(C)=C1;Activo
+FD&C Yellow 6;[Na+].[Na+].OC1=C(N=NC2=CC=C(C=C2)S([O-])(=O)=O)C2=C(C=C1)C=C(C=C2)S([O-])(=O)=O;Inactivo
+1-Naphthol;OC1=CC=CC2=CC=CC=C12;Inactivo
+Xanthone;O=C1C2=C(OC3=C1C=CC=C3)C=CC=C2;Inactivo
+Acetophenone;CC(=O)C1=CC=CC=C1;Inactivo
+4-Methylbenzenamine;CC1=CC=C(N)C=C1;Inactivo
+Fensulfothion;CCOP(=S)(OCC)OC1=CC=C(C=C1)S(C)=O;Inactivo
+2,4,6-Tribromophenol;OC1=C(Br)C=C(Br)C=C1Br;Activo
+Ethanolamine;NCCO;Inactivo
+1,3-Dichlorobenzene;ClC1=CC(Cl)=CC=C1;Inactivo
+2,3,6-Trimethylphenol;CC1=CC=C(C)C(O)=C1C;Inactivo
+Prometon;COC1=NC(NC(C)C)=NC(NC(C)C)=N1;Inactivo
+o,p'-DDT;ClC1=CC=C(C=C1)C(C1=CC=CC=C1Cl)C(Cl)(Cl)Cl;Activo
+4,4'-Diaminobiphenyl methane;NC1=CC=C(CC2=CC=C(N)C=C2)C=C1;Inactivo
+Butylbenzene;CCCCC1=CC=CC=C1;Inactivo
+Corticosterone;C[C@]12C[C@H](O)[C@H]3[C@@H](CCC4=CC(=O)CC[C@]34C)[C@@H]1CC[C@@H]2C(=O)CO;Inactivo
+Didanosine;OC[C@@H]1CC[C@@H](O1)N1C=NC2=C1N=CNC2=O;Inactivo
+6-Thioguanine;NC1=NC2=C(NC=N2)C(=S)N1;Activo
+Valproic acid;CCCC(CCC)C(O)=O;Inactivo
+Benzethonium chloride;[Cl-].CC(C)(C)CC(C)(C)C1=CC=C(OCCOCC[N+](C)(C)CC2=CC=CC=C2)C=C1;Activo
+Metsulfuron-methyl;COC(=O)C1=C(C=CC=C1)S(=O)(=O)NC(=O)NC1=NC(OC)=NC(C)=N1;Inactivo
+Perfluoropinacol;OC(C(O)(C(F)(F)F)C(F)(F)F)(C(F)(F)F)C(F)(F)F;Activo
+Cyromazine;NC1=NC(NC2CC2)=NC(N)=N1;Inactivo
+Difenzoquat metilsulfate;COS([O-])(=O)=O.CN1C(=CC(C2=CC=CC=C2)=[N+]1C)C1=CC=CC=C1;Activo
+Metalaxyl;COCC(=O)N(C(C)C(=O)OC)C1=C(C)C=CC=C1C;Inactivo
+Methamidophos;COP(N)(=O)SC;Inactivo
+Metribuzin;CSC1=NN=C(C(=O)N1N)C(C)(C)C;Inactivo
+Molinate;CCSC(=O)N1CCCCCC1;Inactivo
+Phenanthrene;C1=CC2=C(C=C1)C1=C(C=CC=C1)C=C2;Inactivo
+Thiobencarb;CCN(CC)C(=O)SCC1=CC=C(Cl)C=C1;Inactivo
+C.I. Solvent Yellow 1;NC1=CC=C(C=C1)N=NC1=CC=CC=C1;Activo
+4-Aminobenzoic acid;NC1=CC=C(C=C1)C(O)=O;Inactivo
+3,7-Dimethyl-2,6-octadienal;CC(C)=CCCC(C)=CC=O;Inactivo
+C.I. Solvent Red 80;COC1=CC=C(OC)C(=C1)N=NC1=C(O)C=CC2=C1C=CC=C2;Activo
+Cycloheximide;[H][C@]1(C[C@@H](C)C[C@H](C)C1=O)[C@H](O)CC1CC(=O)NC(=O)C1;Activo
+Cyclophosphamide monohydrate;O.ClCCN(CCCl)P1(=O)NCCCO1;Inactivo
+(E,E)-2,4-Decadienal;CCCCC\C=C\C=C\C=O;Activo
+Decane;CCCCCCCCCC;Inactivo
+Diacetone alcohol;CC(=O)CC(C)(C)O;Inactivo
+1,3-Dichloro-2-propanol;OC(CCl)CCl;Inactivo
+Benzal chloride;ClC(Cl)C1=CC=CC=C1;Inactivo
+Dihexyl phthalate;CCCCCCOC(=O)C1=C(C=CC=C1)C(=O)OCCCCCC;Inactivo
+2,3-Dimethylphenol;CC1=C(C)C(O)=CC=C1;Inactivo
+2,5-Dimethylphenol;CC1=CC(O)=C(C)C=C1;Inactivo
+1-Dodecanethiol;CCCCCCCCCCCCS;Activo
+2-Ethylhexyl glycidyl ether;CCCCC(CC)COCC1CO1;Inactivo
+3-((2-Ethylhexyl)oxy)propionitrile;CCCCC(CC)COCCC#N;Activo
+Glutaraldehyde;O=CCCCC=O;Activo
+Hydroxyurea;NC(=O)NO;Inactivo
+Isoproterenol hydrochloride;Cl.CC(C)NCC(O)C1=CC(O)=C(O)C=C1;Inactivo
+Methyl 2-aminobenzoate;COC(=O)C1=C(N)C=CC=C1;Inactivo
+1-Methyl phenanthrene;CC1=C2C=CC3=CC=CC=C3C2=CC=C1;Inactivo
+Musk ketone;CC(=O)C1=C(C)C(=C(C(=C1C)[N+]([O-])=O)C(C)(C)C)[N+]([O-])=O;Inactivo
+Myrcene;CC(C)=CCCC(=C)C=C;Inactivo
+1,3,5-Trimethylbenzene;CC1=CC(C)=CC(C)=C1;Inactivo
+Sodium dimethyldithiocarbamate;[Na+].CN(C)C([S-])=S;Activo
+2,6-Di-tert-butylphenol;CC(C)(C)C1=CC=CC(=C1O)C(C)(C)C;Activo
+1H-1,2,4-Triazole;N1C=NC=N1;Inactivo
+Diethyl dithiophosphoric acid;CCOP(S)(=S)OCC;Inactivo
+2,6-Diethylaniline;CCC1=CC=CC(CC)=C1N;Inactivo
+Pentadecane;CCCCCCCCCCCCCCC;Inactivo
+Sorbitan, mono-(9Z)-9-octadecenoate;CCCCCCCC\C=C/CCCCCCCC(=O)OC[C@@H](O)[C@H]1OC[C@H](O)[C@H]1O;Inactivo
+N-Ethyl-N-(2-hydroxyethyl)perfluorooctane sulfonamide;CCN(CCO)S(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+1-Propene, tetramer;C\C=C\C\C=C\C\C=C\CC=C;Activo
+2-Pentyl-2-cyclopenten-1-one;CCCCCC1=CCCC1=O;Inactivo
+Tri-o-cresyl phosphate;CC1=C(OP(=O)(OC2=C(C)C=CC=C2)OC2=C(C)C=CC=C2)C=CC=C1;Activo
+Chlorpyrifos-methyl;COP(=S)(OC)OC1=NC(Cl)=C(Cl)C=C1Cl;Activo
+Clodinafop-propargyl;C[C@@H](OC1=CC=C(OC2=NC=C(Cl)C=C2F)C=C1)C(=O)OCC#C;Inactivo
+Ethyl N-cyclohexyl-N-ethylthiolcarbamate;CCSC(=O)N(CC)C1CCCCC1;Inactivo
+Cymoxanil;CCNC(=O)NC(=O)C(=NOC)C#N;Inactivo
+1,2-Benzenedicarboxaldehyde;O=CC1=CC=CC=C1C=O;Inactivo
+4,5-Dichloro-3H-1,2-dithiol-3-one;ClC1=C(Cl)C(=O)SS1;Activo
+Octylbicycloheptenedicarboximide;CCCCC(CC)CN1C(=O)C2C3CC(C=C3)C2C1=O;Activo
+Quinclorac;OC(=O)C1=C(Cl)C=CC2=CC(Cl)=CN=C12;Inactivo
+Sulfentrazone;CC1=NN(C(=O)N1C(F)F)C1=CC(NS(C)(=O)=O)=C(Cl)C=C1Cl;Inactivo
+2-(Thiocyanomethylthio)benzothiazole;N#CSCSC1=NC2=CC=CC=C2S1;Activo
+Tetramethrin;CC(C)=CC1C(C(=O)OCN2C(=O)C3=C(CCCC3)C2=O)C1(C)C;Activo
+Spironolactone;[H][C@@]12CC[C@@]3(CCC(=O)O3)[C@@]1(C)CC[C@@]1([H])[C@@]2([H])[C@@H](CC2=CC(=O)CC[C@]12C)SC(C)=O;Activo
+Clopyralid-olamine;NCCO.OC(=O)C1=C(Cl)C=CC(Cl)=N1;Activo
+Boscalid;ClC1=CC=C(C=C1)C1=C(NC(=O)C2=C(Cl)N=CC=C2)C=CC=C1;Inactivo
+Mesosulfuron-methyl;COC(=O)C1=C(C=C(CNS(C)(=O)=O)C=C1)S(=O)(=O)NC(=O)NC1=NC(OC)=CC(OC)=N1;Inactivo
+Nicosulfuron;COC1=CC(OC)=NC(NC(=O)NS(=O)(=O)C2=NC=CC=C2C(=O)N(C)C)=N1;Inactivo
+Propamocarb hydrochloride;Cl.CCCOC(=O)NCCCN(C)C;Inactivo
+Sodium trichloroacetate;[Na+].[O-]C(=O)C(Cl)(Cl)Cl;Inactivo
+Spirodiclofen;CCC(C)(C)C(=O)OC1=C(C(=O)OC11CCCCC1)C1=CC=C(Cl)C=C1Cl;Activo
+Thymol;CC(C)C1=CC=C(C)C=C1O;Inactivo
+1-(Hydroxymethyl)-5,5-dimethylhydantoin;CC1(C)N(CO)C(=O)NC1=O;Inactivo
+(E,Z)-Tetradeca-9,12-dienyl acetate;C\C=C/C\C=C\CCCCCCCCOC(C)=O;Activo
+(7S)-Hydroprene;CCOC(=O)\C=C(/C)\C=C\C[C@@H](C)CCCC(C)C;Activo
+Mefenpyr-diethyl;CCOC(=O)C1=NN(C2=C(Cl)C=C(Cl)C=C2)C(C)(C1)C(=O)OCC;Inactivo
+4:4 Fluorotelomer alcohol;OCCCCC(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+1H,1H-Perfluoropentylamine;NCC(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+3-(Perfluoropropyl)propanol;OCCCC(F)(F)C(F)(F)C(F)(F)F;Inactivo
+(Perfluoro-5-methylhexyl)ethyl 2-methylprop-2-enoate;CC(=C)C(=O)OCCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(C(F)(F)F)C(F)(F)F;Inactivo
+2,2,2-Trifluoroethyl perfluorobutanesulfonate;FC(F)(F)COS(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+2-Chloro-5-nitroaniline;NC1=CC(=CC=C1Cl)[N+]([O-])=O;Inactivo
+Nonafluoropentanamide;NC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Ethyl butyrate;CCCC(=O)OCC;Inactivo
+Fenaminosulf;[Na+].CN(C)C1=CC=C(C=C1)N=NS([O-])(=O)=O;Activo
+Metaflumizone;FC(F)(F)OC1=CC=C(NC(=O)NN=C(CC2=CC=C(C=C2)C#N)C2=CC=CC(=C2)C(F)(F)F)C=C1;Inactivo
+17alpha-Hydroxyprogesterone;CC(=O)[C@@]1(O)CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@]4(C)[C@H]3CC[C@]12C;Inactivo
+Damascenone;CC=CC(=O)C1=C(C)C=CCC1(C)C;Inactivo
+2,6-Dimethyl-2-heptanol;CC(C)CCCC(C)(C)O;Inactivo
+Tralopyril;FC(F)(F)C1=C(Br)C(C#N)=C(N1)C1=CC=C(Cl)C=C1;Activo
+6-tert-Butyl-2,4-xylenol;CC1=CC(C)=C(O)C(=C1)C(C)(C)C;Activo
+Diphenylsulfone;O=S(=O)(C1=CC=CC=C1)C1=CC=CC=C1;Inactivo
+Phenthoate;CCOC(=O)C(SP(=S)(OC)OC)C1=CC=CC=C1;Activo
+Phorate sulfone;CCOP(=S)(OCC)SCS(=O)(=O)CC;Inactivo
+Triethoxymethylsilane;CCO[Si](C)(OCC)OCC;Inactivo
+Zoalene;CC1=C(C=C(C=C1C(N)=O)[N+]([O-])=O)[N+]([O-])=O;Inactivo
+Cyclopamine;[H][C@@]12NC[C@@H](C)C[C@H]1O[C@]1(CC[C@]3([H])C(C[C@H]4[C@@]3([H])CC=C3C[C@@H](O)CC[C@]43C)=C1C)[C@@H]2C;Inactivo
+(4-Methoxyphenyl)methanol;COC1=CC=C(CO)C=C1;Inactivo
+Pentadecan-15-olide;O=C1CCCCCCCCCCCCCCO1;Activo
+Tetraethyleneglycol dimethacrylate;CC(=C)C(=O)OCCOCCOCCOCCOC(=O)C(C)=C;Inactivo
+1,1,3,3,5-Pentamethyl-4,6-dinitro-2,3-dihydro-1H-indene;CC1=C(C=C2C(=C1[N+]([O-])=O)C(C)(C)CC2(C)C)[N+]([O-])=O;Activo
+CP-607366;CNCC1=C(OC2=CC=C(Cl)C(Cl)=C2)C=CC(F)=C1;Activo
+CP-671305;C[C@@H](OC1=CC=C(CNC(=O)C2=CC=CN=C2OC2=CC=C3OCOC3=C2)C(F)=C1)C(O)=O;Inactivo
+(R)-N-(Quinuclidin-3-yl)furo(2,3-C)pyridine-5-carboxamide;O=C(N[C@H]1CN2CCC1CC2)C1=CC2=C(OC=C2)C=N1;Inactivo
+Candoxatril;COCCOC[C@H](CC1(CCCC1)C(=O)N[C@H]1CC[C@H](CC1)C(O)=O)C(=O)OC1=CC2=C(CCC2)C=C1;Inactivo
+UK-337312;CS([O-])(=O)=O.CN(C[C@@H](CC[N+]12CCC(CC1)(CC2)C1CCCCC1)C1=CC(Cl)=C(Cl)C=C1)C(=O)C1=CC(=CC(=C1)C(F)(F)F)C(F)(F)F;Activo
+GSK163929B;CNS(=O)(=O)C1=C(F)C=C(Cl)C(=C1)C(=O)N1CCC(CCN2C3CCC2CC(C3)N2C(C)=NC3=C2C=CC=C3)(CC1)C1=CC(F)=CC=C1;Activo
+GW473178E methyl benzene sulphonic acid;CC1=CC=C(C=C1)S(O)(=O)=O.CCN(C(C)C)C(=O)C1=CC(OC[C@H](C)NC2=CC=NC=C2)=CC(C)=C1;Inactivo
+PharmaGSID_47315;CCC1=C(OCC(O)=O)C=CC(SCC2=C(CN3CCN(CC3)C3=CC=C(OC)C=C3)N=C(S2)C2=CC=C(C=C2)C(F)(F)F)=C1;Activo
+Carabersat;CC(=O)C1=CC2=C(OC(C)(C)[C@H](O)[C@H]2NC(=O)C2=CC=C(F)C=C2)C=C1;Inactivo
+Volinanserin;COC1=C(OC)C(=CC=C1)[C@H](O)C1CCN(CCC2=CC=C(F)C=C2)CC1;Inactivo
+HMR1171;CCN(CC)C(=O)C1=CC(=C(C=C1N(CC)CCN(C)C)N1CCC(CC1)C1=CC=CC=C1)S(=O)(=O)CC1=CC=CC=C1;Activo
+SR146131 trifluoroacetate (1:1);OC(=O)C(F)(F)F.COC1=CC(C2=C(CCC3CCCCC3)SC(NC(=O)C3=CC4=CC(C)=CC(C)=C4N3CC(O)=O)=N2)=C(OC)C=C1Cl;Activo
+Pravastatin sodium;[Na+].CC[C@H](C)C(=O)O[C@H]1C[C@H](O)C=C2C=C[C@H](C)[C@H](CC[C@@H](O)C[C@@H](O)CC([O-])=O)[C@@H]12;Inactivo
+FR145237;CC1=CC2=C(OC(CN(CC3=CC=CC=C3)C(=O)NC3=C(F)C=C(F)C=C3F)=C2C2=CC=C(Cl)C=C2)C=C1;Inactivo
+Difpas-pyrazole;COC1=CC=C(C=C1)N1N=C(C=C1C1=CC=C(C=C1)S(C)=O)C(F)F;Inactivo
+Perfluoro(4-methoxybutanoic acid);OC(=O)C(F)(F)C(F)(F)C(F)(F)OC(F)(F)F;Inactivo
+Perfluoropentanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Perfluoro-4-isopropoxybutanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)OC(F)(C(F)(F)F)C(F)(F)F;Inactivo
+6:2 Fluorotelomer sulfonic acid;OS(=O)(=O)CCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Sodium perfluorodecanesulfonate;[Na+].[O-]S(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+Perfluoro-3-methoxypropanoic acid;OC(=O)C(F)(F)C(F)(F)OC(F)(F)F;Inactivo
+Acetamide;CC(N)=O;Inactivo
+1-Amino-2-methylanthraquinone;CC1=CC=C2C(=O)C3=C(C=CC=C3)C(=O)C2=C1N;Inactivo
+Bisphenol A;CC(C)(C1=CC=C(O)C=C1)C1=CC=C(O)C=C1;Inactivo
+Chlorambucil;OC(=O)CCCC1=CC=C(C=C1)N(CCCl)CCCl;Activo
+Chlordane;ClC1CC2C(C1Cl)C1(Cl)C(Cl)=C(Cl)C2(Cl)C1(Cl)Cl;Activo
+Coumarin;O=C1OC2=C(C=CC=C2)C=C1;Inactivo
+Diallyl phthalate;C=CCOC(=O)C1=C(C=CC=C1)C(=O)OCC=C;Inactivo
+Dimethoate;CNC(=O)CSP(=S)(OC)OC;Inactivo
+Dimethylarsinic acid;C[As](C)(O)=O;Inactivo
+Hexachloro-1,3-butadiene;ClC(Cl)=C(Cl)C(Cl)=C(Cl)Cl;Activo
+beta-Hexachlorocyclohexane;Cl[C@H]1[C@H](Cl)[C@@H](Cl)[C@H](Cl)[C@@H](Cl)[C@@H]1Cl;Inactivo
+1,2,3,4,5,6-Hexachlorocyclohexane;ClC1C(Cl)C(Cl)C(Cl)C(Cl)C1Cl;Activo
+1,2-Diphenylhydrazine;N(NC1=CC=CC=C1)C1=CC=CC=C1;Inactivo
+Hydroquinone;OC1=CC=C(O)C=C1;Activo
+Ifosfamide;ClCCNP1(=O)OCCCN1CCCl;Inactivo
+Chlorpropham;CC(C)OC(=O)NC1=CC=CC(Cl)=C1;Inactivo
+Methyl linoleate;CCCCC\C=C/C\C=C/CCCCCCCC(=O)OC;Activo
+Methyl methanesulfonate;COS(C)(=O)=O;Inactivo
+Mirex;ClC12C3(Cl)C4(Cl)C5(Cl)C(Cl)(C1(Cl)C4(Cl)Cl)C2(Cl)C(Cl)(Cl)C35Cl;Inactivo
+1-Naphthylamine;NC1=CC=CC2=C1C=CC=C2;Activo
+Nitrofen;[O-][N+](=O)C1=CC=C(OC2=C(Cl)C=C(Cl)C=C2)C=C1;Activo
+Nitrofurantoin;[O-][N+](=O)C1=CC=C(O1)C=NN1CC(=O)NC1=O;Inactivo
+1-Nitronaphthalene;[O-][N+](=O)C1=C2C=CC=CC2=CC=C1;Inactivo
+N-Nitrosodimethylamine;CN(C)N=O;Inactivo
+Parathion;CCOP(=S)(OCC)OC1=CC=C(C=C1)[N+]([O-])=O;Activo
+Pentachlorophenol;OC1=C(Cl)C(Cl)=C(Cl)C(Cl)=C1Cl;Activo
+Phenylmercuric acetate;CC(=O)O[Hg]C1=CC=CC=C1;Activo
+4-Phenylphenol;OC1=CC=C(C=C1)C1=CC=CC=C1;Inactivo
+Phosphamidon;CCN(CC)C(=O)C(Cl)=C(C)OP(=O)(OC)OC;Inactivo
+FD&C Red 3;[Na+].[Na+].[O-]C1=C(I)C2=C(C=C1I)C1(OC(=O)C3=CC=CC=C13)C1=C(O2)C(I)=C([O-])C(I)=C1;Activo
+Reserpine;[H][C@]12C[C@@H](OC(=O)C3=CC(OC)=C(OC)C(OC)=C3)[C@H](OC)[C@@H](C(=O)OC)[C@@]1([H])C[C@@]1([H])N(CCC3=C1NC1=C3C=CC(OC)=C1)C2;Inactivo
+Retinoic acid;C\C(\C=C\C1=C(C)CCCC1(C)C)=C/C=C/C(/C)=C/C(O)=O;Activo
+Tetradifon;ClC1=CC=C(C=C1)S(=O)(=O)C1=CC(Cl)=C(Cl)C=C1Cl;Activo
+Hexanedioic acid;OC(=O)CCCCC(O)=O;Inactivo
+Hexanoic acid;CCCCCC(O)=O;Inactivo
+Pentanal;CCCCC=O;Inactivo
+Diethyl phthalate;CCOC(=O)C1=CC=CC=C1C(=O)OCC;Inactivo
+2,3,4,5,6-Pentabromoethylbenzene;CCC1=C(Br)C(Br)=C(Br)C(Br)=C1Br;Inactivo
+p-Cresol;CC1=CC=C(O)C=C1;Inactivo
+1-Octanol;CCCCCCCCO;Inactivo
+1-Decanol;CCCCCCCCCCO;Inactivo
+Propoxur;CNC(=O)OC1=CC=CC=C1OC(C)C;Activo
+Sodium saccharin hydrate;O.[Na+].O=C1[N-]S(=O)(=O)C2=CC=CC=C12;Inactivo
+2,4,6-Trimethylphenol;CC1=CC(C)=C(O)C(C)=C1;Inactivo
+Carbophenothion;CCOP(=S)(OCC)SCSC1=CC=C(Cl)C=C1;Activo
+2,6-Dichlorobenzamide;NC(=O)C1=C(Cl)C=CC=C1Cl;Inactivo
+EPN;CCOP(=S)(OC1=CC=C(C=C1)[N+]([O-])=O)C1=CC=CC=C1;Activo
+Resmethrin;CC(C)=CC1C(C(=O)OCC2=COC(CC3=CC=CC=C3)=C2)C1(C)C;Activo
+4-(Butan-2-yl)phenol;CCC(C)C1=CC=C(O)C=C1;Inactivo
+Isoeugenol;COC1=CC(C=CC)=CC=C1O;Inactivo
+Methylprednisolone;[H][C@@]12CC[C@](O)(C(=O)CO)[C@@]1(C)C[C@H](O)[C@@]1([H])[C@@]2([H])C[C@H](C)C2=CC(=O)C=C[C@]12C;Inactivo
+Tetracycline;[H][C@@]12C[C@@]3([H])C(=C(O)[C@]1(O)C(=O)C(C(N)=O)=C(O)[C@H]2N(C)C)C(=O)C1=C(C=CC=C1O)[C@@]3(C)O;Inactivo
+Butylate;CCSC(=O)N(CC(C)C)CC(C)C;Inactivo
+1,2-Benzenedicarboxylic acid, 2-butoxy-2-oxoethyl butyl ester;CCCCOC(=O)COC(=O)C1=CC=CC=C1C(=O)OCCCC;Inactivo
+Chlorsulfuron;COC1=NC(C)=NC(NC(=O)NS(=O)(=O)C2=C(Cl)C=CC=C2)=N1;Inactivo
+2,4-Dichlorophenoxybutyric acid;OC(=O)CCCOC1=CC=C(Cl)C=C1Cl;Inactivo
+Endothal;OC(=O)C1C2CCC(O2)C1C(O)=O;Activo
+Ethephon;OP(O)(=O)CCCl;Inactivo
+2-Ethoxyethanol;CCOCCO;Inactivo
+Fomesafen;CS(=O)(=O)NC(=O)C1=CC(OC2=CC=C(C=C2Cl)C(F)(F)F)=CC=C1[N+]([O-])=O;Inactivo
+Lactofen;CCOC(=O)C(C)OC(=O)C1=C(C=CC(OC2=C(Cl)C=C(C=C2)C(F)(F)F)=C1)[N+]([O-])=O;Inactivo
+Bensulfuron-methyl;COC(=O)C1=C(CS(=O)(=O)NC(=O)NC2=NC(OC)=CC(OC)=N2)C=CC=C1;Inactivo
+Oxyfluorfen;CCOC1=CC(OC2=CC=C(C=C2Cl)C(F)(F)F)=CC=C1[N+]([O-])=O;Activo
+Pendimethalin;CCC(CC)NC1=C(C=C(C)C(C)=C1[N+]([O-])=O)[N+]([O-])=O;Activo
+Pentachlorobenzene;ClC1=CC(Cl)=C(Cl)C(Cl)=C1Cl;Inactivo
+Hexythiazox;C[C@H]1[C@@H](SC(=O)N1C(=O)NC1CCCCC1)C1=CC=C(Cl)C=C1;Activo
+1,2,4,5-Tetrachlorobenzene;ClC1=CC(Cl)=C(Cl)C=C1Cl;Inactivo
+Sulfotepp;CCOP(=S)(OCC)OP(=S)(OCC)OCC;Activo
+Vernolate;CCCSC(=O)N(CCC)CCC;Inactivo
+Anthralin;OC1=C2C(CC3=CC=CC(O)=C3C2=O)=CC=C1;Activo
+Chlorpromazine hydrochloride;Cl.CN(C)CCCN1C2=C(SC3=C1C=C(Cl)C=C3)C=CC=C2;Activo
+Cyanuric acid;OC1=NC(O)=NC(O)=N1;Inactivo
+Dazomet;CN1CSC(=S)N(C)C1;Activo
+C.I. Solvent Red 72;OC1=C(Br)C2=C(C=C1)C1(OC(=O)C3=CC=CC=C13)C1=C(O2)C(Br)=C(O)C=C1;Activo
+2,3-Dibromopropyl acrylate;BrCC(Br)COC(=O)C=C;Activo
+2,5-Dichlorophenol;OC1=CC(Cl)=CC=C1Cl;Inactivo
+Bis(2-ethylhexyl) decanedioate;CCCCC(CC)COC(=O)CCCCCCCCC(=O)OCC(CC)CCCC;Inactivo
+1,2-Dimethyl-3-nitrobenzene;CC1=CC=CC(=C1C)[N+]([O-])=O;Inactivo
+Sodium dodecylbenzenesulfonate;[Na+].CCCCCCCCCCCC*.[O-]S(=O)(=O)C1=CC=CC=C1 |c:18,20,t:16,lp:14:3,16:2,17:2,m:13:21.22.23|;Activo
+Triazinetriethanol;OCCN1CN(CCO)CN(CCO)C1;Activo
+Benzohydroxamic acid;ONC(=O)C1=CC=CC=C1;Inactivo
+Linalool;CC(C)=CCCC(C)(O)C=C;Inactivo
+N-Phenyl-1,4-benzenediamine;NC1=CC=C(NC2=CC=CC=C2)C=C1;Activo
+Sodium dehydroacetate;[Na+].C\C([O-])=C1/C(=O)OC(C)=CC1=O;Inactivo
+Toluene 2,4-diisocyanate;CC1=CC=C(C=C1N=C=O)N=C=O;Inactivo
+Linalyl acetate;CC(C)=CCCC(C)(OC(C)=O)C=C;Activo
+Dodecylbenzene;CCCCCCCCCCCCC1=CC=CC=C1;Inactivo
+2,6,8-Trimethyl-4-nonanone;CC(C)CC(C)CC(=O)CC(C)C;Activo
+2,4,7,9-Tetramethyl-5-decyne-4,7-diol;CC(C)CC(C)(O)C#CC(C)(O)CC(C)C;Inactivo
+alpha-Isomethylionone;CC(=O)C(C)=CC1C(C)=CCCC1(C)C;Inactivo
+Octamethylcyclotetrasiloxane;C[Si]1(C)O[Si](C)(C)O[Si](C)(C)O[Si](C)(C)O1;Inactivo
+Bis(2-ethylhexyl) terephthalate;CCCCC(CC)COC(=O)C1=CC=C(C=C1)C(=O)OCC(CC)CCCC;Inactivo
+Perfluoro-(2,5,8-trimethyl-3,6,9-trioxadodecanoic) acid;OC(=O)C(F)(OC(F)(F)C(F)(OC(F)(F)C(F)(OC(F)(F)C(F)(F)C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F;Inactivo
+N-Methyl-N-(2-hydroxyethyl)perfluorooctanesulfonamide;CN(CCO)S(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+Bis(2-ethylhexyl) tetrabromophthalate;CCCCC(CC)COC(=O)C1=C(Br)C(Br)=C(Br)C(Br)=C1C(=O)OCC(CC)CCCC;Inactivo
+Tripropylene glycol diacrylate;CC(COC(C)COC(=O)C=C)OCC(C)OC(=O)C=C;Activo
+2,4-Bis(1-methyl-1-phenylethyl)phenol;CC(C)(C1=CC=CC=C1)C1=CC(=C(O)C=C1)C(C)(C)C1=CC=CC=C1;Activo
+Clotrimazole;ClC1=C(C=CC=C1)C(N1C=CN=C1)(C1=CC=CC=C1)C1=CC=CC=C1;Activo
+Ketoconazole;CC(=O)N1CCN(CC1)C1=CC=C(OC[C@H]2CO[C@@](CN3C=CN=C3)(O2)C2=CC=C(Cl)C=C2Cl)C=C1;Activo
+2-(Perfluorooctyl)ethanol;OCCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+alpha-Cyclodextrin;OC[C@H]1O[C@@H]2O[C@@H]3[C@@H](CO)O[C@H](O[C@@H]4[C@@H](CO)O[C@H](O[C@@H]5[C@@H](CO)O[C@H](O[C@@H]6[C@@H](CO)O[C@H](O[C@@H]7[C@@H](CO)O[C@H](O[C@H]1[C@H](O)[C@H]2O)[C@H](O)[C@H]7O)[C@H](O)[C@H]6O)[C@H](O)[C@H]5O)[C@H](O)[C@H]4O)[C@H](O)[C@H]3O;Inactivo
+Isocyclemone E;CC1CC2=C(CC1(C)C(C)=O)C(C)(C)CCC2;Activo
+Indole-3-carbinol;OCC1=CNC2=C1C=CC=C2;Activo
+Leucomalachite green;CN(C)C1=CC=C(C=C1)C(C1=CC=CC=C1)C1=CC=C(C=C1)N(C)C;Activo
+Flutamide;CC(C)C(=O)NC1=CC(=C(C=C1)[N+]([O-])=O)C(F)(F)F;Inactivo
+Fenoxycarb;CCOC(=O)NCCOC1=CC=C(OC2=CC=CC=C2)C=C1;Activo
+Mesotrione;CS(=O)(=O)C1=CC(=C(C=C1)C(=O)C1C(=O)CCCC1=O)[N+]([O-])=O;Inactivo
+Propetamphos;CCNP(=S)(OC)O\C(C)=C\C(=O)OC(C)C;Inactivo
+Fluazinam;[O-][N+](=O)C1=CC(=C(Cl)C(=C1NC1=C(Cl)C=C(C=N1)C(F)(F)F)[N+]([O-])=O)C(F)(F)F;Activo
+Flumetralin;CCN(CC1=C(Cl)C=CC=C1F)C1=C(C=C(C=C1[N+]([O-])=O)C(F)(F)F)[N+]([O-])=O;Activo
+Flumioxazin;FC1=CC2=C(C=C1N1C(=O)C3=C(CCCC3)C1=O)N(CC#C)C(=O)CO2;Inactivo
+lambda-Cyhalothrin;CC1(C)[C@H](\C=C(/Cl)C(F)(F)F)[C@@H]1C(=O)O[C@@H](C#N)C1=CC(OC2=CC=CC=C2)=CC=C1;Activo
+Pyraclostrobin;CON(C(=O)OC)C1=C(COC2=NN(C=C2)C2=CC=C(Cl)C=C2)C=CC=C1;Activo
+Phenothrin;CC(C)=CC1C(C(=O)OCC2=CC=CC(OC3=CC=CC=C3)=C2)C1(C)C;Activo
+Chlorfenvinphos;CCOP(=O)(OCC)OC(=CCl)C1=C(Cl)C=C(Cl)C=C1;Activo
+Tepraloxydim;CCC(=NOC\C=C\Cl)C1=C(O)CC(CC1=O)C1CCOCC1;Inactivo
+Dimethomorph;COC1=C(OC)C=C(C=C1)C(=CC(=O)N1CCOCC1)C1=CC=C(Cl)C=C1;Inactivo
+Fluopicolide;FC(F)(F)C1=CN=C(CNC(=O)C2=C(Cl)C=CC=C2Cl)C(Cl)=C1;Inactivo
+Isazofos;CCOP(=S)(OCC)OC1=NN(C(C)C)C(Cl)=N1;Inactivo
+Foramsulfuron;COC1=CC(OC)=NC(NC(=O)NS(=O)(=O)C2=C(C=CC(NC=O)=C2)C(=O)N(C)C)=N1;Inactivo
+Thiacloprid;ClC1=CC=C(CN2CCS\C2=N/C#N)C=N1;Inactivo
+Perfluoropentanamide;NC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)F;Inactivo
+Amiodarone hydrochloride;Cl.CCCCC1=C(C(=O)C2=CC(I)=C(OCCN(CC)CC)C(I)=C2)C2=C(O1)C=CC=C2;Activo
+2,2-Dimethoxy-1,2-diphenylethanone;COC(OC)(C(=O)C1=CC=CC=C1)C1=CC=CC=C1;Inactivo
+Bisphenol AF;OC1=CC=C(C=C1)C(C1=CC=C(O)C=C1)(C(F)(F)F)C(F)(F)F;Activo
+3H-Perfluoro-2,2,4,4-tetrahydroxypentane;OC(O)(C(F)C(O)(O)C(F)(F)F)C(F)(F)F;Activo
+4,4,5,5,6,6,7,7,8,8,9,9,9-Tridecafluorononanoic acid;OC(=O)CCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+1H,1H,8H,8H-Perfluoro-3,6-dioxaoctane-1,8-diol;OCC(F)(F)OC(F)(F)C(F)(F)OC(F)(F)CO;Inactivo
+Perfluorooctanamidine;NC(=N)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+3,5,6-Trichloro-2-pyridinol;OC1=NC(Cl)=C(Cl)C=C1Cl;Inactivo
+(Heptafluoropropyl)trimethylsilane;C[Si](C)(C)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Perfluorohexanesulfonic acid;OS(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Chloroxuron;CN(C)C(=O)NC1=CC=C(OC2=CC=C(Cl)C=C2)C=C1;Inactivo
+Ethyl 5,5-diphenyl-2-isoxazoline-3-carboxylate;CCOC(=O)C1=NOC(C1)(C1=CC=CC=C1)C1=CC=CC=C1;Inactivo
+5-Chloro-N-(2-chloro-4-nitrophenyl)-2-hydroxybenzamide;OC1=C(C=C(Cl)C=C1)C(=O)NC1=CC=C(C=C1Cl)[N+]([O-])=O;Activo
+2-Ethylhexyl salicylate;CCCCC(CC)COC(=O)C1=C(O)C=CC=C1;Activo
+2-tert-Butyl-4-methoxyphenol;COC1=CC=C(O)C(=C1)C(C)(C)C;Inactivo
+1-(2-Chlorophenyl)-N-methyl-N-(1-methylpropyl)-3-isoquinolinecarboxamide;CCC(C)N(C)C(=O)C1=CC2=C(C=CC=C2)C(=N1)C1=CC=CC=C1Cl;Inactivo
+6-Diazo-5,6-dihydro-5-oxo1-naphthalenesulfonic acid sodium salt;[Na+].[O-]S(=O)(=O)C1=CC=CC2=C1C=CC(=[N+]=[N-])C2=O;Inactivo
+3,3,4,4-Tetrachlorotetrahydrothiophene 1,1-dioxide;ClC1(Cl)CS(=O)(=O)CC1(Cl)Cl;Activo
+Benodanil;IC1=C(C=CC=C1)C(=O)NC1=CC=CC=C1;Inactivo
+2,2'-Dibenzoylaminodiphenyl disulfide;O=C(NC1=CC=CC=C1SSC1=C(NC(=O)C2=CC=CC=C2)C=CC=C1)C1=CC=CC=C1;Inactivo
+Famphur;COP(=S)(OC)OC1=CC=C(C=C1)S(=O)(=O)N(C)C;Inactivo
+N-Dodecanoyl-N-methylglycine;CCCCCCCCCCCC(=O)N(C)CC(O)=O;Inactivo
+rel-(1R,4S,4aS,5R,8S,8aR)-1,2,3,4,10,10-Hexachloro-1,4,4a,5,8,8a-hexahydro-1,4:5,8-dimethanonaphthalene;[H][C@]12C[C@]([H])(C=C1)[C@@]1([H])[C@]2([H])[C@@]2(Cl)C(Cl)=C(Cl)[C@]1(Cl)C2(Cl)Cl;Activo
+N,N-Dimethyldecylamine oxide;CCCCCCCCCC[N+](C)(C)[O-];Inactivo
+1,1,3,3-Tetrabutylurea;CCCCN(CCCC)C(=O)N(CCCC)CCCC;Activo
+3-(3,4-Methylenedioxyphenyl)-2-methylpropanal;CC(CC1=CC2=C(OCO2)C=C1)C=O;Inactivo
+4-Morpholinecarboxaldehyde;O=CN1CCOCC1;Inactivo
+1,3,5-Benzenetricarbonyl trichloride;ClC(=O)C1=CC(=CC(=C1)C(Cl)=O)C(Cl)=O;Activo
+2-Phenylethyl 2-methylpropanoate;CC(C)C(=O)OCCC1=CC=CC=C1;Inactivo
+1-(2-Hydroxyethyl)pyrrolidin-2-one;OCCN1CCCC1=O;Inactivo
+Isopropyl triethanolamine titanate;CC(C)O[Ti](OCCN(CCO)CCO)(OCCN(CCO)CCO)OC(C)C;Activo
+Bosentan;COC1=CC=CC=C1OC1=C(NS(=O)(=O)C2=CC=C(C=C2)C(C)(C)C)N=C(N=C1OCCO)C1=NC=CC=N1;Inactivo
+Chlorhexidine dihydrochloride;Cl.Cl.ClC1=CC=C(NC(=N)NC(=N)NCCCCCCNC(=N)NC(=N)NC2=CC=C(Cl)C=C2)C=C1;Activo
+Ethyl 2-methylpentanoate;CCCC(C)C(=O)OCC;Inactivo
+PD 0343701;CS(O)(=O)=O.CC1=CC(CCN2CCN(CC2)C2=NSC3=CC=CC=C23)=CC2=C1NC(=O)CC2(C)C;Activo
+Elzasonan;CN1CCN(CC1)C1=CC=CC=C1\C=C1/SCCN(C1=O)C1=CC=C(Cl)C(Cl)=C1;Activo
+CP-532623;CC[C@@H]1C[C@H](N(CC2=CC(=CC(=C2)C(F)(F)F)C(F)(F)F)C(C)=O)C2=C(C=CC(=C2)C(F)(F)F)N1C(=O)OC(C)C;Inactivo
+CP-100829;C1=C2C(C(=O)N(C2=CC(=C1F)Cl)C(=O)N)C(=O)C3=CC(=CS3)Cl  ;Activo
+CP-634384;CC1=CC(NC(=O)C(O)=O)=CC(C)=C1OC1=CC=C(O)C2=C1CCC2;Inactivo
+CP-105696;O[C@@H]1[C@@H](CC2=CC=C(C=C2)C2=CC=CC=C2)COC2=C1C=CC(=C2)C1(CCCC1)C(O)=O;Activo
+Ilepatril;CC(C)[C@H](SC(C)=O)C(=O)N[C@H]1CC2=C(C=CC=C2)[C@H]2CCC[C@H](N2C1=O)C(O)=O;Inactivo
+Nelivaptan;COC1=CC(OC)=C(C=C1)S(=O)(=O)N1C(=O)[C@@](N2C[C@H](O)C[C@H]2C(=O)N(C)C)(C2=CC(Cl)=CC=C12)C1=CC=CC=C1OC;Activo
+Equilin;C[C@]12CC[C@H]3C(=CCC4=C3C=CC(O)=C4)[C@@H]1CCC2=O;Inactivo
+Perfluoro-1-iodohexane;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)I;Activo
+PharmaGSID_48166;COC1=CC(C=O)=CC2=C1[C@H](COC(N)=O)[C@]1(OC(C)=O)ON2C[C@H]2[C@@H]1N2C(C)=O;Activo
+Fabesetron hydrochloride;Cl.CC1=C(C[C@H]2CCC3=C(C)C4=C(C=CC=C4)N3C2=O)N=CN1;Inactivo
+Methyl 3H-perfluoroisopropyl ether;COC(F)(C(F)F)C(F)(F)F;Inactivo
+8H-Perfluorooctanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)F;Inactivo
+(Perfluorobutyryl)-2-thenoylmethane;FC(F)(F)C(F)(F)C(F)(F)C(=O)CC(=O)C1=CC=CS1;Activo
+1H,1H,2H-Perfluoro-1-decene;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C=C;Inactivo
+1-Pentafluoroethylethanol;CC(O)C(F)(F)C(F)(F)F;Inactivo
+Perfluoro-2-methyl-3-oxahexanoic acid;OC(=O)C(F)(OC(F)(F)C(F)(F)C(F)(F)F)C(F)(F)F;Inactivo
+((2,2,3,3-Tetrafluoropropoxy)methyl)oxirane;FC(F)C(F)(F)COCC1CO1;Inactivo
+Aldrin;[H][C@]12C[C@]([H])(C=C1)[C@]1([H])[C@@]2([H])[C@]2(Cl)C(Cl)=C(Cl)[C@@]1(Cl)C2(Cl)Cl;Activo
+Sodium azide;[Na+].[N-]=[N+]=[N-];Inactivo
+Azobenzene;C1=CC=C(C=C1)N=NC1=CC=CC=C1;Inactivo
+3'-Azido-3'-deoxythymidine;CC1=CN([C@H]2C[C@H](N=[N+]=[N-])[C@@H](CO)O2)C(=O)NC1=O;Inactivo
+d-Carvone;CC(=C)[C@H]1CC=C(C)C(=O)C1;Inactivo
+Clomiphene citrate (1:1);OC(=O)CC(O)(CC(O)=O)C(O)=O.CCN(CC)CCOC1=CC=C(C=C1)C(=C(Cl)C1=CC=CC=C1)C1=CC=CC=C1;Activo
+Deltamethrin;CC1(C)[C@@H](C=C(Br)Br)[C@H]1C(=O)O[C@H](C#N)C1=CC=CC(OC2=CC=CC=C2)=C1;Inactivo
+Diethylene glycol;OCCOCCO;Inactivo
+Diethyl maleate;CCOC(=O)\C=C/C(=O)OCC;Inactivo
+5,5-Diphenylhydantoin;O=C1NC(=O)C(N1)(C1=CC=CC=C1)C1=CC=CC=C1;Inactivo
+Ethylene glycol;OCCO;Inactivo
+Fenthion;COP(=S)(OC)OC1=CC(C)=C(SC)C=C1;Inactivo
+Fluometuron;CN(C)C(=O)NC1=CC=CC(=C1)C(F)(F)F;Inactivo
+Griseofulvin;COC1=CC(OC)=C(Cl)C2=C1C(=O)[C@]1(O2)[C@H](C)CC(=O)C=C1OC;Activo
+Isoniazid;NNC(=O)C1=CC=NC=C1;Inactivo
+Isophorone;CC1=CC(=O)CC(C)(C)C1;Inactivo
+Naphthalene;C1=CC2=CC=CC=C2C=C1;Inactivo
+4-Nitrobenzenamine;NC1=CC=C(C=C1)[N+]([O-])=O;Inactivo
+1,4-Benzenediamine dihydrochloride;Cl.Cl.NC1=CC=C(N)C=C1;Inactivo
+1,3-Propane sultone;O=S1(=O)CCCO1;Inactivo
+Sodium chlorite;[Na+].[O-][Cl]=O;Inactivo
+Tamoxifen citrate;OC(=O)CC(O)(CC(O)=O)C(O)=O.CC\C(=C(/C1=CC=CC=C1)C1=CC=C(OCCN(C)C)C=C1)C1=CC=CC=C1;Activo
+Butanoic acid;CCCC(O)=O;Inactivo
+2-(2-Butoxyethoxy)ethanol;CCCCOCCOCCO;Inactivo
+Octadecanoic acid;CCCCCCCCCCCCCCCCCC(O)=O;Inactivo
+4-(2-Methylbutan-2-yl)phenol;CCC(C)(C)C1=CC=C(O)C=C1;Inactivo
+N,N-Diethylaniline;CCN(CC)C1=CC=CC=C1;Inactivo
+o-Cresol;CC1=C(O)C=CC=C1;Inactivo
+1-Heptanol;CCCCCCCO;Inactivo
+2,4,6-Triiodophenol;OC1=C(I)C=C(I)C=C1I;Activo
+2-Hydroxyacetanilide;CC(=O)NC1=C(O)C=CC=C1;Inactivo
+N-(3,4-Dichlorophenyl)propanamide;CCC(=O)NC1=CC=C(Cl)C(Cl)=C1;Inactivo
+3,4-Dichloro-1-butene;ClCC(Cl)C=C;Activo
+Permethrin;CC1(C)C(C=C(Cl)Cl)C1C(=O)OCC1=CC(OC2=CC=CC=C2)=CC=C1;Inactivo
+2,2-Bis(4-hydroxyphenyl)-1,1,1-trichloroethane;OC1=CC=C(C=C1)C(C1=CC=C(O)C=C1)C(Cl)(Cl)Cl;Activo
+17alpha-Estradiol;C[C@]12CC[C@H]3[C@@H](CCC4=C3C=CC(O)=C4)[C@@H]1CC[C@H]2O;Inactivo
+2,4-Dihydroxybenzophenone;OC1=CC=C(C(=O)C2=CC=CC=C2)C(O)=C1;Inactivo
+Ciprofloxacin;OC(=O)C1=CN(C2CC2)C2=CC(N3CCNCC3)=C(F)C=C2C1=O;Inactivo
+Cladribine;NC1=NC(Cl)=NC2=C1N=CN2[C@H]1C[C@H](O)[C@@H](CO)O1;Activo
+Docusate sodium;[Na+].CCCCC(CC)COC(=O)CC(C(=O)OCC(CC)CCCC)S([O-])(=O)=O;Activo
+3,5,3'-Triiodothyronine;N[C@@H](CC1=CC(I)=C(OC2=CC(I)=C(O)C=C2)C(I)=C1)C(O)=O;Inactivo
+L-Tartaric acid;O[C@H]([C@@H](O)C(O)=O)C(O)=O;Inactivo
+Troglitazone;CC1=C(O)C(C)=C2CCC(C)(COC3=CC=C(CC4SC(=O)NC4=O)C=C3)OC2=C1C;Activo
+Acephate;COP(=O)(NC(C)=O)SC;Inactivo
+Acetochlor;CCOCN(C(=O)CCl)C1=C(CC)C=CC=C1C;Activo
+Asulam;COC(=O)NS(=O)(=O)C1=CC=C(N)C=C1;Inactivo
+p-Bromodiphenyl ether;BrC1=CC=C(OC2=CC=CC=C2)C=C1;Inactivo
+2-Chlorotoluene;CC1=C(Cl)C=CC=C1;Inactivo
+Tribenuron-methyl;COC(=O)C1=CC=CC=C1S(=O)(=O)NC(=O)N(C)C1=NC(OC)=NC(C)=N1;Inactivo
+Fluorene;C1C2=C(C=CC=C2)C2=C1C=CC=C2;Inactivo
+1-Methyl-3-phenyl-5-(3-(trifluoromethyl)phenyl)-4-pyridone;CN1C=C(C(=O)C(=C1)C1=CC(=CC=C1)C(F)(F)F)C1=CC=CC=C1;Inactivo
+Flutolanil;CC(C)OC1=CC(NC(=O)C2=C(C=CC=C2)C(F)(F)F)=CC=C1;Inactivo
+Imazalil;ClC1=CC(Cl)=C(C=C1)C(CN1C=CN=C1)OCC=C;Activo
+Indeno[1,2,3-cd]pyrene;C1=CC2=C(C=C1)C1=C3C2=CC2=C4C(C=CC(C=C1)=C34)=CC=C2;Activo
+Isopropalin;CCCN(CCC)C1=C(C=C(C=C1[N+]([O-])=O)C(C)C)[N+]([O-])=O;Activo
+Isoxaben;CCC(C)(CC)C1=NOC(NC(=O)C2=C(OC)C=CC=C2OC)=C1;Inactivo
+Norflurazon;CNC1=C(Cl)C(=O)N(N=C1)C1=CC=CC(=C1)C(F)(F)F;Inactivo
+Oryzalin;CCCN(CCC)C1=C(C=C(C=C1[N+]([O-])=O)S(N)(=O)=O)[N+]([O-])=O;Activo
+Propiconazole;CCCC1COC(CN2C=NC=N2)(O1)C1=C(Cl)C=C(Cl)C=C1;Inactivo
+1-Methoxy-2-propanol;COCC(C)O;Inactivo
+Myclobutanil;CCCCC(CN1C=NC=N1)(C#N)C1=CC=C(Cl)C=C1;Inactivo
+Terbacil;CC1=C(Cl)C(=O)N(C(=O)N1)C(C)(C)C;Inactivo
+4-Androstene-3,17-dione;[H][C@@]12CCC(=O)[C@@]1(C)CC[C@@]1([H])[C@@]2([H])CCC2=CC(=O)CC[C@]12C;Inactivo
+Bronopol;OCC(Br)(CO)[N+]([O-])=O;Activo
+beta-Caryophyllene;[H][C@]12CC(C)(C)[C@]1([H])CC\C(C)=C\CCC2=C;Activo
+4-Chlorotoluene;CC1=CC=C(Cl)C=C1;Inactivo
+3,4-Dichloronitrobenzene;[O-][N+](=O)C1=CC=C(Cl)C(Cl)=C1;Inactivo
+Dimethyl adipate;COC(=O)CCCCC(=O)OC;Inactivo
+Formamide;NC=O;Inactivo
+N,N'-Methylenebisacrylamide;C=CC(=O)NCNC(=O)C=C;Inactivo
+Methylene bis(thiocyanate);N#CSCSC#N;Activo
+Neopentyl glycol diglycidyl ether;CC(C)(COCC1CO1)COCC1CO1;Inactivo
+1,2,3-Trichlorobenzene;ClC1=CC=CC(Cl)=C1Cl;Inactivo
+Triethylene glycol dimethyl ether;COCCOCCOCCOC;Inactivo
+p-Xylenol blue;CC1=CC(=C(C)C=C1O)C1(OS(=O)(=O)C2=C1C=CC=C2)C1=C(C)C=C(O)C(C)=C1;Inactivo
+2,6-Dimethylaniline;CC1=CC=CC(C)=C1N;Inactivo
+1,3-Diisopropylbenzene;CC(C)C1=CC(=CC=C1)C(C)C;Inactivo
+(2E)-3,7-Dimethyl-2,6-octadien-1-ol;CC(C)=CCC\C(C)=C\CO;Inactivo
+1,3-Butanediol;CC(O)CCO;Inactivo
+2-(Hydroxymethyl)-2-nitro-1,3-propanediol;OCC(CO)(CO)[N+]([O-])=O;Inactivo
+2,2-Dimethylpropane-1,3-diol;CC(C)(CO)CO;Inactivo
+Methyl 12-hydroxyoctadecanoate;CCCCCCC(O)CCCCCCCCCCC(=O)OC;Inactivo
+3,4-Dinitrotoluene;CC1=CC=C(C(=C1)[N+]([O-])=O)[N+]([O-])=O;Activo
+4-Nitro-N-phenylaniline;[O-][N+](=O)C1=CC=C(NC2=CC=CC=C2)C=C1;Inactivo
+1,5,9-Cyclododecatriene;C1CC=CCCC=CCCC=C1;Inactivo
+2,2'-Azobis(2-methylbutanenitrile);CCC(C)(N=NC(C)(CC)C#N)C#N;Inactivo
+1-Chloropinacolone;CC(C)(C)C(=O)CCl;Inactivo
+Tetraethylene glycol di(2-ethylhexanoate);CCCCC(CC)C(=O)OCCOCCOCCOCCOC(=O)C(CC)CCCC;Inactivo
+alpha-Amyl cinnamaldehyde;CCCCCC(C=O)=CC1=CC=CC=C1;Activo
+Methacrylamide;CC(=C)C(N)=O;Inactivo
+Octafluoroadipamide;NC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(N)=O;Inactivo
+Perfluorononanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+Perfluorooctanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Ethalfluralin;CCN(CC(C)=C)C1=C(C=C(C=C1[N+]([O-])=O)C(F)(F)F)[N+]([O-])=O;Activo
+Isofenphos;CCOP(=S)(NC(C)C)OC1=CC=CC=C1C(=O)OC(C)C;Inactivo
+Primisulfuron-methyl;COC(=O)C1=C(C=CC=C1)S(=O)(=O)NC(=O)NC1=NC(OC(F)F)=CC(OC(F)F)=N1;Inactivo
+Dipropyl 2,5-pyridinedicarboxylate;CCCOC(=O)C1=CC=C(N=C1)C(=O)OCCC;Inactivo
+4-(4-Chlorophenyl)-2-phenyl-2-(1H-1,2,4-triazol-1-ylmethyl)butyronitrile;ClC1=CC=C(CCC(CN2C=NC=N2)(C#N)C2=CC=CC=C2)C=C1;Inactivo
+Metalaxyl-M;COCC(=O)N([C@H](C)C(=O)OC)C1=C(C)C=CC=C1C;Inactivo
+Pyrithiobac sodium;[Na+].COC1=CC(OC)=NC(SC2=C(C([O-])=O)C(Cl)=CC=C2)=N1;Inactivo
+Hydroxyflutamide;CC(C)(O)C(=O)NC1=CC(=C(C=C1)[N+]([O-])=O)C(F)(F)F;Inactivo
+Cloransulam-methyl;CCOC1=NC(F)=CC2=NC(=NN12)S(=O)(=O)NC1=C(C=CC=C1Cl)C(=O)OC;Inactivo
+Denatonium benzoate;[O-]C(=O)C1=CC=CC=C1.CC[N+](CC)(CC(=O)NC1=C(C)C=CC=C1C)CC1=CC=CC=C1;Inactivo
+Buprofezin;CC(C)N1C(SCN(C1=O)C1=CC=CC=C1)=NC(C)(C)C;Activo
+Ethofumesate;CCOC1OC2=C(C=C(OS(C)(=O)=O)C=C2)C1(C)C;Inactivo
+Etoxazole;CCOC1=C(C=CC(=C1)C(C)(C)C)C1COC(=N1)C1=C(F)C=CC=C1F;Activo
+Famoxadone;CC1(OC(=O)N(NC2=CC=CC=C2)C1=O)C1=CC=C(OC2=CC=CC=C2)C=C1;Inactivo
+Imazapyr;CC(C)C1(C)N=C(NC1=O)C1=NC=CC=C1C(O)=O;Inactivo
+Pinoxaden;CCC1=CC(C)=CC(CC)=C1C1=C(OC(=O)C(C)(C)C)N2CCOCCN2C1=O;Activo
+Pyraflufen-ethyl;CCOC(=O)COC1=C(Cl)C=C(F)C(=C1)C1=NN(C)C(OC(F)F)=C1Cl;Inactivo
+Pyrimethanil;CC1=CC(C)=NC(NC2=CC=CC=C2)=N1;Inactivo
+Tetraconazole;FC(F)C(F)(F)OCC(CN1C=NC=N1)C1=C(Cl)C=C(Cl)C=C1;Activo
+10-Undecenoic acid;OC(=O)CCCCCCCCC=C;Inactivo
+Allethrin;CC(C)=CC1C(C(=O)OC2CC(=O)C(CC=C)=C2C)C1(C)C;Activo
+Perfluoro(2-(2-propoxypropoxy)-1H,1H-propan-1-ol);OCC(F)(OC(F)(F)C(F)(OC(F)(F)C(F)(F)C(F)(F)F)C(F)(F)F)C(F)(F)F;Activo
+11:1 Fluorotelomer alcohol;OCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Potassium perfluorooctanesulfonate;[K+].[O-]S(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+Ammonium perfluorooctanoate;[NH4+].[O-]C(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+(3Z)-Hex-3-en-1-yl salicylate;CC\C=C/CCOC(=O)C1=C(O)C=CC=C1;Activo
+Diphenyl isophthalate;O=C(OC1=CC=CC=C1)C1=CC(=CC=C1)C(=O)OC1=CC=CC=C1;Inactivo
+1H,1H,6H,6H-Perfluorohexane-1,6-diol diacrylate;FC(F)(COC(=O)C=C)C(F)(F)C(F)(F)C(F)(F)COC(=O)C=C;Activo
+Perfluorocyclohexanecarbonyl fluoride;FC(=O)C1(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C1(F)F;Inactivo
+4,4-bis(Trifluoromethyl)-4-fluoropropanoic acid;OC(=O)CCC(F)(C(F)(F)F)C(F)(F)F;Activo
+Perfluoro-3,6,9-trioxadecanoic acid;OC(=O)C(F)(F)OC(F)(F)C(F)(F)OC(F)(F)C(F)(F)OC(F)(F)F;Inactivo
+2-Aminohexafluoropropan-2-ol;NC(O)(C(F)(F)F)C(F)(F)F;Inactivo
+Perfluoroheptanoyl chloride;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(Cl)=O;Inactivo
+1,5-Naphthalene diisocyanate;O=C=NC1=CC=CC2=C(C=CC=C12)N=C=O;Inactivo
+Trifloxysulfuron-sodium;[Na+].COC1=CC(OC)=NC(NC(=O)[N-]S(=O)(=O)C2=NC=CC=C2OCC(F)(F)F)=N1;Inactivo
+Butyl benzoate;CCCCOC(=O)C1=CC=CC=C1;Inactivo
+Triisobutyl phosphate;CC(C)COP(=O)(OCC(C)C)OCC(C)C;Inactivo
+4-Cyclohexylcyclohexanone;O=C1CCC(CC1)C1CCCCC1;Activo
+Diheptyl phthalate;CCCCCCCOC(=O)C1=C(C=CC=C1)C(=O)OCCCCCCC;Inactivo
+2,5-Di-tert-butylbenzene-1,4-diol;CC(C)(C)C1=CC(O)=C(C=C1O)C(C)(C)C;Activo
+Bibenzyl;C(CC1=CC=CC=C1)C1=CC=CC=C1;Activo
+C.I. Solvent Yellow 56;CCN(CC)C1=CC=C(C=C1)N=NC1=CC=CC=C1;Activo
+Disulfoton sulfone;CCOP(=S)(OCC)SCCS(=O)(=O)CC;Inactivo
+Diquat-d4 dibromide;[Br-].[Br-].[2H]C1([2H])[N+]2=C(C=CC=C2)C2=[N+](C=CC=C2)C1([2H])[2H];Activo
+Bismaleimide;O=C1C=CC(=O)N1C1=CC=C(CC2=CC=C(C=C2)N2C(=O)C=CC2=O)C=C1;Activo
+Diphenyl sulfide;S(C1=CC=CC=C1)C1=CC=CC=C1;Activo
+1,4-Dihydroxyanthracene-9,10-dione;OC1=CC=C(O)C2=C1C(=O)C1=C(C=CC=C1)C2=O;Activo
+2-Heptylcyclopentanone;CCCCCCCC1CCCC1=O;Activo
+1-Benzylquinolinium chloride;[Cl-].C(C1=CC=CC=C1)[N+]1=C2C=CC=CC2=CC=C1;Inactivo
+Prop-2-en-1-yl 3-cyclohexylpropanoate;C=CCOC(=O)CCC1CCCCC1;Inactivo
+2,4,4'-Trihydroxybenzophenone;OC1=CC=C(C=C1)C(=O)C1=CC=C(O)C=C1O;Activo
+Bis{2-[2-(propan-2-yl)-1,3-oxazolidin-3-yl]ethyl} hexane-1,6-diylbiscarbamate;CC(C)C1OCCN1CCOC(=O)NCCCCCCNC(=O)OCCN1CCOC1C(C)C;Inactivo
+Methyl perfluoro(3-(1-ethenyloxypropan-2-yloxy)propanoate);COC(=O)C(F)(F)C(F)(F)OC(F)(C(F)(F)F)C(F)(F)OC(F)=C(F)F;Activo
+CI-1029;CC(C)[C@]1(CCC2=CC=C(N)C=C2)CC(O)=C(SC2=CC(C)=C(CO)C=C2C(C)(C)C)C(=O)O1;Inactivo
+CP-283097;O[C@@H]1[C@@H](COC2=CC(O)=CC=C12)N1CCC(O)(CC1)C1=CC=C(F)C=C1;Inactivo
+CP-544439;ONC(=O)C1(CCOCC1)NS(=O)(=O)C1=CC=C(OC2=CC=C(F)C=C2)C=C1;Inactivo
+CI-959;[Na+].COC1=CC2=C(SC(C(=O)NC3=NN=N[N-]3)=C2OC(C)C)C=C1;Activo
+SSR146977;CN(C)C(=O)NC1(CCN(CCC[C@@]2(CCCN(C2)C(=O)C2=CC=CC=C2)C2=CC(Cl)=C(Cl)C=C2)CC1)C1=CC=CC=C1;Inactivo
+SR271425;CCN(CC)CCNC1=C2C(=O)C3=C(SC2=C(CNC=O)C=C1)C=CC(OC)=C3;Activo
+AVE8488;O.Cl.CN1CCN(CC2=CC(=CO2)C2=CC=C3N=C(O)OC3=C2)[C@H](C1)C1=CC=C(F)C=C1;Activo
+SAR102608;CC1=CN(NC(=O)C2=C(C)N=C(N=C2)C2=CC=CC=N2)C2=CC=C(F)C=C12;Inactivo
+Perfluoroundecanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+3,3'-Dimethylbisphenol A;CC1=CC(=CC=C1O)C(C)(C)C1=CC(C)=C(O)C=C1;Activo
+Sarafloxacin;OC(=O)C1=CN(C2=CC=C(F)C=C2)C2=CC(N3CCNCC3)=C(F)C=C2C1=O;Inactivo
+PharmaGSID_48521;CCCC[C@H]1CN(CC2CCOCC2)C(=O)OC11CCN(CC1)C1(C)CCN(CC1)C(=O)C1=C(C)N=CN=C1C;Inactivo
+N-[(Perfluorooctylsulfonamido)propyl]-N,N,N-trimethylammonium iodide;[I-].C[N+](C)(C)CCCNS(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+C.I.Disperse Yellow 42;[O-][N+](=O)C1=CC(=CC=C1NC1=CC=CC=C1)S(=O)(=O)NC1=CC=CC=C1;Activo
+Perfluoroheptanesulfonic acid;OS(=O)(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Perfluoropentanedioic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)C(O)=O;Inactivo
+Perfluorobutanedioic acid;OC(=O)C(F)(F)C(F)(F)C(O)=O;Inactivo
+Perfluoropropanoic acid;OC(=O)C(F)(F)C(F)(F)F;Inactivo
+2-(Perfluorooctyl)ethyl methacrylate;CC(=C)C(=O)OCCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+1-(Perfluorofluorooctyl)propane-2,3-diol;OCC(O)CC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+3H,3H-Perfluoro-2,4-hexanedione;FC(F)(F)C(=O)CC(=O)C(F)(F)C(F)(F)F;Inactivo
+1,6-Diiodoperfluorohexane;FC(F)(I)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)I;Activo
+(E)-Anethole;COC1=CC=C(\C=C\C)C=C1;Inactivo
+Anilazine;ClC1=CC=CC=C1NC1=NC(Cl)=NC(Cl)=N1;Activo
+Astemizole;COC1=CC=C(CCN2CCC(CC2)NC2=NC3=CC=CC=C3N2CC2=CC=C(F)C=C2)C=C1;Activo
+Atrazine;CCNC1=NC(NC(C)C)=NC(Cl)=N1;Inactivo
+Bifenthrin;CC1=C(C=CC=C1COC(=O)[C@@H]1[C@H](\C=C(/Cl)C(F)(F)F)C1(C)C)C1=CC=CC=C1;Activo
+Pentaerythritol dibromide;OCC(CO)(CBr)CBr;Inactivo
+Bis(chloroethyl) ether;ClCCOCCCl;Inactivo
+Capsaicin;COC1=C(O)C=CC(CNC(=O)CCCC\C=C\C(C)C)=C1;Inactivo
+Captan;[H][C@@]12CC=CC[C@]1([H])C(=O)N(SC(Cl)(Cl)Cl)C2=O;Activo
+1-Naphthalenol, 1-(N-methylcarbamate);CNC(=O)OC1=C2C=CC=CC2=CC=C1;Activo
+Carbofuran;CNC(=O)OC1=CC=CC2=C1OC(C)(C)C2;Inactivo
+2-Chloroacetophenone;ClCC(=O)C1=CC=CC=C1;Activo
+4-Chloroaniline;NC1=CC=C(Cl)C=C1;Inactivo
+Chlorobenzilate;CCOC(=O)C(O)(C1=CC=C(Cl)C=C1)C1=CC=C(Cl)C=C1;Activo
+Daminozide;CN(C)NC(=O)CCC(O)=O;Inactivo
+p,p'-DDE;ClC(Cl)=C(C1=CC=C(Cl)C=C1)C1=CC=C(Cl)C=C1;Activo
+Diazinon;CCOP(=S)(OCC)OC1=NC(=NC(C)=C1)C(C)C;Inactivo
+Dibenz[a,h]anthracene;C1=CC2=CC=C3C=C4C(C=CC5=CC=CC=C45)=CC3=C2C=C1;Inactivo
+N,N'-Dicyclohexylthiourea;S=C(NC1CCCCC1)NC1CCCCC1;Inactivo
+Dieldrin;ClC1=C(Cl)[C@]2(Cl)[C@@H]3[C@@H]4C[C@@H]([C@H]5O[C@@H]45)[C@@H]3[C@@]1(Cl)C2(Cl)Cl;Inactivo
+Ethoxyquin;CCOC1=CC2=C(NC(C)(C)C=C2C)C=C1;Activo
+Eugenol;COC1=C(O)C=CC(CC=C)=C1;Inactivo
+Glycerol;OCC(O)CO;Inactivo
+1-(p-Chlorobenzoyl)-5-methoxy-2-methyl-Indole-3-acetic acid;COC1=CC2=C(C=C1)N(C(=O)C1=CC=C(Cl)C=C1)C(C)=C2CC(O)=O;Inactivo
+Malaoxon;CCOC(=O)CC(SP(=O)(OC)OC)C(=O)OCC;Inactivo
+Maleic hydrazide;O=C1NNC(=O)C=C1;Inactivo
+Maneb;[Mn++].[S-]C(=S)NCCNC([S-])=S;Activo
+Methoxychlor;COC1=CC=C(C=C1)C(C1=CC=C(OC)C=C1)C(Cl)(Cl)Cl;Activo
+1-Methylnaphthalene;CC1=C2C=CC=CC2=CC=C1;Inactivo
+1-Phenyl-2-thiourea;NC(=S)NC1=CC=CC=C1;Inactivo
+4-Butyl-1,2-diphenyl-3,5-Pyrazolidinedione;CCCCC1C(=O)N(N(C1=O)C1=CC=CC=C1)C1=CC=CC=C1;Inactivo
+Pyrimethamine;CCC1=NC(N)=NC(N)=C1C1=CC=C(Cl)C=C1;Inactivo
+Bithionol;OC1=C(Cl)C=C(Cl)C=C1SC1=C(O)C(Cl)=CC(Cl)=C1;Activo
+1,2,3-Trichloropropane;ClCC(Cl)CCl;Inactivo
+Triethanolamine;OCCN(CCO)CCO;Inactivo
+Urethane;CCOC(N)=O;Inactivo
+Decanoic acid;CCCCCCCCCC(O)=O;Inactivo
+Nonanal;CCCCCCCCC=O;Inactivo
+Undecane;CCCCCCCCCCC;Inactivo
+Benzyltriethylammonium chloride;[Cl-].CC[N+](CC)(CC)CC1=CC=CC=C1;Inactivo
+2,3,4,6-Tetrachlorophenol;OC1=C(Cl)C(Cl)=C(Cl)C=C1Cl;Activo
+Diphenyl oxide;O(C1=CC=CC=C1)C1=CC=CC=C1;Activo
+3-Methylpyridine;CC1=CC=CN=C1;Inactivo
+Ethylene glycol monoethyl ether acetate;CCOCCOC(C)=O;Inactivo
+2-Phenoxyethanol;OCCOC1=CC=CC=C1;Inactivo
+7,4'-Dihydroxyisoflavone;OC1=CC=C(C=C1)C1=COC2=C(C=CC(O)=C2)C1=O;Inactivo
+4-Octylphenol;CCCCCCCCC1=CC=C(O)C=C1;Activo
+4-(1,1,3,3-Tetramethylbutyl)phenol;CC(C)(C)CC(C)(C)C1=CC=C(O)C=C1;Activo
+5alpha-Dihydrotestosterone;[H][C@@]12CC[C@H](O)[C@@]1(C)CC[C@@]1([H])[C@@]2([H])CC[C@@]2([H])CC(=O)CC[C@]12C;Inactivo
+Estriol;C[C@]12CC[C@H]3[C@@H](CCC4=C3C=CC(O)=C4)[C@@H]1C[C@@H](O)[C@@H]2O;Inactivo
+Bis(4-hydroxyphenyl)methane;OC1=CC=C(CC2=CC=C(O)C=C2)C=C1;Inactivo
+Ethyl cinnamate;CCOC(=O)C=CC1=CC=CC=C1;Inactivo
+Diisobutyl phthalate;CC(C)COC(=O)C1=C(C=CC=C1)C(=O)OCC(C)C;Activo
+Thalidomide;O=C1N(C2CCC(=O)NC2=O)C(=O)C2=CC=CC=C12;Inactivo
+Ethylparaben;CCOC(=O)C1=CC=C(O)C=C1;Inactivo
+Carminic acid;CC1=C2C(=O)C3=C(C(O)=C(O)C([C@@H]4O[C@H](CO)[C@@H](O)[C@H](O)[C@H]4O)=C3O)C(=O)C2=CC(O)=C1C(O)=O;Inactivo
+Norethindrone;[H][C@@]12CC[C@@](O)(C#C)[C@@]1(C)CC[C@]1([H])[C@@]3([H])CCC(=O)C=C3CC[C@@]21[H];Inactivo
+Clofentezine;ClC1=CC=CC=C1C1=NN=C(N=N1)C1=C(Cl)C=CC=C1;Inactivo
+Quizalofop-ethyl;CCOC(=O)C(C)OC1=CC=C(OC2=CN=C3C=C(Cl)C=CC3=N2)C=C1;Inactivo
+Dicrotophos;COP(=O)(OC)O\C(C)=C\C(=O)N(C)C;Inactivo
+2,6-Dimethylphenol;CC1=CC=CC(C)=C1O;Inactivo
+1,3-Dinitrobenzene;[O-][N+](=O)C1=CC(=CC=C1)[N+]([O-])=O;Inactivo
+(+/-)-2-(4-Chloro-2-methylphenoxy)propionic acid;CC(OC1=C(C)C=C(Cl)C=C1)C(O)=O;Inactivo
+Sethoxydim;CCCC(=NOCC)C1=C(O)CC(CC(C)SCC)CC1=O;Inactivo
+Aldicarb oxime;CSC(C)(C)C=NO;Inactivo
+6-Methoxy-2-benzothiazolamine;COC1=CC2=C(C=C1)N=C(N)S2;Inactivo
+5-Amino-2-methylphenol;CC1=C(O)C=C(N)C=C1;Inactivo
+tert-Butyl perbenzoate;CC(C)(C)OOC(=O)C1=CC=CC=C1;Activo
+3,4-Diaminotoluene;CC1=CC=C(N)C(N)=C1;Activo
+4,4'-Dichlorodiphenyl sulfone;ClC1=CC=C(C=C1)S(=O)(=O)C1=CC=C(Cl)C=C1;Inactivo
+7-Diethylamino-4-methylcoumarin;CCN(CC)C1=CC=C2C(C)=CC(=O)OC2=C1;Inactivo
+2,5-Dimethyl-2,5-di-(tert-butylperoxy)hexane;CC(C)(C)OOC(C)(C)CCC(C)(C)OOC(C)(C)C;Inactivo
+1,2-Epoxydodecane;CCCCCCCCCCC1CO1;Activo
+2-Ethylhexanoic acid;CCCCC(CC)C(O)=O;Inactivo
+2-Ethylhexyl acrylate;CCCCC(CC)COC(=O)C=C;Activo
+1,6-Hexanediol diacrylate;C=CC(=O)OCCCCCCOC(=O)C=C;Activo
+3-Methylbutyl acetate;CC(C)CCOC(C)=O;Inactivo
+Theobromine;CN1C=NC2=C1C(=O)NC(=O)N2C;Inactivo
+Tris(1,3-dichloro-2-propyl) phosphate;ClCC(CCl)OP(=O)(OC(CCl)CCl)OC(CCl)CCl;Inactivo
+Tris(2-ethylhexyl) trimellitate;CCCCC(CC)COC(=O)C1=CC=C(C(=O)OCC(CC)CCCC)C(=C1)C(=O)OCC(CC)CCCC;Inactivo
+2-(4-Tert-Butylbenzyl)propionaldehyde;CC(CC1=CC=C(C=C1)C(C)(C)C)C=O;Activo
+N-(2-Methoxyphenyl)-3-oxobutanamide;COC1=C(NC(=O)CC(C)=O)C=CC=C1;Inactivo
+Dihexyl hexanedioate;CCCCCCOC(=O)CCCCC(=O)OCCCCCC;Inactivo
+1-Tetradecanol;CCCCCCCCCCCCCCO;Activo
+2,4-Di-tert-pentylphenol;CCC(C)(C)C1=CC(=C(O)C=C1)C(C)(C)CC;Activo
+Ammonium carbamate;[NH4+].NC([O-])=O;Inactivo
+Octabenzone;CCCCCCCCOC1=CC(O)=C(C=C1)C(=O)C1=CC=CC=C1;Inactivo
+N-(Butoxymethyl)acrylamide;CCCCOCNC(=O)C=C;Inactivo
+Hexa(methoxymethyl)melamine;COCN(COC)C1=NC(=NC(=N1)N(COC)COC)N(COC)COC;Inactivo
+Octrizole;CC(C)(C)CC(C)(C)C1=CC(N2N=C3C=CC=CC3=N2)=C(O)C=C1;Activo
+3-(Methylthio)propanal;CSCCC=O;Inactivo
+Isobornyl methacrylate;CC(=C)C(=O)O[C@H]1C[C@@H]2CC[C@@]1(C)C2(C)C;Activo
+Clopyralid;OC(=O)C1=C(Cl)C=CC(Cl)=N1;Inactivo
+Perfluoro-1-octanesulfonyl chloride;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)S(Cl)(=O)=O;Inactivo
+Tebuconazole;CC(C)(C)C(O)(CCC1=CC=C(Cl)C=C1)CN1C=NC=N1;Inactivo
+Bendiocarb;CNC(=O)OC1=CC=CC2=C1OC(C)(C)O2;Inactivo
+Bensulide;CC(C)OP(=S)(OC(C)C)SCCNS(=O)(=O)C1=CC=CC=C1;Activo
+Dithiopyr;CSC(=O)C1=C(N=C(C(C(=O)SC)=C1CC(C)C)C(F)(F)F)C(F)F;Activo
+Didecyldimethylammonium chloride;[Cl-].CCCCCCCCCC[N+](C)(C)CCCCCCCCCC;Activo
+Zoxamide;CCC(C)(NC(=O)C1=CC(Cl)=C(C)C(Cl)=C1)C(=O)CCl;Activo
+Bromadiolone;OC(CC(C1=CC=CC=C1)C1=C(O)C2=C(OC1=O)C=CC=C2)C1=CC=C(C=C1)C1=CC=C(Br)C=C1;Activo
+Etofenprox;CCOC1=CC=C(C=C1)C(C)(C)COCC1=CC(OC2=CC=CC=C2)=CC=C1;Inactivo
+4-Amino-1,2,4-triazole;NN1C=NN=C1;Inactivo
+Procymidone;CC12CC1(C)C(=O)N(C2=O)C1=CC(Cl)=CC(Cl)=C1;Inactivo
+2-(m-Chlorophenoxy)propionic acid;CC(OC1=CC(Cl)=CC=C1)C(O)=O;Inactivo
+5-Chloro-2-methyl-3(2H)-isothiazolone;CN1SC(Cl)=CC1=O;Activo
+Denatonium saccharide;O=C1[N-]S(=O)(=O)C2=C1C=CC=C2.CC[N+](CC)(CC(=O)NC1=C(C)C=CC=C1C)CC1=CC=CC=C1;Inactivo
+Butafenacil;CN1C(=O)N(C(=O)C=C1C(F)(F)F)C1=CC(C(=O)OC(C)(C)C(=O)OCC=C)=C(Cl)C=C1;Activo
+Cyanamide;NC#N;Inactivo
+4-Chloro-2-cyano-N,N-dimethyl-5-(4-methylphenyl)-1H-imidazole-1-sulfonamide;CN(C)S(=O)(=O)N1C(=NC(Cl)=C1C1=CC=C(C)C=C1)C#N;Activo
+Prohexadione-calcium;[Ca++].[Ca++].CCC(=O)[C-]1C(=O)CC(CC1=O)C([O-])=O.CCC(=O)[C-]1C(=O)CC(CC1=O)C([O-])=O;Inactivo
+Ethametsulfuron-methyl;CCOC1=NC(NC)=NC(NC(=O)NS(=O)(=O)C2=C(C=CC=C2)C(=O)OC)=N1;Activo
+Halosulfuron-methyl;COC(=O)C1=C(N(C)N=C1Cl)S(=O)(=O)NC(=O)NC1=NC(OC)=CC(OC)=N1;Inactivo
+Monocrotophos;CNC(=O)\C=C(/C)OP(=O)(OC)OC;Inactivo
+Azamethiphos;COP(=O)(OC)SCN1C(=O)OC2=CC(Cl)=CN=C12;Activo
+Propoxycarbazone-sodium;[Na+].CCCOC1=NN(C(=O)[N-]S(=O)(=O)C2=C(C=CC=C2)C(=O)OC)C(=O)N1C;Inactivo
+Prosulfuron;COC1=NC(C)=NC(NC(=O)NS(=O)(=O)C2=C(CCC(F)(F)F)C=CC=C2)=N1;Inactivo
+Tributyltin methacrylate;CCCC[Sn](CCCC)(CCCC)OC(=O)C(C)=C;Activo
+Bumetrizole;CC1=CC(=C(O)C(=C1)N1N=C2C=CC(Cl)=CC2=N1)C(C)(C)C;Inactivo
+Testosterone propionate;CCC(=O)O[C@H]1CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@]4(C)[C@H]3CC[C@]12C;Activo
+Diisobutyl adipate;CC(C)COC(=O)CCCCC(=O)OCC(C)C;Inactivo
+1,8-Divinylperfluorooctane;FC(F)(C=C)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C=C;Inactivo
+Demeton-S;CCOP(=O)(OCC)SCCSCC;Inactivo
+4-Methylbenzophenone;CC1=CC=C(C=C1)C(=O)C1=CC=CC=C1;Activo
+3-(Perfluoroheptyl)propanoic acid;OC(=O)CCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+Monomethyl phthalate;COC(=O)C1=C(C=CC=C1)C(O)=O;Activo
+Dimethyl (3-((hydroxymethyl)amino)-3-oxopropyl)phosphonate;COP(=O)(CCC(=O)NCO)OC;Inactivo
+Binapacryl;CCC(C)C1=CC(=CC(=C1OC(=O)C=C(C)C)[N+]([O-])=O)[N+]([O-])=O;Activo
+2,2'-Bipyridine;C1=CC=C(N=C1)C1=CC=CC=N1;Inactivo
+4-(2-Methylbutan-2-yl)cyclohexanol;CCC(C)(C)C1CCC(O)CC1;Inactivo
+2,5-Dimethoxy-4-chloroaniline;COC1=CC(N)=C(OC)C=C1Cl;Inactivo
+alpha-Terpinene;CC(C)C1=CC=C(C)CC1;Inactivo
+Chloroacetamide;NC(=O)CCl;Inactivo
+Limonene diepoxide;CC1OC1C1CCC2(C)OC2C1;Inactivo
+4,4'-(Oxydiethylene)bis(morpholine);C(CN1CCOCC1)OCCN1CCOCC1;Inactivo
+N-Methyldioctylamine;CCCCCCCCN(C)CCCCCCCC;Inactivo
+Tetrapropyl orthosilicate;CCCO[Si](OCCC)(OCCC)OCCC;Inactivo
+2-Amino-6-chloro-4-nitrophenol;NC1=C(O)C(Cl)=CC(=C1)[N+]([O-])=O;Inactivo
+Monobenzyl phthalate;OC(=O)C1=C(C=CC=C1)C(=O)OCC1=CC=CC=C1;Inactivo
+4-Pentylphenol;CCCCCC1=CC=C(O)C=C1;Activo
+N-Butylaniline;CCCCNC1=CC=CC=C1;Inactivo
+Tripropan-2-yl phosphite;CC(C)OP(OC(C)C)OC(C)C;Inactivo
+p-Methylacetophenone;CC(=O)C1=CC=C(C)C=C1;Inactivo
+Phenyl carbonochloridate;ClC(=O)OC1=CC=CC=C1;Inactivo
+D&C Blue No. 9;ClC1=C2NC3=C4C(=O)C5=C(C=CC=C5)C(=O)C4=CC(Cl)=C3NC2=C2C(=O)C3=C(C=CC=C3)C(=O)C2=C1;Activo
+2,2'-[Ethane-1,2-diylbis(oxy)]diethanamine;NCCOCCOCCN;Inactivo
+Ethyl 2-cyano-3,3-diphenylacrylate;CCOC(=O)C(C#N)=C(C1=CC=CC=C1)C1=CC=CC=C1;Activo
+3-tert-Butylphenol;CC(C)(C)C1=CC=CC(O)=C1;Inactivo
+trans-beta-Farnesene;CC(C)=CCC\C(C)=C\CCC(=C)C=C;Inactivo
+2-Ethylhexyl octadecanoate;CCCCCCCCCCCCCCCCCC(=O)OCC(CC)CCCC;Inactivo
+4-Formyl-2-methoxyphenyl isobutyrate;COC1=C(OC(=O)C(C)C)C=CC(C=O)=C1;Inactivo
+CP-122721;COC1=C(CN[C@H]2CCCN[C@H]2C2=CC=CC=C2)C=C(OC(F)(F)F)C=C1;Inactivo
+CP-401387;CCC1=NN(C2CCCCC2)C2=C1C=CC(=C2)[C@]1(CC[C@@H](CC1)C(O)=O)C#N;Activo
+CP-465394;[Na+].CC(C)C1=CC=CC(C(C)C)=C1NC(=O)[N-]S(=O)(=O)C1=CC(=CO1)C(C)(C)O;Inactivo
+Zamifenacin;C(CC1=CC2=C(OCO2)C=C1)N1CCC[C@H](C1)OC(C1=CC=CC=C1)C1=CC=CC=C1;Activo
+1,3-Dichloro-6,7,8,9,10,12-hexahydroazepino[2,1-b]quinazoline hydrochloride (1:1);Cl.ClC1=CC2=C(CN3CCCCCC3=N2)C(Cl)=C1;Inactivo
+PharmaGSID_47330;CC(C)(O)C1=NC2=NC=C(N2N=C1)C1=CC(=C(F)C=C1)C1=C(C=CC=C1F)C#N;Activo
+MK-968;F[C@@H](CO[C@H]1CC[C@@H](CC1)NC1=C2C=NN=C2N=CN1)C1=CC=CC=C1F;Inactivo
+HMR1426;OC12N=C(SC1CC1=CC(Cl)=CC=C21)C1=CC=CC=C1;Inactivo
+3-Hydroxyfluorene;OC1=CC2=C(CC3=CC=CC=C23)C=C1;Inactivo
+Picoxystrobin;CO\C=C(\C(=O)OC)C1=C(COC2=NC(=CC=C2)C(F)(F)F)C=CC=C1;Activo
+1,3,5-Undecatriene;CCCCCC=CC=CC=C;Inactivo
+9-Phenanthrol;OC1=CC2=C(C=CC=C2)C2=CC=CC=C12;Activo
+4,4'-Sulfonylbis[2-(prop-2-en-1-yl)phenol];OC1=C(CC=C)C=C(C=C1)S(=O)(=O)C1=CC(CC=C)=C(O)C=C1;Activo
+PharmaGSID_48510;OC(=O)C1=CC(=CC=C1)N(CC1=CN=CC=C1)C1=CC=C(OC(F)F)C(OC(F)F)=C1;Inactivo
+Ro 23-7637;O=C(CCCCCCCCC1=CN=CC=C1)N1CCC(CC1)C=C(C1=CC=CC=C1)C1=CC=CC=C1;Activo
+PharmaGSID_48514;[Na+].COC1=CC=C(\C=C\S(=O)(=O)[N-]C(=O)C2=CC=C(C)C=C2Cl)C=C1;Activo
+PharmaGSID_48516;[Na+].FC1=CC=C(C(=O)[N-]S(=O)(=O)\C=C\C2=CC=CC=C2)C(Cl)=C1;Activo
+PharmaGSID_48518;FC1=CC(Br)=C(C=C1)C(=O)NS(=O)(=O)\C=C\C1=CC=CS1;Activo
+6:2 Fluorotelomer phosphate monoester;OP(O)(=O)OCCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+1H,1H,7H-Dodecafluoro-1-heptanol;OCC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)F;Inactivo
+Perfluamine;FC(F)(F)C(F)(F)C(F)(F)N(C(F)(F)C(F)(F)C(F)(F)F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo
+1-Bromopentadecafluoroheptane;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)Br;Inactivo
+1H-Perfluoro-1,1-propanediol;OC(O)C(F)(F)C(F)(F)F;Inactivo
+1-Iodo-1H,1H,2H,2H-perfluoroheptane;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)CCI;Activo
+Perfluorotridecanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Activo
+1H,1H,5H-Perfluoropentyl methacrylate;CC(=C)C(=O)OCC(F)(F)C(F)(F)C(F)(F)C(F)F;Inactivo
+1-Iodo-1H,1H,2H,2H-perfluorononane;FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)CCI;Activo
+6:1 Fluorotelomer alcohol;C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)O;Activo
+8:2 Fluorotelomer sulfonic acid;C(CS(=O)(=O)O)C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F;Activo
+1H,1H,9H-Perfluorononyl acrylate;C=CC(=O)OCC(C(C(C(C(C(C(C(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F;Activo
+Acifluorfen;C1=CC(=C(C=C1C(F)(F)F)Cl)OC2=CC(=C(C=C2)[N+](=O)[O-])C(=O)O;Inactivo
+Sodium L-ascorbate;C(C(C1C(=C(C(=O)O1)O)[O-])O)O.[Na+];Inactivo
+Caffeine;CN1C=NC2=C1C(=O)N(C(=O)N2C)C;Inactivo
+2-Chloro-1,4-diaminobenzene sulfate (1:1);C1=CC(=C(C=C1N)Cl)N.OS(=O)(=O)O;Activo
+Monuron;CN(C)C(=O)NC1=CC=C(C=C1)Cl;Inactivo
+Chlorothalonil;C(#N)C1=C(C(=C(C(=C1Cl)Cl)Cl)C#N)Cl;Activo
+Cyclosporin A;CCC1C(=O)N(CC(=O)N(C(C(=O)NC(C(=O)N(C(C(=O)NC(C(=O)NC(C(=O)N(C(C(=O)N(C(C(=O)N(C(C(=O)N(C(C(=O)N1)C(C(C)CC=CC)O)C)C(C)C)C)CC(C)C)C)CC(C)C)C)C)C)CC(C)C)C)C(C)C)CC(C)C)C)C;Activo
+Dichlorprop;CC(C(=O)O)OC1=C(C=C(C=C1)Cl)Cl;Inactivo
+2,4-Dichlorophenoxyacetic acid;C1=CC(=C(C=C1Cl)Cl)OCC(=O)O;Inactivo
+Diuron;CN(C)C(=O)NC1=CC(=C(C=C1)Cl)Cl;Inactivo
+Dimethyl terephthalate;COC(=O)C1=CC=C(C=C1)C(=O)OC;Inactivo
+2,4-Dinitrophenol;C1=CC(=C(C=C1[N+](=O)[O-])[N+](=O)[O-])O;Inactivo
+2,4-Dinitrotoluene;CC1=C(C=C(C=C1)[N+](=O)[O-])[N+](=O)[O-];Inactivo
+17beta-Estradiol;CC12CCC3C(C1CCC2O)CCC4=C3C=CC(=C4)O;Inactivo
+4-Vinyl-1-cyclohexene diepoxide;C1CC2C(O2)CC1C3CO3;Inactivo
+Bis(2-ethylhexyl)hexanedioate;CCCCC(CC)COC(=O)CCCCC(=O)OCC(CC)CCCC;Inactivo
+Geranyl acetate;CC(=CCCC(=CCOC(=O)C)C)C;Inactivo
+Mestranol;CC12CCC3C(C1CCC2(C#C)O)CCC4=C3C=CC(=C4)OC;Activo
+Sodium nitrite;N(=O)[O-].[Na+];Inactivo
+5-Nitro-o-anisidine;COC1=C(C=C(C=C1)[N+](=O)[O-])N;Inactivo
+4,4-Oxydianiline;C1=CC(=CC=C1N)OC2=CC=C(C=C2)N;Inactivo
+4,4'-Oxydianiline;C1=CC(=CC=C1N)OC2=CC=C(C=C2)N;Inactivo
+Phenobarbital sodium;CCC1(C(=O)NC(=NC1=O)[O-])C2=CC=CC=C2.[Na+];Inactivo
+Phenolphthalein;C1=CC=C2C(=C1)C(=O)OC2(C3=CC=C(C=C3)O)C4=CC=C(C=C4)O;Activo
+1,2-Propylene glycol;CC(CO)O;Inactivo
+Safrole;C=CCC1=CC2=C(C=C1)OCO2;Inactivo
+Sulfasalazine;C1=CC=NC(=C1)NS(=O)(=O)C2=CC=C(C=C2)N=NC3=CC(=C(C=C3)O)C(=O)O;Inactivo
+Tetramethylthiuram monosulfide;CN(C)C(=S)SC(=S)N(C)C;Activo
+Thiabendazole;C1=CC=C2C(=C1)NC(=N2)C3=CSC=N3;Inactivo
+Thiotepa;C1CN1P(=S)(N2CC2)N3CC3;Inactivo
+Folpet;C1=CC=C2C(=C1)C(=O)N(C2=O)SC(Cl)(Cl)Cl;Activo
+Trichlorfon;COP(=O)(C(C(Cl)(Cl)Cl)O)OC;Inactivo
+Tris(2-ethylhexyl) phosphate;CCCCC(CC)COP(=O)(OCC(CC)CCCC)OCC(CC)CCCC;Inactivo
+Ziram;CN(C)C(=S)[S-].CN(C)C(=S)[S-].[Zn+2];Activo
+Heptanal;CCCCCCC=O;Inactivo
+4-Isopropylbenzyl alcohol;CC(C)C1=CC=C(C=C1)CO;Inactivo
+N,N,4-Trimethylaniline;CC1=CC=C(C=C1)N(C)C;Inactivo
+4-Nitrophenol;C1=CC(=CC=C1[N+](=O)[O-])O;Inactivo
+1,4-Dinitrobenzene;C1=CC(=CC=C1[N+](=O)[O-])[N+](=O)[O-];Inactivo
+Diethyl decanedioate;CCOC(=O)CCCCCCCCC(=O)OCC;Inactivo
+Benzophenone;C1=CC=C(C=C1)C(=O)C2=CC=CC=C2;Inactivo
+4-(Diethylamino)benzaldehyde;CCN(CC)C1=CC=C(C=C1)C=O;Inactivo
+1,2,4-Trichlorobenzene;C1=CC(=C(C=C1Cl)Cl)Cl;Inactivo
+4-Hydroxy-3-methoxybenzaldehyde;COC1=C(C=CC(=C1)C=O)O;Inactivo
+3-Methoxyphenol;COC1=CC=CC(=C1)O;Inactivo
+Disulfoton;CCOP(=S)(OCC)SCCSCC;Activo
+Dichloromethyl((perfluorohexyl)ethyl)silane;C[Si](CCC(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(Cl)Cl;Activo
+4,4-Bis(4-hydroxyphenyl)valeric acid;CC(CCC(=O)O)(C1=CC=C(C=C1)O)C2=CC=C(C=C2)O;Inactivo
+Folic acid;C1=CC(=CC=C1C(=O)NC(CCC(=O)O)C(=O)O)NCC2=CN=C3C(=N2)C(=O)NC(=N3)N;Inactivo
+Celecoxib;CC1=CC=C(C=C1)C2=CC(=NN2C3=CC=C(C=C3)S(=O)(=O)N)C(F)(F)F;Inactivo
+Simvastatin;CCC(C)(C)C(=O)OC1CC(C=C2C1C(C(C=C2)C)CCC3CC(CC(=O)O3)O)C;Activo
+D-Xylose;C1C(C(C(C(O1)O)O)O)O;Inactivo
+Isophorone diisocyanate;CC1(CC(CC(C1)(C)CN=C=O)N=C=O)C;Inactivo
+Anthracene;C1=CC=C2C=C3C=CC=CC3=CC2=C1;Inactivo
+Bentazone;CC(C)N1C(=O)C2=CC=CC=C2NS1(=O)=O;Activo
+Benzo(b)fluoranthene;C1=CC=C2C3=C4C(=CC=C3)C5=CC=CC=C5C4=CC2=C1;Inactivo
+Carboxin;CC1=C(SCCO1)C(=O)NC2=CC=CC=C2;Inactivo
+Chlorthal-dimethyl;COC(=O)C1=C(C(=C(C(=C1Cl)Cl)C(=O)OC)Cl)Cl;Inactivo
+Fenpropathrin;CC1(C(C1(C)C)C(=O)OC(C#N)C2=CC(=CC=C2)OC3=CC=CC=C3)C;Activo
+Dimethipin;CC1=C(S(=O)(=O)CCS1(=O)=O)C;Inactivo
+Nitrapyrin;C1=CC(=NC(=C1)Cl)C(Cl)(Cl)Cl;Inactivo
+Pirimiphos-methyl;CCN(CC)C1=NC(=CC(=N1)OP(=S)(OC)OC)C;Activo
+Triasulfuron;CC1=NC(=NC(=N1)OC)NC(=O)NS(=O)(=O)C2=CC=CC=C2OCCCl;Inactivo
+Maltol;CC1=C(C(=O)C=CO1)O;Inactivo
+Medroxyprogesterone acetate;CC1CC2C(CCC3(C2CCC3(C(=O)C)OC(=O)C)C)C4(C1=CC(=O)CC4)C;Inactivo
+2-Methyl-1,3-benzenediol;CC1=C(C=CC=C1O)O;Inactivo
+beta-Nitrostyrene;C1=CC=C(C=C1)C=C[N+](=O)[O-];Activo
+4-Nitrosophenol;C1=CC(=CC=C1N=O)O;Inactivo
+Triphenyl phosphite;C1=CC=C(C=C1)OP(OC2=CC=CC=C2)OC3=CC=CC=C3;Inactivo
+1-Undecanol;CCCCCCCCCCCO;Activo
+Diethylene glycol dibenzoate;C1=CC=C(C=C1)C(=O)OCCOCCOC(=O)C2=CC=CC=C2;Inactivo
+Hexadecane;CCCCCCCCCCCCCCCC;Inactivo
+1-Pentadecanol;CCCCCCCCCCCCCCCO;Inactivo
+Malic acid;C(C(C(=O)O)O)C(=O)O;Inactivo
+Trimethylolpropane triacrylate;CCC(COC(=O)C=C)(COC(=O)C=C)COC(=O)C=C;Activo
+Dipropylene glycol;CCC(O)OC(CC)O;Inactivo
+Dipropylene glycol monomethyl ether;CCC(O)OCCCOC;Inactivo
+3-Iodo-2-propynyl-N-butylcarbamate;CCCCNC(=O)OCC#CI;Activo
+1,2-Benzenedicarboxylic acid, di-C9-11-branched alkyl esters, C10-rich;CC(C)CCCCCCCOC(=O)C1=CC=CC=C1C(=O)OCCCCCCCC(C)CÂ Â ;Inactivo
+Triadimenol;CC(C)(C)C(C(N1C=NC=N1)OC2=CC=C(C=C2)Cl)O;Inactivo
+Triclopyr;C1=C(C(=NC(=C1Cl)Cl)OCC(=O)O)Cl;Inactivo
+Azoxystrobin;COC=C(C1=CC=CC=C1OC2=NC=NC(=C2)OC3=CC=CC=C3C#N)C(=O)OC;Inactivo
+Prallethrin;CC1=C(C(=O)CC1OC(=O)C2C(C2(C)C)C=C(C)C)CC#C;Activo
+Thiodicarb;CC(=NOC(=O)N(C)SN(C)C(=O)ON=C(C)SC)SC;Activo
+Cyproconazole;CC(C1CC1)C(CN2C=NC=N2)(C3=CC=C(C=C3)Cl)O;Inactivo
+(+-)-Diclofop-methyl;CC(C(=O)OC)OC1=CC=C(C=C1)OC2=C(C=C(C=C2)Cl)Cl;Activo
+Thidiazuron;C1=CC=C(C=C1)NC(=O)NC2=CN=NS2;Inactivo
+Triticonazole;CC1(CCC(=CC2=CC=C(C=C2)Cl)C1(CN3C=NC=N3)O)C;Inactivo
+17beta-Trenbolone;CC12C=CC3=C4CCC(=O)C=C4CCC3C1CCC2O;Inactivo
+Tebufenpyrad;CCC1=NN(C(=C1Cl)C(=O)NCC2=CC=C(C=C2)C(C)(C)C)C;Activo
+Icaridin;CCC(C)OC(=O)N1CCCCC1CCO;Inactivo
+Acetamiprid;CC(=NC#N)N(C)CC1=CN=C(C=C1)Cl;Inactivo
+Emamectin benzoate;CC[C@H](C)[C@@H]1[C@H](C=C[C@@]2(O1)C[C@@H]3C[C@H](O2)C/C=C(/[C@H]([C@H](/C=C/C=C/4\CO[C@H]5[C@@]4([C@@H](C=C([C@H]5O)C)C(=O)O3)O)C)O[C@H]6C[C@@H]([C@H]([C@@H](O6)C)O[C@H]7C[C@@H]([C@H]([C@@H](O7)C)NC)OC)OC)\C)C.C1=CC=C(C=C1)C(=O)OÂ Â ;Activo
+Mancozeb;C(CNC(=S)[S-])NC(=S)[S-].C(CNC(=S)[S-])NC(=S)[S-].[Mn+2].[Zn+2];Inactivo
+Tolclofos-methyl;CC1=CC(=C(C(=C1)Cl)OP(=S)(OC)OC)Cl;Inactivo
+Penoxsulam;COC1=CN=C(N2C1=NC(=N2)NS(=O)(=O)C3=C(C=CC=C3OCC(F)F)C(F)(F)F)OC;Activo
+Fluazifop-P-butyl;CCCCOC(=O)C(C)OC1=CC=C(C=C1)OC2=NC=C(C=C2)C(F)(F)F;Inactivo
+Isooctyl 2-mercaptoacetate;CC(C)CCCCCOC(=O)CSÂ ;Inactivo
+Calcium dodecylbenzene sulfonate;CCCCCCCCCCCCC1=CC=CC=C1S(=O)(=O)[O-].CCCCCCCCCCCCC1=CC=CC=C1S(=O)(=O)[O-].[Ca+2];Activo
+Diisodecyl hexanedioate;CC(C)CCCCCCCOC(=O)CCCCC(=O)OCCCCCCCC(C)CÂ Â ;Inactivo
+SSR 103800;C1CN2CCC1[C@@H](C2)[C@@H](C3=CC=CC=C3)NC(=O)C4=C(C=CC(=C4Cl)C(F)(F)F)Cl.ClÂ ;Activo
+C10-21 alkanesulfonic acids phenyl esters;CCCCCCCCCCCCCCCS(=O)(=O)OC1=CC=CC=C1;Inactivo
+Paclobutrazol;CC(C)(C)C(C(CC1=CC=C(C=C1)Cl)N2C=NC=N2)O;Inactivo
+Tannic acid;C1=C(C=C(C(=C1O)O)O)C(=O)OC2=CC(=CC(=C2O)O)C(=O)OCC3C(C(C(C(O3)OC(=O)C4=CC(=C(C(=C4)OC(=O)C5=CC(=C(C(=C5)O)O)O)O)O)OC(=O)C6=CC(=C(C(=C6)OC(=O)C7=CC(=C(C(=C7)O)O)O)O)O)OC(=O)C8=CC(=C(C(=C8)OC(=O)C9=CC(=C(C(=C9)O)O)O)O)O)OC(=O)C1=CC(=C(C(=C1)OC(=O)C1=CC(=C(C(=C1)O)O)O)O)O;Activo
+Tripropylene glycol monomethyl ether;CC(CO)OCC(C)OCC(C)OCÂ Â ;Inactivo
+N,NÃ¢ÂÂ²-Disalicylidene-1,2-diaminopropane;CC(CN=CC1=CC=CC=C1O)N=CC2=CC=CC=C2O;Inactivo
+1,Ã¢ÂÂ2-Ã¢ÂÂBenzenediol;C1=CC=C(C(=C1)O)O;Activo
+Cresyl diphenyl phosphate;CC1=CC=C(C=C1)OP(=O)(OC2=CC=CC=C2)OC3=CC=CC=C3;Activo
+Isodecyl diphenyl phosphate;CC(C)CCCCCCCOP(=O)(OC1=CC=CC=C1)OC2=CC=CC=C2;Activo
+Sodium xylenesulfonate;CC1=C(C=C(C=C1)S(=O)(=O)[O-])C.[Na+]Â ;Inactivo
+Methylcyclopentadiene dimer;CC1=CC2C3CC(C2C1)C=C3C;Inactivo
+Dinocap;C/C=C/C(=O)OC1=C(C=C(C=C1[N+](=O)[O-])[N+](=O)[O-])CCCCCC(C)C;Activo
+Tris(methylphenyl) phosphate;CC1=CC=C(C=C1)OP(=O)(OC2=CC=C(C=C2)C)OC3=CC=C(C=C3)CÂ Â ;Activo
+Diisononyl phthalate;CC(C)CCCCCCOC(=O)C1=CC=CC=C1C(=O)OCCCCCCC(C)CÂ ;Inactivo
+Diisodecyl phthalate;CC(C)CCCCCCOC(=O)C1=CC=CC=C1C(=O)OCCCCCCC(C)CÂ ;Inactivo
+Triphenyl phosphates isopropylated;CC(C)C1=CC=C(C=C1)OP(=O)(OC2=CC=C(C=C2)C(C)C)OC3=CC=C(C=C3)C(C)CÂ ;Activo
+Dodecylbenzene sulfonate triethanolamine(1:1);CCCCCCCCCCCCC1=CC(=CC=C1)S(=O)(=O)O.C(CO)N(CCO)CCO;Activo
+Diisononyl adipate;CC(C)CCCCCCOC(=O)CCCCC(=O)OCCCCCCC(C)CÂ ;Inactivo
+Triisononyl trimellitate;CC(C)CCCCCCOC(=O)C1=CC(=C(C=C1)C(=O)OCCCCCCC(C)C)C(=O)OCCCCCCC(C)C;Inactivo
+4-Nonylphenol, branched;CC(C)CCCCCCC1=CC=C(C=C1)O;Activo
+tert-Butylphenyl diphenyl phosphate;CC(C)(C)C1=CC=CC=C1OP(=O)(OC2=CC=CC=C2)OC3=CC=CC=C3Â Â ;Activo
+Dipropylene glycol, dibenzoate;CC(COCC(C)OC(=O)C1=CC=CC=C1)OC(=O)C2=CC=CC=C2;Inactivo
+Dodecylbenzenesulfonic acid;CCCCCCCCCC(CC)C1=CC=C(C=C1)S(=O)(=O)OÂ ;Activo
+Adipic acid, polypropyleneglycol, laurate;CCCCCCCCCCCC(=O)OCC(C)OC(=O)CCCCC(=O)OÂ ;Inactivo
+Butylated hydroxyanisole;CC(C)(C)C1=C(C=CC(=C1)OC)O;Inactivo
+Isodecyl acrylate;CC(C)CCCCCCCOC(=O)C=C;Activo
+Diisooctyl adipate;CC(C)CCCCCOC(=O)CCCCC(=O)OCCCCCC(C)C;Inactivo
+Tripropylene glycol;CC(CO)OCC(C)OCC(C)OÂ Â ;Inactivo
+Dimethylaniline;CC1=CC(=C(C=C1)N)C.CC1=CC(=C(C=C1)C)N.CC1=C(C(=CC=C1)N)C.CC1=C(C(=CC=C1)C)N.CC1=C(C=C(C=C1)N)C.CC1=CC(=CC(=C1)N)CÂ ;Inactivo
+3-(Dodecenyl)dihydro-2,5-furandione;CCCCCCCCCC/C=C/C1CC(=O)OC1=OÂ ;Inactivo
+Isooctyl acrylate;CC(C)CCCCCOC(=O)C=C;Inactivo
+Vinyl neodecanoate;CC(C)(C)CCCCCC(=O)OC=CÂ ;Activo
+Isocyclocitral;CC1C=C(CC(C1C)C=O)C;Inactivo
+Diisononyl cyclohexane-1,2-dicarboxylate;CC(C)CCCCCCOC(=O)C1CCCCC1C(=O)OCCCCCCC(C)C;Inactivo
+1-Phenyl-3-methyl-5-pyrazolone;CC1=NN(C(=O)C1)C2=CC=CC=C2;Inactivo
+Trixylyl phosphate;CC1=CC(=CC(=C1)OP(=O)(OC2=CC(=CC(=C2)C)C)OC3=CC(=CC(=C3)C)C)CÂ Â ;Activo
+1,1Ã¢ÂÂ²,1Ã¢ÂÂ²Ã¢ÂÂ²,1Ã¢ÂÂ²Ã¢ÂÂ²Ã¢ÂÂ²-(Ethylenedinitrilo)tetrakis(2-propanol);CC(CN(CCN(CC(C)O)CC(C)O)CC(C)O)O;Inactivo
+Metiram;C(CNC(=S)[S-])NC(=S)[S-].[Zn+2]Â ;Activo

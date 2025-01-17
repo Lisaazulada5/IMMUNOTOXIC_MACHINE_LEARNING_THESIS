@@ -1,0 +1,52 @@
+INPUT;SMILES;Clasificacion_ATS;LogP
+Tri-n-octyl trimellitate;CCCCCCCCOC(=O)C1=CC=C(C(=O)OCCCCCCCC)C(=C1)C(=O)OCCCCCCCC;Inactivo;9.238500000000002
+Sodium benzoate;[Na+].[O-]C(=O)C1=CC=CC=C1;Inactivo;-2.945899999999998
+Retinol palmitate;CCCCCCCCCCCCCCCC(=O)OC\C=C(/C)\C=C\C=C(/C)\C=C\C1=C(C)CCCC1(C)C;Activo;11.542499999999986
+C.I. Acid Yellow 23;C1=CC(=CC=C1N=NC2=C(NN(C2=O)C3=CC=C(C=C3)S(=O)(=O)[O-])C(=O)[O-])S(=O)(=O)[O-].[Na+].[Na+].[Na+] ;Inactivo;-9.235300000000006
+D-Mannitol;OC[C@@H](O)[C@@H](O)[C@H](O)[C@H](O)CO;Inactivo;-3.5854000000000004
+Glycidyl trimethylammonium chloride;[Cl-].C[N+](C)(C)CC1CO1;Inactivo;-2.904599999999996
+YM 218;OC(=O)\C=C\C(O)=O.CC1=C(C=CO1)C(=O)NC1=CC=C(C=C1)C(=O)N1CCC(F)(F)\C(=C/C(=O)N2CCC(CC2)N2CCCCC2)C2=C1C=CC=C2.CC1=C(C=CO1)C(=O)NC1=CC=C(C=C1)C(=O)N1CCC(F)(F)\C(=C/C(=O)N2CCC(CC2)N2CCCCC2)C2=C1C=CC=C2;Inactivo;12.484639999999985
+Sucrose;OC[C@H]1O[C@@](CO)(O[C@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)[C@@H](O)[C@@H]1O;Inactivo;-5.395599999999993
+D&C Red 27;OC1=C(Br)C2=C(C=C1Br)C1(OC(=O)C3=C1C(Cl)=C(Cl)C(Cl)=C3Cl)C1=C(O2)C(Br)=C(O)C(Br)=C1;Activo;9.329399999999998
+Metam-sodium hydrate;O.O.O.[Na+].CNC([S-])=S;Activo;-5.4324999999999966
+4,4'-Dioctyldiphenylamine;CCCCCCCCC1=CC=C(NC2=CC=C(CCCCCCCC)C=C2)C=C1;Inactivo;9.236199999999998
+Sodium (2-pyridylthio)-N-oxide;[Na+].[O-][N+]1=C([S-])C=CC=C1;Activo;-2.770199999999999
+Dexamethasone sodium phosphate;[Na+].[Na+].[H][C@@]12C[C@@H](C)[C@](O)(C(=O)COP([O-])([O-])=O)[C@@]1(C)C[C@H](O)[C@@]1(F)[C@@]2([H])CCC2=CC(=O)C=C[C@]12C;Activo;-5.243299999999998
+Perfluorotetradecanoic acid;OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F;Inactivo;8.256900000000005
+Fulvestrant;[H][C@@]12CC[C@H](O)[C@@]1(C)CC[C@]1([H])C3=C(C[C@@H](CCCCCCCCCS(=O)CCCC(F)(F)C(F)(F)F)[C@@]21[H])C=C(O)C=C3;Inactivo;8.682600000000004
+Oxytetracycline dihydrate;O.O.CN(C)[C@H]1[C@@H]2[C@@H](O)[C@H]3C(=C(O)[C@]2(O)C(=O)C(C(N)=O)=C1O)C(=O)C1=C(C=CC=C1O)[C@@]3(C)O;Inactivo;-2.892999999999995
+Allura Red C.I.16035;[Na+].[Na+].COC1=C(C=C(C)C(=C1)S([O-])(=O)=O)N=NC1=C2C=CC(=CC2=CC=C1O)S([O-])(=O)=O;Inactivo;-2.9059799999999947
+Tris(2,3-epoxypropyl)isocyanurate;O=C1N(CC2CO2)C(=O)N(CC2CO2)C(=O)N1CC1CO1;Activo;-2.6318999999999972
+Potassium nitrate;[K+].[O-][N+]([O-])=O;Inactivo;-3.2350999999999996
+Tetrabutyl ethylidenebisphenol;CC(C1=C(O)C(=CC(=C1)C(C)(C)C)C(C)(C)C)C1=C(O)C(=CC(=C1)C(C)(C)C)C(C)(C)C;Inactivo;8.439600000000006
+MK-547;[Na+].[Na+].CCCCC1=NC2=C(C=C1)[C@@H]([C@H]([C@@H]2C1=CC=C(OC)C=C1C[C@H](C)C([O-])=O)C([O-])=O)C1=CC2=C(OCO2)C=C1;Inactivo;-3.25849999999999
+Sodium erythorbate;[Na+].OC[C@@H](O)[C@H]1OC(=O)C(O)=C1[O-];Inactivo;-5.601099999999997
+Mercuric chloride;[Cl-].[Cl-].[Hg++];Activo;-5.9945
+Antioxidant 1098;CC(C)(C)C1=CC(CCC(=O)NCCCCCCNC(=O)CCC2=CC(=C(O)C(=C2)C(C)(C)C)C(C)(C)C)=CC(=C1O)C(C)(C)C;Inactivo;8.646000000000008
+Cadmium chloride;[Cl-].[Cl-].[Cd++];Activo;-5.9945
+FD&C Yellow 6;[Na+].[Na+].OC1=C(N=NC2=CC=C(C=C2)S([O-])(=O)=O)C2=C(C=C1)C=C(C=C2)S([O-])(=O)=O;Inactivo;-3.2229999999999963
+Sodium dimethyldithiocarbamate;[Na+].CN(C)C([S-])=S;Activo;-2.6161999999999983
+Sodium trichloroacetate;[Na+].[O-]C(=O)C(Cl)(Cl)Cl;Inactivo;-2.8895
+UK-337312;CS([O-])(=O)=O.CN(C[C@@H](CC[N+]12CCC(CC1)(CC2)C1CCCCC1)C1=CC(Cl)=C(Cl)C=C1)C(=O)C1=CC(=CC(=C1)C(F)(F)F)C(F)(F)F;Activo;9.019300000000001
+SR146131 trifluoroacetate (1:1);OC(=O)C(F)(F)F.COC1=CC(C2=C(CCC3CCCCC3)SC(NC(=O)C3=CC4=CC(C)=CC(C)=C4N3CC(O)=O)=N2)=C(OC)C=C1Cl;Activo;8.535340000000003
+FR145237;CC1=CC2=C(OC(CN(CC3=CC=CC=C3)C(=O)NC3=C(F)C=C(F)C=C3F)=C2C2=CC=C(Cl)C=C2)C=C1;Inactivo;8.71322
+Sodium saccharin hydrate;O.[Na+].O=C1[N-]S(=O)(=O)C2=CC=CC=C12;Inactivo;-2.9178999999999986
+Sodium dehydroacetate;[Na+].C\C([O-])=C1/C(=O)OC(C)=CC1=O;Inactivo;-3.3455999999999975
+Bis(2-ethylhexyl) tetrabromophthalate;CCCCC(CC)COC(=O)C1=C(Br)C(Br)=C(Br)C(Br)=C1C(=O)OCC(CC)CCCC;Inactivo;9.482999999999997
+alpha-Cyclodextrin;OC[C@H]1O[C@@H]2O[C@@H]3[C@@H](CO)O[C@H](O[C@@H]4[C@@H](CO)O[C@H](O[C@@H]5[C@@H](CO)O[C@H](O[C@@H]6[C@@H](CO)O[C@H](O[C@@H]7[C@@H](CO)O[C@H](O[C@H]1[C@H](O)[C@H]2O)[C@H](O)[C@H]7O)[C@H](O)[C@H]6O)[C@H](O)[C@H]5O)[C@H](O)[C@H]4O)[C@H](O)[C@H]3O;Inactivo;-13.054800000000023
+6-Diazo-5,6-dihydro-5-oxo1-naphthalenesulfonic acid sodium salt;[Na+].[O-]S(=O)(=O)C1=CC=CC2=C1C=CC(=[N+]=[N-])C2=O;Inactivo;-2.5249999999999986
+CP-532623;CC[C@@H]1C[C@H](N(CC2=CC(=CC(=C2)C(F)(F)F)C(F)(F)F)C(C)=O)C2=C(C=CC(=C2)C(F)(F)F)N1C(=O)OC(C)C;Inactivo;8.366500000000004
+Sodium chlorite;[Na+].[O-][Cl]=O;Inactivo;-5.3740000000000006
+Diquat-d4 dibromide;[Br-].[Br-].[2H]C1([2H])[N+]2=C(C=CC=C2)C2=[N+](C=CC=C2)C1([2H])[2H];Activo;-5.049799999999995
+Tris(2-ethylhexyl) trimellitate;CCCCC(CC)COC(=O)C1=CC=C(C(=O)OCC(CC)CCCC)C(=C1)C(=O)OCC(CC)CCCC;Inactivo;8.806200000000006
+Prohexadione-calcium;[Ca++].[Ca++].CCC(=O)[C-]1C(=O)CC(CC1=O)C([O-])=O.CCC(=O)[C-]1C(=O)CC(CC1=O)C([O-])=O;Inactivo;-3.0854199999999974
+2-Ethylhexyl octadecanoate;CCCCCCCCCCCCCCCCCC(=O)OCC(CC)CCCC;Inactivo;9.007500000000002
+Sodium L-ascorbate;C(C(C1C(=C(C(=O)O1)O)[O-])O)O.[Na+];Inactivo;-5.601099999999998
+Sodium nitrite;N(=O)[O-].[Na+];Inactivo;-2.7454
+Phenobarbital sodium;CCC1(C(=O)NC(=NC1=O)[O-])C2=CC=CC=C2.[Na+];Inactivo;-3.288899999999998
+Tris(2-ethylhexyl) phosphate;CCCCC(CC)COP(=O)(OCC(CC)CCCC)OCC(CC)CCCC;Inactivo;8.793500000000003
+D-Xylose;C1C(C(C(C(O1)O)O)O)O;Inactivo;-2.5823
+Calcium dodecylbenzene sulfonate;CCCCCCCCCCCCC1=CC=CC=C1S(=O)(=O)[O-].CCCCCCCCCCCCC1=CC=CC=C1S(=O)(=O)[O-].[Ca+2];Activo;9.7274
+Triphenyl phosphates isopropylated;CC(C)C1=CC=C(C=C1)OP(=O)(OC2=CC=C(C=C2)C(C)C)OC3=CC=C(C=C3)C(C)CÂ ;Activo;8.701700000000002
+Triisononyl trimellitate;CC(C)CCCCCCOC(=O)C1=CC(=C(C=C1)C(=O)OCCCCCCC(C)C)C(=O)OCCCCCCC(C)C;Inactivo;9.976499999999996
+Dimethylaniline;CC1=CC(=C(C=C1)N)C.CC1=CC(=C(C=C1)C)N.CC1=C(C(=CC=C1)N)C.CC1=C(C(=CC=C1)C)N.CC1=C(C=C(C=C1)N)C.CC1=CC(=CC(=C1)N)CÂ ;Inactivo;11.313839999999995
