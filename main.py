@@ -457,31 +457,576 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
-#sns.boxplot(data=df, x='Clasificacion_ATS', y='LogP', palette='pastel')
-#plt.title("Distribución de LogP por Clasificación ATS")
-#plt.show()
+"""
+Gráfica de violín
+"""
+
+from modules.procesamiento.graficas import graficar_y_guardar_violinplot
+output_path = 'data/graficas/violinplot_LogP_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_violinplot(df, 'Clasificacion_ATS', 'LogP', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+Grafico de histograma
+"""
+from modules.procesamiento.graficas import graficar_y_guardar_histograma
+
+output_path = 'data/graficas/histogramaplot_LogP_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_histograma(df, 'Clasificacion_ATS', 'LogP', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+CALCULO DE PESO MOLECULAR
+"""
+from modules.procesamiento.calculo_descriptores_moleculares import calcular_pesos_moleculares
+# Calcular los pesos moleculares y actualizar el DataFrame
+df = calcular_pesos_moleculares(df, 'SMILES')
+
+"""
+Análisis descriptivo
+"""
+describe = df['Peso_Molecular'].describe()
+print(describe)
+
+"""
+Encontrando a qué SMILES corresponde el valor minimo
+"""
+fila_minima = df.loc[df['Peso_Molecular'].idxmin()]
+
+# Extrae el SMILES y el valor más bajo de LogP
+smiles_min = fila_minima['INPUT']
+Peso_Molecular_min = fila_minima['Peso_Molecular']
+
+print(f"El valor más bajo de Peso_Molecular es {Peso_Molecular_min}, correspondiente a la sustancia: {smiles_min}")
+
+"""
+Encuentra a qué valor corresponde el valor máximo de Peso_Molecular
+"""
+
+# Encuentra la fila con el valor más alto de LogP
+fila_maxima = df.loc[df['Peso_Molecular'].idxmax()]
+
+# Extrae el SMILES y el valor más alto de LogP
+smiles_max = fila_maxima['INPUT']
+Peso_Molecular_max = fila_maxima['Peso_Molecular']
+
+print(f"El valor más alto de Peso_Molecular es {Peso_Molecular_max}, correspondiente a la sustancia: {smiles_max}")
+
+"""
+Graficamos esta variable
+"""
+
+output_path = 'data/graficas/univariado_peso_molecular.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_variable_continua(df, 'Peso_Molecular', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+DETECTANDO LOS OUTLIERS
+"""
+
+outliers = detectar_outliers(df, 'Peso_Molecular')
+outliers = pd.DataFrame(outliers)
+output_path = 'data/outliers_Peso_Molecular.csv'
+if not os.path.exists(output_path):
+    guardar_csv(outliers, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+ANALISIS DE PESO MOLECULAR Y CLASIFICACIÓN ATS
+"""
+
+# Estadísticas descriptivas agrupadas
+estadisticas = df.groupby('Clasificacion_ATS')['Peso_Molecular'].describe()
+#guardar_csv(estadisticas, 'data/estadisticas_Peso_Molecular.csv')
+print(estadisticas)
+
+"""
+Boxplot: Una gráfica de cajas te permite comparar visualmente la distribución de LogP entre los dos grupos.
+"""
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+from modules.procesamiento.graficas import graficar_y_guardar_boxplot
+output_path = 'data/graficas/boxplot_peso_molecular_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_boxplot(df, 'Clasificacion_ATS', 'Peso_Molecular', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+Gráfica de violín
+"""
+
+from modules.procesamiento.graficas import graficar_y_guardar_violinplot
+output_path = 'data/graficas/violinplot_Peso_Molecular_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_violinplot(df, 'Clasificacion_ATS', 'Peso_Molecular', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+Grafico de histograma
+"""
+output_path = 'data/graficas/histogramaplot_Peso_Molecular_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_histograma(df, 'Clasificacion_ATS', 'Peso_Molecular', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+CALCULO DE NUMERO DE ACEPTORES DE HIDRÍGENO
+"""
+
+from modules.procesamiento.calculo_descriptores_moleculares import calcular_numero_aceptores
+
+calcular_numero_aceptores(df, 'SMILES')
+"""
+Análisis descriptivo
+"""
+describe = df['NumHAcceptors'].describe()
+print(describe)
+
+"""
+Encontrando a qué SMILES corresponde el valor minimo
+"""
+fila_minima = df.loc[df['NumHAcceptors'].idxmin()]
+
+# Extrae el SMILES y el valor más bajo de LogP
+smiles_min = fila_minima['INPUT']
+logp_min = fila_minima['NumHAcceptors']
+
+#guardar_csv(df, 'data/NumHAcceptors.csv')
+
+print(f"El valor más bajo de NumHAcceptors es {logp_min}, correspondiente a la sustancia: {smiles_min}")
+
+"""
+Graficamos esta variable
+"""
+
+output_path = 'data/graficas/univariado_NumHAcceptors.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_variable_continua(df, 'NumHAcceptors', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 
+"""
+DETECTANDO LOS OUTLIERS
+"""
+outliers = detectar_outliers(df, 'NumHAcceptors')
+outliers = pd.DataFrame(outliers)
+output_path = 'data/outliers_NumHAcceptors.csv'
+if not os.path.exists(output_path):
+    guardar_csv(outliers, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+grafico de barras para una variable discreta
+"""
+from modules.procesamiento.graficas import graficar_y_guardar_barras
+
+output_path = 'data/graficas/NumHAcceptors_bar.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_barras(df,'NumHAcceptors', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+# Estadísticas descriptivas agrupadas
+estadisticas = df.groupby('Clasificacion_ATS')['NumHAcceptors'].describe()
+#guardar_csv(estadisticas, 'data/estadisticas_NumHAcceptors.csv')
+print(estadisticas)
+
+"""
+Boxplot: Una gráfica de cajas te permite comparar visualmente la distribución de NumHAcceptors entre los dos grupos.
+"""
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+from modules.procesamiento.graficas import graficar_y_guardar_boxplot
+output_path = 'data/graficas/boxplot_NumHAcceptors_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_boxplot(df, 'Clasificacion_ATS', 'NumHAcceptors', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+Gráfica de violín
+"""
+from modules.procesamiento.graficas import graficar_y_guardar_violinplot
+output_path = 'data/graficas/violinplot_NumHAcceptors_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_violinplot(df, 'Clasificacion_ATS', 'NumHAcceptors', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+Grafico de histograma
+"""
+output_path = 'data/graficas/histogramaplot_NumHAcceptors_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_histograma(df, 'Clasificacion_ATS', 'NumHAcceptors', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+calculo donadores de hidrógeno
+"""
+
+from modules.procesamiento.calculo_descriptores_moleculares import calcular_numero_donadores
+
+calcular_numero_donadores(df, 'SMILES')
+#guardar_csv(df, 'data/donors.csv')
+
+"""
+Análisis descriptivo
+"""
+describe = df['NumHDonors'].describe()
+print(describe)
+
+"""
+Encontrando a qué SMILES corresponde el valor minimo
+"""
+fila_minima = df.loc[df['NumHDonors'].idxmin()]
+
+# Extrae el SMILES y el valor más bajo de LogP
+smiles_min = fila_minima['INPUT']
+logp_min = fila_minima['NumHDonors']
+
+#guardar_csv(df, 'data/NumHAcceptors.csv')
+
+print(f"El valor más bajo de NumHDonors es {logp_min}, correspondiente a la sustancia: {smiles_min}")
 
 
+"""
+Graficamos esta variable
+"""
+
+output_path = 'data/graficas/univariado_NumHDonors.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_variable_continua(df, 'NumHDonors', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+grafico de barras para una variable discreta
+"""
+from modules.procesamiento.graficas import graficar_y_guardar_barras
+
+output_path = 'data/graficas/NumHDonors_bar.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_barras(df,'NumHDonors', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 
+"""
+DETECTANDO LOS OUTLIERS
+"""
+outliers = detectar_outliers(df, 'NumHDonors')
+outliers = pd.DataFrame(outliers)
+output_path = 'data/outliers_NumHDonors.csv'
+if not os.path.exists(output_path):
+    guardar_csv(outliers, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 
+# Estadísticas descriptivas agrupadas
+estadisticas = df.groupby('Clasificacion_ATS')['NumHDonors'].describe()
+guardar_csv(estadisticas, 'data/estadisticas_NumHDonors.csv')
+print(estadisticas)
 
 
+"""
+Boxplot: Una gráfica de cajas te permite comparar visualmente la distribución de NumHDonors entre los dos grupos.
+"""
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+from modules.procesamiento.graficas import graficar_y_guardar_boxplot
+output_path = 'data/graficas/boxplot_NumHDonors_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_boxplot(df, 'Clasificacion_ATS', 'NumHDonors', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+Gráfica de violín
+"""
+from modules.procesamiento.graficas import graficar_y_guardar_violinplot
+output_path = 'data/graficas/violinplot_NumHDonors_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_violinplot(df, 'Clasificacion_ATS', 'NumHDonors', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""  
+Grafico de histograma
+"""
+output_path = 'data/graficas/histogramaplot_NumHDonors_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_histograma(df, 'Clasificacion_ATS', 'NumHDonors', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+CALCULO DE ENLACES DOBLES
+"""
+
+from modules.procesamiento.calculo_descriptores_moleculares import calcular_enlaces_dobles
+
+calcular_enlaces_dobles(df, 'SMILES')
+print(df)
+
+"""
+Análisis descriptivo
+"""
+describe = df['Dobles_Enlaces'].describe()
+print(describe)
+
+"""
+Encontrando a qué SMILES corresponde el valor minimo
+"""
+fila_minima = df.loc[df['Dobles_Enlaces'].idxmin()]
+
+# Extrae el SMILES y el valor más bajo de LogP
+smiles_min = fila_minima['INPUT']
+Dobles_Enlaces = fila_minima['Dobles_Enlaces']
+
+guardar_csv(df, 'data/Dobles_Enlaces.csv')
+
+print(f"El valor más bajo de Dobles_Enlaces es {Dobles_Enlaces}, correspondiente a la sustancia: {smiles_min}")
 
 
+"""
+Graficamos esta variable
+"""
+
+output_path = 'data/graficas/univariado_Dobles_Enlaces.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_variable_continua(df, 'Dobles_Enlaces', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+grafico de barras para una variable discreta
+"""
+from modules.procesamiento.graficas import graficar_y_guardar_barras
+
+output_path = 'data/graficas/Dobles_Enlaces_bar.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_barras(df,'Dobles_Enlaces', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+# Estadísticas descriptivas agrupadas
+estadisticas = df.groupby('Clasificacion_ATS')['Dobles_Enlaces'].describe()
+#guardar_csv(estadisticas, 'data/estadisticas_Dobles_Enlaces.csv')
+print(estadisticas)
 
 
+"""
+Boxplot: Una gráfica de cajas te permite comparar visualmente la distribución de NumHDonors entre los dos grupos.
+"""
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+from modules.procesamiento.graficas import graficar_y_guardar_boxplot
+output_path = 'data/graficas/boxplot_Dobles_Enlaces_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_boxplot(df, 'Clasificacion_ATS', 'Dobles_Enlaces', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+Gráfica de violín
+"""
+from modules.procesamiento.graficas import graficar_y_guardar_violinplot
+output_path = 'data/graficas/violinplot_Dobles_Enlaces_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_violinplot(df, 'Clasificacion_ATS', 'Dobles_Enlaces', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""  
+Grafico de histograma
+"""
+output_path = 'data/graficas/histogramaplot_Dobles_Enlaces_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_histograma(df, 'Clasificacion_ATS', 'Dobles_Enlaces', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+NUMERO DE ENLACES TRIPLES
+"""
 
 
+from modules.procesamiento.calculo_descriptores_moleculares import calcular_enlaces_triples
+
+calcular_enlaces_triples(df, 'SMILES')
+print(df)
+
+"""
+Análisis descriptivo
+"""
+describe = df['Triples_Enlaces'].describe()
+print(describe)
+
+"""
+Encontrando a qué SMILES corresponde el valor minimo
+"""
+fila_minima = df.loc[df['Triples_Enlaces'].idxmin()]
+
+# Extrae el SMILES y el valor más bajo de LogP
+smiles_min = fila_minima['INPUT']
+Triples_Enlaces = fila_minima['Triples_Enlaces']
+
+#guardar_csv(df, 'data/Triples_Enlaces.csv')
+
+print(f"El valor más bajo de Triples_Enlaces es {Triples_Enlaces}, correspondiente a la sustancia: {smiles_min}")
 
 
+"""
+Graficamos esta variable
+"""
+
+output_path = 'data/graficas/univariado_triples_Enlaces.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_variable_continua(df, 'Triples_Enlaces', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+grafico de barras para una variable discreta
+"""
+from modules.procesamiento.graficas import graficar_y_guardar_barras
+
+output_path = 'data/graficas/Triples_Enlaces_bar.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_barras(df,'Triples_Enlaces', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+# Estadísticas descriptivas agrupadas
+estadisticas = df.groupby('Clasificacion_ATS')['Triples_Enlaces'].describe()
+#guardar_csv(estadisticas, 'data/estadisticas_Triples_Enlaces.csv')
+print(estadisticas)
 
 
+"""
+Boxplot: Una gráfica de cajas te permite comparar visualmente la distribución de Triples_Enlaces entre los dos grupos.
+"""
+import seaborn as sns
+import matplotlib.pyplot as plt
 
+from modules.procesamiento.graficas import graficar_y_guardar_boxplot
+output_path = 'data/graficas/boxplot_Triples_Enlaces_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_boxplot(df, 'Clasificacion_ATS', 'Triples_Enlaces', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
+"""
+HIDROXILOS
+"""
 
+from modules.procesamiento.calculo_descriptores_moleculares import calcular_Numero_hidroxilos
 
+calcular_Numero_hidroxilos(df, 'SMILES')
+print(df)
 
+"""
+Análisis descriptivo
+"""
+describe = df['Numero_hidroxilos'].describe()
+print(describe)
+#guardar_csv(df, 'data/Numero_hidroxilos.csv')
+
+"""
+grafico de barras para una variable discreta
+"""
+from modules.procesamiento.graficas import graficar_y_guardar_barras
+
+output_path = 'data/graficas/Numero_hidroxilos_bar.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_barras(df,'Numero_hidroxilos', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+Graficamos esta variable
+"""
+
+output_path = 'data/graficas/univariado_Numero_hidroxilos.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_variable_continua(df, 'Numero_hidroxilos', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+# Estadísticas descriptivas agrupadas
+estadisticas = df.groupby('Clasificacion_ATS')['Numero_hidroxilos'].describe()
+#guardar_csv(estadisticas, 'data/estadisticas_Numero_hidroxilos.csv')
+print(estadisticas)
+
+"""
+numero de carboxilos
+"""
+from modules.procesamiento.calculo_descriptores_moleculares import calcular_Numero_carboxilos
+calcular_Numero_carboxilos(df, 'SMILES')
+
+"""
+Análisis descriptivo
+"""
+describe = df['Numero_carboxilos'].describe()
+print(describe)
+guardar_csv(df, 'data/Numero_carboxilos.csv')
+
+"""
+grafico de barras para una variable discreta
+"""
+from modules.procesamiento.graficas import graficar_y_guardar_barras
+
+output_path = 'data/graficas/Numero_carboxilos_bar.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_barras(df,'Numero_carboxilos', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
