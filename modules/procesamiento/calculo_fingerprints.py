@@ -95,3 +95,8 @@ def calcular_ecfp(df, columna_smiles, radio=3, nBits=1024):
     df['ECFP'] = ecfp_list
 
     return df
+
+def convertir_ECFP_a_numpy(df, columna_ECFP):
+    # Aplica la función de conversión a cada elemento de la columna 'columna_MACCS'
+    df['ECFP_array'] = df[columna_ECFP].apply(convertir_a_numpy)
+    return df

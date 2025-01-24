@@ -1072,13 +1072,58 @@ CALCULO DE MORGAN FINGERPRINTS
 from modules.procesamiento.calculo_fingerprints import calcular_ecfp
 
 calcular_ecfp(df, 'SMILES')
-guardar_csv(df, 'data/morgan_fingerprints.csv')
+#guardar_csv(df, 'data/morgan_fingerprints.csv')
 print(df)
 
 """
 Convertir ECFP a numpy 
 """
+from modules.procesamiento.calculo_fingerprints import convertir_ECFP_a_numpy
 
-df = convertir_MACCS_a_numpy(df, 'ECFP')
-guardar_csv(df, 'data/ECFP_array.csv')
-print(df)
+df = convertir_ECFP_a_numpy(df, 'ECFP')
+#guardar_csv(df, 'data/ECFP_array.csv')
+#print(df['ECFP'][0])
+
+"""
+visualizar una molecula 
+"""
+from rdkit import Chem
+from rdkit.Chem import AllChem
+from rdkit.Chem import Draw
+
+
+
+from rdkit.Chem import Draw
+
+from rdkit.Chem import Draw
+from rdkit import Chem
+mol = AllChem.MolFromSmiles(df['SMILES'][0])
+#fingerprint = df['ECFP'][0]
+# Generar bitInfo para almacenar la información de los bits activados
+bit_info = {}
+fingerprint = AllChem.GetMorganFingerprintAsBitVect(mol, radius=3, bitInfo=bit_info)
+list_bits = [(mol, bit, bit_info) for bit in fingerprint.GetOnBits()]
+legends = [str(bit) for bit in fingerprint.GetOnBits()]
+#img = Draw.DrawMorganBits(list_bits, molsPerRow=4, legends=legends)
+#img.show()
+
+img = Draw.DrawMorganBits(list_bits, molsPerRow=4,legends=legends)
+
+"""
+CODIGO PARA VISUALIZAR LOS FINGERPRINTS
+"""
+from svglib.svglib import svg2rlg
+from reportlab.graphics import renderPM
+from PIL import Image
+
+# Suponiendo que 'img' es el objeto SVG que generaste
+svg_file_path = 'output.svg'  # La ruta donde guardas el SVG
+png_file_path = 'output.png'  # La ruta donde guardas el PNG
+
+# Guarda la imagen SVG
+with open(svg_file_path, 'w') as f:
+    f.write(str(img))
+
+# Cargar el archivo SVG y convertirlo a un gráfico que pueda manejar ReportLab
+#drawing = svg2rlg(svg_file_path)
+
