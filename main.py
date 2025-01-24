@@ -1017,7 +1017,7 @@ Análisis descriptivo
 """
 describe = df['Numero_carboxilos'].describe()
 print(describe)
-guardar_csv(df, 'data/Numero_carboxilos.csv')
+#guardar_csv(df, 'data/Numero_carboxilos.csv')
 
 """
 grafico de barras para una variable discreta
@@ -1030,3 +1030,55 @@ if not os.path.exists(output_path):
     print(f"Archivo generado: {output_path}")
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+
+"""
+Graficamos esta variable
+"""
+
+output_path = 'data/graficas/univariado_Numero_carboxilos.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_variable_continua(df, 'Numero_carboxilos', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+# Estadísticas descriptivas agrupadas
+estadisticas = df.groupby('Clasificacion_ATS')['Numero_carboxilos'].describe()
+#guardar_csv(estadisticas, 'data/estadisticas_Numero_carboxilos.csv')
+print(estadisticas)
+
+
+"""Calcula el fingerprint de MACCS para una molécula en formato SMILES."""
+from modules.procesamiento.calculo_fingerprints import calcular_fingerprints_maccs
+
+calcular_fingerprints_maccs(df, 'SMILES')
+#guardar_csv(df, 'data/MACCS_KEYS.csv')
+#print(df)
+
+"""
+Convertir MACCS a numpy 
+"""
+
+from modules.procesamiento.calculo_fingerprints import convertir_MACCS_a_numpy
+
+df = convertir_MACCS_a_numpy(df, 'MACCS')
+#guardar_csv(df, 'data/MACCS_KEYS.csv')
+#print(df)
+
+"""
+CALCULO DE MORGAN FINGERPRINTS
+"""
+from modules.procesamiento.calculo_fingerprints import calcular_ecfp
+
+calcular_ecfp(df, 'SMILES')
+guardar_csv(df, 'data/morgan_fingerprints.csv')
+print(df)
+
+"""
+Convertir ECFP a numpy 
+"""
+
+df = convertir_MACCS_a_numpy(df, 'ECFP')
+guardar_csv(df, 'data/ECFP_array.csv')
+print(df)
