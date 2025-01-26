@@ -1121,9 +1121,156 @@ svg_file_path = 'output.svg'  # La ruta donde guardas el SVG
 png_file_path = 'output.png'  # La ruta donde guardas el PNG
 
 # Guarda la imagen SVG
-with open(svg_file_path, 'w') as f:
-    f.write(str(img))
+#with open(svg_file_path, 'w') as f:
+#    f.write(str(img))
 
 # Cargar el archivo SVG y convertirlo a un gráfico que pueda manejar ReportLab
 #drawing = svg2rlg(svg_file_path)
+
+from modules.procesamiento.calculo_descriptores_moleculares import calcular_tpsa
+
+# Calcular TPSA
+df = calcular_tpsa(df, 'SMILES')
+
+"""
+Análisis descriptivo
+"""
+describe = df['TPSA'].describe()
+print(describe)
+#guardar_csv(df, 'data/TPSA.csv')
+
+
+"""
+Graficamos esta variable
+"""
+
+output_path = 'data/graficas/univariado_TPSA.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_variable_continua(df, 'TPSA', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+# Estadísticas descriptivas agrupadas
+estadisticas = df.groupby('Clasificacion_ATS')['TPSA'].describe()
+#guardar_csv(estadisticas, 'data/estadisticas_TPSA.csv')
+print(estadisticas)
+
+"""
+Boxplot: Una gráfica de cajas te permite comparar visualmente la distribución de NumHDonors entre los dos grupos.
+"""
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+from modules.procesamiento.graficas import graficar_y_guardar_boxplot
+output_path = 'data/graficas/boxplot_TPSA.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_boxplot(df, 'Clasificacion_ATS', 'TPSA', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+Gráfica de violín
+"""
+from modules.procesamiento.graficas import graficar_y_guardar_violinplot
+output_path = 'data/graficas/violinplot_TPSA.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_violinplot(df, 'Clasificacion_ATS', 'TPSA', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+Grafico de histograma
+"""
+from modules.procesamiento.graficas import graficar_y_guardar_histograma
+
+output_path = 'data/graficas/histogramaplot_TPSA_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_histograma(df, 'Clasificacion_ATS', 'TPSA', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+Calculo de enlaces rotables
+"""
+
+from modules.procesamiento.calculo_descriptores_moleculares import calcular_enlaces_rotables
+
+calcular_enlaces_rotables(df, 'SMILES')
+
+"""
+Análisis descriptivo
+"""
+describe = df['NumRotatableBonds'].describe()
+print(describe)
+guardar_csv(df, 'data/NumRotatableBonds.csv')
+
+"""
+grafico de barras para una variable discreta
+"""
+from modules.procesamiento.graficas import graficar_y_guardar_barras
+
+output_path = 'data/graficas/NumRotatableBonds_bar.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_barras(df,'NumRotatableBonds', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+Graficamos esta variable
+"""
+
+output_path = 'data/graficas/univariado_NumRotatableBonds.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_variable_continua(df, 'NumRotatableBonds', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+# Estadísticas descriptivas agrupadas
+estadisticas = df.groupby('Clasificacion_ATS')['NumRotatableBonds'].describe()
+guardar_csv(estadisticas, 'data/estadisticas_NumRotatableBonds.csv')
+print(estadisticas)
+
+"""
+Boxplot: Una gráfica de cajas te permite comparar visualmente la distribución de NumHDonors entre los dos grupos.
+"""
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+from modules.procesamiento.graficas import graficar_y_guardar_boxplot
+output_path = 'data/graficas/boxplot_NumRotatableBonds.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_boxplot(df, 'Clasificacion_ATS', 'NumRotatableBonds', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+Gráfica de violín
+"""
+from modules.procesamiento.graficas import graficar_y_guardar_violinplot
+output_path = 'data/graficas/violinplot_NumRotatableBonds.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_violinplot(df, 'Clasificacion_ATS', 'NumRotatableBonds', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+Grafico de histograma
+"""
+from modules.procesamiento.graficas import graficar_y_guardar_histograma
+
+output_path = 'data/graficas/histogramaplot_NumRotatableBonds_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_histograma(df, 'Clasificacion_ATS', 'NumRotatableBonds', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
 

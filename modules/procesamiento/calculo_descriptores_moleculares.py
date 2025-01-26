@@ -298,3 +298,55 @@ def calcular_Numero_carboxilos(df, columna_smiles):
     df['Numero_carboxilos'] = df[columna_smiles].apply(contar_carboxilos)
     return df
 
+"""
+TPSA
+"""
+from rdkit import Chem
+from rdkit.Chem import MolSurf
+
+
+def calcular_tpsa(df, smiles_col):
+    """
+    Calcula el TPSA para cada molécula en una columna de SMILES y guarda los resultados en una nueva columna.
+
+    Parámetros:
+        df (pandas.DataFrame): DataFrame que contiene la columna de SMILES.
+        smiles_col (str): Nombre de la columna que contiene las cadenas SMILES.
+
+    Retorna:
+        pandas.DataFrame: DataFrame con una nueva columna "TPSA" que contiene los valores calculados.
+    """
+    # Crear una nueva columna para los valores de TPSA
+    df['TPSA'] = df[smiles_col].apply(
+        lambda smi: MolSurf.TPSA(Chem.MolFromSmiles(smi)) if Chem.MolFromSmiles(smi) else None)
+    return df
+
+"""
+CALCULO DEL NÚMERO DE ENLACES ROTABLES 
+"""
+
+def calcular_enlaces_rotables(df, smiles_col):
+    """
+    Calcula el número de enlaces rotables para cada molécula en una columna de SMILES y guarda los resultados en una nueva columna.
+
+    Parámetros:
+        df (pandas.DataFrame): DataFrame que contiene la columna de SMILES.
+        smiles_col (str): Nombre de la columna que contiene las cadenas SMILES.
+
+    Retorna:
+        pandas.DataFrame: DataFrame con una nueva columna "NumRotatableBonds" que contiene los valores calculados.
+        Imprime un mensaje si encuentra SMILES inválidos.
+    """
+    enlaces_rotables = []
+    smiles_invalidos = 0
+    for smi in df[smiles_col]:
+        mol = Chem.MolFromSmiles(smi)
+        if mol:
+            enlaces_rotables.append(Descriptors.NumRotatableBonds(mol))
+        else:
+            enlaces_rotables.append(None)
+            smiles_invalidos += 1
+    if smiles_invalidos > 0:
+        print(f"Se encontraron {smiles_invalidos} SMILES inválidos. Se han asignado valores None.")
+    df['NumRotatableBonds'] = enlaces_rotables
+    return df
