@@ -1,0 +1,22 @@
+Variable 1;Variable 2;Coeficiente de Pearson;Valor P
+LogP_scaled;TPSA_scaled;-0.2441761774134413;1.6427682133705771e-24
+LogP_scaled;Dobles_Enlaces_scaled;-0.049155759415916;0.042654743093450666
+LogP_scaled;NumHAcceptors_scaled;-0.1529893318525187;2.2606694458178458e-10
+LogP_scaled;NumHDonors_scaled;-0.23036581695133335;6.347085364375783e-22
+LogP_scaled;NumRotatableBonds_scaled;0.40038005192253967;1.677292252444675e-66
+LogP_scaled;Peso_Molecular_scaled;0.465752217439359;2.5328004596749504e-92
+TPSA_scaled;Dobles_Enlaces_scaled;0.5935386652135075;1.913106927249585e-162
+TPSA_scaled;NumHAcceptors_scaled;0.8849550149919321;0.0
+TPSA_scaled;NumHDonors_scaled;0.7126440433118079;7.27497955918223e-264
+TPSA_scaled;NumRotatableBonds_scaled;0.24422065506831162;1.6105574520106504e-24
+TPSA_scaled;Peso_Molecular_scaled;0.5240609249523613;1.279635277389049e-120
+Dobles_Enlaces_scaled;NumHAcceptors_scaled;0.5476086261881091;1.0574645667323373e-133
+Dobles_Enlaces_scaled;NumHDonors_scaled;0.1533891592544332;2.027097382194793e-10
+Dobles_Enlaces_scaled;NumRotatableBonds_scaled;0.2737771427430721;1.2649262921046913e-30
+Dobles_Enlaces_scaled;Peso_Molecular_scaled;0.4398809486259005;2.0182441277000954e-81
+NumHAcceptors_scaled;NumHDonors_scaled;0.5108302266059169;1.0409545816158905e-113
+NumHAcceptors_scaled;NumRotatableBonds_scaled;0.3482673231220165;1.0959560801325652e-49
+NumHAcceptors_scaled;Peso_Molecular_scaled;0.561026804047188;1.2314764998501972e-141
+NumHDonors_scaled;NumRotatableBonds_scaled;0.013720539145028385;0.571740989167941
+NumHDonors_scaled;Peso_Molecular_scaled;0.28806435377599526;7.3261980204351516e-34
+NumRotatableBonds_scaled;Peso_Molecular_scaled;0.532146614640482;5.382526083370788e-125

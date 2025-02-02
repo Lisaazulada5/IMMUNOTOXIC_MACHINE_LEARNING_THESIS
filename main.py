@@ -848,6 +848,19 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
+"""
+Detección de outliers 
+"""
+outliers = detectar_outliers(df, 'Dobles_Enlaces')
+outliers = pd.DataFrame(outliers)
+output_path = 'data/outliers_Dobles_Enlaces.csv'
+if not os.path.exists(output_path):
+    guardar_csv(outliers, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+
 # Estadísticas descriptivas agrupadas
 estadisticas = df.groupby('Clasificacion_ATS')['Dobles_Enlaces'].describe()
 #guardar_csv(estadisticas, 'data/estadisticas_Dobles_Enlaces.csv')
@@ -942,6 +955,20 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
+
+"""
+Detección de outliers 
+"""
+outliers = detectar_outliers(df, 'Triples_Enlaces')
+outliers = pd.DataFrame(outliers)
+output_path = 'data/outliers_Triples_Enlaces.csv'
+if not os.path.exists(output_path):
+    guardar_csv(outliers, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+
 # Estadísticas descriptivas agrupadas
 estadisticas = df.groupby('Clasificacion_ATS')['Triples_Enlaces'].describe()
 #guardar_csv(estadisticas, 'data/estadisticas_Triples_Enlaces.csv')
@@ -1001,6 +1028,19 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
+"""
+Detección de outliers 
+"""
+outliers = detectar_outliers(df, 'Numero_hidroxilos')
+outliers = pd.DataFrame(outliers)
+output_path = 'data/outliers_Numero_hidroxilos.csv'
+if not os.path.exists(output_path):
+    guardar_csv(outliers, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+
 # Estadísticas descriptivas agrupadas
 estadisticas = df.groupby('Clasificacion_ATS')['Numero_hidroxilos'].describe()
 #guardar_csv(estadisticas, 'data/estadisticas_Numero_hidroxilos.csv')
@@ -1043,10 +1083,33 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
+"""
+Detección de outliers 
+"""
+outliers = detectar_outliers(df, 'Numero_carboxilos')
+outliers = pd.DataFrame(outliers)
+output_path = 'data/outliers_Numero_carboxilos.csv'
+if not os.path.exists(output_path):
+    guardar_csv(outliers, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+
 # Estadísticas descriptivas agrupadas
 estadisticas = df.groupby('Clasificacion_ATS')['Numero_carboxilos'].describe()
 #guardar_csv(estadisticas, 'data/estadisticas_Numero_carboxilos.csv')
 print(estadisticas)
+
+from modules.procesamiento.graficas import graficar_y_guardar_boxplot
+output_path = 'data/graficas/boxplot_Numero_carboxilos_actividad.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_boxplot(df, 'Clasificacion_ATS', 'Numero_carboxilos', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+
 
 
 """Calcula el fingerprint de MACCS para una molécula en formato SMILES."""
@@ -1151,6 +1214,19 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
+"""
+Detección de outliers 
+"""
+outliers = detectar_outliers(df, 'TPSA')
+outliers = pd.DataFrame(outliers)
+output_path = 'data/outliers_TPSA.csv'
+if not os.path.exists(output_path):
+    guardar_csv(outliers, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+
 # Estadísticas descriptivas agrupadas
 estadisticas = df.groupby('Clasificacion_ATS')['TPSA'].describe()
 #guardar_csv(estadisticas, 'data/estadisticas_TPSA.csv')
@@ -1206,7 +1282,7 @@ Análisis descriptivo
 """
 describe = df['NumRotatableBonds'].describe()
 print(describe)
-guardar_csv(df, 'data/NumRotatableBonds.csv')
+#guardar_csv(df, 'data/NumRotatableBonds.csv')
 
 """
 grafico de barras para una variable discreta
@@ -1231,9 +1307,21 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
+"""
+Detección de outliers 
+"""
+outliers = detectar_outliers(df, 'NumRotatableBonds')
+outliers = pd.DataFrame(outliers)
+output_path = 'data/outliers_NumRotatableBonds.csv'
+if not os.path.exists(output_path):
+    guardar_csv(outliers, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
 # Estadísticas descriptivas agrupadas
 estadisticas = df.groupby('Clasificacion_ATS')['NumRotatableBonds'].describe()
-guardar_csv(estadisticas, 'data/estadisticas_NumRotatableBonds.csv')
+#guardar_csv(estadisticas, 'data/estadisticas_NumRotatableBonds.csv')
 print(estadisticas)
 
 """
@@ -1273,4 +1361,470 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
+"""
+ANALIZAMOS LA NORMALIDAD DE LOS DATOS
+"""
+from modules.procesamiento.analisis_estadistico import calcular_sesgo_curtosis
 
+# *** Define las columnas que deseas analizar ***
+columnas_a_analizar = ['LogP', 'Peso_Molecular', 'NumHAcceptors', 'NumHDonors',
+                       'Dobles_Enlaces', 'Triples_Enlaces', 'Numero_hidroxilos',
+                       'Numero_carboxilos', 'TPSA', 'NumRotatableBonds']  # Reemplaza con tus columnas
+
+# Calcular sesgo y curtosis
+resultados_sesgo_curtosis = calcular_sesgo_curtosis(df, columnas_a_analizar)
+print("Resultados de Sesgo y Curtosis:")
+print(resultados_sesgo_curtosis)
+
+"""
+Graficar la normalidad de la variable LogP
+"""
+from modules.procesamiento.graficas import graficar_normalidad
+
+output_path = 'data/graficas/histogramaplot_normalidad_LogP.png'
+if not os.path.exists(output_path):
+    graficar_normalidad(df, 'LogP', output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+
+from modules.procesamiento.graficas import graficar_qq_multivariable
+
+
+# Variables a graficar
+variables = [
+    'Peso_Molecular', 'NumHAcceptors', 'NumHDonors',
+    'Dobles_Enlaces', 'Triples_Enlaces']
+
+# Llama a la función para graficar los Q-Q Plots
+output_path = 'data/graficas/histogramaplot_normalidad_variables no normales.png'
+if not os.path.exists(output_path):
+    graficar_qq_multivariable(df, variables, output_path, titulo="Q-Q Plots de Variables No Normales")
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+# Variables a graficar
+variables = [
+    'Numero_hidroxilos',
+    'Numero_carboxilos', 'TPSA', 'NumRotatableBonds']
+
+# Llama a la función para graficar los Q-Q Plots
+output_path = 'data/graficas/histogramaplot_normalidad_variables no normales2.png'
+if not os.path.exists(output_path):
+    graficar_qq_multivariable(df, variables, output_path, titulo="Q-Q Plots de Variables No Normales")
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+PRUEBA DE NORMALIDAD DE  Kolmogorov-Smirnov 
+"""
+from scipy import stats
+print('Analisis de la normalidad de columna LogP')
+# *** Define la columna que deseas analizar ***
+columna_a_analizar = 'LogP'  # Reemplaza con el nombre real de tu columna
+
+# Realizar la prueba de Kolmogorov-Smirnov
+try:
+    ks_statistic, p_value = stats.kstest(df[columna_a_analizar].dropna(), 'norm') #Manejo de valores nulos
+except KeyError:
+    print(f"Error: La columna '{columna_a_analizar}' no existe en el DataFrame.")
+    exit()
+except Exception as e:
+    print(f"Error al ejecutar la prueba KS: {e}")
+    exit()
+
+print(f"Estadístico K-S: {ks_statistic:.4f}")
+print(f"Valor p: {p_value:.4f}")
+
+# Interpretar los resultados
+alpha = 0.05  # Nivel de significancia común
+
+if p_value > alpha:
+    print("La columna parece seguir una distribución normal (no se rechaza la hipótesis nula).")
+else:
+    print("La columna no parece seguir una distribución normal (se rechaza la hipótesis nula).")
+
+"""
+CALCULAMOS LA MEDIANA DE LOS DATOS
+"""
+
+from modules.procesamiento.analisis_estadistico import obtener_mediana
+
+# Suponiendo que ya tienes el DataFrame 'df' cargado con los datos
+# Especifica las columnas de interés
+columnas_interes = ['LogP', 'Peso_Molecular', 'NumHAcceptors', 'NumHDonors',
+                    'Dobles_Enlaces', 'Triples_Enlaces', 'Numero_hidroxilos',
+                    'Numero_carboxilos', 'TPSA', 'NumRotatableBonds']
+
+# Llamar a la función para obtener la mediana de las columnas especificadas
+mediana_resultados = obtener_mediana(df, columnas_interes)
+
+# Mostrar el resultado
+print("Mediana de cada columna:")
+print(mediana_resultados)
+
+"""
+OBTENEMOS LA MEDIA
+"""
+from modules.procesamiento.analisis_estadistico import obtener_media
+
+media_resultados = obtener_media(df, columnas_interes)
+# Mostrar el resultado
+print("Media de cada columna:")
+print(media_resultados)
+
+"""
+calculo del rango intercuartilico
+"""
+from modules.procesamiento.analisis_estadistico import calcular_iqr
+
+iqr_resultados  = calcular_iqr(df, columnas_interes)
+
+print("Rango Intercuartílico (IQR) de cada columna:")
+print(iqr_resultados)
+
+"""
+ESTADISTICOS DE CADA VARIABLE
+"""
+from modules.procesamiento.analisis_estadistico import obtener_estadisticos
+
+estadisticos = obtener_estadisticos(df, columnas_interes)
+print("estadisticos de cada variable:")
+guardar_csv(estadisticos, 'data/estadisticos.csv')
+print(estadisticos)
+
+
+"""
+ANALISIS DE LA VARIABLE CATEGORICA ATS
+"""
+from modules.procesamiento.analisis_estadistico import generar_tabla_frecuencias
+
+print(generar_tabla_frecuencias(df, 'Clasificacion_ATS'))
+
+"""
+ANALISIS MULTIVARIADO DE LOS DATOS
+"""
+from modules.procesamiento.analisis_estadistico import obtener_estadisticas_por_grupo
+columnas_numericas = ['LogP', 'Peso_Molecular', 'NumHAcceptors', 'NumHDonors',
+                    'Dobles_Enlaces', 'Triples_Enlaces', 'Numero_hidroxilos',
+                    'Numero_carboxilos', 'TPSA', 'NumRotatableBonds']
+
+estadisticas_grupo = obtener_estadisticas_por_grupo(df, 'Clasificacion_ATS', columnas_numericas)
+print(estadisticas_grupo.reset_index())
+estadisticas_grupo= estadisticas_grupo.reset_index()
+#guardar_csv(estadisticas_grupo, 'data/estadisticas_grupo.csv')
+
+"""
+Escalado de variables con z-score
+"""
+
+from sklearn.preprocessing import StandardScaler
+
+# Crear el escalador
+scaler = StandardScaler()
+
+# Aplicar escalado solo a las columnas necesarias
+df_scaled = df.copy()
+df_scaled[['LogP_scaled', 'Peso_Molecular_scaled','TPSA_scaled']] = scaler.fit_transform(df[['LogP', 'Peso_Molecular', 'TPSA']])
+
+# Ver los resultados
+print(df_scaled.describe())
+
+"""
+Escalado max-min
+"""
+from sklearn.preprocessing import MinMaxScaler
+
+# Crear el escalador
+scaler = MinMaxScaler()
+
+# Aplicar escalado solo a la columna NumRotatableBonds
+df_scaled = df_scaled.copy()
+df_scaled['NumRotatableBonds_scaled'] = scaler.fit_transform(df[['NumRotatableBonds']])
+
+# Ver los resultados
+print(df_scaled['NumRotatableBonds_scaled'].describe())
+
+"""
+scatterplot
+"""
+from modules.procesamiento.graficas import generar_pairplot
+
+columnas = ['LogP_scaled', 'Peso_Molecular_scaled', 'NumRotatableBonds_scaled']
+generar_pairplot(df_scaled, columnas, 'data/scater_escaladas.png')
+
+#guardar_csv(df_scaled, 'data/escalado_somevariables.csv')
+
+graficar_y_guardar_variable_continua(df_scaled, 'NumRotatableBonds_scaled', 'data/NumRotatableBonds_scaled.png')
+
+"""
+Prueba de correlación de Pearson
+"""
+from scipy.stats import pearsonr
+#entre Peso molecular y Numero de enlaces rotables
+
+print('Prueba de correlación entre Peso molecular y Numero de enlaces rotables ')
+r, p_value = pearsonr(df_scaled['Peso_Molecular_scaled'], df_scaled['NumRotatableBonds_scaled'])
+print(f'Correlación: {r:.2f}, Valor p: {p_value:.5f}')
+
+#entre Peso molecular y LogP
+
+print('Prueba de correlación entre Peso molecular y LogP')
+r, p_value = pearsonr(df_scaled['Peso_Molecular_scaled'], df_scaled['LogP_scaled'])
+print(f'Correlación: {r:.2f}, Valor p: {p_value:.5f}')
+
+#entre LogP y Numero de enlaces rotables
+
+print('Prueba de correlación entre LogP y Numero de enlaces rotables')
+r, p_value = pearsonr(df_scaled['LogP_scaled'], df_scaled['NumRotatableBonds_scaled'])
+print(f'Correlación: {r:.2f}, Valor p: {p_value:.5f}')
+
+# Aplicar escalado solo las demás columnas
+df_scaled = df_scaled.copy()
+df_scaled['Dobles_Enlaces_scaled'] = scaler.fit_transform(df[['Dobles_Enlaces']])
+df_scaled['NumHAcceptors_scaled'] = scaler.fit_transform(df[['NumHAcceptors']])
+df_scaled['NumHDonors_scaled'] = scaler.fit_transform(df[['NumHDonors']])
+
+"""
+scatterplot con las demás variables
+"""
+from modules.procesamiento.graficas import generar_pairplot
+
+columnas = ['LogP_scaled', 'TPSA_scaled', 'Dobles_Enlaces_scaled', 'NumHAcceptors_scaled', 'NumHDonors_scaled']
+generar_pairplot(df_scaled, columnas, 'data/graficas/scater_escaladas_variables no tan relacionadas.png')
+
+"""
+Prueba de correlación de Pearson
+"""
+import pandas as pd
+from modules.procesamiento.analisis_estadistico  import calcular_correlacion
+
+# Suponiendo que df_scaled ya esté definido y contiene los datos escalados
+# Lista de columnas para comparar en pares
+columnas_relacionadas = ['LogP_scaled', 'TPSA_scaled', 'Dobles_Enlaces_scaled', 'NumHAcceptors_scaled', 'NumHDonors_scaled',
+                         'NumRotatableBonds_scaled', 'Peso_Molecular_scaled']
+
+# Llamar a la función que calcula las correlaciones
+resultados = calcular_correlacion(df_scaled, columnas_relacionadas)
+print(resultados)
+# Imprimir los resultados
+print(resultados)
+#guardar_csv(resultados, 'data/pearson_pvalue_variablespococorre.csv')
+
+"""
+scatterplot con las demás variables y Peso moelcular
+"""
+from modules.procesamiento.graficas import generar_pairplot
+
+columnas = ['Peso_Molecular_scaled', 'TPSA_scaled', 'Dobles_Enlaces_scaled', 'NumHAcceptors_scaled', 'NumHDonors_scaled']
+generar_pairplot(df_scaled, columnas, 'data/graficas/scater_escaladas_variables_peso_molecular.png')
+
+"""
+Scaterplot vs caegoria
+"""
+from modules.procesamiento.graficas import generar_pairplot_CATEOGRIAS
+columnas_interes = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled']
+categoria = "Clasificacion_ATS"
+generar_pairplot_CATEOGRIAS(df_scaled, columnas_interes, categoria, 'data/graficas/pairplot_clasificacion.png')
+
+"""
+Prueba de prueba_mann_whitney para evaluar la mediana de dos grupos de datos
+"""
+print('Prueba de prueba_mann_whitney para evaluar la mediana de dos grupos de datos')
+from modules.procesamiento.analisis_estadistico import prueba_mann_whitney_df
+columnas = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled',  'NumHAcceptors_scaled', 'NumHDonors_scaled']
+columna_categorica = 'Clasificacion_ATS'
+resultado_mann_whitney = prueba_mann_whitney_df(df_scaled, columna_categorica, columnas)
+print(resultado_mann_whitney)
+
+"""
+Analisis de PCA
+"""
+
+"""
+print('Analisis de PCA')
+from modules.procesamiento.analisis_estadistico import calcular_matriz_covarianza
+
+cov_matrix = calcular_matriz_covarianza(df_scaled, columnas)
+
+print(cov_matrix)
+import numpy as np
+# Calcular autovalores y autovectores
+eigenvalues, eigenvectors = np.linalg.eig(cov_matrix)
+
+import matplotlib.pyplot as plt
+
+# Suponiendo que tienes los autovalores en una variable llamada 'eigenvalues'
+plt.plot(range(1, len(eigenvalues)+1), np.cumsum(eigenvalues) / np.sum(eigenvalues), marker='o')
+plt.xlabel('Número de componentes')
+plt.ylabel('Proporción de varianza acumulada')
+plt.title('Scree Plot')
+plt.show()
+
+
+
+
+
+
+"""
+
+
+"""
+ANALISIS DE LA MULTICOLINEALIDAD
+"""
+
+
+"""
+from modules.procesamiento.analisis_estadistico import calcular_vif
+columnas = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled',  'NumHAcceptors_scaled', 'NumHDonors_scaled']
+
+resultado_vif = calcular_vif(df_scaled, columnas)
+
+print(resultado_vif)
+
+"""
+
+"""
+MODELO DE REGRESION PARA ESOCGER VARIABLES
+"""
+from modules.procesamiento.modelos import modelo_regresion
+
+df_scaled['Clasificacion_ATS'] = df_scaled['Clasificacion_ATS'].map({'Activo': 1, 'Inactivo': 0})
+
+X_columns = ['LogP_scaled', 'TPSA_scaled',  'NumRotatableBonds_scaled', 'Peso_Molecular_scaled']
+
+Y_column = 'Clasificacion_ATS'
+
+#print(df_scaled[Y_column])
+
+# Convertir la variable Y a valores numéricos
+#Y_column = df[Y_column].map({'Activo': 1, 'Inactivo': 0})
+
+modelo_final = modelo_regresion(df_scaled, X_columns, Y_column)
+
+print(modelo_final.summary())
+
+from modules.procesamiento.analisis_estadistico import calcular_vif
+columnas = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled',  'NumHAcceptors_scaled', 'NumHDonors_scaled']
+resultados_VIF = calcular_vif (df_scaled, columnas)
+print(resultados_VIF)
+
+"""
+Modelo de regresión logistica
+"""
+print('Modelo de regresión logística')
+from modules.procesamiento.modelos import regresion_logistica
+X_columns = ['LogP_scaled', 'TPSA_scaled',  'NumRotatableBonds_scaled', 'Peso_Molecular_scaled']
+target = 'Clasificacion_ATS'
+modelo, accuracy, cm, report = regresion_logistica(df_scaled, columnas, target)
+
+
+# Imprimir la precisión del modelo
+print("Precisión del modelo:", accuracy)
+
+# Imprimir la matriz de confusión
+print("Matriz de Confusión:")
+print(cm)
+
+# Imprimir el informe de clasificación
+print("Informe de Clasificación:")
+print(report)
+
+# Ver los coeficientes del modelo
+print("Coeficientes del modelo:")
+print(modelo.coef_)
+
+"""
+ARBOLES DE DECISION
+"""
+from modules.procesamiento.modelos import arbol_decision
+print('modelo de arboles de decision')
+# Definir las columnas predictoras y la variable objetivo
+columnas_predictoras = ["LogP_scaled", "TPSA_scaled", "NumRotatableBonds_scaled", "Peso_Molecular_scaled"]
+target = "Clasificacion_ATS"
+# Llamar al modelo
+modelo, accuracy, cm, report = arbol_decision(df_scaled, columnas_predictoras, target)
+# Mostrar resultados
+print(f"Precisión del modelo: {accuracy:.4f}")
+print("Matriz de confusión:")
+print(cm)
+print("Reporte de clasificación:")
+print(report)
+
+"""
+Probar el modelo
+"""
+#saco una porcion de los datos de mi dataset, con el fin de que el modelo jamás los haya visto
+import pandas as pd
+
+# Asegúrate de tener tu DataFrame 'df_scaled' con la columna 'Clasificacion_ATS'
+
+# Filtrar las moléculas activas e inactivas
+activos = df_scaled[df_scaled['Clasificacion_ATS'] == 1]
+inactivos = df_scaled[df_scaled['Clasificacion_ATS'] == 0]
+
+
+
+# Seleccionar aleatoriamente 50 activos y 50 inactivos
+activos_seleccionados = activos.sample(n=50, random_state=42)
+inactivos_seleccionados = inactivos.sample(n=50, random_state=42)
+
+# Concatenar los seleccionados
+df_seleccionados = pd.concat([activos_seleccionados, inactivos_seleccionados])
+
+# Eliminar las moléculas seleccionadas del DataFrame original
+df_restantes = df_scaled.drop(df_seleccionados.index)
+
+# Mostrar los DataFrames resultantes
+print("DataFrame con las moléculas seleccionadas:")
+print(df_seleccionados)
+print("\nDataFrame con las moléculas restantes:")
+print(df_restantes)
+
+"""
+Realizamos nuevamente el modelo de arboles con el df_seleccionados dejando aparte el df_restantes
+"""
+""
+from modules.procesamiento.modelos import arbol_decision
+
+print('modelo de arboles de decision df_seleccionados')
+# Definir las columnas predictoras y la variable objetivo
+columnas_predictoras = ["LogP_scaled", "TPSA_scaled", "NumRotatableBonds_scaled", "Peso_Molecular_scaled"]
+target = "Clasificacion_ATS"
+# Llamar al modelo
+modelo, accuracy, cm, report = arbol_decision(df_seleccionados, columnas_predictoras, target)
+# Mostrar resultados
+print(f"Precisión del modelo: {accuracy:.4f}")
+print("Matriz de confusión:")
+print(cm)
+print("Reporte de clasificación:")
+print(report)
+
+#Pruebo el modelo "perfecto" con un nuevo conjunto de datos
+
+# Selecciona solo las columnas que te interesan por su nombre
+columnas_deseadas = ["LogP_scaled", "TPSA_scaled", "NumRotatableBonds_scaled", "Peso_Molecular_scaled"] # Aquí pones los nombres de las columnas que necesitas
+X_nuevo = df_restantes[columnas_deseadas]
+
+predicciones = modelo.predict(X_nuevo)
+
+y_nuevo = df_restantes['Clasificacion_ATS']  # La variable objetivo
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+# Calcular la precisión
+precision = accuracy_score(y_nuevo, predicciones)
+print(f'Precisión del modelo en el nuevo conjunto de datos: {precision:.4f}')
+
+# Mostrar la matriz de confusión
+print('Matriz de confusión:')
+print(confusion_matrix(y_nuevo, predicciones))
+
+# Mostrar el reporte de clasificación
+print('Reporte de clasificación:')
+print(classification_report(y_nuevo, predicciones))

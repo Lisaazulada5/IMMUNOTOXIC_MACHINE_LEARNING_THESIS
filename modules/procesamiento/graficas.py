@@ -107,3 +107,316 @@ def graficar_y_guardar_barras(df, columna_x, ruta_guardado="grafica.jpg"):
 
     # Guardar la figura como archivo JPG
     fig.savefig(ruta_guardado, format="png", dpi=300)
+
+"""
+GRAFICA DE NORMALIDAD
+"""
+
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+import numpy as np
+
+def graficar_normalidad(data, variable, ruta_guardado="grafica.jpg", bins=30):
+    """
+    Grafica un histograma y un gráfico Q-Q para evaluar la normalidad de una variable.
+
+    Parámetros:
+        data (pd.DataFrame): DataFrame que contiene la variable a analizar.
+        variable (str): Nombre de la columna que contiene los datos.
+        bins (int): Número de bins para el histograma (opcional, por defecto 30).
+
+    Salida:
+        Muestra un histograma y un gráfico Q-Q en una figura.
+    """
+    if variable not in data.columns:
+        raise ValueError(f"La variable '{variable}' no está en el DataFrame.")
+
+    valores = data[variable].dropna()
+
+    # Crear la figura
+    fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+
+    # Histograma con la curva de densidad normal
+    axs[0].hist(valores, bins=bins, density=True, alpha=0.6, color='skyblue', edgecolor='black')
+    xmin, xmax = axs[0].get_xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, valores.mean(), valores.std())
+    axs[0].plot(x, p, 'k', linewidth=2, label='Densidad Normal')
+    axs[0].set_title('Histograma y Densidad Normal')
+    axs[0].set_xlabel(variable)
+    axs[0].set_ylabel('Densidad')
+    axs[0].legend()
+
+    # Gráfico Q-Q
+    stats.probplot(valores, dist="norm", plot=axs[1])
+    axs[1].set_title('Gráfico Q-Q')
+
+    # Ajustar diseño
+    plt.tight_layout()
+    plt.show()
+
+    # Guardar la figura como archivo JPG
+    fig.savefig(ruta_guardado, format="png", dpi=300)
+
+
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+
+"""
+GRAFICAS Q-Q PLOT PARA DIFERENTES VARIABLES
+"""
+
+def graficar_qq_multivariable(df, columnas, ruta_guardado="grafica.jpg", titulo="Q-Q Plots"):
+    """
+    Genera Q-Q Plots para múltiples variables en un solo gráfico.
+
+    Parámetros:
+        df (pd.DataFrame): DataFrame con los datos.
+        columnas (list): Lista de nombres de las columnas a graficar.
+        titulo (str): Título del gráfico general.
+    """
+    num_vars = len(columnas)
+    filas = (num_vars // 3) + (1 if num_vars % 3 != 0 else 0)  # Calcula las filas necesarias (3 gráficos por fila)
+    fig, axes = plt.subplots(filas, 3, figsize=(15, 5 * filas))
+    fig.suptitle(titulo, fontsize=16)
+
+    # Asegurarse de que `axes` sea una matriz, incluso si es solo una fila
+    if filas == 1:
+        axes = [axes]
+
+    for i, columna in enumerate(columnas):
+        fila, col = divmod(i, 3)  # Posición en la cuadrícula
+        ax = axes[fila][col] if filas > 1 else axes[col]
+        stats.probplot(df[columna], dist="norm", plot=ax)
+        ax.set_title(f"Q-Q Plot: {columna}", fontsize=12, pad=10)
+        ax.grid(True)
+
+    # Ocultar gráficos vacíos si hay menos de 3 gráficos en la última fila
+    for j in range(i + 1, filas * 3):
+        fila, col = divmod(j, 3)
+        ax = axes[fila][col] if filas > 1 else axes[col]
+        ax.axis("off")
+
+    plt.subplots_adjust(hspace=10, wspace=1)
+    plt.tight_layout(pad=3.0, rect=[0, 0, 1, 0.95])
+    plt.show()
+
+    # Guardar la figura como archivo JPG
+    fig.savefig(ruta_guardado, format="png", dpi=300)
+
+"""
+ANALISIS MULTIVARIADO
+"""
+#Código para Scatter Plots
+
+import matplotlib.pyplot as plt
+def generar_scatterplots(df, columnas_x, columnas_y, guardar_figuras=False, carpeta_figuras="scatterplots"):
+    """
+    Genera scatter plots entre pares de columnas especificadas del DataFrame.
+
+    Args:
+        df (pd.DataFrame): El DataFrame con los datos.
+        columnas_x (list): Lista de columnas para el eje X.
+        columnas_y (list): Lista de columnas para el eje Y.
+        guardar_figuras (bool): Si True, guarda las figuras como archivos PNG.
+        carpeta_figuras (str): Carpeta donde se guardarán las figuras.
+
+    Returns:
+        None
+    """
+    import os
+
+    # Crear carpeta para guardar las figuras, si no existe
+    if guardar_figuras:
+        os.makedirs(carpeta_figuras, exist_ok=True)
+
+    # Generar scatter plots para cada combinación de columnas
+    for x in columnas_x:
+        for y in columnas_y:
+            if x != y:  # Evitar scatter plot de la misma variable
+                plt.figure(figsize=(8, 6))
+                sns.scatterplot(data=df, x=x, y=y, alpha=0.7, edgecolor=None)
+
+                # Configurar el título y etiquetas
+                plt.title(f"Scatter Plot: {x} vs {y}", fontsize=14, pad=15)
+                plt.xlabel(x, fontsize=12)
+                plt.ylabel(y, fontsize=12)
+                plt.grid(True, linestyle='--', alpha=0.7)
+
+                # Guardar la figura si es necesario
+                if guardar_figuras:
+                    figura_nombre = f"{carpeta_figuras}/scatter_{x}_vs_{y}.png"
+                    plt.savefig(figura_nombre)
+                    print(f"Figura guardada como: {figura_nombre}")
+
+                # Mostrar el scatter plot
+                plt.show()
+
+#MATRIZ DE SCATTERPLOT
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+
+def generar_pairplot(df, columnas, ruta_guardado = "grafica.png", hue=None):
+    """
+    Genera una matriz de scatterplots (pairplot) para columnas específicas del DataFrame.
+
+    Args:
+        df (pd.DataFrame): DataFrame con los datos.
+        columnas (list): Lista de nombres de columnas a incluir en el pairplot.
+        hue (str, optional): Columna categórica para colorear los puntos.
+
+    Returns:
+        sns.PairGrid: Objeto PairGrid de seaborn que contiene la matriz de scatterplots.
+    """
+    # Filtrar las columnas seleccionadas
+    df_seleccion = df[columnas]
+
+    # Agregar la columna hue si está definida
+    if hue and hue in df.columns:
+        df_seleccion[hue] = df[hue]
+
+    # Crear el pairplot
+    sns.set_theme(style="ticks")
+    pairplot = sns.pairplot(df_seleccion, hue=hue, height = 2)
+
+    for ax in pairplot.axes.flat:
+        # Rotar etiquetas del eje X
+        ax.tick_params(axis='x', labelsize=8, rotation=0)
+
+        # Obtener el título del eje Y y rotarlo
+        ax.set_ylabel(ax.get_ylabel(), rotation=45, fontsize=8, labelpad=20)  # Rotar y ajustar padding
+        # Obtener el título del eje X y rotarlo
+        ax.set_xlabel(ax.get_xlabel(), rotation=45, fontsize=8, labelpad=20)  # Rotar y ajustar padding
+
+    # Agregar valores de correlación
+    for i, j in zip(*np.triu_indices_from(pairplot.axes, 1)):  # Solo parte superior de la matriz
+        if i < len(columnas) and j < len(columnas):  # Evitar índices fuera de rango
+            x_col = columnas[j]
+            y_col = columnas[i]
+            # Calcular correlación de Pearson
+            corr_coef = df[[x_col, y_col]].corr().iloc[0, 1]
+            # Agregar la correlación al gráfico
+            pairplot.axes[i, j].annotate(
+                f"r = {corr_coef:.2f}",
+                xy=(0.1, 0.9),
+                xycoords="axes fraction",
+                ha="left",
+                va="center",
+                fontsize=10,
+                color="red",
+            )
+
+    # Mostrar el plot
+    plt.show()
+
+    # Guardar la figura como archivo JPG
+    pairplot.savefig(ruta_guardado, format="png", dpi=300)
+
+
+def calcular_matriz_correlacion(df, columnas,ruta_guardado= "grafica.png", metodo='pearson', guardar_figura=False,
+                                nombre_figura="heatmap_correlacion.png"):
+    """
+    Calcula y visualiza la matriz de correlación de columnas específicas de un DataFrame.
+
+    Args:
+        df (pd.DataFrame): El DataFrame con los datos.
+        columnas (list): Lista de columnas específicas para incluir en la matriz de correlación.
+        metodo (str): Método de correlación ('pearson', 'spearman', 'kendall'). Por defecto 'pearson'.
+        guardar_figura (bool): Si True, guarda la figura como archivo PNG.
+        nombre_figura (str): Nombre del archivo si se guarda el heatmap.
+
+    Returns:
+        pd.DataFrame: Matriz de correlación calculada.
+    """
+    # Seleccionar solo las columnas especificadas
+    df_seleccionado = df[columnas]
+
+    # Calcular la matriz de correlación
+    matriz_correlacion = df_seleccionado.corr(method=metodo)
+    print(matriz_correlacion)
+
+    # Visualizar la matriz de correlación con un heatmap
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(matriz_correlacion, annot=True, fmt=".2f", cmap="coolwarm", cbar=True, square=True)
+    plt.title(f"Matriz de Correlación ({metodo.capitalize()})", fontsize=16, pad=20)
+    plt.xticks(rotation=45, ha='right')
+    plt.yticks(rotation=0)
+    plt.tight_layout()
+
+    # Guardar la figura si es necesario
+    if guardar_figura:
+        plt.savefig(nombre_figura)
+        print(f"Figura guardada como: {nombre_figura}")
+
+
+    # Guardar la figura como archivo JPG
+    plt.savefig(ruta_guardado, format="png", dpi=300)
+    # Mostrar el heatmap
+    plt.show()
+
+"""
+GRAFICO DE DISPERSION TENIENDO EN CUENTA LA CATEGORIA
+"""
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+
+def generar_pairplot_CATEOGRIAS(df, columnas, categoria, ruta_guardado):
+    """
+    Genera un pairplot con las columnas seleccionadas y una variable categórica para diferenciar los datos.
+
+    Parámetros:
+    df (DataFrame): DataFrame con los datos.
+    columnas (list): Lista de columnas numéricas a graficar.
+    categoria (str): Nombre de la columna categórica para diferenciar los datos.
+    """
+    sns.set_theme(style="ticks")
+
+    # Filtrar el DataFrame con las columnas seleccionadas
+    df_filtrado = df[columnas + [categoria]]
+
+    # Crear el pairplot
+    pairplot = sns.pairplot(df_filtrado, hue=categoria)
+
+    for ax in pairplot.axes.flat:
+        # Rotar etiquetas del eje X
+        ax.tick_params(axis='x', labelsize=8, rotation=0)
+        # Obtener el título del eje Y y rotarlo
+        ax.set_ylabel(ax.get_ylabel(), rotation=45, fontsize=8, labelpad=20)  # Rotar y ajustar padding
+        # Obtener el título del eje X y rotarlo
+        ax.set_xlabel(ax.get_xlabel(), rotation=0, fontsize=8, labelpad=20)  # Rotar y ajustar padding
+
+    # Guardar la figura como archivo JPG
+    plt.savefig(ruta_guardado, format="png", dpi=300)
+    # Mostrar la gráfica
+    plt.show()
+
+"""
+Matriz de covarianza
+"""
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+
+def graficar_matriz_covarianza(df, columnas_numericas):
+    """
+    Calcula y grafica la matriz de covarianza de un DataFrame para las columnas seleccionadas.
+
+    :param df: DataFrame de pandas con los datos.
+    :param columnas_numericas: Lista de nombres de columnas numéricas.
+    """
+    cov_matrix = df[columnas_numericas].cov()  # Calcula la matriz de covarianza
+
+    plt.figure(figsize=(8, 6))  # Tamaño de la figura
+    sns.heatmap(cov_matrix, annot=True, fmt=".2f", cmap="coolwarm", linewidths=0.5)
+
+    plt.title("Matriz de Covarianza")
+    plt.show()

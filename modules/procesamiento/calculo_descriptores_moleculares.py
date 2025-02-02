@@ -350,3 +350,40 @@ def calcular_enlaces_rotables(df, smiles_col):
         print(f"Se encontraron {smiles_invalidos} SMILES inválidos. Se han asignado valores None.")
     df['NumRotatableBonds'] = enlaces_rotables
     return df
+
+
+from rdkit import Chem
+
+
+def contar_sulfatos(smile):
+    """
+    Cuenta los grupos sulfato (-SO4) en una molécula dada en formato SMILES.
+
+    Parameters:
+        smile (str): Representación SMILES de la molécula.
+
+    Returns:
+        int or None: Número de grupos sulfato en la molécula, o None si el SMILES no es válido.
+    """
+    mol = Chem.MolFromSmiles(smile)
+    if mol is None:
+        return None
+    # SMARTS para el grupo sulfato (-SO4)
+    sulfato_smarts = Chem.MolFromSmarts('O=S(=O)([O])[O]')
+    return len(mol.GetSubstructMatches(sulfato_smarts))
+
+
+# Aplicar la función a una columna del DataFrame
+def agregar_numero_sulfatos(df, columna_smiles):
+    """
+    Agrega una nueva columna al DataFrame con el conteo de grupos sulfato en las moléculas SMILES.
+
+    Parameters:
+        df (pandas.DataFrame): DataFrame que contiene una columna con SMILES.
+        columna_smiles (str): Nombre de la columna con los SMILES.
+
+    Returns:
+        pandas.DataFrame: DataFrame con una nueva columna 'Numero_sulfatos' que contiene el conteo.
+    """
+    df['Numero_sulfatos'] = df[columna_smiles].apply(contar_sulfatos)
+    return df

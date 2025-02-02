@@ -1,0 +1,381 @@
+INPUT;SMILES;Clasificacion_ATS;LogP;Peso_Molecular;NumHAcceptors;NumHDonors;Dobles_Enlaces;Triples_Enlaces;Numero_hidroxilos;Numero_carboxilos;MACCS;MACCS_array;ECFP;ECFP_array;TPSA
+Musk Xylene;CC1=C(C(=C(C(C)=C1[N+]([O-])=O)[N+]([O-])=O)C(C)(C)C)[N+]([O-])=O;Activo;3.325540000000003;297.0960852;6;0;3;0;0;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB56E40>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 1 1 0 0
+ 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0
+ 0 1 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 1 0 0 1 0 1 1 0 0 0 1 1 1 0 1 0 1 0
+ 1 1 1 0 0 0 0 0 1 0 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD0200>;[0 0 0 ... 0 0 0];129.42000000000002
+C.I. Acid Yellow 23;C1=CC(=CC=C1N=NC2=C(NN(C2=O)C3=CC=C(C=C3)S(=O)(=O)[O-])C(=O)[O-])S(=O)(=O)[O-].[Na+].[Na+].[Na+] ;Inactivo;-9.235300000000006;533.950402708;12;1;7;0;0;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB56F20>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+ 0 0 1 1 0 0 0 1 0 0 0 1 1 0 1 1 0 0 1 0 0 1 1 1 1 1 0 1 1 0 1 0 1 0 0 0 1
+ 0 1 0 0 0 1 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 1 0 0 0 0 1 0 0 0 1 0 0 0 1
+ 0 1 1 0 0 0 1 0 1 1 1 1 1 1 1 0 1 0 0 1 0 0 1 0 1 1 1 0 0 1 0 1 1 1 1 1 0
+ 1 0 1 1 0 0 1 0 1 1 1 1 0 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD02E0>;[0 0 0 ... 0 0 0];217.04
+Thifensulfuron methyl;COC(=O)C1=C(C=CS1)S(=O)(=O)NC(=O)NC1=NC(C)=NC(OC)=N1;Inactivo;0.5471199999999999;387.0307251360001;10;2;4;0;0;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB57900>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 1
+ 1 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 1 0 0 0 1
+ 0 0 0 1 0 0 1 1 0 1 0 0 0 0 1 1 0 0 0 1 1 0 1 1 1 0 0 0 1 0 0 0 1 0 0 0 1
+ 0 1 1 0 0 0 1 0 0 1 1 0 1 1 1 1 1 0 0 1 1 0 1 0 1 1 1 0 0 1 1 1 1 1 0 1 0
+ 1 1 1 1 0 0 1 0 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD0C80>;[0 1 0 ... 0 0 0];149.46999999999997
+Rimsulfuron;CCS(=O)(=O)C1=CC=CN=C1S(=O)(=O)NC(=O)NC1=NC(OC)=CC(OC)=N1;Inactivo;0.19279999999999942;431.05693988400003;10;2;5;0;0;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB58D60>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0
+ 1 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 1 0 0 0 1
+ 0 0 0 1 0 1 1 1 0 0 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1
+ 0 1 1 1 0 0 1 0 0 1 1 0 0 1 1 1 1 0 0 1 1 1 1 0 1 1 1 0 0 1 1 1 1 1 1 1 0
+ 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD2120>;[0 0 0 ... 0 0 0];166.53999999999996
+Oxytetracycline;CN(C)[C@H]1[C@@H]2[C@@H](O)[C@H]3C(=C(O)[C@]2(O)C(=O)C(C(N)=O)=C1O)C(=O)C1=C(C=CC=C1O)[C@@]3(C)O;Activo;-1.243599999999999;460.14818034799987;10;7;5;0;6;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB59120>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0
+ 1 0 1 0 0 0 0 0 0 0 1 1 1 0 0 1 0 0 1 1 0 1 0 1 0 1 0 1 0 0 0 1 0 0 0 0 1
+ 0 1 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 1 0 0 1 0 0 1 1 1 1 1 1 1 1 0
+ 1 1 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD24A0>;[0 0 0 ... 0 0 0];201.84999999999997
+Nitric acid, calcium salt (2:1);[Ca++].[O-][N+]([O-])=O.[O-][N+]([O-])=O;Inactivo;-0.8590000000000002;163.93822670000003;6;0;2;0;0;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB599E0>;"[0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0
+ 0 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 1 0
+ 1 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 1 0 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD2D60>;[0 0 0 ... 0 0 0];132.4
+Sucralose;OC[C@H]1O[C@H](O[C@]2(CCl)O[C@H](CCl)[C@@H](O)[C@@H]2O)[C@H](O)[C@@H](O)[C@H]1Cl;Inactivo;-1.6561000000000003;396.014550608;8;5;0;0;5;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB59B30>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+ 0 0 0 0 0 0 0 0 1 1 0 0 0 1 0 1 1 1 0 0 0 0 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0
+ 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 1 1 1 0 0 1 1 0 1 0 0 1 1 1 1 0 0 1 0 0 1 0
+ 0 0 1 0 1 1 0 1 0 1 0 1 0 0 0 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD2EB0>;[1 0 0 ... 0 0 0];128.84
+UK-333747;COCC1=NN=C(N1C1=C(Cl)C(Cl)=CC2=C1NC(=O)C(=O)N2)C1=C[N+]([O-])=CC=C1;Inactivo;1.5507;434.029708224;7;2;2;0;0;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB5A510>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 1 0
+ 0 1 0 1 0 1 1 0 0 1 0 1 1 1 0 0 0 0 1 1 1 1 1 1 1 0 0 1 1 1 0 1 0 1 0 1 1
+ 1 0 1 0 1 0 1 0 0 1 1 1 0 1 1 1 1 0 0 1 1 0 1 1 1 1 1 0 0 1 0 1 1 1 1 1 0
+ 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD3890>;[0 0 0 ... 0 0 0];132.6
+PharmaGSID_48172;OC(=O)\C=C\C(O)=O.O=C1N(CCC2=NOC(=N2)C2=CC=C(CN3CCCCCC3)S2)C(=O)C2=C1C=CC=C2;Inactivo;3.7246000000000024;552.1678702359999;9;2;5;0;2;2;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB5ABA0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+ 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0
+ 0 1 0 1 0 1 1 1 0 1 0 1 1 0 1 1 0 0 1 0 1 1 1 1 0 1 1 1 1 0 0 1 0 0 0 0 1
+ 1 0 0 0 0 0 1 1 0 1 1 1 1 1 1 0 1 1 1 0 1 0 0 0 0 1 1 1 1 1 0 1 1 1 0 1 1
+ 1 0 1 0 0 1 1 1 1 1 1 1 0 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD3F20>;[0 0 1 ... 0 0 0];154.14
+YM 218;OC(=O)\C=C\C(O)=O.CC1=C(C=CO1)C(=O)NC1=CC=C(C=C1)C(=O)N1CCC(F)(F)\C(=C/C(=O)N2CCC(CC2)N2CCCCC2)C2=C1C=CC=C2.CC1=C(C=CO1)C(=O)NC1=CC=C(C=C1)C(=O)N1CCC(F)(F)\C(=C/C(=O)N2CCC(CC2)N2CCCCC2)C2=C1C=CC=C2;Inactivo;12.484639999999985;1348.5831828799999;12;4;11;0;2;2;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB5AC80>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 1 1 0 0 0 1 0 0 1 0 1 1 1 0 1 0 0 1 0 0 0 1 1 1 1 1 1 0 0 0 1 0 1 0 0 1
+ 1 1 0 0 0 0 1 1 0 1 1 1 1 0 1 0 0 1 1 0 1 0 1 1 1 1 1 1 1 1 0 1 0 1 1 1 1
+ 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD4040>;[0 0 1 ... 0 0 0];246.80000000000004
+FD&C Blue No. 1;[Na+].[Na+].CCN(CC1=CC(=CC=C1)S([O-])(=O)=O)C1=CC=C(C=C1)C(=C1C=CC(C=C1)=[N+](CC)CC1=CC(=CC=C1)S([O-])(=O)=O)C1=C(C=CC=C1)S([O-])(=O)=O;Inactivo;-0.9650999999999883;792.1221822280002;10;0;10;0;0;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB5B0B0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+ 0 0 1 1 0 0 0 1 0 0 0 1 1 1 1 0 0 0 1 0 0 1 1 1 1 0 0 1 0 0 1 0 0 0 0 0 1
+ 0 0 1 0 1 0 0 1 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0
+ 0 1 0 1 0 1 0 0 1 0 0 1 0 1 1 0 0 0 0 1 0 0 1 0 1 1 0 1 0 1 0 1 0 1 1 1 0
+ 1 1 1 0 0 1 0 1 1 0 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD4430>;[0 0 0 ... 0 0 0];177.84999999999997
+Sucrose;OC[C@H]1O[C@@](CO)(O[C@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)[C@@H](O)[C@@H]1O;Inactivo;-5.395599999999993;342.11621152399994;11;8;0;0;8;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB5BC10>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+ 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 1 1 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 1 0
+ 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 1 1 1 0 0 1 1 0 0 0 0 1 1 1 1 0 0 1 0 0 1 0
+ 0 0 1 0 1 1 0 1 0 1 0 1 0 0 0 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD4F90>;[1 0 0 ... 0 0 0];189.52999999999997
+Rosiglitazone maleate;OC(=O)\C=C/C(O)=O.CN(CCOC1=CC=C(CC2SC(=O)NC2=O)C=C1)C1=CC=CC=N1;Activo;2.202699999999999;473.12567107600006;8;3;5;0;2;2;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB5C660>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+ 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0
+ 0 0 0 1 0 0 0 1 0 1 0 1 1 0 1 1 1 1 1 1 0 1 1 0 1 1 1 0 0 0 0 0 1 0 0 1 1
+ 1 0 1 0 1 1 1 1 0 1 1 1 1 0 1 1 1 0 0 0 1 1 1 0 1 1 1 1 1 1 0 1 1 0 1 1 1
+ 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD59E0>;[0 0 0 ... 0 0 0];146.13
+Triflusulfuron-methyl;COC(=O)C1=C(C(C)=CC=C1)S(=O)(=O)NC(=O)NC1=NC(=NC(OCC(F)(F)F)=N1)N(C)C;Inactivo;1.48412;492.1038879880001;10;2;4;0;0;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB5D970>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0
+ 1 0 0 0 0 1 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 1 0 0 0 1
+ 1 0 0 1 0 0 1 1 0 0 0 1 1 0 1 1 0 0 0 1 1 0 0 1 1 0 0 0 1 0 0 0 1 1 0 1 1
+ 0 1 1 0 0 0 1 0 0 1 1 1 1 1 1 1 1 0 0 1 1 0 1 1 1 1 1 0 0 1 1 1 1 1 1 1 0
+ 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD6CF0>;[0 0 0 ... 1 0 0];152.70999999999998
+Iodosulfuron methyl ester sodium salt;[Na+].COC(=O)C1=C(C=C(I)C=C1)S(=O)(=O)[N-]C(=O)NC1=NC(OC)=NC(C)=N1;Inactivo;-1.1216799999999991;528.952896416;9;1;4;0;0;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB5E040>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 1 1 0 1 0
+ 1 1 0 0 0 0 0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 0 0 0 0 1
+ 0 0 0 1 0 0 1 1 0 0 0 0 0 1 1 1 0 0 0 1 1 0 0 1 1 0 0 0 1 0 0 0 1 1 0 0 1
+ 0 1 1 0 0 0 1 0 0 1 1 0 1 1 1 1 1 0 0 1 0 0 1 1 1 1 1 0 0 1 1 1 1 1 1 1 0
+ 1 1 1 1 0 0 1 0 1 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD73C0>;[0 1 0 ... 0 0 0];151.54000000000002
+CP-608039;CNC(=O)[C@H]1O[C@H]([C@H](O)[C@@H]1N)N1C=NC2=C1N=CN=C2NCC1=CC(Cl)=CC=C1OCC1=CC(C)=NO1;Inactivo;1.2988199999999994;528.16364358;12;4;1;0;1;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB5EE40>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 1 1 0
+ 0 1 0 1 0 1 1 0 1 1 1 1 0 1 0 1 0 0 1 1 1 1 1 1 1 0 1 1 1 1 0 1 0 1 1 1 1
+ 0 0 1 0 0 0 1 0 0 1 1 1 0 1 1 1 1 1 0 0 1 1 1 1 1 0 1 1 1 1 0 1 1 1 1 1 0
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD8200>;[0 0 0 ... 0 0 0];175.46999999999997
+Citric acid;OC(=O)CC(O)(CC(O)=O)C(O)=O;Inactivo;-1.2485;192.02700259600002;4;4;3;0;4;3;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB5F7B0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0
+ 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0
+ 0 0 0 0 1 0 1 1 0 1 0 1 0 0 0 0 1 0 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD8B30>;[0 0 0 ... 0 0 0];132.13000000000002
+Aminopterin;NC1=NC2=C(N=C(CNC3=CC=C(C=C3)C(=O)N[C@@H](CCC(O)=O)C(O)=O)C=N2)C(N)=N1;Inactivo;0.24410000000000026;440.15566573999996;10;6;3;0;2;2;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB606D0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0
+ 0 0 0 1 0 1 1 0 1 0 1 0 0 0 0 0 1 1 1 0 0 1 0 0 1 0 1 1 0 0 1 1 1 0 0 0 1
+ 1 0 0 0 0 0 1 1 0 1 1 0 1 0 1 0 0 0 0 0 1 1 1 0 1 1 1 0 1 1 0 1 0 0 1 1 1
+ 0 0 0 1 0 1 1 1 1 1 1 1 0 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBD9A50>;[0 1 0 ... 0 0 0];219.33000000000004
+C.I. Disperse Blue 27;OCCC1=CC=C(NC2=CC=C(O)C3=C2C(=O)C2=C(C=CC(O)=C2C3=O)[N+]([O-])=O)C=C1;Activo;3.059800000000001;420.0957508519999;8;4;3;0;3;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB612E0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0
+ 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 1 1 0 1 1 0 0 0 1 0
+ 0 0 1 0 0 0 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 1 1 0 1 1 0 0 1 1 0 1 1 1 1 1 1
+ 1 0 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBDA660>;[0 0 0 ... 0 0 0];150.0
+Sucrose octaacetate;[H][C@]1(O[C@]2(COC(C)=O)O[C@H](COC(C)=O)[C@@H](OC(C)=O)[C@@H]2OC(C)=O)O[C@H](COC(C)=O)[C@@H](OC(C)=O)[C@H](OC(C)=O)[C@H]1OC(C)=O;Inactivo;-0.8291999999999908;678.2007289960001;19;0;8;0;0;8;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB63190>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+ 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 1 0
+ 0 1 0 0 0 1 0 0 0 1 0 0 1 0 0 1 1 1 0 0 0 1 0 0 0 1 1 1 0 1 1 0 1 0 0 1 0
+ 0 1 1 0 1 1 1 1 0 1 0 1 1 0 0 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBDC510>;[1 0 1 ... 0 0 0];238.08999999999995
+CP-471358;ONC(=O)C1(CCCC1)N(CCC(O)=O)S(=O)(=O)C1=CC=C(OC2=CC=C(F)C=C2)C=C1;Inactivo;2.901600000000001;466.121000296;6;3;4;0;2;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB63580>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0
+ 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 1 1 0 0 1 0 1 1 1 1 0 1 1 1
+ 0 0 0 0 0 1 0 1 0 0 0 0 0 1 1 0 1 1 1 0 1 1 1 1 0 0 1 0 1 0 1 0 1 1 0 0 1
+ 1 1 1 0 0 0 1 1 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 0 0 1 1 0 1 1 0 1 1 1
+ 1 0 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBDC900>;[0 0 0 ... 0 0 0];133.23999999999998
+Cariporide mesylate;CS(O)(=O)=O.CC(C)C1=CC=C(C=C1S(C)(=O)=O)C(=O)N=C(N)N;Inactivo;0.13110000000000127;379.08717739200006;5;3;6;0;1;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB636D0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 1 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 1 1 1 1 0 0 1 0 0 1 0 1 0 0 0 1
+ 1 0 0 1 1 0 0 1 0 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 1
+ 0 1 0 0 0 0 1 0 1 0 0 0 0 1 0 0 0 0 0 1 1 0 0 0 0 1 0 0 1 1 1 1 0 1 0 1 0
+ 1 1 1 1 0 0 1 0 1 0 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBDCA50>;[0 1 0 ... 0 0 0];169.98
+Dexamethasone sodium phosphate;[Na+].[Na+].[H][C@@]12C[C@@H](C)[C@](O)(C(=O)COP([O-])([O-])=O)[C@@]1(C)C[C@H](O)[C@@]1(F)[C@@]2([H])CCC2=CC(=O)C=C[C@]12C;Activo;-5.243299999999998;516.130121266;8;2;5;0;2;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB63820>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0
+ 0 0 0 0 0 1 0 1 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 0 0 0 0 1 0 0 1 0 1 1 0 1 1 1 1 1 1 0
+ 0 1 0 0 1 1 0 1 0 0 0 0 0 1 0 1 1 1 1 1 1 1 0 1 0 1 0 0 1 1 1 0 1 0 1 1 1
+ 1 1 1 0 1 1 1 1 0 1 0 1 1 0 0 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBDCBA0>;[0 0 0 ... 0 0 0];147.01999999999998
+Methotrexate;CN(CC1=NC2=C(N=C1)N=C(N)N=C2N)C1=CC=C(C=C1)C(=O)N[C@@H](CCC(O)=O)C(O)=O;Inactivo;0.2684000000000003;454.1713158039999;10;5;3;0;2;2;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB64740>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0
+ 0 0 0 1 0 1 1 0 0 0 1 1 1 0 0 0 1 1 1 1 0 1 0 0 1 0 1 1 0 0 1 1 1 0 0 0 1
+ 1 0 0 0 1 0 1 1 0 1 1 1 1 0 1 0 0 0 0 0 1 1 1 0 1 1 1 0 1 1 0 1 0 0 1 1 1
+ 1 0 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBDDAC0>;[0 1 0 ... 0 0 0];210.53999999999996
+Quercetin;OC1=CC2=C(C(O)=C1)C(=O)C(O)=C(O2)C1=CC(O)=C(O)C=C1;Activo;1.987999999999999;302.04265266;7;5;1;0;5;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB64A50>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0
+ 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 0 0 1 0 1 1 0 0 1 1 1 1 0
+ 0 0 1 0 1 0 1 0 0 1 0 1 0 0 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBDDDD0>;[0 0 0 ... 0 0 0];131.36
+Erythromycin;CC[C@H]1OC(=O)[C@H](C)[C@@H](O[C@H]2C[C@@](C)(OC)[C@@H](O)[C@H](C)O2)[C@H](C)[C@@H](O[C@@H]2O[C@H](C)C[C@@H]([C@H]2O)N(C)C)[C@](C)(O)C[C@@H](C)C(=O)[C@H](C)[C@@H](O)[C@]1(C)O;Inactivo;1.785600000000004;733.4612412040001;14;5;2;0;5;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB655F0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0
+ 1 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 1 0 1 0 1 1 0 0 1 0 0 1 0 0 0 1 0 0
+ 1 1 0 1 1 1 0 0 0 1 0 1 1 0 0 1 1 0 0 0 1 1 1 0 0 1 1 0 1 1 1 0 1 0 1 1 0
+ 1 1 1 0 1 0 1 1 1 1 1 1 1 1 0 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBDE970>;[0 0 0 ... 0 0 0];193.91
+Oxytetracycline dihydrate;O.O.CN(C)[C@H]1[C@@H]2[C@@H](O)[C@H]3C(=C(O)[C@]2(O)C(=O)C(C(N)=O)=C1O)C(=O)C1=C(C=CC=C1O)[C@@]3(C)O;Inactivo;-2.892999999999995;496.1693097159999;10;7;5;0;6;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB65660>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0
+ 1 0 1 0 0 0 0 0 0 0 1 1 1 0 0 1 0 0 1 1 0 1 0 1 0 1 0 1 0 0 0 1 0 0 0 0 1
+ 0 1 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 1 0 0 1 0 0 1 1 1 1 1 1 1 1 0
+ 1 1 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBDE9E0>;[0 0 0 ... 0 0 0];264.84999999999997
+Allura Red C.I.16035;[Na+].[Na+].COC1=C(C=C(C)C(=C1)S([O-])(=O)=O)N=NC1=C2C=CC(=CC2=CC=C1O)S([O-])(=O)=O;Inactivo;-2.9059799999999947;495.99869596799994;10;1;5;0;1;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB65C80>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+ 0 0 1 1 0 0 0 1 0 0 0 1 1 0 1 1 0 0 1 0 0 1 1 1 1 0 0 1 0 0 1 0 0 0 0 0 1
+ 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 1 1 1 0 1 0 0 0 1 1 0 0 1 1 0 0 0 0
+ 0 1 1 0 0 0 0 0 1 0 0 0 0 1 1 1 1 0 0 1 0 0 1 0 1 1 0 0 1 1 0 1 1 1 1 1 0
+ 1 1 1 0 1 0 0 0 1 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBDF040>;[0 0 0 ... 0 0 0];168.57999999999998
+Oxasulfuron;CC1=CC(C)=NC(NC(=O)NS(=O)(=O)C2=C(C=CC=C2)C(=O)OC2COC2)=N1;Inactivo;1.1594399999999998;406.094705296;8;2;4;0;0;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB66CF0>;"[0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0
+ 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 1 1 1 0 0 1 1 0 1 0 1 0 0 1 1
+ 0 0 0 1 0 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 1 0 0 1 1 0 0 0 1 0 0 0 1 0 0 1 1
+ 0 1 0 0 0 0 1 0 0 1 1 0 1 1 1 1 1 0 0 1 1 1 1 0 1 1 1 1 0 1 0 1 1 1 1 1 0
+ 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE00B0>;[0 0 0 ... 0 0 0];136.57999999999998
+Orthosulfamuron;COC1=CC(OC)=NC(NC(=O)NS(=O)(=O)NC2=C(C=CC=C2)C(=O)N(C)C)=N1;Inactivo;0.6739999999999997;424.11650336;8;3;4;0;0;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB66EB0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0
+ 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 1 0 0 1 0 1 1 0 0 0 1 0 1 0 1 0 0 0 1
+ 1 0 0 1 0 0 1 0 0 0 0 1 1 0 1 1 0 0 1 1 1 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1
+ 0 1 1 0 0 0 1 0 0 1 1 1 0 1 1 1 1 0 0 1 1 0 1 0 1 1 1 0 0 1 1 1 1 1 1 1 0
+ 1 1 1 1 0 0 1 0 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE0270>;[0 0 0 ... 0 0 0];151.85000000000002
+Pitavastatin calcium;[Ca++].O[C@H](C[C@H](O)\C=C\C1=C(C2=CC=C(F)C=C2)C2=C(C=CC=C2)N=C1C1CC1)CC([O-])=O.O[C@H](C[C@H](O)\C=C\C1=C(C2=CC=C(F)C=C2)C2=C(C=CC=C2)N=C1C1CC1)CC([O-])=O;Activo;5.986000000000006;880.284813852;10;4;4;0;4;2;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB67AC0>;"[0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 1 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 0 1 1 0 1 0 0 1 1 0 1 0 0 0
+ 0 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 0 0 0 0 1 1 0 1 0 1 1 0 1 1 0 1 0 1 1 1 1
+ 0 0 1 0 1 0 1 1 1 1 0 1 0 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE0E40>;[0 1 0 ... 0 0 0];186.95999999999998
+MK-812;OC(=O)CCC([O-])=O.CO[C@@H]1COCC[C@@H]1[NH2+][C@@H]1CC[C@](C1)(C(C)C)C(=O)N1CCC2=C(C1)C=C(C=N2)C(F)(F)F;Inactivo;1.148400000000006;587.28183528;7;2;3;0;1;2;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB67D60>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0
+ 1 1 0 0 0 0 1 0 0 0 1 1 1 0 0 0 1 1 1 1 0 1 1 1 1 0 1 1 0 0 1 1 1 1 1 1 1
+ 1 1 0 0 0 1 1 1 0 1 1 1 1 0 0 1 1 1 1 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE1120>;[0 1 0 ... 0 0 0];145.70000000000005
+SAR377142;CC(O)=O.COCCOC1=NC=C2N(CC(=O)NC3=NC=C(Cl)C=C3)C(=CC2=C1)C(=O)NC1CCN(CC1)C(C)C;Inactivo;3.4421000000000017;588.2463105840001;9;3;3;0;1;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB67F90>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0
+ 1 1 0 1 0 1 1 0 0 1 0 1 1 1 0 0 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 0 1 1 1 1
+ 1 0 1 0 1 1 1 1 0 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE1350>;[0 1 0 ... 0 0 0];147.91000000000003
+SAR102779;OC(=O)CCC(O)=O.CC(=O)NC1(CCN(CC[C@]2(CN(C(=O)CO2)C2=CC=CC=C2)C2=CC=C(Cl)C(Cl)=C2)CC1)C1=CC=CC(F)=C1;Activo;5.844500000000008;701.2070841359999;6;3;4;0;2;2;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB68040>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 1 1 0 0 1 0 1 0 0 1 0 1 1 0 1 0 0 1 1 0 0 1 1 1 1
+ 1 1 0 0 0 0 1 1 0 1 1 1 1 0 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1
+ 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE13C0>;[0 0 0 ... 0 0 0];136.47999999999996
+SAR 150640;Cl.CCOC(=O)C1=CC=C(C=C1)[C@H]1CC[C@@H](CC1)NC[C@H](O)COC1=CC=C(O)C(NS(C)(=O)=O)=C1;Activo;3.4179000000000013;542.1853501399999;8;4;3;0;2;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB680B0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 1 0 1 1 1 0 0 0 0 1 0 1 0 0 1 1
+ 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 1 1 1 0 1 0 0 1 0 1 1 1 0 1 0 0 1 0
+ 1 1 1 1 0 0 1 1 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE1430>;[0 1 0 ... 0 0 0];134.19
+Methyldopa sesquihydrate;O.O.O.C[C@](N)(CC1=CC=C(O)C(O)=C1)C(O)=O.C[C@](N)(CC1=CC=C(O)C(O)=C1)C(O)=O;Activo;-1.5894999999999986;476.2006098439999;8;8;2;0;6;2;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB68F90>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0
+ 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0
+ 1 1 1 0 1 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 1 0 0 0 0 1 0 0 1 1 0 1 1 1 1 1 0
+ 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE2350>;[0 0 0 ... 0 0 0];302.06
+Oxytetracycline hydrochloride;Cl.CN(C)[C@H]1[C@@H]2[C@@H](O)[C@H]3C(=C(O)[C@]2(O)C(=O)C(C(N)=O)=C1O)C(=O)C1=C(C=CC=C1O)[C@@]3(C)O;Inactivo;-0.8217999999999992;496.12485805999995;10;7;5;0;6;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB69190>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0
+ 1 0 1 0 0 0 0 0 0 0 1 1 1 0 0 1 0 0 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0 0 0 0 1
+ 0 1 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 0 1 0 0 1 1 1 1 1 1 1 1 0
+ 1 1 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE2510>;[0 0 0 ... 0 0 0];201.84999999999997
+Pentamidine isethionate;OCCS(O)(=O)=O.OCCS(O)(=O)=O.NC(=N)C1=CC=C(OCCCCCOC2=CC=C(C=C2)C(N)=N)C=C1;Activo;0.615840000000003;592.187285352;10;8;6;0;4;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB69DD0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 1 1 1 0 0 1 0 0 0 0 1 0 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0 0 0 1 0 1 0 0 0 1
+ 0 0 0 1 1 0 0 0 1 0 1 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 1 0
+ 0 1 1 0 0 0 0 1 1 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 1 0 1 1 1 0 1 1 0 1 1 1
+ 1 0 0 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE3190>;[0 0 0 ... 0 0 0];267.4
+Cytarabine hydrochloride;Cl.NC1=NC(=O)N(C=C1)[C@@H]1O[C@H](CO)[C@@H](O)[C@@H]1O;Inactivo;-2.1412000000000004;279.062198228;8;4;1;0;3;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB6A5F0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0
+ 0 1 0 1 0 0 1 0 1 1 1 1 0 0 0 1 1 1 1 0 0 1 1 1 1 0 0 0 0 1 0 0 1 0 0 1 1
+ 0 0 1 0 0 0 1 0 0 1 1 1 0 0 0 0 1 0 0 0 1 1 1 1 1 0 1 0 1 1 0 1 1 1 0 1 0
+ 1 0 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE3970>;[0 0 0 ... 0 0 0];130.83
+C.I. Direct Red 81 disodium salt;[Na+].[Na+].OC1=C(N=NC2=CC=C(C=C2)N=NC2=CC=C(C=C2)S([O-])(=O)=O)C(=CC2=CC(NC(=O)C3=CC=CC=C3)=CC=C12)S([O-])(=O)=O;Activo;0.44470000000000126;675.0470431279999;12;2;7;0;1;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB6BCF0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+ 0 0 1 1 0 0 0 1 0 0 0 1 1 0 1 1 0 0 1 0 0 1 1 1 1 0 0 1 0 0 1 0 0 0 0 0 1
+ 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 1 0 0 0 1 1 0 0 1 1 0 0 0 1
+ 0 1 1 0 0 0 1 0 1 0 0 0 0 1 1 0 1 0 0 1 1 0 1 0 1 1 0 0 1 1 0 1 1 1 1 1 0
+ 1 0 1 1 1 0 1 0 1 1 1 1 0 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE50B0>;[0 0 0 ... 0 0 0];213.17
+Ximelagatran;CCOC(=O)CN[C@H](C1CCCCC1)C(=O)N1CC[C@H]1C(=O)NCC1=CC=C(C=C1)C(\N)=N\O;Inactivo;1.0998000000000032;473.2638192200001;7;4;4;0;1;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB6CA50>;"[0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+ 0 1 0 1 1 1 0 0 1 0 1 1 0 0 0 0 1 1 1 0 1 1 0 0 0 0 1 0 1 0 0 0 0 0 1 1 1
+ 1 0 0 1 0 0 1 1 1 0 1 1 1 1 0 1 0 1 1 0 1 1 0 0 0 1 1 1 1 1 0 1 0 0 1 1 1
+ 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE5DD0>;[0 1 1 ... 1 0 0];146.35
+Argatroban monohydrate;O.C[C@@H]1CCN([C@H](C1)C(O)=O)C(=O)[C@H](CCCNC(N)=N)NS(=O)(=O)C1=CC=CC2=C1NC[C@H](C)C2;Inactivo;0.08787000000000611;526.2573539360001;6;6;5;0;1;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB6CB30>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0
+ 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 1 0 1 0 0 1 1 1 1 0 0 1 0 0 1 0 1 0 0 0 1
+ 0 1 0 1 1 1 1 1 1 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 1 0 1 1 1 0 1 1 1 0 0 0 1
+ 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 1 1 1 1 0 0 0 1 1 1 1 1 1 0 1 0 1 1 1 1
+ 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE5EB0>;[0 1 1 ... 0 0 0];209.20999999999998
+Rifampicin;CO[C@H]1\C=C\O[C@@]2(C)OC3=C(C2=O)C2=C(C(O)=C3C)C(O)=C(NC(=O)\C(C)=C/C=C/[C@H](C)[C@H](O)[C@@H](C)[C@@H](O)[C@@H](C)[C@H](OC(C)=O)[C@@H]1C)C(\C=N\N1CCN(C)CC1)=C2O;Inactivo;4.3354200000000045;822.4051232959999;15;6;7;0;5;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB6D970>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+ 0 1 1 0 1 1 1 0 0 1 0 1 1 0 0 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 1 0 0 0 0 1
+ 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE6CF0>;[0 0 0 ... 1 0 0];220.15
+FD&C Yellow 6;[Na+].[Na+].OC1=C(N=NC2=CC=C(C=C2)S([O-])(=O)=O)C2=C(C=C1)C=C(C=C2)S([O-])(=O)=O;Inactivo;-3.2229999999999963;451.9724812199999;9;1;5;0;1;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB6DB30>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+ 0 0 1 1 0 0 0 1 0 0 0 1 1 0 1 1 0 0 1 0 0 1 1 1 1 0 0 1 0 0 1 0 0 0 0 0 1
+ 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 1 1 0 1 0 0 0 1 1 0 0 1 1 0 0 0 0
+ 0 1 1 0 0 0 0 0 1 0 0 0 0 1 1 0 1 0 0 1 0 0 1 0 1 1 0 0 1 1 0 1 1 1 1 1 0
+ 1 0 1 0 1 0 0 0 1 1 1 1 0 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE6EB0>;[0 0 0 ... 0 0 0];159.35
+Metsulfuron-methyl;COC(=O)C1=C(C=CC=C1)S(=O)(=O)NC(=O)NC1=NC(OC)=NC(C)=N1;Inactivo;0.48561999999999983;381.0743042000001;9;2;4;0;0;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB6E3C0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0
+ 1 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 1 0 0 0 1
+ 0 0 0 1 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1
+ 0 1 1 0 0 0 1 0 0 1 1 0 1 1 1 1 1 0 0 1 1 0 1 0 1 1 1 0 0 1 1 1 1 1 1 1 0
+ 1 1 1 1 0 0 1 0 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE7740>;[0 1 0 ... 0 0 0];149.46999999999997
+Mesosulfuron-methyl;COC(=O)C1=C(C=C(CNS(C)(=O)=O)C=C1)S(=O)(=O)NC(=O)NC1=NC(OC)=CC(OC)=N1;Inactivo;-0.15999999999999925;503.07806925200003;11;3;6;0;0;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB6FE40>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0
+ 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 1 0 0 0 1
+ 0 0 0 1 0 0 1 1 1 0 0 0 0 0 1 1 0 0 1 1 1 0 0 1 1 0 1 0 1 0 0 0 1 0 0 0 1
+ 0 1 1 0 0 1 1 0 0 1 1 0 1 1 1 1 1 0 0 1 1 0 1 0 1 1 1 0 0 1 1 1 1 1 1 1 0
+ 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE9200>;[0 0 0 ... 0 0 0];191.97999999999996
+Nicosulfuron;COC1=CC(OC)=NC(NC(=O)NS(=O)(=O)C2=NC=CC=C2C(=O)N(C)C)=N1;Inactivo;0.10100000000000042;410.100853296;9;2;4;0;0;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB6FEB0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0
+ 1 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 1 0 0 0 1
+ 1 0 0 1 0 1 1 1 0 0 0 1 1 0 1 1 0 0 1 1 1 1 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1
+ 0 1 1 0 0 0 1 0 0 1 1 1 0 1 1 1 1 0 0 1 1 0 1 0 1 1 1 0 0 1 1 1 1 1 1 1 0
+ 1 1 1 1 0 0 1 0 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE9270>;[0 0 0 ... 0 0 0];152.71000000000004
+Zoalene;CC1=C(C=C(C=C1C(N)=O)[N+]([O-])=O)[N+]([O-])=O;Inactivo;0.91032;225.038570324;5;1;3;0;0;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB70B30>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0
+ 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1
+ 0 0 0 0 0 0 1 0 1 0 0 1 0 1 0 0 0 0 0 1 0 0 1 0 1 1 0 0 0 1 0 1 0 1 0 1 0
+ 1 0 1 1 0 0 1 0 1 0 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBE9EB0>;[0 0 0 ... 0 0 0];129.37
+SR146131 trifluoroacetate (1:1);OC(=O)C(F)(F)F.COC1=CC(C2=C(CCC3CCCCC3)SC(NC(=O)C3=CC4=CC(C)=CC(C)=C4N3CC(O)=O)=N2)=C(OC)C=C1Cl;Activo;8.535340000000003;723.199283864;8;3;3;0;2;2;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB712E0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+ 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0
+ 0 1 0 1 0 1 0 1 0 1 0 1 0 1 1 0 0 1 1 1 0 1 1 1 0 0 1 1 0 1 1 1 1 1 1 0 1
+ 0 1 1 0 0 0 1 1 0 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBEA660>;[0 0 1 ... 0 0 0];139.98
+Tetracycline;[H][C@@]12C[C@@]3([H])C(=C(O)[C@]1(O)C(=O)C(C(N)=O)=C(O)[C@H]2N(C)C)C(=O)C1=C(C=CC=C1O)[C@@]3(C)O;Inactivo;-0.21439999999999826;444.1532657279999;9;6;5;0;5;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB72DD0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0
+ 1 0 1 0 0 0 0 0 0 0 1 1 1 0 0 1 1 1 1 1 0 1 0 1 0 1 0 1 0 0 0 1 0 0 1 0 1
+ 0 1 1 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 1 0 0 1 0 0 1 1 1 1 1 1 1 1 0
+ 1 1 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBEC190>;[0 0 0 ... 0 0 0];181.61999999999998
+Bensulfuron-methyl;COC(=O)C1=C(CS(=O)(=O)NC(=O)NC2=NC(OC)=CC(OC)=N2)C=CC=C1;Inactivo;0.9318999999999993;410.089619916;9;2;4;0;0;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB73270>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0
+ 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 0 1 1 0 0 0 1 0 1 0 1 0 0 0 1
+ 0 0 0 1 0 0 1 0 0 0 0 0 0 0 1 1 0 1 1 1 1 0 0 1 1 0 0 0 1 0 1 0 1 0 0 0 1
+ 1 1 1 0 0 0 1 0 0 1 1 0 1 1 1 1 1 0 0 1 1 1 1 0 1 1 1 0 0 1 1 1 1 1 1 1 0
+ 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBEC5F0>;[0 0 0 ... 0 0 0];145.81
+alpha-Cyclodextrin;OC[C@H]1O[C@@H]2O[C@@H]3[C@@H](CO)O[C@H](O[C@@H]4[C@@H](CO)O[C@H](O[C@@H]5[C@@H](CO)O[C@H](O[C@@H]6[C@@H](CO)O[C@H](O[C@@H]7[C@@H](CO)O[C@H](O[C@H]1[C@H](O)[C@H]2O)[C@H](O)[C@H]7O)[C@H](O)[C@H]6O)[C@H](O)[C@H]5O)[C@H](O)[C@H]4O)[C@H](O)[C@H]3O;Inactivo;-13.054800000000023;972.3169405200002;30;18;0;0;18;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB743C0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+ 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0
+ 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 1 0 0 0 0 1 1 1 1 0 0 1 0 1 1 0
+ 0 0 1 0 1 1 0 1 0 1 0 1 0 0 0 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBED740>;[0 0 0 ... 0 0 0];474.9000000000001
+Mesotrione;CS(=O)(=O)C1=CC(=C(C=C1)C(=O)C1C(=O)CCCC1=O)[N+]([O-])=O;Inactivo;1.1193;339.041272756;7;0;6;0;0;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB74660>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 1 0 1 1 1 1 0 1 1 0 0 1 0 0 1 1 0 1
+ 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0
+ 0 1 0 0 0 0 0 1 1 0 0 1 0 1 0 0 1 1 0 1 0 1 1 0 1 1 0 0 0 1 0 0 1 1 1 1 1
+ 1 0 1 0 1 0 1 0 1 0 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBED9E0>;[0 0 0 ... 0 0 0];128.49
+Foramsulfuron;COC1=CC(OC)=NC(NC(=O)NS(=O)(=O)C2=C(C=CC(NC=O)=C2)C(=O)N(C)C)=N1;Inactivo;0.27429999999999977;452.11141798;9;3;5;0;0;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB74C10>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0
+ 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 1 0 0 0 1
+ 1 0 0 1 0 0 1 1 0 0 0 1 1 0 1 1 0 0 1 1 1 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1
+ 0 1 1 0 0 0 1 0 0 1 1 1 0 1 1 1 1 0 0 1 1 0 1 0 1 1 1 0 0 1 1 1 1 1 1 1 0
+ 1 1 1 1 0 0 1 0 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBEDF90>;[0 0 0 ... 0 0 0];168.92000000000002
+Bosentan;COC1=CC=CC=C1OC1=C(NS(=O)(=O)C2=CC=C(C=C2)C(C)(C)C)N=C(N=C1OCCO)C1=NC=CC=N1;Inactivo;4.2039000000000035;551.1838546480001;10;2;2;0;1;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB75B30>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0
+ 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 1 1 1 0 1 1 1 1 0 1 0 0 1 1
+ 1 0 0 1 0 1 1 1 1 0 0 0 0 0 1 0 0 0 1 1 1 1 0 1 1 0 0 0 1 0 1 0 1 0 0 1 1
+ 0 1 1 0 0 0 1 1 0 1 1 0 0 1 1 1 1 0 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBEEEB0>;[0 0 0 ... 0 0 0];145.64999999999998
+Chlorhexidine dihydrochloride;Cl.Cl.ClC1=CC=C(NC(=N)NC(=N)NCCCCCCNC(=N)NC(=N)NC2=CC=C(Cl)C=C2)C=C1;Activo;5.018880000000003;576.1565517440001;4;10;4;0;0;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB75BA0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 1 1 0 1 0 1 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 1 0 0 1 1 0 1 1 0 0 0
+ 1 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 1 1 0 1 0 1 1 1 0 0 1 0 0 0 1 0 0 1 0 1
+ 0 0 0 1 0 1 0 1 1 0 1 0 0 1 1 1 0 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBEEF20>;[0 0 0 ... 0 0 0];167.58
+PharmaGSID_48166;COC1=CC(C=O)=CC2=C1[C@H](COC(N)=O)[C@]1(OC(C)=O)ON2C[C@H]2[C@@H]1N2C(C)=O;Activo;0.3105000000000002;419.132864632;9;1;4;0;0;2;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB76120>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0
+ 0 1 0 0 0 1 1 0 0 0 1 1 0 0 0 1 1 0 1 1 1 1 0 1 1 0 1 1 1 0 0 1 1 0 1 1 1
+ 1 1 1 0 0 0 1 0 0 1 1 1 1 1 0 1 1 0 0 0 0 1 0 0 1 1 1 1 0 1 1 1 1 1 1 1 0
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBEF4A0>;[0 0 0 ... 0 1 0];137.47000000000003
+3'-Azido-3'-deoxythymidine;CC1=CN([C@H]2C[C@H](N=[N+]=[N-])[C@@H](CO)O2)C(=O)NC1=O;Inactivo;-0.19628000000000012;267.096753896;6;2;4;0;1;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB76660>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 1 0
+ 0 1 0 1 0 0 1 0 1 1 0 1 0 0 0 1 0 1 1 0 1 1 1 1 1 0 0 0 0 0 0 0 1 0 0 1 1
+ 1 0 1 0 0 0 1 0 1 1 1 1 0 1 0 0 1 1 1 1 1 1 1 0 0 1 1 0 1 1 0 1 1 1 0 1 0
+ 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBEF9E0>;[0 0 0 ... 0 0 0];133.07999999999998
+Clomiphene citrate (1:1);OC(=O)CC(O)(CC(O)=O)C(O)=O.CCN(CC)CCOC1=CC=C(C=C1)C(=C(Cl)C1=CC=CC=C1)C1=CC=CC=C1;Activo;5.314100000000005;597.212944792;6;4;4;0;4;3;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB76740>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 1 0 0 0 1 1 0 0 1 1 0 0 1 1 1 0
+ 1 1 1 1 0 1 0 1 0 0 0 1 1 0 1 1 1 0 1 0 1 1 0 1 0 1 0 1 1 1 0 0 1 0 1 1 1
+ 1 1 0 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBEFAC0>;[0 0 0 ... 0 0 0];144.60000000000002
+Tamoxifen citrate;OC(=O)CC(O)(CC(O)=O)C(O)=O.CC\C(=C(/C1=CC=CC=C1)C1=CC=C(OCCN(C)C)C=C1)C1=CC=CC=C1;Activo;4.747600000000005;563.251917144;6;4;4;0;4;3;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB76E40>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0
+ 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 1 0 1 0 0 0 1 1 0 0 0 1 0 0 0 0 1 0
+ 1 1 1 1 1 1 0 1 0 0 0 1 1 0 1 1 1 0 0 0 1 1 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1
+ 1 1 0 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBF0200>;[0 0 1 ... 0 0 0];144.60000000000002
+Tribenuron-methyl;COC(=O)C1=CC=CC=C1S(=O)(=O)NC(=O)N(C)C1=NC(OC)=NC(C)=N1;Inactivo;0.5099199999999997;395.0899542640001;9;1;4;0;0;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB77A50>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0
+ 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 1 0 0 0 1
+ 0 0 0 1 0 0 1 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1
+ 0 1 1 0 0 0 1 0 0 1 1 1 1 1 1 1 1 0 0 1 0 0 1 0 1 1 1 0 0 1 1 1 1 1 1 1 0
+ 1 1 1 1 0 0 1 0 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBF0DD0>;[0 1 0 ... 0 0 0];140.68
+Oryzalin;CCCN(CCC)C1=C(C=C(C=C1[N+]([O-])=O)S(N)(=O)=O)[N+]([O-])=O;Activo;1.7768000000000002;346.0947052959999;7;1;4;0;0;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB77E40>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 1 0 1 1 1 1 0 1 1 0 0 1 0 1 1 1 0 1
+ 0 0 0 0 0 1 1 1 0 0 1 1 1 0 1 0 0 0 0 0 1 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 0
+ 1 1 0 1 1 0 1 1 1 0 0 1 0 1 0 0 0 1 1 1 0 0 1 0 1 1 0 1 0 1 0 1 0 1 0 1 1
+ 1 1 1 1 0 1 0 1 1 0 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBF1200>;[0 0 0 ... 0 0 0];149.67999999999998
+Primisulfuron-methyl;COC(=O)C1=C(C=CC=C1)S(=O)(=O)NC(=O)NC1=NC(OC(F)F)=CC(OC(F)F)=N1;Inactivo;1.9763999999999997;468.036282604;9;2;4;0;0;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB78F20>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0
+ 1 0 0 0 0 1 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 1 0 0 0 1
+ 0 0 0 1 0 0 1 1 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 1 1 0 0 0 1 0 0 0 1 1 0 0 1
+ 0 1 1 0 0 0 1 0 0 1 1 0 1 1 1 1 1 0 0 1 1 0 1 1 1 1 1 0 0 1 0 1 1 1 1 1 0
+ 1 0 1 1 0 0 1 0 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBF22E0>;[0 1 0 ... 0 0 0];145.81
+Trifloxysulfuron-sodium;[Na+].COC1=CC(OC)=NC(NC(=O)[N-]S(=O)(=O)C2=NC=CC=C2OCC(F)(F)F)=N1;Inactivo;-0.8716000000000008;459.04363307600005;9;1;3;0;0;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB79D60>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 1 0
+ 1 0 0 0 0 1 0 1 0 0 1 0 1 0 1 0 0 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 0 0 0 0 1
+ 0 0 0 1 0 1 1 1 0 0 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 0 0 0 1 0 0 0 1 1 0 1 1
+ 0 1 1 0 0 0 1 0 0 1 1 0 0 1 1 1 1 0 0 1 0 0 1 1 1 1 1 0 0 1 0 1 1 1 1 1 0
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBF3120>;[0 0 0 ... 0 0 0];143.7
+Carminic acid;CC1=C2C(=O)C3=C(C(O)=C(O)C([C@@H]4O[C@H](CO)[C@@H](O)[C@H](O)[C@H]4O)=C3O)C(=O)C2=CC(O)=C1C(O)=O;Inactivo;-1.1940800000000007;492.09039069999983;12;9;3;0;9;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB7C820>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0
+ 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 1 1 0 0 0 1 1 0 1 1 0 0 1 1 1 1 0
+ 0 0 1 0 1 1 1 1 0 1 0 1 1 0 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBF5BA0>;[0 0 0 ... 0 0 0];242.50999999999996
+Prohexadione-calcium;[Ca++].[Ca++].CCC(=O)[C-]1C(=O)CC(CC1=O)C([O-])=O.CCC(=O)[C-]1C(=O)CC(CC1=O)C([O-])=O;Inactivo;-3.0854199999999974;500.0308287999998;10;0;8;0;0;2;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB7E0B0>;"[0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 1 0 1 1 0
+ 0 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBF7430>;[0 0 0 ... 0 0 1];182.67999999999998
+Ethametsulfuron-methyl;CCOC1=NC(NC)=NC(NC(=O)NS(=O)(=O)C2=C(C=CC=C2)C(=O)OC)=N1;Activo;0.6089999999999994;410.10085329599997;10;3;4;0;0;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB7E120>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0
+ 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 1 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 1 0 0 0 1
+ 0 0 0 1 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 1 1 0 0 0 1 0 0 0 1 0 0 1 1
+ 0 1 1 1 0 0 1 0 0 1 1 0 1 1 1 1 1 0 0 1 1 0 1 0 1 1 1 0 0 1 1 1 1 1 1 1 0
+ 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBF74A0>;[0 0 0 ... 0 0 0];161.5
+Halosulfuron-methyl;COC(=O)C1=C(N(C)N=C1Cl)S(=O)(=O)NC(=O)NC1=NC(OC)=CC(OC)=N1;Inactivo;0.17769999999999953;434.0411455;11;2;4;0;0;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB7E190>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0
+ 1 0 0 0 0 0 1 0 0 0 1 0 0 0 1 1 0 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 1 0 0 0 1
+ 0 1 0 1 0 1 1 1 0 1 0 0 0 1 1 1 0 0 1 1 1 1 1 1 1 0 0 0 1 1 0 0 1 1 0 0 1
+ 0 1 1 0 0 0 1 0 0 1 1 1 1 1 1 1 1 0 0 1 1 0 1 1 1 1 1 0 0 1 1 1 1 1 0 1 0
+ 1 1 1 1 0 0 1 0 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBF7510>;[0 0 0 ... 0 0 0];163.63
+Propoxycarbazone-sodium;[Na+].CCCOC1=NN(C(=O)[N-]S(=O)(=O)C2=C(C=CC=C2)C(=O)OC)C(=O)N1C;Inactivo;-2.1080999999999968;420.07156416399994;10;0;5;0;0;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB7E2E0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 1 0
+ 1 0 0 0 0 0 0 1 0 0 0 0 1 0 1 1 0 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 0 0 0 0 1
+ 0 1 0 1 0 1 1 1 0 1 0 1 0 0 1 1 0 0 0 1 1 1 1 1 0 0 0 0 1 0 0 0 1 0 1 1 1
+ 0 1 1 1 1 0 1 1 0 1 1 1 1 1 1 1 1 0 0 1 0 1 0 0 0 1 1 0 0 1 1 1 1 1 0 1 1
+ 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBF7660>;[0 0 0 ... 0 0 0];140.66000000000003
+Cyclosporin A;CCC1C(=O)N(CC(=O)N(C(C(=O)NC(C(=O)N(C(C(=O)NC(C(=O)NC(C(=O)N(C(C(=O)N(C(C(=O)N(C(C(=O)N(C(C(=O)N1)C(C(C)CC=CC)O)C)C(C)C)C)CC(C)C)C)CC(C)C)C)C)C)CC(C)C)C)C(C)C)CC(C)C)C)C;Activo;3.2690000000000063;1201.841367992;12;5;12;0;1;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB802E0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1 1 0 0 0 1 0 0 0 0 0 1 1 0 0 1 1 1 1 1 0 1 0 1 0 1 1 0 0 0 1 0 0 0 1 0 1
+ 1 0 0 1 1 1 1 0 0 1 1 1 0 0 0 0 1 1 0 0 1 1 0 0 0 1 1 0 1 1 1 1 1 0 0 1 0
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBF9660>;[0 1 0 ... 0 0 0];278.8
+Sulfasalazine;C1=CC=NC(=C1)NS(=O)(=O)C2=CC=C(C=C2)N=NC3=CC(=C(C=C3)O)C(=O)O;Inactivo;3.701600000000002;398.0684905479999;7;3;4;0;2;1;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB80BA0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0
+ 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 1 0 0 0 1
+ 0 0 0 1 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 1 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 0
+ 0 1 1 0 0 0 1 0 1 0 1 0 1 1 1 0 1 0 0 1 1 0 1 0 1 1 1 0 1 1 0 1 1 1 1 1 0
+ 1 0 1 1 1 0 1 0 1 1 1 1 0 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBF9F20>;[0 0 0 ... 0 0 0];141.31
+Folic acid;C1=CC(=CC=C1C(=O)NC(CCC(=O)O)C(=O)O)NCC2=CN=C3C(=N2)C(=O)NC(=N3)N;Inactivo;-0.044799999999998674;441.1396813280001;9;6;4;0;2;2;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB81580>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0
+ 0 0 0 1 0 1 1 0 1 0 1 0 0 0 0 0 1 1 1 0 0 1 0 1 1 0 1 1 0 0 1 1 1 0 0 0 1
+ 1 0 1 0 0 0 1 1 0 1 1 0 1 0 1 0 1 0 0 0 1 1 1 0 1 1 1 0 1 1 0 1 1 0 1 1 1
+ 0 0 0 1 0 1 1 1 1 1 1 1 0 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBFA900>;[0 1 0 ... 0 0 0];213.28
+Triasulfuron;CC1=NC(=NC(=N1)OC)NC(=O)NS(=O)(=O)C2=CC=CC=C2OCCCl;Inactivo;1.31662;401.05606729199997;8;2;3;0;0;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB81BA0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0
+ 1 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 1 0 0 0 1
+ 0 0 0 1 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 1 1 0 0 0 1 1 0 0 1 0 0 1 1
+ 0 1 1 0 0 0 1 1 0 1 1 0 0 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 0 1 0 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBFAF20>;[0 1 0 ... 0 0 0];132.39999999999998
+Emamectin benzoate;CC[C@H](C)[C@@H]1[C@H](C=C[C@@]2(O1)C[C@@H]3C[C@H](O2)C/C=C(/[C@H]([C@H](/C=C/C=C/4\CO[C@H]5[C@@]4([C@@H](C=C([C@H]5O)C)C(=O)O3)O)C)O[C@H]6C[C@@H]([C@H]([C@@H](O6)C)O[C@H]7C[C@@H]([C@H]([C@@H](O7)C)NC)OC)OC)\C)C.C1=CC=C(C=C1)C(=O)OÂ Â ;Activo;6.989300000000008;1007.560620892;15;4;7;0;3;2;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB82900>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 1 1 1 0 1 0 1 1 0 1 1 0 1 0 0 0 1 0 0 1 1 0
+ 0 1 0 1 1 1 0 0 0 1 0 0 1 0 0 1 1 1 0 0 1 1 1 0 0 1 1 0 1 1 1 0 1 0 1 1 0
+ 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBFBC80>;[0 1 0 ... 0 0 0];199.16
+Tannic acid;C1=C(C=C(C(=C1O)O)O)C(=O)OC2=CC(=CC(=C2O)O)C(=O)OCC3C(C(C(C(O3)OC(=O)C4=CC(=C(C(=C4)OC(=O)C5=CC(=C(C(=C5)O)O)O)O)O)OC(=O)C6=CC(=C(C(=C6)OC(=O)C7=CC(=C(C(=C7)O)O)O)O)O)OC(=O)C8=CC(=C(C(=C8)OC(=O)C9=CC(=C(C(=C9)O)O)O)O)O)OC(=O)C1=CC(=C(C(=C1)OC(=O)C1=CC(=C(C(=C1)O)O)O)O)O;Activo;4.838100000000011;1700.172974183999;46;25;10;0;25;10;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB82DD0>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0
+ 0 0 1 0 0 0 0 0 0 0 0 0 1 0 1 1 1 0 0 0 1 1 0 0 0 1 1 0 1 1 0 0 1 1 1 1 0
+ 0 0 1 0 1 1 1 1 0 1 0 1 0 0 1 1 1 1 0]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBFC190>;[0 0 0 ... 0 0 0];777.9800000000005
+Dimethylaniline;CC1=CC(=C(C=C1)N)C.CC1=CC(=C(C=C1)C)N.CC1=C(C(=CC=C1)N)C.CC1=C(C(=CC=C1)C)N.CC1=C(C=C(C=C1)N)C.CC1=CC(=CC(=C1)N)CÂ ;Inactivo;11.313839999999995;726.5348961120001;6;6;0;0;0;0;<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FB83900>;"[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 1 1 0 1 1 0 0
+ 0 1 1 1 0 0 0 0 1 0 1 0 1 1 1 1 0 1 1]";<rdkit.DataStructs.cDataStructs.ExplicitBitVect object at 0x000001DC0FBFCC80>;[0 0 0 ... 0 0 0];156.12

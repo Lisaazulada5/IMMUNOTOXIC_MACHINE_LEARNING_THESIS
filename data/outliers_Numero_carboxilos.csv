@@ -1,0 +1,24 @@
+INPUT;SMILES;Clasificacion_ATS;LogP;Peso_Molecular;NumHAcceptors;NumHDonors;Dobles_Enlaces;Triples_Enlaces;Numero_hidroxilos;Numero_carboxilos
+Triethyl citrate;CCOC(=O)CC(O)(CC(=O)OCC)C(=O)OCC;Inactivo;0.18700000000000006;276.12090298000004;7;1;3;0;1;3
+Propylsilanetriyl triacetate;CCC[Si](OC(C)=O)(OC(C)=O)OC(C)=O;Inactivo;1.0246;248.071614762;6;0;3;0;0;3
+AVE6324;Cl.CCOC(=O)O[C@H](C)OC(=O)C1=CC=C2N(CC3=NOC(=C3)C3=CC=C(Cl)S3)C(=CC2=C1)C(=O)NC1CCN(CC1)C(C)C;Activo;6.759800000000007;678.168175852;11;1;3;0;0;3
+Tri-n-octyl trimellitate;CCCCCCCCOC(=O)C1=CC=C(C(=O)OCCCCCCCC)C(=C1)C(=O)OCCCCCCCC;Inactivo;9.238500000000002;546.392039448;6;0;3;0;0;3
+Butyryl-n-trihexylcitrate;CCCCCCOC(=O)CC(CC(=O)OCCCCCC)(OC(=O)CCC)C(=O)OCCCCCC;Inactivo;6.219200000000007;514.3505685599999;8;0;4;0;0;4
+Ethenylsilanetriyl triacetate;CC(=O)O[Si](OC(C)=O)(OC(C)=O)C=C;Inactivo;0.3397999999999999;232.040314634;6;0;4;0;0;3
+Pentaerythritol triacrylate;OCC(COC(=O)C=C)(COC(=O)C=C)COC(=O)C=C;Activo;0.1526999999999996;298.105252916;7;1;6;0;1;3
+Acetyl tributyl citrate;CCCCOC(=O)CC(CC(=O)OCCCC)(OC(C)=O)C(=O)OCCCC;Inactivo;3.0984000000000016;402.22536804799995;8;0;4;0;0;4
+Citric acid;OC(=O)CC(O)(CC(O)=O)C(O)=O;Inactivo;-1.2485;192.02700259600002;4;4;3;0;4;3
+Triacetin;CC(=O)OCC(COC(C)=O)OC(C)=O;Inactivo;0.044299999999999784;218.079038168;6;0;3;0;0;3
+1,1,1-Trimethylolpropane trimethacrylate;CCC(COC(=O)C(C)=C)(COC(=O)C(C)=C)COC(=O)C(C)=C;Activo;2.7407000000000012;338.172938552;6;0;6;0;0;3
+Ethyltriacetoxysilane;CC[Si](OC(C)=O)(OC(C)=O)OC(C)=O;Inactivo;0.6345000000000001;234.055964698;6;0;3;0;0;3
+Sucrose octaacetate;[H][C@]1(O[C@]2(COC(C)=O)O[C@H](COC(C)=O)[C@@H](OC(C)=O)[C@@H]2OC(C)=O)O[C@H](COC(C)=O)[C@@H](OC(C)=O)[C@H](OC(C)=O)[C@H]1OC(C)=O;Inactivo;-0.8291999999999908;678.2007289960001;19;0;8;0;0;8
+Citric acid, triethyl ester, acetate;CCOC(=O)CC(CC(=O)OCC)(OC(C)=O)C(=O)OCC;Inactivo;0.7578;318.131467664;8;0;4;0;0;4
+Nitrilotriacetic acid;OC(=O)CN(CC(O)=O)CC(O)=O;Inactivo;-1.4577999999999993;191.042987008;4;3;3;0;3;3
+1,2-Benzenedicarboxylic acid, 2-butoxy-2-oxoethyl butyl ester;CCCCOC(=O)COC(=O)C1=CC=CC=C1C(=O)OCCCC;Inactivo;3.143600000000002;336.157288488;6;0;3;0;0;3
+Clomiphene citrate (1:1);OC(=O)CC(O)(CC(O)=O)C(O)=O.CCN(CC)CCOC1=CC=C(C=C1)C(=C(Cl)C1=CC=CC=C1)C1=CC=CC=C1;Activo;5.314100000000005;597.212944792;6;4;4;0;4;3
+Tamoxifen citrate;OC(=O)CC(O)(CC(O)=O)C(O)=O.CC\C(=C(/C1=CC=CC=C1)C1=CC=C(OCCN(C)C)C=C1)C1=CC=CC=C1;Activo;4.747600000000005;563.251917144;6;4;4;0;4;3
+Tris(2-ethylhexyl) trimellitate;CCCCC(CC)COC(=O)C1=CC=C(C(=O)OCC(CC)CCCC)C(=C1)C(=O)OCC(CC)CCCC;Inactivo;8.806200000000006;546.392039448;6;0;3;0;0;3
+Trimethylolpropane triacrylate;CCC(COC(=O)C=C)(COC(=O)C=C)COC(=O)C=C;Activo;1.5704;296.12598836;6;0;6;0;0;3
+Tannic acid;C1=C(C=C(C(=C1O)O)O)C(=O)OC2=CC(=CC(=C2O)O)C(=O)OCC3C(C(C(C(O3)OC(=O)C4=CC(=C(C(=C4)OC(=O)C5=CC(=C(C(=C5)O)O)O)O)O)OC(=O)C6=CC(=C(C(=C6)OC(=O)C7=CC(=C(C(=C7)O)O)O)O)O)OC(=O)C8=CC(=C(C(=C8)OC(=O)C9=CC(=C(C(=C9)O)O)O)O)O)OC(=O)C1=CC(=C(C(=C1)OC(=O)C1=CC(=C(C(=C1)O)O)O)O)O;Activo;4.838100000000011;1700.172974183999;46;25;10;0;25;10
+Triisononyl trimellitate;CC(C)CCCCCCOC(=O)C1=CC(=C(C=C1)C(=O)OCCCCCCC(C)C)C(=O)OCCCCCCC(C)C;Inactivo;9.976499999999996;588.4389896399999;6;0;3;0;0;3
+Adipic acid, polypropyleneglycol, laurate;CCCCCCCCCCCC(=O)OCC(C)OC(=O)CCCCC(=O)OÂ ;Inactivo;5.027200000000004;386.26683893599994;5;1;3;0;1;3
