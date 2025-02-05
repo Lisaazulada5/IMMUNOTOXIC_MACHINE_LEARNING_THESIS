@@ -420,3 +420,36 @@ def graficar_matriz_covarianza(df, columnas_numericas):
 
     plt.title("Matriz de Covarianza")
     plt.show()
+
+# modules/procesamiento/graficas.py
+import matplotlib.pyplot as plt
+from sklearn.metrics import roc_curve, roc_auc_score
+
+def graficar_curva_roc(y_test, y_pred_proba, ruta_guardado, titulo="Curva ROC para Regresión Logística"):
+    """
+    Grafica la Curva ROC y calcula el AUC.
+
+    :param y_test: Etiquetas verdaderas del conjunto de prueba.
+    :param y_pred_proba: Probabilidades predichas para la clase positiva.
+    :param titulo: Título de la gráfica (opcional).
+    """
+    # Calcular la curva ROC y el AUC
+    fpr, tpr, thresholds = roc_curve(y_test, y_pred_proba)
+    auc = roc_auc_score(y_test, y_pred_proba)
+
+    # Graficar la curva ROC
+    plt.figure(figsize=(8, 6))
+    plt.plot(fpr, tpr, label=f'Curva ROC (AUC = {auc:.2f})')
+    plt.plot([0, 1], [0, 1], 'k--')  # Línea diagonal para referencia
+    plt.xlabel('Tasa de Falsos Positivos (FPR)')
+    plt.ylabel('Tasa de Verdaderos Positivos (TPR)')
+    plt.title(titulo)
+    plt.legend(loc='lower right')
+
+
+    # Guardar la figura como archivo JPG
+    plt.savefig(ruta_guardado, format="png", dpi=300)
+    plt.show()
+
+    # Imprimir el valor del AUC
+    print(f'AUC: {auc:.2f}')

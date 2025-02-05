@@ -6,6 +6,50 @@ from sklearn.preprocessing import StandardScaler
 
 import numpy as np
 import statsmodels.api as sm
+
+# modelos.py
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+
+"""
+Dividir los datos
+"""
+
+from modules.procesamiento.limpieza_datos import guardar_csv
+
+def dividir_datos(df, columna_etiqueta, test_size=0.2, random_state=42):
+    """
+    Función para dividir el DataFrame en conjunto de entrenamiento y conjunto de prueba.
+    Guarda los conjuntos de datos como CSV.
+
+    :param df: DataFrame con los datos
+    :param columna_etiqueta: Nombre de la columna que contiene las etiquetas (e.g., 'etiqueta')
+    :param test_size: Proporción de datos para el conjunto de prueba (por defecto 20%)
+    :param random_state: Semilla para garantizar la reproducibilidad (por defecto 42)
+    :return: None
+    """
+    # Dividir el DataFrame en características (X) y etiquetas (y)
+    X = df.drop(columna_etiqueta, axis=1)  # Características
+    y = df[columna_etiqueta]  # Etiquetas (por ejemplo, activa/inactiva)
+
+    # Dividir en entrenamiento y prueba, manteniendo la proporción de las clases
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, stratify=y, random_state=random_state)
+
+    # Unir X_train, X_test con y_train, y_test de nuevo en DataFrames para exportar
+    train_df = pd.concat([X_train, y_train], axis=1)
+    test_df = pd.concat([X_test, y_test], axis=1)
+
+    # Guardar los conjuntos de datos como archivos CSV
+    guardar_csv(train_df, 'data/train_data.csv')
+    guardar_csv(test_df, 'data/test_data.csv')
+
+    print("Los conjuntos de datos se han dividido y guardado correctamente como 'train_data.csv' y 'test_data.csv'.")
+
+
+
+
+
 """
 Regresión  multiple
 """
@@ -53,11 +97,12 @@ def regresion_logistica(df, columnas, target):
     X_test = sm.add_constant(X_test)
 
     # Crear el modelo de regresión logística
-    log_reg = LogisticRegression(max_iter=1000)
+    log_reg = LogisticRegression(penalty='none', solver='lbfgs', max_iter=1000)
     log_reg.fit(X_train, y_train)
 
     # Predicciones
     y_pred = log_reg.predict(X_test)
+    y_pred_proba = log_reg.predict_proba(X_test)[:, 1]
 
     # Evaluación del modelo
     accuracy = accuracy_score(y_test, y_pred)
@@ -71,7 +116,31 @@ def regresion_logistica(df, columnas, target):
     print("Reporte de clasificación:")
     print(report)
 
-    return log_reg, accuracy, cm, report
+    return log_reg, accuracy, cm, report,y_test, y_pred_proba
+
+"""
+COEFICIENTES DE LA REGRESION LOGISTICA
+"""
+import pandas as pd
+
+def obtener_coeficientes(columnas, modelo):
+    """
+    Función para obtener los coeficientes del modelo y asociarlos con las variables predictoras.
+
+    :param columnas: Lista de nombres de las variables predictoras.
+    :param modelo: El modelo entrenado (por ejemplo, un modelo de regresión logística).
+    :return: DataFrame con los coeficientes y las variables asociadas.
+    """
+    # Extraer los coeficientes del modelo
+    coeficientes = modelo.params  # Extraer coeficientes para la clasificación binomial
+
+    # Crear un DataFrame con las variables y sus coeficientes
+    coef_df = pd.DataFrame({
+        'Variable': ['Coeficiente de Intercepto'] + columnas,
+        'Coeficiente': coeficientes
+    })
+
+    return coef_df
 
 """
 MODELO DE ÁRBOLES DE DECISION
@@ -105,10 +174,10 @@ def arbol_decision(df, columnas_predictoras, target, criterio='gini', max_depth=
     X = df[columnas_predictoras]
     y = df[target]
 
-    modelo = DecisionTreeClassifier(criterion=criterio, max_depth=max_depth,
+    modelo = DecisionTreeClassifier(criterion=criterio, max_depth=5,
                                     min_samples_split=min_samples_split,
                                     min_samples_leaf=min_samples_leaf,
-                                    random_state=42)
+                                    random_state=42, class_weight='balanced')
 
     modelo.fit(X, y)
     y_pred = modelo.predict(X)
@@ -118,3 +187,58 @@ def arbol_decision(df, columnas_predictoras, target, criterio='gini', max_depth=
     report = classification_report(y, y_pred)
 
     return modelo, accuracy, cm, report
+
+""""
+REGLOG LOGIT CON SUMMARY PARA VER  VALOR P DE COEFICIENTES
+"""
+
+import statsmodels.api as sm
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+
+def regresion_logistica_sm(df, columnas, target):
+    """
+    Función para realizar regresión logística utilizando statsmodels,
+    obteniendo el summary con los p-valores de los coeficientes.
+
+    :param df: DataFrame con los datos.
+    :param columnas: Lista de nombres de columnas para las variables predictoras.
+    :param target: Nombre de la columna de la variable dependiente.
+    :return: Modelo ajustado, summary, precisión, matriz de confusión, reporte de clasificación,
+             datos reales de test (y_test) y probabilidades predichas (y_pred_proba).
+    """
+    # Extraer las variables predictoras y la variable dependiente
+    X = df[columnas]
+    y = df[target]
+
+    # Dividir los datos en conjunto de entrenamiento y prueba
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    # Agregar la constante para el intercepto en el modelo
+    X_train = sm.add_constant(X_train)
+    X_test = sm.add_constant(X_test)
+
+    # Ajustar el modelo de regresión logística usando Logit de statsmodels
+    modelo = sm.Logit(y_train, X_train).fit()
+
+    # Obtener y mostrar el summary del modelo (incluye p-valores de los coeficientes)
+    summary = modelo.summary()
+    print(summary)
+
+    # Realizar predicciones sobre el conjunto de prueba
+    y_pred_proba = modelo.predict(X_test)
+    y_pred = (y_pred_proba >= 0.5).astype(int)  # Clasificación con umbral 0.5
+
+    # Evaluar el modelo
+    accuracy = accuracy_score(y_test, y_pred)
+    cm = confusion_matrix(y_test, y_pred)
+    report = classification_report(y_test, y_pred)
+
+    print(f"Precisión del modelo: {accuracy:.4f}")
+    print("Matriz de confusión:")
+    print(cm)
+    print("Reporte de clasificación:")
+    print(report)
+
+    return modelo, summary, accuracy, cm, report, y_test, y_pred_proba

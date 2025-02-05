@@ -1127,7 +1127,7 @@ from modules.procesamiento.calculo_fingerprints import convertir_MACCS_a_numpy
 
 df = convertir_MACCS_a_numpy(df, 'MACCS')
 #guardar_csv(df, 'data/MACCS_KEYS.csv')
-#print(df)
+print(df)
 
 """
 CALCULO DE MORGAN FINGERPRINTS
@@ -1491,10 +1491,15 @@ ESTADISTICOS DE CADA VARIABLE
 """
 from modules.procesamiento.analisis_estadistico import obtener_estadisticos
 
-estadisticos = obtener_estadisticos(df, columnas_interes)
-print("estadisticos de cada variable:")
-guardar_csv(estadisticos, 'data/estadisticos.csv')
-print(estadisticos)
+output_path = 'data/estadisticos.csv'
+if not os.path.exists(output_path):
+    estadisticos = obtener_estadisticos(df, columnas_interes)
+    print("estadisticos de cada variable:")
+    guardar_csv(estadisticos, output_path)
+    print(estadisticos)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 
 """
@@ -1512,10 +1517,15 @@ columnas_numericas = ['LogP', 'Peso_Molecular', 'NumHAcceptors', 'NumHDonors',
                     'Dobles_Enlaces', 'Triples_Enlaces', 'Numero_hidroxilos',
                     'Numero_carboxilos', 'TPSA', 'NumRotatableBonds']
 
-estadisticas_grupo = obtener_estadisticas_por_grupo(df, 'Clasificacion_ATS', columnas_numericas)
-print(estadisticas_grupo.reset_index())
-estadisticas_grupo= estadisticas_grupo.reset_index()
-#guardar_csv(estadisticas_grupo, 'data/estadisticas_grupo.csv')
+output_path = 'data/estadisticas_grupo.csv'
+if not os.path.exists(output_path):
+    estadisticas_grupo = obtener_estadisticas_por_grupo(df, 'Clasificacion_ATS', columnas_numericas)
+    print(estadisticas_grupo.reset_index())
+    estadisticas_grupo= estadisticas_grupo.reset_index()
+    guardar_csv(estadisticas_grupo, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
 Escalado de variables con z-score
@@ -1554,11 +1564,27 @@ scatterplot
 from modules.procesamiento.graficas import generar_pairplot
 
 columnas = ['LogP_scaled', 'Peso_Molecular_scaled', 'NumRotatableBonds_scaled']
-generar_pairplot(df_scaled, columnas, 'data/scater_escaladas.png')
 
-#guardar_csv(df_scaled, 'data/escalado_somevariables.csv')
+output_path = 'data/graficas/scater_escaladas.png'
+if not os.path.exists(output_path):
+    generar_pairplot(df_scaled, columnas, output_path) #genera scatterplot
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
-graficar_y_guardar_variable_continua(df_scaled, 'NumRotatableBonds_scaled', 'data/NumRotatableBonds_scaled.png')
+output_path = 'data/escalado_somevariables.csv'
+if not os.path.exists(output_path):
+    guardar_csv(df_scaled, 'data/escalado_somevariables.csv') #permite veriricar como se observan la variable escalada
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+output_path = 'data/graficas/NumRotatableBonds_scaled.png'
+if not os.path.exists(output_path):
+    graficar_y_guardar_variable_continua(df_scaled, 'NumRotatableBonds_scaled', output_path) #grafica la variable numero de enlaces rotables
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
 Prueba de correlación de Pearson
@@ -1593,8 +1619,14 @@ scatterplot con las demás variables
 """
 from modules.procesamiento.graficas import generar_pairplot
 
+
+output_path = 'data/graficas/scater_escaladas_variables no tan relacionadas.png'
 columnas = ['LogP_scaled', 'TPSA_scaled', 'Dobles_Enlaces_scaled', 'NumHAcceptors_scaled', 'NumHDonors_scaled']
-generar_pairplot(df_scaled, columnas, 'data/graficas/scater_escaladas_variables no tan relacionadas.png')
+if not os.path.exists(output_path):
+    generar_pairplot(df_scaled, columnas, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
 Prueba de correlación de Pearson
@@ -1608,11 +1640,16 @@ columnas_relacionadas = ['LogP_scaled', 'TPSA_scaled', 'Dobles_Enlaces_scaled', 
                          'NumRotatableBonds_scaled', 'Peso_Molecular_scaled']
 
 # Llamar a la función que calcula las correlaciones
-resultados = calcular_correlacion(df_scaled, columnas_relacionadas)
-print(resultados)
+output_path = 'data/pearson_pvalue_variablespococorre.csv'
+if not os.path.exists(output_path):
+    resultados = calcular_correlacion(df_scaled, columnas_relacionadas)
+    print(resultados)
 # Imprimir los resultados
-print(resultados)
-#guardar_csv(resultados, 'data/pearson_pvalue_variablespococorre.csv')
+    print(resultados)
+    guardar_csv(resultados, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
 scatterplot con las demás variables y Peso moelcular
@@ -1620,7 +1657,12 @@ scatterplot con las demás variables y Peso moelcular
 from modules.procesamiento.graficas import generar_pairplot
 
 columnas = ['Peso_Molecular_scaled', 'TPSA_scaled', 'Dobles_Enlaces_scaled', 'NumHAcceptors_scaled', 'NumHDonors_scaled']
-generar_pairplot(df_scaled, columnas, 'data/graficas/scater_escaladas_variables_peso_molecular.png')
+output_path = 'data/graficas/scater_escaladas_variables_peso_molecular.png'
+if not os.path.exists(output_path):
+    generar_pairplot(df_scaled, columnas, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
 Scaterplot vs caegoria
@@ -1629,11 +1671,17 @@ from modules.procesamiento.graficas import generar_pairplot_CATEOGRIAS
 columnas_interes = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
                     'Dobles_Enlaces_scaled']
 categoria = "Clasificacion_ATS"
-generar_pairplot_CATEOGRIAS(df_scaled, columnas_interes, categoria, 'data/graficas/pairplot_clasificacion.png')
+output_path = 'data/graficas/pairplot_clasificacion.png'
+if not os.path.exists(output_path):
+    generar_pairplot_CATEOGRIAS(df_scaled, columnas_interes, categoria, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
 Prueba de prueba_mann_whitney para evaluar la mediana de dos grupos de datos
 """
+
 print('Prueba de prueba_mann_whitney para evaluar la mediana de dos grupos de datos')
 from modules.procesamiento.analisis_estadistico import prueba_mann_whitney_df
 columnas = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
@@ -1643,114 +1691,243 @@ resultado_mann_whitney = prueba_mann_whitney_df(df_scaled, columna_categorica, c
 print(resultado_mann_whitney)
 
 """
-Analisis de PCA
+DIVIDIR DATOS PARA FEATURE SELECION
 """
+print('______________________________ ')
+print('DIVIDIR 20-80% DATOS PARA FEATURE SELECION')
+print('______________________________ ')
+from modules.procesamiento.modelos import dividir_datos
+output_path = 'data/train_data.csv'
+if not os.path.exists(output_path):
+    dividir_datos(df_scaled, columna_etiqueta='Clasificacion_ATS')
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+"""
+Cargamos los datos del train data para realizar la feature selection
+"""
+train_data = leer_csv('data/train_data.csv')
+#convertimos los valores de la variable categorica en factores:
+train_data['Clasificacion_ATS'] = train_data['Clasificacion_ATS'].map({'Activo': 1, 'Inactivo': 0})
 
 """
-print('Analisis de PCA')
-from modules.procesamiento.analisis_estadistico import calcular_matriz_covarianza
+Realizamos una regresión lógistica con todas las variables
+"""
+print('______________________________ ')
+print('REGRESION LOGISTICA TODAS LAS VARIABLES')
+print('______________________________ ')
 
-cov_matrix = calcular_matriz_covarianza(df_scaled, columnas)
+#from modules.procesamiento.modelos import regresion_logistica
+X_columns = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled',  'NumHAcceptors_scaled', 'NumHDonors_scaled']
+target = 'Clasificacion_ATS'
 
-print(cov_matrix)
+#modeloRL, accuracy, cm, report,y_test, y_pred_proba = regresion_logistica(train_data, X_columns, target)
+
+
+"""
+Coeficientes del modelo y Calculo ODDS coeficientes
+"""
+# Calcular Odds Ratios
+#from modules.procesamiento.modelos import obtener_coeficientes
+#coeficientes = obtener_coeficientes(X_columns, modeloRL)
+#print('Coeficientes del modelo y Odds Ratios de Coeficientes del modelo')
+#print('______________________________ ')
+#import numpy as np
+#coeficientes['odds_ratios'] = np.exp(coeficientes['Coeficiente'])
+
+# Imprimir resultados
+#print(coeficientes)
+
+"""
+summary del modelo
+"""
+print('SUMMARY MODELO REGLOG')
+print('______________________________ ')
+from modules.procesamiento.modelos import regresion_logistica_sm
+modelo, summary, accuracy, cm, report, y_test, y_pred_proba = regresion_logistica_sm(train_data, X_columns, target)
+
+"""
+CURVA ROC 
+"""
+from modules.procesamiento.graficas import graficar_curva_roc
+
+output_path = 'data/graficas/Curva_ROC_REGLOG_todaslasvariables.png'
+if not os.path.exists(output_path):
+    graficar_curva_roc(y_test,y_pred_proba, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+
+"""
+Coeficientes del modelo y Calculo ODDS coeficientes
+"""
+# Calcular Odds Ratios
+from modules.procesamiento.modelos import obtener_coeficientes
+coeficientes = obtener_coeficientes(X_columns, modelo)
+print('Coeficientes del modelo y Odds Ratios de Coeficientes del modelo')
+print('______________________________ ')
 import numpy as np
-# Calcular autovalores y autovectores
-eigenvalues, eigenvectors = np.linalg.eig(cov_matrix)
+coeficientes['odds_ratios'] = np.exp(coeficientes['Coeficiente'])
+
+# Imprimir resultados
+print(coeficientes)
+
+"""
+EVALUACION DE LOS SUPUESTOS DE LA REGRESION LOGISTICA
+"""
+print('______________________________ ')
+print('EVALUACION DE LOS SUPUESTOS DE LA REGRESION LOGISTICA')
+print('______________________________ ')
+print('Evaluación de la linealidad')
+print('______________________________ ')
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import PolynomialFeatures
+
+# Generar términos cuadráticos
+poly = PolynomialFeatures(degree=2, include_bias=False)
+X_poly = poly.fit_transform(train_data[X_columns])  # X es tu conjunto de datos con las variables predictoras
+y = train_data['Clasificacion_ATS']
+model = LogisticRegression()
+model.fit(X_poly, y)  # Ajustar el modelo con las nuevas características
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+import numpy as np
+
+# Predecir las probabilidades para cada clase
+probas = model.predict_proba(X_poly)[:, 1]  # Obtener las probabilidades de la clase positiva (1)
+
+# Calcular los log-odds (logaritmo de las probabilidades)
+log_odds = np.log(probas / (1 - probas))  # Log-odds = log(p/(1-p))
 
 import matplotlib.pyplot as plt
 
-# Suponiendo que tienes los autovalores en una variable llamada 'eigenvalues'
-plt.plot(range(1, len(eigenvalues)+1), np.cumsum(eigenvalues) / np.sum(eigenvalues), marker='o')
-plt.xlabel('Número de componentes')
-plt.ylabel('Proporción de varianza acumulada')
-plt.title('Scree Plot')
+# Supongamos que quieres graficar una variable 'LogP_scaled' frente a los log-odds
+plt.scatter(X_poly[:, 0], log_odds)
+plt.xlabel('LogP_scaled')
+plt.ylabel('Log-Odds')
+plt.title('Log-Odds vs. LogP_scaled')
 plt.show()
 
+print('Independencia en las observaciones')
+print('______________________________ ')
 
+# Extraer las probabilidades ajustadas (fitted values)
+fitted = modelo.fittedvalues
+# Extraer los valores observados (la variable dependiente)
+# Esto depende de cómo guardaste tus datos, pero una opción es:
+y_observed = modelo.model.endog
+# Calcular los residuos crudos
+raw_resid = y_observed - fitted
 
+import statsmodels.stats.stattools as st
 
+# Usando los residuos crudos
+dw_raw = st.durbin_watson(raw_resid)
+print(f'Estadístico Durbin-Watson (residuos crudos): {dw_raw:.3f}')
 
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(8, 4))
+plt.scatter(fitted, raw_resid, alpha=0.7, label='Residuos crudos')
+plt.axhline(0, color='red', linestyle='--')
+plt.xlabel('Valores ajustados (fitted values)')
+plt.ylabel('Residuos crudos')
+plt.title('Residuos crudos vs. Valores ajustados')
+plt.legend()
+plt.show()
+
+print('______________________________ ')
+print('REGRESION LOGISTICA SIN LA VARIABLE NumHAcceptors_scaled ')
+print('______________________________ ')
+
+#from modules.procesamiento.modelos import regresion_logistica
+X_columns = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled',  'NumHDonors_scaled']
+target = 'Clasificacion_ATS'
 
 """
+summary del modelo
+"""
+print('SUMMARY MODELO REGLOG')
+print('______________________________ ')
+from modules.procesamiento.modelos import regresion_logistica_sm
+modelo, summary, accuracy, cm, report, y_test, y_pred_proba = regresion_logistica_sm(train_data, X_columns, target)
 
+print('______________________________ ')
+print('REGRESION LOGISTICA SIN LA VARIABLE NumHAcceptors_scaled Y NumHDonors_scaled')
+print('______________________________ ')
+
+#from modules.procesamiento.modelos import regresion_logistica
+X_columns = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled']
+target = 'Clasificacion_ATS'
 
 """
-ANALISIS DE LA MULTICOLINEALIDAD
+summary del modelo
 """
+print('SUMMARY MODELO REGLOG')
+print('______________________________ ')
+from modules.procesamiento.modelos import regresion_logistica_sm
+modelo, summary, accuracy, cm, report, y_test, y_pred_proba = regresion_logistica_sm(train_data, X_columns, target)
 
+print('______________________________ ')
+print('REGRESION LOGISTICA SIN LA VARIABLE NumHAcceptors_scaled , NumHDonors_scaled Y Dobles_Enlaces_scaled')
+print('______________________________ ')
+
+#from modules.procesamiento.modelos import regresion_logistica
+X_columns = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled']
+target = 'Clasificacion_ATS'
 
 """
+summary del modelo
+"""
+print('SUMMARY MODELO REGLOG')
+print('______________________________ ')
+from modules.procesamiento.modelos import regresion_logistica_sm
+modelo, summary, accuracy, cm, report, y_test, y_pred_proba = regresion_logistica_sm(train_data, X_columns, target)
+
+"""
+Calculo VIF del modelo MULTICOLINEALIDAD
+"""
+print('______________________________ ')
+print('Calculo VIF del modelo con las variables LogP_scaled, TPSA_scaled,  NumRotatableBonds_scaled, Peso_Molecular_scaled, Dobles_Enlaces_scaled,  NumHAcceptors_scaled, NumHDonors_scaled')
+print('______________________________ ')
 from modules.procesamiento.analisis_estadistico import calcular_vif
+
 columnas = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
                     'Dobles_Enlaces_scaled',  'NumHAcceptors_scaled', 'NumHDonors_scaled']
 
-resultado_vif = calcular_vif(df_scaled, columnas)
-
-print(resultado_vif)
-
-"""
-
-"""
-MODELO DE REGRESION PARA ESOCGER VARIABLES
-"""
-from modules.procesamiento.modelos import modelo_regresion
-
-df_scaled['Clasificacion_ATS'] = df_scaled['Clasificacion_ATS'].map({'Activo': 1, 'Inactivo': 0})
-
-X_columns = ['LogP_scaled', 'TPSA_scaled',  'NumRotatableBonds_scaled', 'Peso_Molecular_scaled']
-
-Y_column = 'Clasificacion_ATS'
-
-#print(df_scaled[Y_column])
-
-# Convertir la variable Y a valores numéricos
-#Y_column = df[Y_column].map({'Activo': 1, 'Inactivo': 0})
-
-modelo_final = modelo_regresion(df_scaled, X_columns, Y_column)
-
-print(modelo_final.summary())
-
-from modules.procesamiento.analisis_estadistico import calcular_vif
-columnas = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
-                    'Dobles_Enlaces_scaled',  'NumHAcceptors_scaled', 'NumHDonors_scaled']
 resultados_VIF = calcular_vif (df_scaled, columnas)
 print(resultados_VIF)
 
+
 """
-Modelo de regresión logistica
+Calculo VIF
 """
-print('Modelo de regresión logística')
-from modules.procesamiento.modelos import regresion_logistica
-X_columns = ['LogP_scaled', 'TPSA_scaled',  'NumRotatableBonds_scaled', 'Peso_Molecular_scaled']
-target = 'Clasificacion_ATS'
-modelo, accuracy, cm, report = regresion_logistica(df_scaled, columnas, target)
-
-
-# Imprimir la precisión del modelo
-print("Precisión del modelo:", accuracy)
-
-# Imprimir la matriz de confusión
-print("Matriz de Confusión:")
-print(cm)
-
-# Imprimir el informe de clasificación
-print("Informe de Clasificación:")
-print(report)
-
-# Ver los coeficientes del modelo
-print("Coeficientes del modelo:")
-print(modelo.coef_)
+print('______________________________ ')
+print('Calculo VIF del modelo con las variables LogP_scaled, TPSA_scaled,  NumRotatableBonds_scaled, Peso_Molecular_scaled')
+print('______________________________ ')
+columnas = ['LogP_scaled', 'TPSA_scaled',  'NumRotatableBonds_scaled', 'Peso_Molecular_scaled']
+resultados_VIF = calcular_vif (df_scaled, columnas)
+print(resultados_VIF)
 
 """
 ARBOLES DE DECISION
 """
 from modules.procesamiento.modelos import arbol_decision
-print('modelo de arboles de decision')
+print('______________________________  ')
+print('MODELO ARBOL DE DECISION')
+print('______________________________  ')
 # Definir las columnas predictoras y la variable objetivo
-columnas_predictoras = ["LogP_scaled", "TPSA_scaled", "NumRotatableBonds_scaled", "Peso_Molecular_scaled"]
+columnas_predictoras = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled',  'NumHAcceptors_scaled', 'NumHDonors_scaled']
 target = "Clasificacion_ATS"
 # Llamar al modelo
-modelo, accuracy, cm, report = arbol_decision(df_scaled, columnas_predictoras, target)
+modelo, accuracy, cm, report = arbol_decision(train_data, columnas_predictoras, target)
 # Mostrar resultados
 print(f"Precisión del modelo: {accuracy:.4f}")
 print("Matriz de confusión:")
@@ -1758,48 +1935,81 @@ print(cm)
 print("Reporte de clasificación:")
 print(report)
 
+print('Extraer la importancia de las características')
+print('______________________________  ')
+importancias = modelo.feature_importances_
+
+# Crear DataFrame para visualizar
+df_importancias = pd.DataFrame({
+    "Variable": columnas_predictoras,
+    "Importancia": importancias
+})
+
+# Ordenar por importancia
+df_importancias = df_importancias.sort_values(by="Importancia", ascending=False)
+
+# Mostrar las 10 variables más importantes
+print(df_importancias.head(10))
+
+
 """
 Probar el modelo
 """
-#saco una porcion de los datos de mi dataset, con el fin de que el modelo jamás los haya visto
-import pandas as pd
-
-# Asegúrate de tener tu DataFrame 'df_scaled' con la columna 'Clasificacion_ATS'
-
-# Filtrar las moléculas activas e inactivas
-activos = df_scaled[df_scaled['Clasificacion_ATS'] == 1]
-inactivos = df_scaled[df_scaled['Clasificacion_ATS'] == 0]
-
-
-
-# Seleccionar aleatoriamente 50 activos y 50 inactivos
-activos_seleccionados = activos.sample(n=50, random_state=42)
-inactivos_seleccionados = inactivos.sample(n=50, random_state=42)
-
-# Concatenar los seleccionados
-df_seleccionados = pd.concat([activos_seleccionados, inactivos_seleccionados])
-
-# Eliminar las moléculas seleccionadas del DataFrame original
-df_restantes = df_scaled.drop(df_seleccionados.index)
-
-# Mostrar los DataFrames resultantes
-print("DataFrame con las moléculas seleccionadas:")
-print(df_seleccionados)
-print("\nDataFrame con las moléculas restantes:")
-print(df_restantes)
-
 """
 Realizamos nuevamente el modelo de arboles con el df_seleccionados dejando aparte el df_restantes
 """
 ""
 from modules.procesamiento.modelos import arbol_decision
 
-print('modelo de arboles de decision df_seleccionados')
+print('modelo de arboles de decision CONJUNTO PRUEBA')
+test_data = leer_csv('data/test_data.csv')
+test_data['Clasificacion_ATS'] = test_data['Clasificacion_ATS'].map({'Activo': 1, 'Inactivo': 0})
+columnas = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled',  'NumHAcceptors_scaled', 'NumHDonors_scaled']
+predict_data = test_data[columnas]
+
+nuevas_predicciones = modelo.predict(predict_data)
+test_data['nuevas_predicciones'] = nuevas_predicciones
+guardar_csv(test_data, 'data/predicion_arbol.csv')
+
+
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data['Clasificacion_ATS']
+y_pred = test_data['nuevas_predicciones']
+
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+
+## Mostrar la matriz de confusión gráficamente
+#disp = ConfusionMatrixDisplay(confusion_matrix=cm)
+#a = disp.plot()
+#a.show()
+
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
+
+
+print('______________________________  ')
+print('MODELO ARBOL DE DECISION sin las variables NumHAcceptors_scaled, NumHDonors_scaled')
+print('______________________________  ')
 # Definir las columnas predictoras y la variable objetivo
-columnas_predictoras = ["LogP_scaled", "TPSA_scaled", "NumRotatableBonds_scaled", "Peso_Molecular_scaled"]
+columnas_predictoras = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled']
 target = "Clasificacion_ATS"
 # Llamar al modelo
-modelo, accuracy, cm, report = arbol_decision(df_seleccionados, columnas_predictoras, target)
+modelo, accuracy, cm, report = arbol_decision(train_data, columnas_predictoras, target)
 # Mostrar resultados
 print(f"Precisión del modelo: {accuracy:.4f}")
 print("Matriz de confusión:")
@@ -1807,24 +2017,389 @@ print(cm)
 print("Reporte de clasificación:")
 print(report)
 
-#Pruebo el modelo "perfecto" con un nuevo conjunto de datos
+print('Extraer la importancia de las características')
+print('______________________________  ')
+importancias = modelo.feature_importances_
 
-# Selecciona solo las columnas que te interesan por su nombre
-columnas_deseadas = ["LogP_scaled", "TPSA_scaled", "NumRotatableBonds_scaled", "Peso_Molecular_scaled"] # Aquí pones los nombres de las columnas que necesitas
-X_nuevo = df_restantes[columnas_deseadas]
+# Crear DataFrame para visualizar
+df_importancias = pd.DataFrame({
+    "Variable": columnas_predictoras,
+    "Importancia": importancias
+})
 
-predicciones = modelo.predict(X_nuevo)
+# Ordenar por importancia
+df_importancias = df_importancias.sort_values(by="Importancia", ascending=False)
 
-y_nuevo = df_restantes['Clasificacion_ATS']  # La variable objetivo
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-# Calcular la precisión
-precision = accuracy_score(y_nuevo, predicciones)
-print(f'Precisión del modelo en el nuevo conjunto de datos: {precision:.4f}')
+# Mostrar las 10 variables más importantes
+print(df_importancias.head(10))
 
-# Mostrar la matriz de confusión
-print('Matriz de confusión:')
-print(confusion_matrix(y_nuevo, predicciones))
 
-# Mostrar el reporte de clasificación
-print('Reporte de clasificación:')
-print(classification_report(y_nuevo, predicciones))
+"""
+Probar el modelo
+"""
+"""
+Realizamos nuevamente el modelo de arboles con el df_seleccionados dejando aparte el df_restantes
+"""
+""
+from modules.procesamiento.modelos import arbol_decision
+
+print('modelo de arboles de decision CONJUNTO PRUEBA')
+print('______________________________  ')
+test_data = leer_csv('data/test_data.csv')
+test_data['Clasificacion_ATS'] = test_data['Clasificacion_ATS'].map({'Activo': 1, 'Inactivo': 0})
+columnas = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled']
+predict_data = test_data[columnas]
+
+nuevas_predicciones = modelo.predict(predict_data)
+test_data['nuevas_predicciones'] = nuevas_predicciones
+guardar_csv(test_data, 'data/predicion_arbol.csv')
+
+
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data['Clasificacion_ATS']
+y_pred = test_data['nuevas_predicciones']
+
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+
+## Mostrar la matriz de confusión gráficamente
+#disp = ConfusionMatrixDisplay(confusion_matrix=cm)
+#a = disp.plot()
+#a.show()
+
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
+
+"""
+INCLUSION DE LOS FINGERPRINTS
+"""
+print('______________________________  ')
+print('INCLUSION DE LOS FINGERPRINTS')
+print('______________________________  ')
+print('INCLUSION DE LOS MACCS')
+
+train_data_MACCS_array =train_data[['Clasificacion_ATS','LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled']]
+
+MACCS = train_data['MACCS_array']
+# Eliminar los corchetes y convertir cada fila en una lista de enteros
+MACCS = train_data['MACCS_array'].str.replace(r"[\[\]]", "", regex=True).str.strip()
+#MACCS = train_data['MACCS_array'].str.replace(" ", "")
+# Dividir en columnas y convertir a enteros
+MACCS_df = MACCS.str.split(expand=True).apply(pd.to_numeric, errors='coerce').astype(int)
+#print(MACCS_df)
+
+# Concatenamos ambos DataFrames (asegúrate de que ambos tengan el mismo índice)
+train_data_MACCS_array = pd.concat([train_data_MACCS_array.reset_index(drop=True), MACCS_df.reset_index(drop=True)], axis=1)
+
+# Mostramos el DataFrame resultante
+#print(train_data_MACCS_array.head())
+
+"""
+MODELO DE ARBOLES DE DECISION USANDO MACCS
+"""
+print('______________________________  ')
+print('MODELO DE ARBOLES DE DECISION USANDO MACCS')
+print('______________________________  ')
+# Definir las columnas predictoras y la variable objetivo
+columnas_predictoras = [col for col in train_data_MACCS_array.columns if col != 'Clasificación_ATS' and isinstance(col, str) == False]
+#print(columnas_predictoras)
+target = "Clasificacion_ATS"
+# Llamar al modelo
+modelo, accuracy, cm, report = arbol_decision(train_data_MACCS_array, columnas_predictoras, target)
+# Mostrar resultados
+print(f"Precisión del modelo: {accuracy:.4f}")
+print("Matriz de confusión:")
+print(cm)
+print("Reporte de clasificación:")
+print(report)
+
+"""
+Inclusión de los fingerprints en el conjunto de prueba
+"""
+"""
+INCLUSION DE LOS FINGERPRINTS
+"""
+
+
+test_data_MACCS_array =test_data[['Clasificacion_ATS','LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled']]
+
+MACCS = test_data['MACCS_array']
+# Eliminar los corchetes y convertir cada fila en una lista de enteros
+MACCS = test_data['MACCS_array'].str.replace(r"[\[\]]", "", regex=True).str.strip()
+#MACCS = train_data['MACCS_array'].str.replace(" ", "")
+# Dividir en columnas y convertir a enteros
+MACCS_df = MACCS.str.split(expand=True).apply(pd.to_numeric, errors='coerce').astype(int)
+#print(MACCS_df)
+
+# Concatenamos ambos DataFrames (asegúrate de que ambos tengan el mismo índice)
+test_data_MACCS_array = pd.concat([test_data_MACCS_array.reset_index(drop=True), MACCS_df.reset_index(drop=True)], axis=1)
+
+# Mostramos el DataFrame resultante
+#print(test_data_MACCS_array.head())
+
+from modules.procesamiento.modelos import arbol_decision
+
+print('modelo de arboles de decision CONJUNTO PRUEBA')
+print('______________________________  ')
+columnas = [col for col in test_data_MACCS_array.columns if col != 'Clasificación_ATS' and isinstance(col, str) == False]
+predict_data = test_data_MACCS_array[columnas]
+
+nuevas_predicciones = modelo.predict(predict_data)
+test_data_MACCS_array['nuevas_predicciones'] = nuevas_predicciones
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+
+
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_MACCS_array['Clasificacion_ATS']
+y_pred = test_data_MACCS_array['nuevas_predicciones']
+
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
+
+"""
+CROSS VALIDATION
+"""
+print('______________________________  ')
+print('CROSS VALIDATION MODELO MACCS')
+print('______________________________  ')
+
+from sklearn.model_selection import cross_val_score
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import make_scorer, accuracy_score
+import numpy as np
+
+# Supongamos que tienes tus datos en X (features) y y (target)
+modelo = DecisionTreeClassifier()  # Puedes cambiarlo por otro modelo
+
+# Aplicar validación cruzada con 5 folds
+y = train_data_MACCS_array['Clasificacion_ATS']
+X = train_data_MACCS_array[columnas_predictoras]
+
+scores = cross_val_score(modelo, X, y, cv=5, scoring='accuracy')
+
+# Mostrar resultados
+print("Precisión en cada fold:", scores)
+print("Precisión media:", np.mean(scores))
+print("Desviación estándar:", np.std(scores))
+
+"""
+INCLUSION DE LOS FINGERPRINTS DE MORGAN
+"""
+print('______________________________  ')
+print('INCLUSION DE LOS FINGERPRINTS DE MORGAN')
+print('______________________________  ')
+print('INCLUSION DE LOS MORGAN')
+
+calcular_ecfp(train_data, 'SMILES')
+from modules.procesamiento.calculo_fingerprints import convertir_ECFP_a_numpy
+convertir_ECFP_a_numpy(train_data, 'ECFP')
+#print(train_data['ECFP_array'])
+ECFP = train_data['ECFP_array']
+ECFP = pd.DataFrame(ECFP.tolist())
+#print(ECFP)
+train_data_MACCS_array = pd.concat([train_data_MACCS_array.reset_index(drop=True), ECFP.reset_index(drop=True)], axis=1)
+#print(train_data_MACCS_array)
+
+print('______________________________  ')
+print('MODELO DE ARBOLES DE DECISION USANDO MACCS y MORGAN')
+print('______________________________  ')
+
+# Definir las columnas predictoras y la variable objetivo
+columnas_predictoras = [col for col in train_data_MACCS_array.columns if col != 'Clasificación_ATS' and isinstance(col, str) == False]
+#print(columnas_predictoras)
+target = "Clasificacion_ATS"
+# Llamar al modelo
+modelo, accuracy, cm, report = arbol_decision(train_data_MACCS_array, columnas_predictoras, target)
+# Mostrar resultados
+print(f"Precisión del modelo: {accuracy:.4f}")
+print("Matriz de confusión:")
+print(cm)
+print("Reporte de clasificación:")
+print(report)
+
+#guardar_csv(train_data_MACCS_array, 'data/train_data_MACCS_array.csv')
+
+print('modelo de arboles MACCS y MORGAN de decision CONJUNTO PRUEBA')
+print('______________________________  ')
+
+calcular_ecfp(test_data, 'SMILES')
+from modules.procesamiento.calculo_fingerprints import convertir_ECFP_a_numpy
+convertir_ECFP_a_numpy(test_data, 'ECFP')
+#print(train_data['ECFP_array'])
+ECFP = test_data['ECFP_array']
+ECFP = pd.DataFrame(ECFP.tolist())
+#print(ECFP)
+test_data_MACCS_array = pd.concat([test_data_MACCS_array.reset_index(drop=True), ECFP.reset_index(drop=True)], axis=1)
+#print(test_data_MACCS_array)
+
+columnas = [col for col in test_data_MACCS_array.columns if col != 'Clasificación_ATS' and isinstance(col, str) == False]
+predict_data = test_data_MACCS_array[columnas]
+
+nuevas_predicciones = modelo.predict(predict_data)
+test_data_MACCS_array['nuevas_predicciones'] = nuevas_predicciones
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+
+
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_MACCS_array['Clasificacion_ATS']
+y_pred = test_data_MACCS_array['nuevas_predicciones']
+
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
+
+"""
+CROSS VALIDATION
+"""
+print('______________________________  ')
+print('CROSS VALIDATION MODELO MACCS Y EFPC')
+print('______________________________  ')
+
+from sklearn.model_selection import cross_val_score
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import make_scorer, accuracy_score
+import numpy as np
+
+# Supongamos que tienes tus datos en X (features) y y (target)
+modelo = DecisionTreeClassifier()  # Puedes cambiarlo por otro modelo
+
+# Aplicar validación cruzada con 5 folds
+y = train_data_MACCS_array['Clasificacion_ATS']
+X = train_data_MACCS_array[columnas_predictoras]
+
+scores = cross_val_score(modelo, X, y, cv=5, scoring='accuracy')
+
+# Mostrar resultados
+print("Precisión en cada fold:", scores)
+print("Precisión media:", np.mean(scores))
+print("Desviación estándar:", np.std(scores))
+
+"""
+MODELO ARBOLES SOLO CON EFPC
+"""
+df_ecfp = train_data_MACCS_array.iloc[:, 173:]  # Selecciona desde la columna 172 hasta el final
+df_ecfp['Clasificacion_ATS'] = train_data_MACCS_array['Clasificacion_ATS']
+#print(df_ecfp)
+
+print('______________________________  ')
+print('MODELO DE ARBOLES DE DECISION USANDO MORGAN')
+print('______________________________  ')
+
+# Definir las columnas predictoras y la variable objetivo
+columnas_predictoras = [col for col in df_ecfp.columns if col != 'Clasificación_ATS' and isinstance(col, str) == False]
+#print(columnas_predictoras)
+target = "Clasificacion_ATS"
+# Llamar al modelo
+modelo, accuracy, cm, report = arbol_decision(df_ecfp, columnas_predictoras, target)
+# Mostrar resultados
+print(f"Precisión del modelo: {accuracy:.4f}")
+print("Matriz de confusión:")
+print(cm)
+print("Reporte de clasificación:")
+print(report)
+
+print('modelo de arboles MORGAN de decision CONJUNTO PRUEBA')
+print('______________________________  ')
+
+
+columnas = [col for col in df_ecfp.columns if col != 'Clasificación_ATS' and isinstance(col, str) == False]
+predict_data = df_ecfp[columnas]
+
+nuevas_predicciones = modelo.predict(predict_data)
+df_ecfp['nuevas_predicciones'] = nuevas_predicciones
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+
+
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = df_ecfp['Clasificacion_ATS']
+y_pred = df_ecfp['nuevas_predicciones']
+
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
+
+"""
+CROSS VALIDATION
+"""
+print('______________________________  ')
+print('CROSS VALIDATION MODELO MORGAN')
+print('______________________________  ')
+
+from sklearn.model_selection import cross_val_score
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import make_scorer, accuracy_score
+import numpy as np
+
+# Supongamos que tienes tus datos en X (features) y y (target)
+modelo = DecisionTreeClassifier()  # Puedes cambiarlo por otro modelo
+
+# Aplicar validación cruzada con 5 folds
+y = df_ecfp['Clasificacion_ATS']
+X = df_ecfp[columnas_predictoras]
+
+scores = cross_val_score(modelo, X, y, cv=5, scoring='accuracy')
+
+# Mostrar resultados
+print("Precisión en cada fold:", scores)
+print("Precisión media:", np.mean(scores))
+print("Desviación estándar:", np.std(scores))
+
+

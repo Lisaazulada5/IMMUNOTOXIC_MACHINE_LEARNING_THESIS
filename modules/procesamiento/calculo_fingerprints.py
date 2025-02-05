@@ -17,6 +17,8 @@ def calcular_fingerprints_maccs(df, columna_smiles):
     if columna_smiles not in df.columns:
         raise ValueError(f"La columna '{columna_smiles}' no se encuentra en el DataFrame.")
 
+        # Crear una lista para almacenar los fingerprints ECFP
+
     def obtener_fingerprint(smile):
         """Calcula el fingerprint de MACCS para una molécula en formato SMILES."""
         mol = Chem.MolFromSmiles(smile)
@@ -96,7 +98,49 @@ def calcular_ecfp(df, columna_smiles, radio=3, nBits=1024):
 
     return df
 
-def convertir_ECFP_a_numpy(df, columna_ECFP):
+#def convertir_ECFP_a_numpy(df, columna_ECFP):
     # Aplica la función de conversión a cada elemento de la columna 'columna_MACCS'
-    df['ECFP_array'] = df[columna_ECFP].apply(convertir_a_numpy)
+    #df['ECFP_array'] = df[columna_ECFP].apply(convertir_a_numpy)
+#    return df
+
+def convertir_a_numpy(bitvector):
+    arr = np.zeros((bitvector.GetNumBits(),), dtype=np.int8)  # Asegurar el tamaño correcto
+    DataStructs.ConvertToNumpyArray(bitvector, arr)
+    return arr
+
+
+import numpy as np
+from rdkit import DataStructs
+
+
+def convertir_bitvector_a_numpy(bitvector):
+    """
+    Convierte un objeto RDKit ExplicitBitVect en un array de NumPy.
+
+    Parámetros:
+    - bitvector: rdkit.DataStructs.cDataStructs.ExplicitBitVect
+
+    Retorna:
+    - Un array de NumPy con valores 0 y 1.
+    """
+    arr = np.zeros((bitvector.GetNumBits(),), dtype=np.int8)  # Asegurar el tamaño correcto
+    DataStructs.ConvertToNumpyArray(bitvector, arr)
+    return arr
+
+
+def convertir_ECFP_a_numpy(df, columna_ECFP):
+    """
+    Convierte la columna de fingerprints en arrays de NumPy.
+
+    Parámetros:
+    - df: DataFrame que contiene la columna con fingerprints.
+    - columna_ECFP: Nombre de la columna que contiene los ExplicitBitVect.
+
+    Retorna:
+    - DataFrame con una nueva columna 'ECFP_array' con los fingerprints como arrays de NumPy.
+    """
+    df['ECFP_array'] = df[columna_ECFP].apply(convertir_bitvector_a_numpy)
     return df
+
+
+
