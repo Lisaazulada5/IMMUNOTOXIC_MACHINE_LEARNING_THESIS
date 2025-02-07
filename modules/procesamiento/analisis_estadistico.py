@@ -442,3 +442,98 @@ def calcular_matriz_covarianza(df, columnas_numericas):
     """
     return df[columnas_numericas].cov()
 
+
+import numpy as np
+
+
+def Puntos_influentes_Cook(modelo, train_data_scaled):
+    """
+    Calcula e imprime los puntos influyentes basados en la distancia de Cook.
+
+    Parámetros:
+    - modelo: modelo ya ajustado que implementa el método get_influence().
+    - train_data_scaled: conjunto de datos de entrenamiento escalados (se utiliza para obtener el tamaño muestral).
+
+    Retorna:
+    - puntos_influyentes: array con los índices de las observaciones influyentes.
+    """
+    # Obtener la influencia del modelo
+    influencia = modelo.get_influence()
+
+    # Extraer la distancia de Cook (se asume que cooks_distance es una tupla o arreglo, donde el primero contiene los valores)
+    cooks_d = influencia.cooks_distance[0]
+
+    # Calcular umbral típico para la distancia de Cook
+    umbral_cook = 4 / len(train_data_scaled)
+
+    # Identificar observaciones influyentes
+    puntos_influyentes = np.where(cooks_d > umbral_cook)[0]
+
+    print("Puntos influyentes según Cook:", puntos_influyentes)
+
+    return puntos_influyentes
+
+"""
+Analisis de supuesto de linealidad de LOGIT
+"""
+# analisis_estadistico.py
+
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LogisticRegression
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+def calcular_linealidad(df, X_columns, target, degree=2, plot=False):
+    """
+    Calcula la linealidad en un modelo de regresión logística a partir de términos polinomiales.
+
+    Se generan términos cuadráticos (u otros de grado especificado) para las variables predictoras,
+    se ajusta un modelo de regresión logística y se calculan los log-odds de la probabilidad predicha
+    para la clase positiva.
+
+    Parámetros:
+        - train_data_scaled: Conjunto de datos escalados (array o DataFrame) que contiene las variables predictoras.
+        - train_data: DataFrame original que contiene la variable respuesta.
+        - X_columns: Lista con los nombres de las columnas predictoras.
+        - degree: Grado de la transformación polinómica (por defecto 2, para términos cuadráticos).
+        - plot: Booleano que indica si se debe generar una gráfica de los log-odds (por defecto False).
+
+    Retorna:
+        - log_odds: Array de log-odds calculados para cada observación.
+        - model: Modelo de regresión logística ajustado.
+        - X_poly: Datos transformados que incluyen los términos polinomiales.
+    """
+    # Generar términos polinomiales (por defecto cuadráticos)
+    poly = PolynomialFeatures(degree=degree, include_bias=False)
+    X_poly = poly.fit_transform(df[X_columns])
+
+    # Variable de respuesta
+    y = df[target]
+
+    # Ajustar el modelo de regresión logística
+    model = LogisticRegression()
+    model.fit(X_poly, y)
+
+    # Predecir las probabilidades para la clase positiva (1)
+    probas = model.predict_proba(X_poly)[:, 1]
+
+    # Calcular los log-odds: log(p/(1-p))
+    log_odds = np.log(probas / (1 - probas))
+    #print('Log Odds')
+    #print('________________')
+    #print(log_odds)
+    """
+    # Si se solicita, generar la gráfica de log-odds
+    if plot:
+        plt.figure(figsize=(8, 5))
+        plt.plot(log_odds, 'o', alpha=0.7)
+        plt.xlabel("Índice de observación")
+        plt.ylabel("Log-odds")
+        plt.title("Log-odds de la clase positiva")
+        plt.show()
+    """
+    return log_odds, model, X_poly
+
+
+

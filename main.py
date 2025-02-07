@@ -1696,10 +1696,12 @@ DIVIDIR DATOS PARA FEATURE SELECION
 print('______________________________ ')
 print('DIVIDIR 20-80% DATOS PARA FEATURE SELECION')
 print('______________________________ ')
+
+print(df) #Los datos están sin escalar nuevamente, ya que se aplicara el escalamiento al conjunto de entrenamiento unicamente.
 from modules.procesamiento.modelos import dividir_datos
 output_path = 'data/train_data.csv'
 if not os.path.exists(output_path):
-    dividir_datos(df_scaled, columna_etiqueta='Clasificacion_ATS')
+    dividir_datos(df, columna_etiqueta='Clasificacion_ATS')
     print(f"Archivo generado: {output_path}")
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
@@ -1711,19 +1713,94 @@ train_data = leer_csv('data/train_data.csv')
 train_data['Clasificacion_ATS'] = train_data['Clasificacion_ATS'].map({'Activo': 1, 'Inactivo': 0})
 
 """
+Escalamiento de los datos de entrenamiento
+"""
+"""
+Escalado de variables con z-score
+"""
+print('Escalado de los datos de entrenamiento')
+print('______________________________ ')
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+# Crear el escalador
+scaler = StandardScaler()
+
+# Aplicar escalado solo a las columnas necesarias
+#train_data = leer_csv('data/train_data.csv')
+output_path = 'data/train_data_scaled.csv'
+if not os.path.exists(output_path):
+    train_data_scaled = train_data.copy()
+    train_data_scaled[['LogP_scaled', 'Peso_Molecular_scaled','TPSA_scaled']] = scaler.fit_transform(train_data[['LogP',
+                                                                                                                 'Peso_Molecular', 'TPSA']])
+    """
+    Escalado max-min
+    """
+    # Crear el escalador
+    scaler = MinMaxScaler()
+
+# Aplicar escalado solo a la columna NumRotatableBonds
+    train_data_scaled = train_data_scaled.copy()
+    train_data_scaled['NumRotatableBonds_scaled'] = scaler.fit_transform(train_data_scaled[['NumRotatableBonds']])
+    # Aplicar escalado solo las demás columnas
+    train_data_scaled = train_data_scaled.copy()
+    train_data_scaled['Dobles_Enlaces_scaled'] = scaler.fit_transform(train_data_scaled[['Dobles_Enlaces']])
+    train_data_scaled['NumHAcceptors_scaled'] = scaler.fit_transform(train_data_scaled[['NumHAcceptors']])
+    train_data_scaled['NumHDonors_scaled'] = scaler.fit_transform(train_data_scaled[['NumHDonors']])
+    guardar_csv(train_data_scaled, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+train_data_scaled = leer_csv('data/train_data_scaled.csv' )
+
+print('Escalado de los datos de prueba')
+print('______________________________ ')
+
+test_data = leer_csv('data/test_data.csv')
+#convertimos los valores de la variable categorica en factores:
+test_data['Clasificacion_ATS'] = test_data['Clasificacion_ATS'].map({'Activo': 1, 'Inactivo': 0})
+# Crear el escalador
+scaler = StandardScaler()
+
+# Aplicar escalado solo a las columnas necesarias
+
+output_path = 'data/test_data_scaled.csv'
+if not os.path.exists(output_path):
+    test_data_scaled = test_data.copy()
+    test_data_scaled[['LogP_scaled', 'Peso_Molecular_scaled','TPSA_scaled']] = scaler.fit_transform(test_data[['LogP',
+                                                                                                               'Peso_Molecular', 'TPSA']])
+    """
+    Escalado max-min
+    """
+    # Crear el escalador
+    scaler = MinMaxScaler()
+
+# Aplicar escalado solo a la columna NumRotatableBonds
+    test_data_scaled = test_data_scaled.copy()
+    test_data_scaled['NumRotatableBonds_scaled'] = scaler.fit_transform(test_data_scaled[['NumRotatableBonds']])
+    test_data_scaled = test_data_scaled.copy()
+    test_data_scaled['Dobles_Enlaces_scaled'] = scaler.fit_transform(test_data_scaled[['Dobles_Enlaces']])
+    test_data_scaled['NumHAcceptors_scaled'] = scaler.fit_transform(test_data_scaled[['NumHAcceptors']])
+    test_data_scaled['NumHDonors_scaled'] = scaler.fit_transform(test_data_scaled[['NumHDonors']])
+    guardar_csv(test_data_scaled, output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+FEATURE SELECTION
+"""
+
+"""
 Realizamos una regresión lógistica con todas las variables
 """
 print('______________________________ ')
 print('REGRESION LOGISTICA TODAS LAS VARIABLES')
 print('______________________________ ')
 
-#from modules.procesamiento.modelos import regresion_logistica
 X_columns = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
                     'Dobles_Enlaces_scaled',  'NumHAcceptors_scaled', 'NumHDonors_scaled']
 target = 'Clasificacion_ATS'
-
-#modeloRL, accuracy, cm, report,y_test, y_pred_proba = regresion_logistica(train_data, X_columns, target)
-
 
 """
 Coeficientes del modelo y Calculo ODDS coeficientes
@@ -1745,7 +1822,7 @@ summary del modelo
 print('SUMMARY MODELO REGLOG')
 print('______________________________ ')
 from modules.procesamiento.modelos import regresion_logistica_sm
-modelo, summary, accuracy, cm, report, y_test, y_pred_proba = regresion_logistica_sm(train_data, X_columns, target)
+modelo, summary, accuracy, cm, report, y_test, y_pred_proba = regresion_logistica_sm(train_data_scaled, X_columns, target)
 
 """
 CURVA ROC 
@@ -1759,6 +1836,22 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
+"""
+ANALISIS DE LOS PUNTOS INFLUYENTES USANDO LA DISTANCIA DE COOK
+"""
+print('PUNTOS INFLUYENTES USANDO LA DISTANCIA DE COOK')
+print('______________________________ ')
+from modules.procesamiento.analisis_estadistico import Puntos_influentes_Cook
+
+Puntos_influentes_Cook(modelo, train_data_scaled)
+
+from modules.procesamiento.graficas import graficar_cook
+output_path = 'data/graficas/puntos_influyentes.png'
+if not os.path.exists(output_path):
+    graficar_cook(modelo, train_data_scaled,output_path)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
 Coeficientes del modelo y Calculo ODDS coeficientes
@@ -1772,7 +1865,7 @@ import numpy as np
 coeficientes['odds_ratios'] = np.exp(coeficientes['Coeficiente'])
 
 # Imprimir resultados
-print(coeficientes)
+#print(coeficientes)
 
 """
 EVALUACION DE LOS SUPUESTOS DE LA REGRESION LOGISTICA
@@ -1785,33 +1878,20 @@ print('______________________________ ')
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import PolynomialFeatures
 
-# Generar términos cuadráticos
-poly = PolynomialFeatures(degree=2, include_bias=False)
-X_poly = poly.fit_transform(train_data[X_columns])  # X es tu conjunto de datos con las variables predictoras
-y = train_data['Clasificacion_ATS']
-model = LogisticRegression()
-model.fit(X_poly, y)  # Ajustar el modelo con las nuevas características
+from modules.procesamiento.analisis_estadistico import calcular_linealidad
+log_odds, model, X_poly = calcular_linealidad(train_data_scaled, X_columns, target)
 
-import matplotlib.pyplot as plt
-import numpy as np
+from modules.procesamiento.graficas import graficar_supeustolinealidad
+X = X_poly[:,0]
 
-import numpy as np
+output_path = 'data/graficas/supuestolinealidad_LogP_scaled.png'
+if not os.path.exists(output_path):
+    graficar_supeustolinealidad('LogP_scaled', X,  log_odds,  output_path) #variable debe usarse por posicion de variable y no su nombre
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
-# Predecir las probabilidades para cada clase
-probas = model.predict_proba(X_poly)[:, 1]  # Obtener las probabilidades de la clase positiva (1)
-
-# Calcular los log-odds (logaritmo de las probabilidades)
-log_odds = np.log(probas / (1 - probas))  # Log-odds = log(p/(1-p))
-
-import matplotlib.pyplot as plt
-
-# Supongamos que quieres graficar una variable 'LogP_scaled' frente a los log-odds
-plt.scatter(X_poly[:, 0], log_odds)
-plt.xlabel('LogP_scaled')
-plt.ylabel('Log-Odds')
-plt.title('Log-Odds vs. LogP_scaled')
-plt.show()
-
+"""
 print('Independencia en las observaciones')
 print('______________________________ ')
 
@@ -1850,7 +1930,7 @@ X_columns = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Mol
 target = 'Clasificacion_ATS'
 
 """
-summary del modelo
+#summary del modelo
 """
 print('SUMMARY MODELO REGLOG')
 print('______________________________ ')
@@ -1867,7 +1947,7 @@ X_columns = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Mol
 target = 'Clasificacion_ATS'
 
 """
-summary del modelo
+#summary del modelo
 """
 print('SUMMARY MODELO REGLOG')
 print('______________________________ ')
@@ -1883,13 +1963,13 @@ X_columns = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Mol
 target = 'Clasificacion_ATS'
 
 """
-summary del modelo
+#summary del modelo
 """
 print('SUMMARY MODELO REGLOG')
 print('______________________________ ')
 from modules.procesamiento.modelos import regresion_logistica_sm
 modelo, summary, accuracy, cm, report, y_test, y_pred_proba = regresion_logistica_sm(train_data, X_columns, target)
-
+"""
 """
 Calculo VIF del modelo MULTICOLINEALIDAD
 """
@@ -1901,9 +1981,8 @@ from modules.procesamiento.analisis_estadistico import calcular_vif
 columnas = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
                     'Dobles_Enlaces_scaled',  'NumHAcceptors_scaled', 'NumHDonors_scaled']
 
-resultados_VIF = calcular_vif (df_scaled, columnas)
+resultados_VIF = calcular_vif (train_data_scaled, columnas)
 print(resultados_VIF)
-
 
 """
 Calculo VIF
@@ -1912,11 +1991,11 @@ print('______________________________ ')
 print('Calculo VIF del modelo con las variables LogP_scaled, TPSA_scaled,  NumRotatableBonds_scaled, Peso_Molecular_scaled')
 print('______________________________ ')
 columnas = ['LogP_scaled', 'TPSA_scaled',  'NumRotatableBonds_scaled', 'Peso_Molecular_scaled']
-resultados_VIF = calcular_vif (df_scaled, columnas)
+resultados_VIF = calcular_vif (train_data_scaled, columnas)
 print(resultados_VIF)
 
 """
-ARBOLES DE DECISION
+#ARBOLES DE DECISION
 """
 from modules.procesamiento.modelos import arbol_decision
 print('______________________________  ')
@@ -1927,14 +2006,18 @@ columnas_predictoras = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled'
                     'Dobles_Enlaces_scaled',  'NumHAcceptors_scaled', 'NumHDonors_scaled']
 target = "Clasificacion_ATS"
 # Llamar al modelo
-modelo, accuracy, cm, report = arbol_decision(train_data, columnas_predictoras, target)
-# Mostrar resultados
-print(f"Precisión del modelo: {accuracy:.4f}")
-print("Matriz de confusión:")
-print(cm)
-print("Reporte de clasificación:")
-print(report)
+modelo, accuracy, cm, report = arbol_decision(train_data_scaled, columnas_predictoras, target)
 
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_arboles_todaslasvariables.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(cm, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+# Mostrar resultados
 print('Extraer la importancia de las características')
 print('______________________________  ')
 importancias = modelo.feature_importances_
@@ -1948,82 +2031,61 @@ df_importancias = pd.DataFrame({
 # Ordenar por importancia
 df_importancias = df_importancias.sort_values(by="Importancia", ascending=False)
 
-# Mostrar las 10 variables más importantes
-print(df_importancias.head(10))
-
-
-"""
-Probar el modelo
-"""
-"""
-Realizamos nuevamente el modelo de arboles con el df_seleccionados dejando aparte el df_restantes
-"""
-""
-from modules.procesamiento.modelos import arbol_decision
-
-print('modelo de arboles de decision CONJUNTO PRUEBA')
-test_data = leer_csv('data/test_data.csv')
-test_data['Clasificacion_ATS'] = test_data['Clasificacion_ATS'].map({'Activo': 1, 'Inactivo': 0})
-columnas = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
-                    'Dobles_Enlaces_scaled',  'NumHAcceptors_scaled', 'NumHDonors_scaled']
-predict_data = test_data[columnas]
-
-nuevas_predicciones = modelo.predict(predict_data)
-test_data['nuevas_predicciones'] = nuevas_predicciones
-guardar_csv(test_data, 'data/predicion_arbol.csv')
-
-
-from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
-# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
-y_true = test_data['Clasificacion_ATS']
-y_pred = test_data['nuevas_predicciones']
-
-# Matriz de confusión
-cm = confusion_matrix(y_true, y_pred)
-print("Matriz de Confusión:")
-print(cm)
-
-## Mostrar la matriz de confusión gráficamente
-#disp = ConfusionMatrixDisplay(confusion_matrix=cm)
-#a = disp.plot()
-#a.show()
-
-#Cálculo de métricas
-precision = precision_score(y_true, y_pred)
-recall = recall_score(y_true, y_pred)
-f1 = f1_score(y_true, y_pred)
-accuracy = accuracy_score(y_true, y_pred)
-
-# Mostrar las métricas
-print(f"Precisión: {precision}")
-print(f"Recall: {recall}")
-print(f"F1-Score: {f1}")
-print(f"Exactitud: {accuracy}")
-
+# Mostrar las variables más importantes
+print(df_importancias)
 
 print('______________________________  ')
-print('MODELO ARBOL DE DECISION sin las variables NumHAcceptors_scaled, NumHDonors_scaled')
+print('MODELO ARBOL DE DECISION sin las variables NumHAcceptors_scaled NumHDonors_scaled')
 print('______________________________  ')
 # Definir las columnas predictoras y la variable objetivo
 columnas_predictoras = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
                     'Dobles_Enlaces_scaled']
 target = "Clasificacion_ATS"
 # Llamar al modelo
-modelo, accuracy, cm, report = arbol_decision(train_data, columnas_predictoras, target)
-# Mostrar resultados
-print(f"Precisión del modelo: {accuracy:.4f}")
-print("Matriz de confusión:")
-print(cm)
-print("Reporte de clasificación:")
-print(report)
+modelo, accuracy, cm, report = arbol_decision(train_data_scaled, columnas_predictoras, target)
 
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_arboles_sinNumHAcceptors_scaledNumHDonors_scaled.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(cm, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+BOSQUES DE DECISIÓN
+"""
+print('______________________________  ')
+print('MODELO BOSQUES DE DECISION')
+print('______________________________  ')
+from modules.procesamiento.modelos import entrenar_random_forest
+
+X = train_data_scaled[['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled',  'NumHAcceptors_scaled', 'NumHDonors_scaled']]
+y= train_data_scaled["Clasificacion_ATS"]
+
+random, confusion_matrix = entrenar_random_forest(X, y)
+
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_bosques.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(confusion_matrix, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+# Mostrar resultados
 print('Extraer la importancia de las características')
 print('______________________________  ')
-importancias = modelo.feature_importances_
+columnas = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled',  'NumHAcceptors_scaled', 'NumHDonors_scaled']
+importancias = random.feature_importances_
 
 # Crear DataFrame para visualizar
 df_importancias = pd.DataFrame({
-    "Variable": columnas_predictoras,
+    "Variable": columnas,
     "Importancia": importancias
 })
 
@@ -2031,149 +2093,137 @@ df_importancias = pd.DataFrame({
 df_importancias = df_importancias.sort_values(by="Importancia", ascending=False)
 
 # Mostrar las 10 variables más importantes
-print(df_importancias.head(10))
+print(df_importancias)
 
-
-"""
-Probar el modelo
-"""
-"""
-Realizamos nuevamente el modelo de arboles con el df_seleccionados dejando aparte el df_restantes
-"""
-""
-from modules.procesamiento.modelos import arbol_decision
-
-print('modelo de arboles de decision CONJUNTO PRUEBA')
 print('______________________________  ')
-test_data = leer_csv('data/test_data.csv')
-test_data['Clasificacion_ATS'] = test_data['Clasificacion_ATS'].map({'Activo': 1, 'Inactivo': 0})
-columnas = ['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
-                    'Dobles_Enlaces_scaled']
-predict_data = test_data[columnas]
+print('MODELO BOSQUES DE DECISION sin las variables NumHAcceptors_scaled NumHDonors_scaled ')
+from modules.procesamiento.modelos import entrenar_random_forest
 
-nuevas_predicciones = modelo.predict(predict_data)
-test_data['nuevas_predicciones'] = nuevas_predicciones
-guardar_csv(test_data, 'data/predicion_arbol.csv')
-
-
-from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
-# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
-y_true = test_data['Clasificacion_ATS']
-y_pred = test_data['nuevas_predicciones']
-
-# Matriz de confusión
-cm = confusion_matrix(y_true, y_pred)
-print("Matriz de Confusión:")
-print(cm)
-
-## Mostrar la matriz de confusión gráficamente
-#disp = ConfusionMatrixDisplay(confusion_matrix=cm)
-#a = disp.plot()
-#a.show()
-
-#Cálculo de métricas
-precision = precision_score(y_true, y_pred)
-recall = recall_score(y_true, y_pred)
-f1 = f1_score(y_true, y_pred)
-accuracy = accuracy_score(y_true, y_pred)
-
-# Mostrar las métricas
-print(f"Precisión: {precision}")
-print(f"Recall: {recall}")
-print(f"F1-Score: {f1}")
-print(f"Exactitud: {accuracy}")
-
-"""
-INCLUSION DE LOS FINGERPRINTS
-"""
-print('______________________________  ')
-print('INCLUSION DE LOS FINGERPRINTS')
-print('______________________________  ')
-print('INCLUSION DE LOS MACCS')
-
-train_data_MACCS_array =train_data[['Clasificacion_ATS','LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+X = train_data_scaled[['LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
                     'Dobles_Enlaces_scaled']]
+y= train_data_scaled["Clasificacion_ATS"]
 
-MACCS = train_data['MACCS_array']
-# Eliminar los corchetes y convertir cada fila en una lista de enteros
-MACCS = train_data['MACCS_array'].str.replace(r"[\[\]]", "", regex=True).str.strip()
-#MACCS = train_data['MACCS_array'].str.replace(" ", "")
-# Dividir en columnas y convertir a enteros
-MACCS_df = MACCS.str.split(expand=True).apply(pd.to_numeric, errors='coerce').astype(int)
-#print(MACCS_df)
+random, confusion_matrix = entrenar_random_forest(X, y)
 
-# Concatenamos ambos DataFrames (asegúrate de que ambos tengan el mismo índice)
-train_data_MACCS_array = pd.concat([train_data_MACCS_array.reset_index(drop=True), MACCS_df.reset_index(drop=True)], axis=1)
-
-# Mostramos el DataFrame resultante
-#print(train_data_MACCS_array.head())
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_bosques_sin_NumRotatableBonds_scaledPeso_Molecular_scaled.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(confusion_matrix, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
-MODELO DE ARBOLES DE DECISION USANDO MACCS
+INCLUSION DEL LOS FINGERPRINTS DENTRO DE LOS DATOS DE ENTRENAMIENTO.
 """
 print('______________________________  ')
-print('MODELO DE ARBOLES DE DECISION USANDO MACCS')
+print('INCLUSION DEL LOS FINGERPRINTS DENTRO DE LOS DATOS DE ENTRENAMIENTO ')
+train_data_fingerprints = train_data_scaled[['Clasificacion_ATS', 'LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled','SMILES']].copy()
+#calculamos los ECFP  a partir de los SMILES
+from modules.procesamiento.calculo_fingerprints import calcular_ecfp
+calcular_ecfp(train_data_fingerprints, 'SMILES')
+#print(train_data_fingerprints['ECFP'][0])
+from rdkit.Chem import DataStructs
+ECFP_array = []
+for i in train_data_fingerprints['ECFP']:
+    arr = np.zeros((0,), dtype=np.int8)
+    DataStructs.ConvertToNumpyArray(i, arr)
+    ECFP_array.append(arr)
+
+train_data_fingerprints = pd.concat([train_data_fingerprints, pd.DataFrame(ECFP_array)], axis  =1)
+#print(train_data_fingerprints)
+#calculamos los MACCS a partir de los SMILES
+calcular_fingerprints_maccs(train_data_fingerprints, 'SMILES')
+from rdkit.Chem import DataStructs
+MACCS_array = []
+for i in train_data_fingerprints['MACCS']:
+    arr = np.zeros((0,), dtype=np.int8)
+    DataStructs.ConvertToNumpyArray(i, arr)
+    MACCS_array.append(arr)
+train_data_fingerprints = pd.concat([train_data_fingerprints, pd.DataFrame(MACCS_array)], axis  =1)
+#guardar_csv(train_data_fingerprints, 'data/train_data_fingerprints.csv')
+
+print('______________________________  ')
+print('INCLUSION DEL LOS FINGERPRINTS DENTRO DE LOS DATOS DE PRUEBA ')
+test_data_scaled = leer_csv('data/test_data_scaled.csv')
+print(test_data_scaled.columns)
+test_data_fingerprints = test_data_scaled[['Clasificacion_ATS', 'LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+                    'Dobles_Enlaces_scaled','SMILES']].copy()
+#print(test_data_fingerprints.columns)
+#calcular los ECFP para el conjunto de prueba
+calcular_ecfp(test_data_fingerprints, 'SMILES')
+#print(train_data_fingerprints['ECFP'][0])
+from rdkit.Chem import DataStructs
+ECFP_array_test = []
+for i in test_data_fingerprints['ECFP']:
+    arr = np.zeros((0,), dtype=np.int8)
+    DataStructs.ConvertToNumpyArray(i, arr)
+    ECFP_array_test.append(arr)
+
+#print(ECFP_array_test)
+test_data_fingerprints = pd.concat([test_data_fingerprints, pd.DataFrame(ECFP_array_test)], axis  =1)
+#print(test_data_fingerprints)
+
+#calculamos los MACCS a partir de los SMILES
+calcular_fingerprints_maccs(test_data_fingerprints, 'SMILES')
+from rdkit.Chem import DataStructs
+MACCS_array_test = []
+for i in test_data_fingerprints['MACCS']:
+    arr = np.zeros((0,), dtype=np.int8)
+    DataStructs.ConvertToNumpyArray(i, arr)
+    MACCS_array_test.append(arr)
+test_data_fingerprints = pd.concat([test_data_fingerprints, pd.DataFrame(MACCS_array_test)], axis  =1)
+#test_data_fingerprints.columns = test_data_fingerprints.columns.astype(str) #convertimos las columnas a strings
+print(test_data_fingerprints)
+
+"""
+MODELADO CON FINGERPRINTS
+"""
+print('______________________________  ')
+print('MODELO ARBOL DE DECISION MACCS')
 print('______________________________  ')
 # Definir las columnas predictoras y la variable objetivo
-columnas_predictoras = [col for col in train_data_MACCS_array.columns if col != 'Clasificación_ATS' and isinstance(col, str) == False]
-#print(columnas_predictoras)
+
+train_data_fingerprints = train_data_fingerprints.drop(columns=['MACCS', 'SMILES', 'ECFP'])
+
+MACCS = train_data_fingerprints.iloc[:, 2054:2222]
+columnas_predictoras = MACCS.columns
 target = "Clasificacion_ATS"
 # Llamar al modelo
-modelo, accuracy, cm, report = arbol_decision(train_data_MACCS_array, columnas_predictoras, target)
-# Mostrar resultados
-print(f"Precisión del modelo: {accuracy:.4f}")
-print("Matriz de confusión:")
-print(cm)
-print("Reporte de clasificación:")
-print(report)
+modeloMACCS, accuracy, cm, report = arbol_decision(train_data_fingerprints, columnas_predictoras, target)
+
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_arboles_MACCS.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(cm, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
-Inclusión de los fingerprints en el conjunto de prueba
+Prueba modelo con dataset prueba
 """
-"""
-INCLUSION DE LOS FINGERPRINTS
-"""
+print('Prueba modelo con dataset prueba MACCS')
+print('--------------------------------')
+test_data_fingerprints = test_data_fingerprints.drop(columns=['MACCS', 'SMILES', 'ECFP'])
+MACCS_test = test_data_fingerprints.iloc[:, 2054:2222]
+columnas_predictoras_test = MACCS_test.columns #extrae los nombres de las columnas del df
+predict_data = test_data_fingerprints[columnas_predictoras_test]
+nuevas_predicciones = modeloMACCS.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_MACCS'] = nuevas_predicciones
 
-
-test_data_MACCS_array =test_data[['Clasificacion_ATS','LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
-                    'Dobles_Enlaces_scaled']]
-
-MACCS = test_data['MACCS_array']
-# Eliminar los corchetes y convertir cada fila en una lista de enteros
-MACCS = test_data['MACCS_array'].str.replace(r"[\[\]]", "", regex=True).str.strip()
-#MACCS = train_data['MACCS_array'].str.replace(" ", "")
-# Dividir en columnas y convertir a enteros
-MACCS_df = MACCS.str.split(expand=True).apply(pd.to_numeric, errors='coerce').astype(int)
-#print(MACCS_df)
-
-# Concatenamos ambos DataFrames (asegúrate de que ambos tengan el mismo índice)
-test_data_MACCS_array = pd.concat([test_data_MACCS_array.reset_index(drop=True), MACCS_df.reset_index(drop=True)], axis=1)
-
-# Mostramos el DataFrame resultante
-#print(test_data_MACCS_array.head())
-
-from modules.procesamiento.modelos import arbol_decision
-
-print('modelo de arboles de decision CONJUNTO PRUEBA')
-print('______________________________  ')
-columnas = [col for col in test_data_MACCS_array.columns if col != 'Clasificación_ATS' and isinstance(col, str) == False]
-predict_data = test_data_MACCS_array[columnas]
-
-nuevas_predicciones = modelo.predict(predict_data)
-test_data_MACCS_array['nuevas_predicciones'] = nuevas_predicciones
 #guardar_csv(test_data, 'data/predicion_arbol.csv')
-
-
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
 # Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
-y_true = test_data_MACCS_array['Clasificacion_ATS']
-y_pred = test_data_MACCS_array['nuevas_predicciones']
-
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_MACCS']
 # Matriz de confusión
 cm = confusion_matrix(y_true, y_pred)
 print("Matriz de Confusión:")
 print(cm)
-
 #Cálculo de métricas
 precision = precision_score(y_true, y_pred)
 recall = recall_score(y_true, y_pred)
@@ -2186,100 +2236,112 @@ print(f"Recall: {recall}")
 print(f"F1-Score: {f1}")
 print(f"Exactitud: {accuracy}")
 
-"""
-CROSS VALIDATION
-"""
+
 print('______________________________  ')
-print('CROSS VALIDATION MODELO MACCS')
+print('MODELO ARBOL DE DECISION MACCS y FISICOQUIMICOS')
 print('______________________________  ')
+# Definir las columnas predictoras y la variable objetivo
 
-from sklearn.model_selection import cross_val_score
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import make_scorer, accuracy_score
-import numpy as np
+train_data_fingerprints.columns = train_data_fingerprints.columns.astype(str)
 
-# Supongamos que tienes tus datos en X (features) y y (target)
-modelo = DecisionTreeClassifier()  # Puedes cambiarlo por otro modelo
+Fisicoquimicas = train_data_fingerprints.iloc[:, 1:6]
+columns_subset = pd.concat([Fisicoquimicas, MACCS], axis=1)
+columnas_predictoras = columns_subset.columns.astype(str)
 
-# Aplicar validación cruzada con 5 folds
-y = train_data_MACCS_array['Clasificacion_ATS']
-X = train_data_MACCS_array[columnas_predictoras]
+target = "Clasificacion_ATS"
+# Llamar al modelo
+modeloMACCS_FISICOQUIMICOS, accuracy, cm, report = arbol_decision(train_data_fingerprints, columnas_predictoras, target)
 
-scores = cross_val_score(modelo, X, y, cv=5, scoring='accuracy')
-
-# Mostrar resultados
-print("Precisión en cada fold:", scores)
-print("Precisión media:", np.mean(scores))
-print("Desviación estándar:", np.std(scores))
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_arboles_MACCSFISICOQUIMICOS.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(cm, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
-INCLUSION DE LOS FINGERPRINTS DE MORGAN
+#Prueba modelo con dataset prueba
 """
-print('______________________________  ')
-print('INCLUSION DE LOS FINGERPRINTS DE MORGAN')
-print('______________________________  ')
-print('INCLUSION DE LOS MORGAN')
+print('Prueba modelo con dataset prueba MACCS y FISICOQUIMICOS')
+print('--------------------------------')
+test_data_fingerprints.columns = test_data_fingerprints.columns.astype(str)
+Fisicoquimicas_test = test_data_fingerprints.iloc[:, 1:6]
+columns_subset_test = pd.concat([Fisicoquimicas_test, MACCS_test], axis=1)
+columnas_predictoras_test = columns_subset_test.columns.astype(str)
 
-calcular_ecfp(train_data, 'SMILES')
-from modules.procesamiento.calculo_fingerprints import convertir_ECFP_a_numpy
-convertir_ECFP_a_numpy(train_data, 'ECFP')
-#print(train_data['ECFP_array'])
-ECFP = train_data['ECFP_array']
-ECFP = pd.DataFrame(ECFP.tolist())
+predict_data = test_data_fingerprints[columnas_predictoras_test]
+nuevas_predicciones = modeloMACCS_FISICOQUIMICOS.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_MACCSFISICOQUIMICOS'] = nuevas_predicciones
+
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_MACCSFISICOQUIMICOS']
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
+
+print('______________________________  ')
+print('MODELO ARBOL DE DECISION ECFP ')
+print('______________________________  ')
+# Definir las columnas predictoras y la variable objetivo
+
+ECFP = train_data_fingerprints.iloc[:, 6:2054]
 #print(ECFP)
-train_data_MACCS_array = pd.concat([train_data_MACCS_array.reset_index(drop=True), ECFP.reset_index(drop=True)], axis=1)
-#print(train_data_MACCS_array)
+columnas_predictoras = ECFP.columns
 
-print('______________________________  ')
-print('MODELO DE ARBOLES DE DECISION USANDO MACCS y MORGAN')
-print('______________________________  ')
-
-# Definir las columnas predictoras y la variable objetivo
-columnas_predictoras = [col for col in train_data_MACCS_array.columns if col != 'Clasificación_ATS' and isinstance(col, str) == False]
-#print(columnas_predictoras)
+#columnas_predictoras = columnas_predictoras.astype(int)
 target = "Clasificacion_ATS"
 # Llamar al modelo
-modelo, accuracy, cm, report = arbol_decision(train_data_MACCS_array, columnas_predictoras, target)
-# Mostrar resultados
-print(f"Precisión del modelo: {accuracy:.4f}")
-print("Matriz de confusión:")
-print(cm)
-print("Reporte de clasificación:")
-print(report)
+modelo_ECFP, accuracy, cm, report = arbol_decision(train_data_fingerprints, columnas_predictoras, target)
 
-#guardar_csv(train_data_MACCS_array, 'data/train_data_MACCS_array.csv')
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_arboles_ECFP.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(cm, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
-print('modelo de arboles MACCS y MORGAN de decision CONJUNTO PRUEBA')
-print('______________________________  ')
-
-calcular_ecfp(test_data, 'SMILES')
-from modules.procesamiento.calculo_fingerprints import convertir_ECFP_a_numpy
-convertir_ECFP_a_numpy(test_data, 'ECFP')
-#print(train_data['ECFP_array'])
-ECFP = test_data['ECFP_array']
-ECFP = pd.DataFrame(ECFP.tolist())
+"""
+#Prueba modelo con dataset prueba
+"""
+print('Prueba modelo con dataset prueba ECFP')
+print('--------------------------------')
+# Definir las columnas predictoras y la variable objetivo
+ECFP_test = test_data_fingerprints.iloc[:, 6:2054]
 #print(ECFP)
-test_data_MACCS_array = pd.concat([test_data_MACCS_array.reset_index(drop=True), ECFP.reset_index(drop=True)], axis=1)
-#print(test_data_MACCS_array)
+columnas_predictoras_test = ECFP_test.columns
 
-columnas = [col for col in test_data_MACCS_array.columns if col != 'Clasificación_ATS' and isinstance(col, str) == False]
-predict_data = test_data_MACCS_array[columnas]
+predict_data = test_data_fingerprints[columnas_predictoras_test]
+nuevas_predicciones = modelo_ECFP.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_ECFP'] = nuevas_predicciones
 
-nuevas_predicciones = modelo.predict(predict_data)
-test_data_MACCS_array['nuevas_predicciones'] = nuevas_predicciones
 #guardar_csv(test_data, 'data/predicion_arbol.csv')
-
-
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
 # Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
-y_true = test_data_MACCS_array['Clasificacion_ATS']
-y_pred = test_data_MACCS_array['nuevas_predicciones']
-
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_ECFP']
 # Matriz de confusión
 cm = confusion_matrix(y_true, y_pred)
 print("Matriz de Confusión:")
 print(cm)
-
 #Cálculo de métricas
 precision = precision_score(y_true, y_pred)
 recall = recall_score(y_true, y_pred)
@@ -2292,78 +2354,51 @@ print(f"Recall: {recall}")
 print(f"F1-Score: {f1}")
 print(f"Exactitud: {accuracy}")
 
-"""
-CROSS VALIDATION
-"""
 print('______________________________  ')
-print('CROSS VALIDATION MODELO MACCS Y EFPC')
+print('MODELO ARBOL DE DECISION ECFP y FISICOQUIMICAS ')
 print('______________________________  ')
-
-from sklearn.model_selection import cross_val_score
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import make_scorer, accuracy_score
-import numpy as np
-
-# Supongamos que tienes tus datos en X (features) y y (target)
-modelo = DecisionTreeClassifier()  # Puedes cambiarlo por otro modelo
-
-# Aplicar validación cruzada con 5 folds
-y = train_data_MACCS_array['Clasificacion_ATS']
-X = train_data_MACCS_array[columnas_predictoras]
-
-scores = cross_val_score(modelo, X, y, cv=5, scoring='accuracy')
-
-# Mostrar resultados
-print("Precisión en cada fold:", scores)
-print("Precisión media:", np.mean(scores))
-print("Desviación estándar:", np.std(scores))
-
-"""
-MODELO ARBOLES SOLO CON EFPC
-"""
-df_ecfp = train_data_MACCS_array.iloc[:, 173:]  # Selecciona desde la columna 172 hasta el final
-df_ecfp['Clasificacion_ATS'] = train_data_MACCS_array['Clasificacion_ATS']
-#print(df_ecfp)
-
-print('______________________________  ')
-print('MODELO DE ARBOLES DE DECISION USANDO MORGAN')
-print('______________________________  ')
-
 # Definir las columnas predictoras y la variable objetivo
-columnas_predictoras = [col for col in df_ecfp.columns if col != 'Clasificación_ATS' and isinstance(col, str) == False]
-#print(columnas_predictoras)
+# Seleccionar las columnas que no son la posición 0 ni de la 7 a la 2054
+
+columns_subset = pd.concat([Fisicoquimicas, ECFP], axis=1)
+columnas_predictoras = columns_subset.columns
+
+#columnas_predictoras = columnas_predictoras.astype(int)
 target = "Clasificacion_ATS"
 # Llamar al modelo
-modelo, accuracy, cm, report = arbol_decision(df_ecfp, columnas_predictoras, target)
-# Mostrar resultados
-print(f"Precisión del modelo: {accuracy:.4f}")
-print("Matriz de confusión:")
-print(cm)
-print("Reporte de clasificación:")
-print(report)
+modelo_ECFP_FISICOQUIMICAS, accuracy, cm, report = arbol_decision(train_data_fingerprints, columnas_predictoras, target)
 
-print('modelo de arboles MORGAN de decision CONJUNTO PRUEBA')
-print('______________________________  ')
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_arboles_ECFPFISICOQUIMICAS.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(cm, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
+"""
+#Prueba modelo con dataset prueba
+"""
+print('Prueba modelo con dataset prueba ECFP y FISICOQUIMICAS')
+print('--------------------------------')
+# Definir las columnas predictoras y la variable objetivo
+columns_subset_test = pd.concat([Fisicoquimicas_test, ECFP_test], axis=1)
+columnas_predictoras_test = columns_subset_test.columns
 
-columnas = [col for col in df_ecfp.columns if col != 'Clasificación_ATS' and isinstance(col, str) == False]
-predict_data = df_ecfp[columnas]
+predict_data = test_data_fingerprints[columnas_predictoras_test]
+nuevas_predicciones = modelo_ECFP_FISICOQUIMICAS.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_ECFPFISICOQUIMICAS'] = nuevas_predicciones
 
-nuevas_predicciones = modelo.predict(predict_data)
-df_ecfp['nuevas_predicciones'] = nuevas_predicciones
 #guardar_csv(test_data, 'data/predicion_arbol.csv')
-
-
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
 # Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
-y_true = df_ecfp['Clasificacion_ATS']
-y_pred = df_ecfp['nuevas_predicciones']
-
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_ECFPFISICOQUIMICAS']
 # Matriz de confusión
 cm = confusion_matrix(y_true, y_pred)
 print("Matriz de Confusión:")
 print(cm)
-
 #Cálculo de métricas
 precision = precision_score(y_true, y_pred)
 recall = recall_score(y_true, y_pred)
@@ -2376,30 +2411,121 @@ print(f"Recall: {recall}")
 print(f"F1-Score: {f1}")
 print(f"Exactitud: {accuracy}")
 
-"""
-CROSS VALIDATION
-"""
 print('______________________________  ')
-print('CROSS VALIDATION MODELO MORGAN')
+print('MODELO ARBOL DE DECISION ECFP y MACCS ')
 print('______________________________  ')
+# Definir las columnas predictoras y la variable objetivo
+# Seleccionar las columnas que no son la posición 0 ni de la 7 a la 2054
 
-from sklearn.model_selection import cross_val_score
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import make_scorer, accuracy_score
-import numpy as np
+columns_subset = pd.concat([MACCS, ECFP], axis=1)
+columnas_predictoras = columns_subset.columns.astype(str)
 
-# Supongamos que tienes tus datos en X (features) y y (target)
-modelo = DecisionTreeClassifier()  # Puedes cambiarlo por otro modelo
+#columnas_predictoras = columnas_predictoras.astype(int)
+target = "Clasificacion_ATS"
+# Llamar al modelo
+modelo_ECFP_MACCS, accuracy, cm, report = arbol_decision(train_data_fingerprints, columnas_predictoras, target)
 
-# Aplicar validación cruzada con 5 folds
-y = df_ecfp['Clasificacion_ATS']
-X = df_ecfp[columnas_predictoras]
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_arboles_ECFPMACCS.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(cm, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
-scores = cross_val_score(modelo, X, y, cv=5, scoring='accuracy')
+"""
+#Prueba modelo con dataset prueba
+"""
+print('Prueba modelo con dataset prueba ECFP y MACCS')
+print('--------------------------------')
+# Definir las columnas predictoras y la variable objetivo
+columns_subset_test = pd.concat([MACCS_test, ECFP_test], axis=1)
+columnas_predictoras_test = columns_subset_test.columns.astype(str)
 
-# Mostrar resultados
-print("Precisión en cada fold:", scores)
-print("Precisión media:", np.mean(scores))
-print("Desviación estándar:", np.std(scores))
+predict_data = test_data_fingerprints[columnas_predictoras_test]
+nuevas_predicciones = modelo_ECFP_MACCS.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_ECFPFMACCS'] = nuevas_predicciones
 
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_ECFPFMACCS']
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
+
+print('______________________________  ')
+print('MODELO ARBOL DE DECISION ECFP,  MACCS y FISICOQUIMICAS ')
+print('______________________________  ')
+# Definir las columnas predictoras y la variable objetivo
+# Seleccionar las columnas que no son la posición 0 ni de la 7 a la 2054
+
+columns_subset = pd.concat([MACCS, ECFP, Fisicoquimicas], axis=1)
+columnas_predictoras = columns_subset.columns.astype(str)
+
+#columnas_predictoras = columnas_predictoras.astype(int)
+target = "Clasificacion_ATS"
+# Llamar al modelo
+modeloECFP_MACCS_FISICOQUIMICAS, accuracy, cm, report = arbol_decision(train_data_fingerprints, columnas_predictoras, target)
+
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_arboles_ECFPMACCSFISICOQUIMICAS.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(cm, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+#Prueba modelo con dataset prueba
+"""
+print('Prueba modelo con dataset prueba ECFP MACCS FISICOQUIMICAS')
+print('--------------------------------')
+# Definir las columnas predictoras y la variable objetivo
+columns_subset_test = pd.concat([MACCS_test, ECFP_test, Fisicoquimicas_test], axis=1)
+#print(columns_subset_test)
+columnas_predictoras_test = columns_subset_test.columns.astype(str)
+#print(columnas_predictoras_test)
+#guardar_csv(columns_subset_test, 'data/columas_preductoras_test.csv')
+"""
+"""
+predict_data = test_data_fingerprints[columnas_predictoras_test]
+nuevas_predicciones = modeloECFP_MACCS_FISICOQUIMICAS.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_ECFPFMACCSFISICOQUIMICAS'] = nuevas_predicciones
+
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_ECFPFMACCSFISICOQUIMICAS']
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
 

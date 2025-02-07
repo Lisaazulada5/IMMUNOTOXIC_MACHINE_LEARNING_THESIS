@@ -185,6 +185,20 @@ def arbol_decision(df, columnas_predictoras, target, criterio='gini', max_depth=
     accuracy = accuracy_score(y, y_pred)
     cm = confusion_matrix(y, y_pred)
     report = classification_report(y, y_pred)
+    print(f"Precisión del modelo: {accuracy:.4f}")
+    print("Matriz de confusión:")
+    print(cm)
+    print("Reporte de clasificación:")
+    print(report)
+
+    # Validación cruzada
+    scores = cross_val_score(modelo, X, y, cv=5)
+    print("\n______________________________")
+    print("CROSS VALIDATION")
+    print("______________________________")
+    print(f"Precisión en cada fold: {scores}")
+    print(f"Precisión media: {np.mean(scores)}")
+    print(f"Desviación estándar: {np.std(scores)}")
 
     return modelo, accuracy, cm, report
 
@@ -242,3 +256,51 @@ def regresion_logistica_sm(df, columnas, target):
     print(report)
 
     return modelo, summary, accuracy, cm, report, y_test, y_pred_proba
+
+
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+import numpy as np
+
+
+def entrenar_random_forest(X, y, n_estimators=100, random_state=42):
+    """
+    Entrena un modelo Random Forest y muestra métricas de desempeño.
+    :param X: DataFrame con las características
+    :param y: Serie con la variable objetivo
+    :param n_estimators: Número de árboles en el bosque
+    :param random_state: Semilla aleatoria para reproducibilidad
+    """
+    # Dividir datos en entrenamiento y prueba
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=random_state)
+
+    # Inicializar y entrenar el modelo
+    modelo = RandomForestClassifier(n_estimators=n_estimators, random_state=random_state, class_weight='balanced', max_depth=5)
+    modelo.fit(X_train, y_train)
+
+    # Predicciones
+    y_pred = modelo.predict(X_test)
+    cm = confusion_matrix(y_test, y_pred)
+
+    # Evaluación
+    print("\n______________________________")
+    print("RANDOM FOREST")
+    print("______________________________")
+    print(f"Precisión del modelo: {accuracy_score(y_test, y_pred):.4f}")
+    print("Matriz de confusión:")
+    print(confusion_matrix(y_test, y_pred))
+    print("Reporte de clasificación:")
+    print(classification_report(y_test, y_pred))
+
+    # Validación cruzada
+    scores = cross_val_score(modelo, X, y, cv=5)
+    print("\n______________________________")
+    print("CROSS VALIDATION")
+    print("______________________________")
+    print(f"Precisión en cada fold: {scores}")
+    print(f"Precisión media: {np.mean(scores)}")
+    print(f"Desviación estándar: {np.std(scores)}")
+
+    return modelo, cm
+

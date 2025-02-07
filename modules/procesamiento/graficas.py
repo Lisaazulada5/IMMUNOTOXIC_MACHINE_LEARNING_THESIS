@@ -453,3 +453,82 @@ def graficar_curva_roc(y_test, y_pred_proba, ruta_guardado, titulo="Curva ROC pa
 
     # Imprimir el valor del AUC
     print(f'AUC: {auc:.2f}')
+
+
+# graficas.py
+
+import matplotlib.pyplot as plt
+
+
+def graficar_cook(modelo, train_data_scaled, ruta_guardado):
+    """
+    Genera y muestra una gráfica de la distancia de Cook para cada observación.
+
+    Parámetros:
+    - modelo: modelo ya ajustado que implementa el método get_influence().
+    - train_data_scaled: conjunto de datos de entrenamiento escalados (para determinar el umbral).
+    """
+    # Obtener la influencia del modelo
+    influencia = modelo.get_influence()
+
+    # Extraer la distancia de Cook (se asume que cooks_distance es una tupla y que el primer elemento contiene los valores)
+    cooks_d = influencia.cooks_distance[0]
+
+    # Calcular umbral típico para la distancia de Cook
+    umbral_cook = 4 / len(train_data_scaled)
+
+    # Crear la gráfica
+    plt.figure(figsize=(8, 5))
+    plt.stem(range(len(cooks_d)), cooks_d, markerfmt="ro")
+    plt.axhline(umbral_cook, color="r", linestyle="dashed", label="Umbral 4/n")
+    plt.xlabel("Índice de observación")
+    plt.ylabel("Distancia de Cook")
+    plt.title("Distancia de Cook por observación")
+    plt.legend()
+    # Guardar la figura como archivo JPG
+    plt.savefig(ruta_guardado, format="png", dpi=300)
+    plt.show()
+
+import matplotlib.pyplot as plt
+def graficar_supeustolinealidad(variable,X,log_odds, ruta_guardado):
+    """
+    Genera y muestra una gráfica para verificar el supuesto de linealidad de cada variable
+
+    Parámetros:
+    - modelo: modelo ya ajustado que implementa el método get_influence().
+    - variable: variable a graficar
+    -Log_odds: calculado anteriormente
+    """
+    # Supongamos que quieres graficar una variable frente a los log-odds
+    plt.scatter(X, log_odds)
+    plt.xlabel(variable)
+    plt.ylabel('log_odds')
+    plt.title(f"Log-Odds vs. {variable}")
+    # Guardar la figura como archivo JPG
+    plt.savefig(ruta_guardado, format="png", dpi=300)
+    plt.show()
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+def plot_confusion_matrix(cm, ruta_guardado, class_names=None, cmap="Blues"):
+    """
+    Grafica una matriz de confusión con Seaborn y Matplotlib.
+
+    Parámetros:
+    cm (array-like): Matriz de confusión generada por sklearn.metrics.confusion_matrix().
+    class_names (list, opcional): Lista con los nombres de las clases. Si es None, usa índices numéricos.
+    cmap (str, opcional): Colormap para el heatmap. Ejemplo: "Blues", "Reds", "Greens".
+
+    Retorna:
+    None (muestra la gráfica).
+    """
+    plt.figure(figsize=(6, 5))
+    sns.heatmap(cm, annot=True, fmt="d", cmap=cmap, cbar=False, linewidths=1,
+                linecolor="black", xticklabels=class_names, yticklabels=class_names)
+
+    plt.xlabel("Predicción")
+    plt.ylabel("Valor Real")
+    plt.title("Matriz de Confusión")
+    plt.savefig(ruta_guardado, format="png", dpi=300)
+    plt.show()

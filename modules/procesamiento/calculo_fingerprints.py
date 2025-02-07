@@ -47,14 +47,18 @@ CONVERTIR MACCS (BIRVECTOR) A UN ARRAY NUMPY
 """
 
 # Función para convertir ExplicitBitVect a numpy array
-def convertir_a_numpy(fingerprint):
-    # Crea un array vacío de tamaño igual al número de bits del fingerprint (en este caso, 167)
-    numpy_array = np.zeros((fingerprint.GetNumBits(),), dtype=int)
+def convertir_a_numpy(columna_fingerprint):
+    fingerprint = []
+    for i in columna_fingerprint:
+        # Crea un array vacío de tamaño igual al número de bits del fingerprint (en este caso, 167)
+        arr = np.zeros((0,), dtype=np.int8)
+        # Convierte el fingerprint (ExplicitBitVect) a un array de NumPy
+        DataStructs.ConvertToNumpyArray(i, arr)
+        fingerprint.append(arr)
+    return fingerprint
 
-    # Convierte el fingerprint (ExplicitBitVect) a un array de NumPy
-    DataStructs.ConvertToNumpyArray(fingerprint, numpy_array)
 
-    return numpy_array
+
 
 
 # Función para aplicar la conversión a una columna del DataFrame
@@ -69,7 +73,7 @@ MORGAN FINGERPRINTS
 """
 
 
-def calcular_ecfp(df, columna_smiles, radio=3, nBits=1024):
+def calcular_ecfp(df, columna_smiles, radio=2, nBits=2048):
     """
     Calcula los fingerprints ECFP para cada molécula en el DataFrame y agrega una nueva columna con los resultados.
 
