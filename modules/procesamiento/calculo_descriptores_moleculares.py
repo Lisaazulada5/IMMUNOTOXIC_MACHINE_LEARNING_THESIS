@@ -387,3 +387,74 @@ def agregar_numero_sulfatos(df, columna_smiles):
     """
     df['Numero_sulfatos'] = df[columna_smiles].apply(contar_sulfatos)
     return df
+
+
+from rdkit import Chem
+from rdkit.Chem import Descriptors
+import pandas as pd
+
+
+def calcular_carga_molecular(smiles):
+    """Calcula la carga formal total de una molécula a partir de su SMILES."""
+    mol = Chem.MolFromSmiles(smiles)
+    if mol is None:
+        return None  # Manejo de errores si el SMILES es inválido
+    return Chem.GetFormalCharge(mol)
+
+
+def agregar_carga_molecular(df, smiles_col="SMILES"):
+    """
+    Agrega la carga formal total al DataFrame con base en una columna de SMILES.
+
+    Parámetros:
+    - df: DataFrame de pandas con una columna de SMILES.
+    - smiles_col: Nombre de la columna que contiene los SMILES (por defecto, "SMILES").
+
+    Retorna:
+    - DataFrame con una nueva columna "Carga_Molecular".
+    """
+    df["Carga_Molecular"] = df[smiles_col].apply(calcular_carga_molecular)
+    return df
+
+from rdkit.Chem import AllChem
+
+from rdkit import Chem
+from rdkit.Chem import AllChem
+import pandas as pd
+
+
+def calcular_carga_formal(smiles):
+    """
+    Calcula la carga formal total de una molécula a partir de su SMILES.
+    """
+    mol = Chem.MolFromSmiles(smiles)
+    if mol is None:
+        return None  # Manejo de errores si el SMILES es inválido
+    return Chem.GetFormalCharge(mol)
+
+
+def calcular_carga_gasteiger(smiles):
+    """
+    Calcula la suma de las cargas parciales de Gasteiger de una molécula.
+    """
+    mol = Chem.MolFromSmiles(smiles)
+    if mol is None:
+        return None
+    AllChem.ComputeGasteigerCharges(mol)
+    return sum(float(a.GetProp("_GasteigerCharge")) for a in mol.GetAtoms())
+
+
+def agregar_cargas_moleculares(df, smiles_col="SMILES"):
+    """
+    Agrega las cargas formales y de Gasteiger al DataFrame.
+
+    Parámetros:
+    - df: DataFrame con una columna de SMILES.
+    - smiles_col: Nombre de la columna que contiene los SMILES (por defecto, "SMILES").
+
+    Retorna:
+    - DataFrame con nuevas columnas "Carga_Formal" y "Carga_Gasteiger".
+    """
+    df["Carga_Formal"] = df[smiles_col].apply(calcular_carga_formal)
+    df["Carga_Gasteiger"] = df[smiles_col].apply(calcular_carga_gasteiger)
+    return df

@@ -174,9 +174,9 @@ def arbol_decision(df, columnas_predictoras, target, criterio='gini', max_depth=
     X = df[columnas_predictoras]
     y = df[target]
 
-    modelo = DecisionTreeClassifier(criterion=criterio, max_depth=5,
-                                    min_samples_split=min_samples_split,
-                                    min_samples_leaf=min_samples_leaf,
+    modelo = DecisionTreeClassifier(criterion="gini", max_depth=5,
+                                    min_samples_split=10,
+                                    min_samples_leaf=5,
                                     random_state=42, class_weight='balanced')
 
     modelo.fit(X, y)
@@ -284,8 +284,8 @@ def entrenar_random_forest(X, y, n_estimators=100, random_state=42):
     cm = confusion_matrix(y_test, y_pred)
 
     # Evaluación
-    print("\n______________________________")
-    print("RANDOM FOREST")
+    #print("\n______________________________")
+    #print("RANDOM FOREST")
     print("______________________________")
     print(f"Precisión del modelo: {accuracy_score(y_test, y_pred):.4f}")
     print("Matriz de confusión:")
@@ -303,4 +303,180 @@ def entrenar_random_forest(X, y, n_estimators=100, random_state=42):
     print(f"Desviación estándar: {np.std(scores)}")
 
     return modelo, cm
+
+import xgboost as xgb
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+
+import xgboost as xgb
+from sklearn.model_selection import train_test_split, StratifiedKFold, cross_val_score
+from sklearn.metrics import classification_report, make_scorer, f1_score
+
+import xgboost as xgb
+from sklearn.model_selection import train_test_split, StratifiedKFold, cross_val_score
+from sklearn.metrics import classification_report, make_scorer, f1_score
+
+
+"""
+MODELOS XGBOOST
+"""
+def entrenar_xgboost(X, y, test_size=0.2, random_state=42, cv=5):
+    """
+    Entrena un modelo XGBoost con scale_pos_weight y realiza validación cruzada.
+
+    Parámetros:
+    - X: Features (DataFrame o array)
+    - y: Labels (array)
+    - test_size: Proporción de datos para prueba
+    - random_state: Semilla para reproducibilidad
+    - cv: Número de folds para validación cruzada
+
+    Retorna:
+    - modelo: Modelo XGBoost entrenado
+    """
+
+    # Dividir datos en entrenamiento y prueba
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
+
+
+    # Calcular scale_pos_weight (relación entre clases)
+    peso_clase = sum(y_train == 0) / sum(y_train == 1)
+    print(f"Peso de la clase minoritaria: {peso_clase:.2f}")
+
+    # Configurar y entrenar modelo XGBoost
+    modelo = xgb.XGBClassifier(scale_pos_weight=peso_clase/2, max_depth=4, learning_rate=0.1, n_estimators=200, eval_metric="logloss")
+    modelo.fit(X_train, y_train)
+
+    # Evaluación en test set
+    y_pred = modelo.predict(X_test)
+    reporte = classification_report(y_test, y_pred, output_dict=True)
+
+    # Validación cruzada
+    skf = StratifiedKFold(n_splits=cv, shuffle=True, random_state=random_state)
+    puntajes_f1 = cross_val_score(modelo, X, y, cv=skf, scoring=make_scorer(f1_score))
+
+    # 🔹 **Imprimir métricas dentro de la función**
+    print("\n🔹 Reporte de Clasificación en Test Set:")
+    for clase, valores in reporte.items():
+        if isinstance(valores, dict):
+            print(f"\nClase {clase}:")
+            for metrica, valor in valores.items():
+                print(f"  {metrica}: {valor:.4f}")
+    print('\n _______________________________________________')
+    print('VALIDACIÓN CRUZADA')
+    print('__________________________________________________')
+    print(f"\n Puntajes F1 en cada fold de validación cruzada: {puntajes_f1}")
+    print(f" F1 Score promedio: {puntajes_f1.mean():.4f}")
+
+    return modelo
+
+"""
+MAQUINAS DE SOPORTE
+"""
+from sklearn.svm import SVC
+from sklearn.model_selection import cross_val_score, train_test_split
+from sklearn.metrics import classification_report
+import numpy as np
+from imblearn.over_sampling import SMOTE
+
+
+def entrenar_svm(X, y, test_size=0.2, random_state=42, cv=5):
+    """
+    Entrena un modelo SVM con kernel RBF, realiza validación cruzada y muestra métricas.
+
+    Parámetros:
+    - df: DataFrame con los datos
+    - columnas_predictoras: Lista de columnas a usar como variables predictoras
+    - columna_target: Nombre de la columna objetivo
+    - test_size: Proporción de datos para test (default 0.2)
+    - random_state: Semilla para reproducibilidad (default 42)
+    - cv: Número de folds en validación cruzada (default 5)
+    """
+    # Separar variables predictoras y objetivo
+    #X = df[columnas_predictoras]
+    #y = df[columna_target]
+
+    # Dividir datos en entrenamiento y prueba
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
+
+    # Aplicar SMOTE solo al conjunto de entrenamiento
+    #smote = SMOTE(random_state=random_state)
+    #X_train, y_train = smote.fit_resample(X_train, y_train)
+
+    # Definir y entrenar el modelo SVM con kernel RBF
+    modelo = SVC(kernel='rbf', C=1.0, gamma='scale', random_state=random_state, class_weight={0:1, 1:1.48})
+    modelo.fit(X_train, y_train)
+
+    # Predicción en test
+    y_pred = modelo.predict(X_test)
+
+    # Validación cruzada
+    scores = cross_val_score(modelo, X_train, y_train, cv=cv, scoring='f1_weighted')
+
+    # Imprimir métricas
+    print("Matriz de confusión")
+    cm = confusion_matrix(y_test, y_pred)
+    print(cm)
+    print("🔹 Reporte de Clasificación en Test Set:")
+    print(classification_report(y_test, y_pred))
+    print(f"🔹 Validación Cruzada (F1 weighted, {cv}-fold): {np.mean(scores):.4f} ± {np.std(scores):.4f}")
+
+
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import classification_report, confusion_matrix
+import numpy as np
+
+
+"""
+REDES NEURONALES
+"""
+def entrenar_red_neuronal(X, y, test_size=0.2, random_state=42, epochs=50, batch_size=32):
+    """
+    Entrena una red neuronal simple para clasificación binaria.
+
+    Parámetros:
+    - X: Datos de entrada (numpy array o DataFrame)
+    - y: Etiquetas (numpy array o Series)
+    - test_size: Proporción del conjunto de prueba
+    - random_state: Semilla para reproducibilidad
+    - epochs: Número de veces que la red verá los datos completos
+    - batch_size: Tamaño de los lotes de entrenamiento
+    """
+    # Dividir datos en entrenamiento y prueba
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
+
+    # Escalado de datos (importante para redes neuronales)
+    scaler = StandardScaler()
+    X_train = scaler.fit_transform(X_train)
+    X_test = scaler.transform(X_test)
+
+    # Definir la arquitectura de la red neuronal
+    modelo = keras.Sequential([
+        layers.Dense(64, activation='relu'),
+        layers.Dense(32, activation='relu'),
+        layers.Dense(1, activation='sigmoid')  # Capa de salida para clasificación binaria
+    ])
+
+    # Compilar el modelo
+    modelo.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+    # Entrenar el modelo
+    modelo.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, validation_data=(X_test, y_test), verbose=1)
+
+    # Evaluar el modelo
+    y_pred_prob = modelo.predict(X_test)
+    y_pred = (y_pred_prob > 0.5).astype(int)  # Convertir probabilidades en 0 o 1
+
+    # Imprimir métricas
+    print("🔹 Matriz de Confusión")
+    print(confusion_matrix(y_test, y_pred))
+    print("\n🔹 Reporte de Clasificación")
+    print(classification_report(y_test, y_pred))
+
+    return modelo
+
 

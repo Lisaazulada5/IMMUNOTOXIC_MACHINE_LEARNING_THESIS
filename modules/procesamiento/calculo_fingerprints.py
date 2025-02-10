@@ -73,7 +73,7 @@ MORGAN FINGERPRINTS
 """
 
 
-def calcular_ecfp(df, columna_smiles, radio=2, nBits=2048):
+def calcular_ecfp(df, columna_smiles, radio=4, nBits=2048):
     """
     Calcula los fingerprints ECFP para cada molécula en el DataFrame y agrega una nueva columna con los resultados.
 

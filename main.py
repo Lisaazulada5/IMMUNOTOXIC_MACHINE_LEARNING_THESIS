@@ -786,7 +786,7 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
-"""  
+"""
 Grafico de histograma
 """
 output_path = 'data/graficas/histogramaplot_NumHDonors_actividad.png'
@@ -849,7 +849,7 @@ else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
-Detección de outliers 
+Detección de outliers
 """
 outliers = detectar_outliers(df, 'Dobles_Enlaces')
 outliers = pd.DataFrame(outliers)
@@ -892,7 +892,7 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
-"""  
+"""
 Grafico de histograma
 """
 output_path = 'data/graficas/histogramaplot_Dobles_Enlaces_actividad.png'
@@ -957,7 +957,7 @@ else:
 
 
 """
-Detección de outliers 
+Detección de outliers
 """
 outliers = detectar_outliers(df, 'Triples_Enlaces')
 outliers = pd.DataFrame(outliers)
@@ -1029,7 +1029,7 @@ else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
-Detección de outliers 
+Detección de outliers
 """
 outliers = detectar_outliers(df, 'Numero_hidroxilos')
 outliers = pd.DataFrame(outliers)
@@ -1084,7 +1084,7 @@ else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
-Detección de outliers 
+Detección de outliers
 """
 outliers = detectar_outliers(df, 'Numero_carboxilos')
 outliers = pd.DataFrame(outliers)
@@ -1120,7 +1120,7 @@ calcular_fingerprints_maccs(df, 'SMILES')
 #print(df)
 
 """
-Convertir MACCS a numpy 
+Convertir MACCS a numpy
 """
 
 from modules.procesamiento.calculo_fingerprints import convertir_MACCS_a_numpy
@@ -1139,7 +1139,7 @@ calcular_ecfp(df, 'SMILES')
 print(df)
 
 """
-Convertir ECFP a numpy 
+Convertir ECFP a numpy
 """
 from modules.procesamiento.calculo_fingerprints import convertir_ECFP_a_numpy
 
@@ -1148,7 +1148,7 @@ df = convertir_ECFP_a_numpy(df, 'ECFP')
 #print(df['ECFP'][0])
 
 """
-visualizar una molecula 
+visualizar una molecula
 """
 from rdkit import Chem
 from rdkit.Chem import AllChem
@@ -1215,7 +1215,7 @@ else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
-Detección de outliers 
+Detección de outliers
 """
 outliers = detectar_outliers(df, 'TPSA')
 outliers = pd.DataFrame(outliers)
@@ -1308,7 +1308,7 @@ else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
-Detección de outliers 
+Detección de outliers
 """
 outliers = detectar_outliers(df, 'NumRotatableBonds')
 outliers = pd.DataFrame(outliers)
@@ -1419,7 +1419,7 @@ else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
-PRUEBA DE NORMALIDAD DE  Kolmogorov-Smirnov 
+PRUEBA DE NORMALIDAD DE  Kolmogorov-Smirnov
 """
 from scipy import stats
 print('Analisis de la normalidad de columna LogP')
@@ -1825,7 +1825,7 @@ from modules.procesamiento.modelos import regresion_logistica_sm
 modelo, summary, accuracy, cm, report, y_test, y_pred_proba = regresion_logistica_sm(train_data_scaled, X_columns, target)
 
 """
-CURVA ROC 
+CURVA ROC
 """
 from modules.procesamiento.graficas import graficar_curva_roc
 
@@ -2115,7 +2115,7 @@ else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
-INCLUSION DEL LOS FINGERPRINTS DENTRO DE LOS DATOS DE ENTRENAMIENTO.
+#INCLUSION DEL LOS FINGERPRINTS DENTRO DE LOS DATOS DE ENTRENAMIENTO.
 """
 print('______________________________  ')
 print('INCLUSION DEL LOS FINGERPRINTS DENTRO DE LOS DATOS DE ENTRENAMIENTO ')
@@ -2148,7 +2148,7 @@ train_data_fingerprints = pd.concat([train_data_fingerprints, pd.DataFrame(MACCS
 print('______________________________  ')
 print('INCLUSION DEL LOS FINGERPRINTS DENTRO DE LOS DATOS DE PRUEBA ')
 test_data_scaled = leer_csv('data/test_data_scaled.csv')
-print(test_data_scaled.columns)
+#print(test_data_scaled.columns)
 test_data_fingerprints = test_data_scaled[['Clasificacion_ATS', 'LogP_scaled', 'TPSA_scaled', 'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
                     'Dobles_Enlaces_scaled','SMILES']].copy()
 #print(test_data_fingerprints.columns)
@@ -2176,10 +2176,12 @@ for i in test_data_fingerprints['MACCS']:
     MACCS_array_test.append(arr)
 test_data_fingerprints = pd.concat([test_data_fingerprints, pd.DataFrame(MACCS_array_test)], axis  =1)
 #test_data_fingerprints.columns = test_data_fingerprints.columns.astype(str) #convertimos las columnas a strings
-print(test_data_fingerprints)
+#print(test_data_fingerprints)
+
 
 """
-MODELADO CON FINGERPRINTS
+"""
+#MODELADO CON FINGERPRINTS
 """
 print('______________________________  ')
 print('MODELO ARBOL DE DECISION MACCS')
@@ -2204,7 +2206,7 @@ else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
 """
-Prueba modelo con dataset prueba
+#Prueba modelo con dataset prueba
 """
 print('Prueba modelo con dataset prueba MACCS')
 print('--------------------------------')
@@ -2416,7 +2418,8 @@ print('MODELO ARBOL DE DECISION ECFP y MACCS ')
 print('______________________________  ')
 # Definir las columnas predictoras y la variable objetivo
 # Seleccionar las columnas que no son la posición 0 ni de la 7 a la 2054
-
+#MACCS = MACCS.add_prefix("MACCS_")
+#train_data_fingerprints['MACCS'] = train_data_fingerprints['MACCS'].add_prefix("MACCS_")
 columns_subset = pd.concat([MACCS, ECFP], axis=1)
 columnas_predictoras = columns_subset.columns.astype(str)
 
@@ -2528,4 +2531,746 @@ print(f"Precisión: {precision}")
 print(f"Recall: {recall}")
 print(f"F1-Score: {f1}")
 print(f"Exactitud: {accuracy}")
+"""
+
+
+
+"""
+"""
+#MODELADO DE BOSQUES ALEATORIOS
+"""
+print('***************************')
+print('MODELO BOSQUES DE DECISION MACCS')
+print('______________________________  ')
+from modules.procesamiento.modelos import entrenar_random_forest
+train_data_fingerprints = train_data_fingerprints.drop(columns=['MACCS', 'SMILES', 'ECFP'])
+MACCS = train_data_fingerprints.iloc[:, 2054:2222]
+#print(MACCS)
+columnas_predictoras = MACCS
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+
+randomMACCS, confusion_matrix = entrenar_random_forest(X, y)
+
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_bosques_MACCS.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(confusion_matrix, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+#Prueba modelo con dataset prueba
+"""
+print('Prueba modelo con dataset prueba MACCS')
+print('--------------------------------')
+test_data_fingerprints = test_data_fingerprints.drop(columns=['MACCS', 'SMILES', 'ECFP'])
+MACCS_test = test_data_fingerprints.iloc[:, 2054:2222]
+#columnas_predictoras_test = MACCS_test #extrae los nombres de las columnas del df
+predict_data = MACCS_test
+nuevas_predicciones = randomMACCS.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_MACCS'] = nuevas_predicciones
+
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_MACCS']
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
+
+print('***************************')
+print('MODELO BOSQUES DE DECISION MACCS y FISICOQUIMICOS')
+print('______________________________  ')
+
+Fisicoquimicas = train_data_fingerprints.iloc[:, 1:6]
+columnas_predictoras = pd.concat([Fisicoquimicas, MACCS], axis=1)
+columnas_predictoras.columns =columnas_predictoras.columns.astype(str)
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+
+randomMACCS_FISICOQUIMICOS, confusion_matrix = entrenar_random_forest(X, y)
+
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_bosques_MACCS_FISICOQUIMICOS.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(confusion_matrix, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+#Prueba modelo con dataset prueba
+"""
+print('Prueba modelo con dataset prueba MACCS y FISICOQUIMICOS')
+print('--------------------------------')
+
+Fisicoquimicas_test = test_data_fingerprints.iloc[:, 1:6]
+columns_subset_test = pd.concat([Fisicoquimicas_test, MACCS_test], axis=1)
+columns_subset_test.columns = columns_subset_test.columns.astype(str)
+
+
+predict_data = columns_subset_test
+nuevas_predicciones = randomMACCS_FISICOQUIMICOS.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_MACCS_FISICOQUIMICOS'] = nuevas_predicciones
+
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_MACCS_FISICOQUIMICOS']
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
+
+print('***************************')
+print('MODELO BOSQUES DE DECISION ECFP')
+print('______________________________  ')
+ECFP = train_data_fingerprints.iloc[:, 6:2054]
+columnas_predictoras = ECFP
+#columnas_predictoras.columns =columnas_predictoras.columns.astype(str)
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+
+randomECFP, confusion_matrix = entrenar_random_forest(X, y)
+
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_bosques_ECFP.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(confusion_matrix, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+#Prueba modelo con dataset prueba
+"""
+print('Prueba modelo con dataset prueba ECFP')
+print('--------------------------------')
+
+ECFP_test = test_data_fingerprints.iloc[:, 6:2054]
+predict_data = ECFP_test
+nuevas_predicciones = randomECFP.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_MACCS_FISICOQUIMICOS'] = nuevas_predicciones
+
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_MACCS_FISICOQUIMICOS']
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
+
+print('***************************')
+print('MODELO BOSQUES DE DECISION ECFP Y FISICOQUIMICOS')
+print('______________________________  ')
+columnas_predictoras = pd.concat([Fisicoquimicas, ECFP], axis=1)
+columnas_predictoras.columns =columnas_predictoras.columns.astype(str)
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+
+randomECFP_FISICOQUIMICOS, confusion_matrix = entrenar_random_forest(X, y)
+
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_bosques_ECFP_FISICOQUIMICOS.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(confusion_matrix, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+#Prueba modelo con dataset prueba
+"""
+print('Prueba modelo con dataset prueba ECFP Y FISICOQUIMICOS')
+print('--------------------------------')
+
+ECFP_test = test_data_fingerprints.iloc[:, 6:2054]
+columnas_predictoras = pd.concat([Fisicoquimicas_test, ECFP_test], axis=1)
+columnas_predictoras.columns = columnas_predictoras.columns.astype(str)
+predict_data = columnas_predictoras
+nuevas_predicciones = randomECFP_FISICOQUIMICOS.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_ECFP_FISICOQUIMICOS'] = nuevas_predicciones
+
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_ECFP_FISICOQUIMICOS']
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
+
+print('***************************')
+print('MODELO BOSQUES DE DECISION ECFP Y MACCS')
+print('______________________________  ')
+columnas_predictoras = pd.concat([MACCS, ECFP], axis=1)
+columnas_predictoras.columns =columnas_predictoras.columns.astype(str)
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+
+randomECFP_MACCS, confusion_matrix = entrenar_random_forest(X, y)
+
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_bosques_ECFP Y MACCS.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(confusion_matrix, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+#Prueba modelo con dataset prueba
+"""
+print('Prueba modelo con dataset prueba ECFP Y MACCS')
+print('--------------------------------')
+
+columnas_predictoras = pd.concat([MACCS_test, ECFP_test], axis=1)
+columnas_predictoras.columns = columnas_predictoras.columns.astype(str)
+predict_data = columnas_predictoras
+nuevas_predicciones = randomECFP_MACCS.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_ECFP Y MACCS'] = nuevas_predicciones
+
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_ECFP Y MACCS']
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
+
+print('***************************')
+print('MODELO BOSQUES DE DECISION ECFP, MACCS Y FISICOQUIMICOS')
+print('______________________________  ')
+columnas_predictoras = pd.concat([MACCS, ECFP, Fisicoquimicas], axis=1)
+columnas_predictoras.columns =columnas_predictoras.columns.astype(str)
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+
+randomECFP_MACCS_FISICOQUIMICOS, confusion_matrix = entrenar_random_forest(X, y)
+
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_bosques_ECFP_MACCS_FISICOQUIMICOS.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(confusion_matrix, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+#Prueba modelo con dataset prueba
+"""
+print('Prueba modelo con dataset prueba ECFP, MACCS Y FISICOQUIMICOS')
+print('--------------------------------')
+
+columnas_predictoras = pd.concat([MACCS_test, ECFP_test, Fisicoquimicas_test], axis=1)
+columnas_predictoras.columns = columnas_predictoras.columns.astype(str)
+predict_data = columnas_predictoras
+nuevas_predicciones = randomECFP_MACCS_FISICOQUIMICOS.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_ECFP_MACCS_FISICOQUIMICOS'] = nuevas_predicciones
+
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_ECFP_MACCS_FISICOQUIMICOS']
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
+"""
+
+
+
+
+"""
+"""
+#Se explora que el dataset sea diverso SIMILARIDAD DE TANIMOTO
+""" 
+print('____________________')
+print('\n Diversidad datos')
+print('\n ____________________')
+df_diversidad = df_scaled.copy()
+df_diversidad = df_diversidad[['INPUT', 'SMILES']]
+print('\n Calculo de fingerprints ECFP')
+print('____________________')
+
+from modules.procesamiento.calculo_fingerprints import calcular_ecfp
+calcular_ecfp(df_diversidad, 'SMILES')
+print(df_diversidad.columns)
+#print(train_data_fingerprints['ECFP'][0])
+#from rdkit.Chem import DataStructs
+#ECFP_array = []
+#for i in train_data_fingerprints['ECFP']:
+#    arr = np.zeros((0,), dtype=np.int8)
+#    DataStructs.ConvertToNumpyArray(i, arr)
+#    ECFP_array.append(arr)
+
+#train_data_fingerprints = pd.concat([train_data_fingerprints, pd.DataFrame(ECFP_array)], axis  =1)
+#print(train_data_fingerprints)
+
+print(type(df_diversidad["ECFP"].iloc[0]))  # Tipo de dato del primer fingerprint
+import time
+from rdkit.SimDivFilters import MaxMinPicker
+
+# Inicializar el selector
+mmp = MaxMinPicker()
+
+# Extraer los fingerprints
+fps = df_diversidad["ECFP"].tolist()
+
+# Medir tiempo de ejecución
+t1 = time.time()
+bv_ids = mmp.LazyBitVectorPick(fps, len(fps), 50)
+t2 = time.time()
+
+print("Selección completada en %.2f segundos" % (t2 - t1))
+
+# Filtrar df_diversidad con los índices seleccionados
+df_seleccionados = df_diversidad.iloc[bv_ids]
+
+# Mostrar los primeros resultados
+print(df_seleccionados)
+
+import matplotlib.pyplot as plt
+from rdkit import DataStructs
+
+# Lista para almacenar las similitudes de Tanimoto
+dist_hist = []
+
+# Comparar la similitud entre todas las moléculas seleccionadas
+for i in range(len(bv_ids)):
+    for j in range(i + 1, len(bv_ids)):
+        sim = DataStructs.TanimotoSimilarity(fps[bv_ids[i]], fps[bv_ids[j]])
+        dist_hist.append(sim)
+
+# Graficar el histograma de similitudes
+plt.hist(dist_hist, bins=20, edgecolor="black")
+plt.title("Distribución de Similitudes (MaxMin Picks)")
+plt.xlabel("Similaridad de Tanimoto")
+plt.ylabel("Frecuencia")
+plt.show()
+"""
+
+
+
+
+"""
+"""
+#MODELO xgboost
+"""
+"""
+#MODELO USANDO MACCS
+"""
+print('\n ****************')
+print('MODELOS xgboost')
+print('****************')
+from modules.procesamiento.modelos import entrenar_xgboost
+print('\n----------------')
+print('MODELOS MACCS')
+print('----------------')
+train_data_fingerprints = train_data_fingerprints.drop(columns=['MACCS', 'SMILES', 'ECFP'])
+MACCS = train_data_fingerprints.iloc[:, 2054:2222]
+#print(MACCS)
+columnas_predictoras = MACCS
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+xgboost_MACCS = entrenar_xgboost(X,y)
+
+
+print('\n----------------')
+print('MODELOS MACCS y Fisicoquimicas')
+print('----------------')
+
+Fisicoquimicas = train_data_fingerprints.iloc[:, 1:6]
+columns_subset = pd.concat([Fisicoquimicas, MACCS], axis=1)
+columns_subset.columns = columns_subset.columns.astype(str)
+columnas_predictoras = columns_subset
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+xgboost_MACCS_Fisicoquimicas = entrenar_xgboost(X,y)
+
+print('\n----------------')
+print('MODELOS ECFP')
+print('----------------')
+
+ECFP = train_data_fingerprints.iloc[:, 6:2054]
+columnas_predictoras = ECFP
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+xgboost_ECFP = entrenar_xgboost(X,y)
+
+print('\n----------------')
+print('MODELOS ECFP y Fisicoquimicos')
+print('----------------')
+
+columns_subset = pd.concat([Fisicoquimicas, ECFP], axis=1)
+columns_subset.columns = columns_subset.columns.astype(str)
+columnas_predictoras = columns_subset
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+xgboost_ECFP_Fisicoquimicos = entrenar_xgboost(X,y)
+
+print('\n----------------')
+print('MODELOS ECFP Y MACCS ')
+print('----------------')
+MACCS = MACCS.add_prefix("MACCS_")
+#print(MACCS)
+columns_subset = pd.concat([ECFP, MACCS], axis=1)
+columns_subset.columns = columns_subset.columns.astype(str)
+columnas_predictoras = columns_subset
+target = train_data_fingerprints["Clasificacion_ATS"]
+#print(target)
+X = columnas_predictoras
+y= target
+xgboost_MACCS_ECFP = entrenar_xgboost(X,y)
+
+print('\n----------------')
+print('MODELOS ECFP Y MACCS fisicoquimicas')
+print('----------------')
+
+columns_subset = pd.concat([ECFP, MACCS, Fisicoquimicas], axis=1)
+columns_subset.columns = columns_subset.columns.astype(str)
+columnas_predictoras = columns_subset
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+xgboost_MACCS_ECFP_fisicoquimicas = entrenar_xgboost(X,y)
+"""
+
+
+"""
+"""
+#MÁQUINAS DE SOPORTE VECTORIAL
+"""
+print('\n ****************')
+print('MODELOS MSV')
+print('****************')
+from modules.procesamiento.modelos import entrenar_svm
+
+print('\n----------------')
+print('MODELOS MSV MACCS')
+print('----------------')
+train_data_fingerprints = train_data_fingerprints.drop(columns=['MACCS', 'SMILES', 'ECFP'])
+MACCS = train_data_fingerprints.iloc[:, 2054:2222]
+#print(MACCS)
+columnas_predictoras = MACCS
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+MSV_MACCS = entrenar_svm(X, y)
+
+print('\n----------------')
+print('MODELOS MSV MACCS fisicoqumicas')
+print('----------------')
+Fisicoquimicas = train_data_fingerprints.iloc[:, 1:6]
+columns_subset = pd.concat([Fisicoquimicas, MACCS], axis=1)
+columns_subset.columns = columns_subset.columns.astype(str)
+columnas_predictoras = columns_subset
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+MSV_MACCS_Fisicoquimicas = entrenar_svm(X,y)
+
+print('\n----------------')
+print('MODELOS ECFP')
+print('----------------')
+
+ECFP = train_data_fingerprints.iloc[:, 6:2054]
+columnas_predictoras = ECFP
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+MSV_ECFP = entrenar_svm(X,y)
+
+print('\n----------------')
+print('MODELOS ECFP Y FISICOQUIMICOS')
+print('----------------')
+
+ECFP = train_data_fingerprints.iloc[:, 6:2054]
+columns_subset = pd.concat([Fisicoquimicas, ECFP], axis=1)
+columns_subset.columns = columns_subset.columns.astype(str)
+columnas_predictoras = columns_subset
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+MSV_ECFP = entrenar_svm(X,y)
+
+print('\n----------------')
+print('MODELOS ECFP Y MACCS ')
+print('----------------')
+MACCS = MACCS.add_prefix("MACCS_")
+#print(MACCS)
+columns_subset = pd.concat([ECFP, MACCS], axis=1)
+columns_subset.columns = columns_subset.columns.astype(str)
+columnas_predictoras = columns_subset
+target = train_data_fingerprints["Clasificacion_ATS"]
+#print(target)
+X = columnas_predictoras
+y= target
+MSV_MACCS_ECFP = entrenar_svm(X,y)
+
+print('\n----------------')
+print('MODELOS ECFP Y MACCS fisicoquimicas')
+print('----------------')
+
+columns_subset = pd.concat([ECFP, MACCS, Fisicoquimicas], axis=1)
+columns_subset.columns = columns_subset.columns.astype(str)
+columnas_predictoras = columns_subset
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+MSV_MACCS_ECFP_fisicoquimicas = entrenar_svm(X,y)
+"""
+
+
+"""
+"""
+#REDES NEURONALES
+"""
+print('\n ****************')
+print('MODELOS REDES NEURONALES')
+print('****************')
+from modules.procesamiento.modelos import entrenar_red_neuronal
+
+print('\n----------------')
+print('MODELOS REDES NEURONALES MACCS')
+print('----------------')
+train_data_fingerprints = train_data_fingerprints.drop(columns=['MACCS', 'SMILES', 'ECFP'])
+MACCS = train_data_fingerprints.iloc[:, 2054:2222]
+#print(MACCS)
+
+columnas_predictoras = MACCS
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+RN_MACCS = entrenar_red_neuronal(X, y)
+
+
+print('\n----------------')
+print('MODELOS REDES NEURONALES MACCS fisicoqumicas')
+print('----------------')
+Fisicoquimicas = train_data_fingerprints.iloc[:, 1:6]
+columns_subset = pd.concat([Fisicoquimicas, MACCS], axis=1)
+
+columns_subset.columns = columns_subset.columns.astype(str)
+columnas_predictoras = columns_subset
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+RN_MACCS_Fisicoquimicas = entrenar_red_neuronal(X,y)
+
+
+print('\n----------------')
+print('MODELOS REDES NEURONALES ECFP')
+print('----------------')
+
+ECFP = train_data_fingerprints.iloc[:, 6:2054]
+
+columnas_predictoras = ECFP
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+RN_ECFP = entrenar_red_neuronal(X,y)
+
+print('\n----------------')
+print('REDES NEURONALES ECFP Y FISICOQUIMICOS')
+print('----------------')
+
+#ECFP = train_data_fingerprints.iloc[:, 6:2054]
+columns_subset = pd.concat([Fisicoquimicas, ECFP], axis=1)
+columns_subset.columns = columns_subset.columns.astype(str)
+columnas_predictoras = columns_subset
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+RN_ECFP = entrenar_red_neuronal(X,y)
+
+
+
+print('\n----------------')
+print('REDES NEURONALES ECFP Y MACCS')
+print('----------------')
+MACCS = MACCS.add_prefix("MACCS_")
+#print(MACCS)
+columns_subset = pd.concat([ECFP, MACCS], axis=1)
+columns_subset.columns = columns_subset.columns.astype(str)
+columnas_predictoras = columns_subset
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+
+RN_ECFP = entrenar_red_neuronal(X,y)
+
+
+
+print('\n----------------')
+print('MODELOS REDES NEURONALES ECFP Y MACCS fisicoquimicas')
+print('----------------')
+
+columns_subset = pd.concat([ECFP, MACCS, Fisicoquimicas], axis=1)
+columns_subset.columns = columns_subset.columns.astype(str)
+columnas_predictoras = columns_subset
+target = train_data_fingerprints["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+RN_MACCS_ECFP_fisicoquimicas = entrenar_red_neuronal(X,y)
+"""
+
+
+
+"""
+#DADO QUE LAS VARIABLES PROPUESTAS PARECEN NO SER SUCIFIENTES SE HACE NECESARIO EL CALCULO DE OTRAS VARIABLES
+
+#Para esto se usa el dataframe que ya tiene las variables escaladas y que contiene los fingerprints
+"""
+df_nuevasvariables = train_data_fingerprints.copy()
+from modules.procesamiento.calculo_descriptores_moleculares import agregar_cargas_moleculares
+agregar_cargas_moleculares(df_nuevasvariables, 'SMILES')
+#guardar_csv(df_nuevasvariables, 'data/df_nuevasvariables.csv')
+#graficar_y_guardar_variable_continua(df_nuevasvariables,'Carga_Gasteiger', 'data/graficas/Carga_Gasteiger')
+#graficar_y_guardar_boxplot(df_nuevasvariables, 'Clasificacion_ATS', 'Carga_Gasteiger', 'data/graficas/cajas_bigotes')
+df_nuevasvariables = leer_csv('data/df_nuevasvariables.csv')
+from sklearn.preprocessing import StandardScaler
+
+# Crear el escalador
+scaler = StandardScaler()
+
+# Aplicar escalado solo a las columnas necesarias
+#df_nuevasvariables = df.copy()
+df_nuevasvariables['Carga_Gasteiger_scaled'] = scaler.fit_transform(df_nuevasvariables[['Carga_Gasteiger']])
+print(df_nuevasvariables.columns)
+
+
+print('\n----------------')
+print('MODELOS ECFP Y FISICOQUIMICOS con gaiser')
+print('----------------')
+from modules.procesamiento.modelos import entrenar_svm
+df_nuevasvariables.columns = df_nuevasvariables.columns.astype(str)
+df_nuevasvariables = df_nuevasvariables.drop(columns=['MACCS', 'SMILES', 'ECFP'])
+Fisicoquimicas = df_nuevasvariables[['LogP_scaled', 'TPSA_scaled',
+       'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+       'Dobles_Enlaces_scaled', 'Carga_Gasteiger_scaled']]
+ECFP = df_nuevasvariables.iloc[:, 6:2054]
+MACCS = df_nuevasvariables.iloc[:, 2054:2222]
+MACCS = MACCS.add_prefix("MACCS_")
+#print(ECFP)
+columns_subset = pd.concat([ECFP, MACCS, Fisicoquimicas], axis=1)
+columns_subset.columns = columns_subset.columns.astype(str)
+columnas_predictoras = columns_subset
+target = df_nuevasvariables["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+MSV_ECFP = entrenar_svm(X,y)
+
+print('\n----------------')
+print('MODELOS ECFP Y FISICOQUIMICOS sin gaiser')
+print('----------------')
+from modules.procesamiento.modelos import entrenar_svm
+#df_nuevasvariables.columns = df_nuevasvariables.columns.astype(str)
+#df_nuevasvariables = df_nuevasvariables.drop(columns=['MACCS', 'SMILES', 'ECFP'])
+Fisicoquimicas = df_nuevasvariables[['LogP_scaled', 'TPSA_scaled',
+       'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
+       'Dobles_Enlaces_scaled']]
+ECFP = df_nuevasvariables.iloc[:, 6:2054]
+#print(ECFP)
+columns_subset = pd.concat([ECFP, MACCS, Fisicoquimicas], axis=1)
+columns_subset.columns = columns_subset.columns.astype(str)
+columnas_predictoras = columns_subset
+target = df_nuevasvariables["Clasificacion_ATS"]
+X = columnas_predictoras
+y= target
+MSV_ECFP = entrenar_svm(X,y)
+
 

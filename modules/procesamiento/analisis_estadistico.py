@@ -4,6 +4,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 
+
+
 # modules/procesamiento/analisis_estadistico.py
 
 def detectar_outliers(df, columna):
@@ -290,17 +292,7 @@ def obtener_estadisticas_por_grupo(df, columna_grupo, columnas_numericas):
     # Combinar los resultados en un único DataFrame
     return pd.concat(resultados)
 
-# Ejemplo de uso
-if __name__ == "__main__":
-    # Supongamos que tienes un DataFrame llamado 'df'
-    # con una columna 'etiqueta' y varias columnas numéricas
-    columnas_numericas = ['columna1', 'columna2', 'columna3']  # Reemplaza con tus columnas numéricas
-    columna_grupo = 'etiqueta'  # Columna que contiene "activos" e "inactivos"
 
-    estadisticas_por_grupo = obtener_estadisticas_por_grupo(df, columna_grupo, columnas_numericas)
-
-    # Mostrar las estadísticas por grupo
-    print(estadisticas_por_grupo)
 
 """
 Calcular correlación
@@ -534,6 +526,8 @@ def calcular_linealidad(df, X_columns, target, degree=2, plot=False):
         plt.show()
     """
     return log_odds, model, X_poly
+
+
 
 
 
