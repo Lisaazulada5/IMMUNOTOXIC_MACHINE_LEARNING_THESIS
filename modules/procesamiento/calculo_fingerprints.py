@@ -147,4 +147,22 @@ def convertir_ECFP_a_numpy(df, columna_ECFP):
     return df
 
 
+from rdkit import Chem
+from rdkit.Chem import AllChem
+from rdkit.Chem.AtomPairs import Pairs
+from rdkit.Chem.AtomPairs import Torsions
+import pandas as pd
+
+
+def calcular_fingerprints_atom(smiles):
+    """Calcula los fingerprints Atom Pair y Topological Torsion a partir de una lista de SMILES."""
+    atom_pair_list = []
+    #top_torsion_list = []
+    for smi in smiles:
+        mol = Chem.MolFromSmiles(smi)
+        atom_pair_fp = Pairs.GetAtomPairFingerprintAsBitVect(mol)
+        atom_pair_list.append(atom_pair_fp)
+
+    return atom_pair_list
+
 

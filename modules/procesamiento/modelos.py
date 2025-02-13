@@ -174,10 +174,10 @@ def arbol_decision(df, columnas_predictoras, target, criterio='gini', max_depth=
     X = df[columnas_predictoras]
     y = df[target]
 
-    modelo = DecisionTreeClassifier(criterion="gini", max_depth=5,
-                                    min_samples_split=10,
+    modelo = DecisionTreeClassifier(criterion="entropy", max_depth=5,
+                                    min_samples_split=2,
                                     min_samples_leaf=5,
-                                    random_state=42, class_weight='balanced')
+                                    random_state=42) #, class_weight='balanced')
 
     modelo.fit(X, y)
     y_pred = modelo.predict(X)
@@ -191,8 +191,9 @@ def arbol_decision(df, columnas_predictoras, target, criterio='gini', max_depth=
     print("Reporte de clasificación:")
     print(report)
 
-    # Validación cruzada
-    scores = cross_val_score(modelo, X, y, cv=5)
+    from sklearn.model_selection import StratifiedKFold, cross_val_score
+    cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+    scores = cross_val_score(modelo, X, y, cv=cv, scoring="roc_auc")
     print("\n______________________________")
     print("CROSS VALIDATION")
     print("______________________________")
@@ -276,7 +277,13 @@ def entrenar_random_forest(X, y, n_estimators=100, random_state=42):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=random_state)
 
     # Inicializar y entrenar el modelo
-    modelo = RandomForestClassifier(n_estimators=n_estimators, random_state=random_state, class_weight='balanced', max_depth=5)
+    modelo = RandomForestClassifier(criterion='entropy',  # Cálculo de la impureza
+    min_samples_leaf=2,  # Mínimo de muestras por hoja
+    min_samples_split=10,  # Mínimo de muestras para dividir un nodo
+    n_estimators=300,  # Número de árboles
+    random_state=random_state,  # Semilla para reproducibilidad
+    max_depth=None) # Profundidad máxima del árbol
+
     modelo.fit(X_train, y_train)
 
     # Predicciones
@@ -294,7 +301,9 @@ def entrenar_random_forest(X, y, n_estimators=100, random_state=42):
     print(classification_report(y_test, y_pred))
 
     # Validación cruzada
-    scores = cross_val_score(modelo, X, y, cv=5)
+    from sklearn.model_selection import StratifiedKFold, cross_val_score
+    cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+    scores = cross_val_score(modelo, X, y, cv=cv, scoring="roc_auc")
     print("\n______________________________")
     print("CROSS VALIDATION")
     print("______________________________")
@@ -344,7 +353,7 @@ def entrenar_xgboost(X, y, test_size=0.2, random_state=42, cv=5):
     print(f"Peso de la clase minoritaria: {peso_clase:.2f}")
 
     # Configurar y entrenar modelo XGBoost
-    modelo = xgb.XGBClassifier(scale_pos_weight=peso_clase/2, max_depth=4, learning_rate=0.1, n_estimators=200, eval_metric="logloss")
+    modelo = xgb.XGBClassifier(max_depth=3, learning_rate=0.05, n_estimators=100, eval_metric="logloss")
     modelo.fit(X_train, y_train)
 
     # Evaluación en test set
@@ -404,14 +413,14 @@ def entrenar_svm(X, y, test_size=0.2, random_state=42, cv=5):
     #X_train, y_train = smote.fit_resample(X_train, y_train)
 
     # Definir y entrenar el modelo SVM con kernel RBF
-    modelo = SVC(kernel='rbf', C=1.0, gamma='scale', random_state=random_state, class_weight={0:1, 1:1.48})
+    modelo = SVC(kernel='rbf', C=1, gamma='scale', random_state=random_state)
     modelo.fit(X_train, y_train)
 
     # Predicción en test
     y_pred = modelo.predict(X_test)
 
     # Validación cruzada
-    scores = cross_val_score(modelo, X_train, y_train, cv=cv, scoring='f1_weighted')
+    scores = cross_val_score(modelo, X_train, y_train, cv=cv, scoring='roc_auc')
 
     # Imprimir métricas
     print("Matriz de confusión")
@@ -420,6 +429,7 @@ def entrenar_svm(X, y, test_size=0.2, random_state=42, cv=5):
     print("🔹 Reporte de Clasificación en Test Set:")
     print(classification_report(y_test, y_pred))
     print(f"🔹 Validación Cruzada (F1 weighted, {cv}-fold): {np.mean(scores):.4f} ± {np.std(scores):.4f}")
+    return modelo
 
 
 import tensorflow as tf
@@ -480,3 +490,44 @@ def entrenar_red_neuronal(X, y, test_size=0.2, random_state=42, epochs=50, batch
     return modelo
 
 
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report, confusion_matrix
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report, confusion_matrix
+
+
+def entrenar_knn(X, y, test_size=0.2, n_neighbors=5, random_state=42):
+    """
+    Entrena un modelo KNN con los datos proporcionados, dividiendo en entrenamiento y validación.
+
+    Parámetros:
+    - X: DataFrame o array con las características.
+    - y: Serie o array con la variable objetivo (clase).
+    - test_size: Proporción del conjunto de prueba (por defecto 0.2).
+    - n_neighbors: Número de vecinos en KNN (por defecto 5).
+    - random_state: Semilla para la reproducibilidad.
+
+    Retorna:
+    - Un diccionario con la matriz de confusión y el reporte de clasificación.
+    """
+    # Dividir en conjunto de entrenamiento y prueba
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state,
+                                                        stratify=y)
+
+    X_train = np.ascontiguousarray(X_train, dtype=np.float64)
+    X_test = np.ascontiguousarray(X_test, dtype=np.float64)
+    # Entrenar modelo KNN
+    knn = KNeighborsClassifier(n_neighbors=n_neighbors)
+    knn.fit(X_train, y_train)
+
+    # Predicciones
+    y_pred = knn.predict(X_test)
+
+    # Evaluación
+    matriz_confusion = confusion_matrix(y_test, y_pred)
+    reporte_clasificacion = classification_report(y_test, y_pred)
+
+    return matriz_confusion, reporte_clasificacion

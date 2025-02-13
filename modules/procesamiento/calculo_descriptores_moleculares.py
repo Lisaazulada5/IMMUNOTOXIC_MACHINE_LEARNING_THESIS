@@ -458,3 +458,233 @@ def agregar_cargas_moleculares(df, smiles_col="SMILES"):
     df["Carga_Formal"] = df[smiles_col].apply(calcular_carga_formal)
     df["Carga_Gasteiger"] = df[smiles_col].apply(calcular_carga_gasteiger)
     return df
+
+from rdkit import Chem
+from rdkit.Chem import GraphDescriptors
+
+from rdkit import Chem
+from rdkit.Chem import rdMolDescriptors
+
+
+from rdkit import Chem
+from rdkit.Chem import Descriptors
+import pandas as pd
+
+
+def calcular_molmr(df, columna_smiles):
+    """
+    Calcula el descriptor MolMR (Wildman-Crippen MR value) para cada molécula en un DataFrame.
+    :param df: DataFrame con una columna de SMILES.
+    :param columna_smiles: Nombre de la columna que contiene los SMILES.
+    :return: DataFrame con la nueva columna 'MolMR'.
+    """
+    valores_molmr = []
+
+    for smiles in df[columna_smiles]:
+        mol = Chem.MolFromSmiles(smiles)
+        if mol:
+            molmr = Descriptors.MolMR(mol)  # Cálculo del descriptor
+        else:
+            molmr = None  # Manejo de errores en caso de SMILES inválidos
+        valores_molmr.append(molmr)
+
+    df['MolMR'] = valores_molmr
+    return df
+
+
+from rdkit import Chem
+from rdkit.Chem import Descriptors, rdPartialCharges
+def calcular_maxparcialcharge(df, columna_smiles):
+    """
+    Calcula el descriptor MolMR (Wildman-Crippen MR value) para cada molécula en un DataFrame.
+    :param df: DataFrame con una columna de SMILES.
+    :param columna_smiles: Nombre de la columna que contiene los SMILES.
+    :return: DataFrame con la nueva columna 'MolMR'.
+    """
+    valores_calcular_maxparcialcharge = []
+
+    for smiles in df[columna_smiles]:
+        mol = Chem.MolFromSmiles(smiles)
+        if mol:
+            molmr = Chem.Descriptors.MaxPartialCharge(mol)  # Cálculo del descriptor
+        else:
+            molmr = None  # Manejo de errores en caso de SMILES inválidos
+        valores_calcular_maxparcialcharge.append(molmr)
+
+    df['Max_Charge'] = valores_calcular_maxparcialcharge
+    return df
+
+def calcular_minparcialcharge(df, columna_smiles):
+    """
+    Calcula el descriptor MolMR (Wildman-Crippen MR value) para cada molécula en un DataFrame.
+    :param df: DataFrame con una columna de SMILES.
+    :param columna_smiles: Nombre de la columna que contiene los SMILES.
+    :return: DataFrame con la nueva columna 'MolMR'.
+    """
+    valores_calcular_maxparcialcharge = []
+
+    for smiles in df[columna_smiles]:
+        mol = Chem.MolFromSmiles(smiles)
+        if mol:
+            molmr = Chem.Descriptors.MinPartialCharge(mol)  # Cálculo del descriptor
+        else:
+            molmr = None  # Manejo de errores en caso de SMILES inválidos
+        valores_calcular_maxparcialcharge.append(molmr)
+
+    df['Min_Charge'] = valores_calcular_maxparcialcharge
+    return df
+
+
+from rdkit import Chem
+from rdkit.Chem import rdchem
+import numpy as np
+
+
+def calcular_bcutw(smiles):
+    """Calcula BCUTw.1 l y BCUTw.1 h para una molécula a partir de un SMILES."""
+    mol = Chem.MolFromSmiles(smiles)
+    if mol is None:
+        return None, None  # Retorna valores nulos si el SMILES no es válido
+
+    num_atoms = mol.GetNumAtoms()
+
+    # Crear la matriz de adyacencia
+    adj_matrix = Chem.rdmolops.GetAdjacencyMatrix(mol)
+
+    # Obtener los pesos atómicos
+    pesos_atomicos = np.array(
+        [rdchem.GetPeriodicTable().GetAtomicWeight(atom.GetAtomicNum()) for atom in mol.GetAtoms()])
+
+    # Modificar la matriz con los pesos atómicos
+    weighted_matrix = adj_matrix * np.sqrt(np.outer(pesos_atomicos, pesos_atomicos))
+
+    # Calcular los eigenvalues
+    eigenvalues = np.linalg.eigvalsh(weighted_matrix)
+
+    # Tomar el más bajo (l) y el más alto (h)
+    bcutw_l = min(eigenvalues)
+    bcutw_h = max(eigenvalues)
+
+    return bcutw_l, bcutw_h
+
+
+from rdkit import Chem
+from rdkit.Chem import rdmolops
+from rdkit.Chem.rdPartialCharges import ComputeGasteigerCharges
+import numpy as np
+
+
+def calcular_bcutc(smiles):
+    """Calcula BCUTc.1 l y BCUTc.1 h para una molécula a partir de un SMILES."""
+    mol = Chem.MolFromSmiles(smiles)
+    if mol is None:
+        return None, None  # Retorna valores nulos si el SMILES no es válido
+
+    # Calcular cargas parciales de Gasteiger
+    ComputeGasteigerCharges(mol)
+
+    # Obtener las cargas parciales de los átomos
+    cargas_parciales = np.array([atom.GetDoubleProp('_GasteigerCharge') for atom in mol.GetAtoms()])
+
+    # Crear la matriz de adyacencia
+    adj_matrix = rdmolops.GetAdjacencyMatrix(mol)
+
+    # Modificar la matriz con las cargas parciales
+    weighted_matrix = adj_matrix * np.sqrt(np.outer(cargas_parciales, cargas_parciales))
+
+    # Calcular los eigenvalues
+    eigenvalues = np.linalg.eigvalsh(weighted_matrix)
+
+    # Tomar el más bajo (l) y el más alto (h)
+    bcutc_l = min(eigenvalues)
+    bcutc_h = max(eigenvalues)
+
+    return bcutc_l, bcutc_h
+
+import pandas as pd
+from mordred import Calculator, descriptors
+from rdkit import Chem
+from rdkit import Chem
+from mordred import Calculator, BCUT
+
+def calcular_bcut_smr_df(df, smiles_col):
+    """
+    Calcula el descriptor BCUT_SMR para cada molécula en un DataFrame.
+
+    Args:
+        df (pd.DataFrame): DataFrame con una columna de SMILES.
+        smiles_col (str): Nombre de la columna con los SMILES.
+
+    Returns:
+        pd.DataFrame: DataFrame con una nueva columna "BCUT_SMR".
+    """
+    # Configurar el cálculo de BCUT usando SMR como propiedad atómica
+    calc = Calculator(BCUT.BCUT(prop="e", nth=0))  # nth=0 para el mayor eigenvalor
+
+    def calcular_bcut(smiles):
+        mol = Chem.MolFromSmiles(smiles)
+        if mol:
+            try:
+                descriptores = calc(mol)
+                return descriptores.asdict().get("BCUT_SMR_0", None)  # Extrae el valor correcto
+            except Exception as e:
+                print(f"Error con {smiles}: {e}")
+                return None
+        return None
+
+    # Aplicar la función a la columna de SMILES
+    df["BCUT_SMR"] = df[smiles_col].apply(calcular_bcut)
+
+    return df  # Retorna el DataFrame con la nueva columna
+
+from rdkit import Chem
+from mordred import Calculator, descriptors
+import pandas as pd
+
+from rdkit import Chem
+from mordred import Calculator, descriptors
+import pandas as pd
+
+
+def calcular_todos_los_descriptores(df, smiles_col):
+    """
+    Calcula todos los descriptores de Mordred y los añade al DataFrame.
+
+    Args:
+        df (pd.DataFrame): DataFrame con una columna de SMILES.
+        smiles_col (str): Nombre de la columna con los SMILES.
+
+    Returns:
+        pd.DataFrame: DataFrame con los descriptores calculados agregados.
+    """
+    calc = Calculator(descriptors, ignore_3D=True)  # Ignorar descriptores 3D
+    nombres_descriptores = [str(d) for d in calc.descriptors]  # Obtener nombres de los descriptores
+
+    df_descriptores = []
+
+    for smiles in df[smiles_col]:
+        mol = Chem.MolFromSmiles(smiles)
+        if mol:
+            try:
+                valores = calc(mol)
+                df_descriptores.append(list(valores))
+            except Exception as e:
+                print(f"Error al calcular descriptores para {smiles}: {e}")
+                df_descriptores.append([None] * len(nombres_descriptores))
+        else:
+            df_descriptores.append([None] * len(nombres_descriptores))
+
+    # Convertir los resultados a un DataFrame con nombres de columnas
+    df_descriptores = pd.DataFrame(df_descriptores, columns=nombres_descriptores)
+
+    # Concatenar el DataFrame original con los descriptores
+    df_resultado = pd.concat([df, df_descriptores], axis=1)
+
+    return df_resultado
+
+
+
+
+
+
+

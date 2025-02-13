@@ -3029,11 +3029,11 @@ y= target
 xgboost_MACCS_ECFP_fisicoquimicas = entrenar_xgboost(X,y)
 """
 
-
+"""
 """
 """
 #MÁQUINAS DE SOPORTE VECTORIAL
-"""
+
 print('\n ****************')
 print('MODELOS MSV')
 print('****************')
@@ -3049,7 +3049,7 @@ columnas_predictoras = MACCS
 target = train_data_fingerprints["Clasificacion_ATS"]
 X = columnas_predictoras
 y= target
-MSV_MACCS = entrenar_svm(X, y)
+#MSV_MACCS = entrenar_svm(X, y)
 
 print('\n----------------')
 print('MODELOS MSV MACCS fisicoqumicas')
@@ -3112,6 +3112,77 @@ target = train_data_fingerprints["Clasificacion_ATS"]
 X = columnas_predictoras
 y= target
 MSV_MACCS_ECFP_fisicoquimicas = entrenar_svm(X,y)
+"""
+
+"""
+print('\n ***************** MEJOR modelo')
+
+from sklearn.svm import SVC
+from sklearn.model_selection import GridSearchCV
+X_train = columnas_predictoras
+y_train = target
+# Definir el espacio de búsqueda de hiperparámetros
+param_grid = {
+    'C': [0.1, 1, 10, 100],
+    'gamma': [0.01, 0.1, 1, 'scale'],
+    'class_weight': [None, 'balanced']
+}
+
+# Crear el modelo base
+svm_model = SVC(kernel='rbf', random_state=42)
+
+# Configurar GridSearchCV
+grid_search = GridSearchCV(svm_model, param_grid, cv=5, scoring='f1_weighted', n_jobs=-1)
+
+# Ajustar el modelo con los datos de entrenamiento
+grid_search.fit(X_train, y_train)
+
+# Mostrar los mejores hiperparámetros encontrados
+print("Mejores parámetros:", grid_search.best_params_)
+"""
+
+# Guardar el mejor modelo encontrado
+#best_model = grid_search.best_estimator_
+
+
+#Prueba modelo con dataset prueba
+"""
+print('Prueba modelo MSV_MACCS_ECFP_fisicoquimicas con dataset prueba ECFP, MACCS Y FISICOQUIMICOS')
+print('--------------------------------')
+test_data_fingerprints = test_data_fingerprints.drop(columns=['MACCS', 'SMILES', 'ECFP'])
+MACCS_test = test_data_fingerprints.iloc[:, 2054:2222]
+MACCS_test = MACCS_test.add_prefix("MACCS_")
+#print(MACCS_test)
+ECFP_test = test_data_fingerprints.iloc[:, 6:2054]
+#print(ECFP_test)
+Fisicoquimicas_test = test_data_fingerprints.iloc[:, 1:6]
+#print(Fisicoquimicas_test)
+columnas_predictoras = pd.concat([ECFP_test, MACCS_test, Fisicoquimicas_test], axis=1)
+columnas_predictoras.columns = columnas_predictoras.columns.astype(str)
+predict_data = columnas_predictoras
+nuevas_predicciones = MSV_MACCS_ECFP_fisicoquimicas.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_ECFP_MACCS_FISICOQUIMICOS'] = nuevas_predicciones
+
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_ECFP_MACCS_FISICOQUIMICOS']
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
 """
 
 
@@ -3208,69 +3279,476 @@ y= target
 RN_MACCS_ECFP_fisicoquimicas = entrenar_red_neuronal(X,y)
 """
 
-
-
 """
-#DADO QUE LAS VARIABLES PROPUESTAS PARECEN NO SER SUCIFIENTES SE HACE NECESARIO EL CALCULO DE OTRAS VARIABLES
-
-#Para esto se usa el dataframe que ya tiene las variables escaladas y que contiene los fingerprints
+#Se explora que el dataset sea diverso SIMILARIDAD DE TANIMOTO 
+""" #Debido a que estamos teniendo problemas con el balanceo del dataset,
+#se van a escoger 1000 sustancias, 500 activas y 500 inactivas, teniendo en cuenta las distancias de tanimoto para tener dataset variados.
 """
-df_nuevasvariables = train_data_fingerprints.copy()
-from modules.procesamiento.calculo_descriptores_moleculares import agregar_cargas_moleculares
-agregar_cargas_moleculares(df_nuevasvariables, 'SMILES')
-#guardar_csv(df_nuevasvariables, 'data/df_nuevasvariables.csv')
-#graficar_y_guardar_variable_continua(df_nuevasvariables,'Carga_Gasteiger', 'data/graficas/Carga_Gasteiger')
-#graficar_y_guardar_boxplot(df_nuevasvariables, 'Clasificacion_ATS', 'Carga_Gasteiger', 'data/graficas/cajas_bigotes')
-df_nuevasvariables = leer_csv('data/df_nuevasvariables.csv')
+print('____________________')
+print('\n Diversidad datos')
+print('\n ____________________')
+df_diversidad = df_scaled.copy()
+df_diversidad['Clasificacion_ATS'] = df_diversidad['Clasificacion_ATS'].map({'Activo': 1, 'Inactivo': 0})
+#df_diversidad = df_diversidad['Clasificacion_ATS']
+#df_diversidad = df_diversidad[df_diversidad['Clasificacion_ATS'] == 0] #escoger solo los inactivos.
+#print(df_diversidad['Clasificacion_ATS'])
+
+print('\n Calculo de fingerprints ECFP')
+print('____________________')
+
+from modules.procesamiento.calculo_fingerprints import calcular_ecfp
+calcular_ecfp(df_diversidad, 'SMILES')
+print(df_diversidad.columns)
+print(df_diversidad['ECFP'][0])
+from rdkit.Chem import DataStructs
+ECFP_array = []
+for i in df_diversidad['ECFP']:
+    arr = np.zeros((0,), dtype=np.int8)
+    DataStructs.ConvertToNumpyArray(i, arr)
+    ECFP_array.append(arr)
+
+df_diversidad = pd.concat([df_diversidad, pd.DataFrame(ECFP_array)], axis  =1)
+print(df_diversidad)
+df_diversidad_INACTIVO = df_diversidad[df_diversidad['Clasificacion_ATS'] == 0] #escoger solo los inactivos.
+
+print(type(df_diversidad_INACTIVO["ECFP"].iloc[0]))  # Tipo de dato del primer fingerprint
+
+import time
+from rdkit.SimDivFilters import MaxMinPicker
+
+# Inicializar el selector
+mmp = MaxMinPicker()
+
+# Extraer los fingerprints
+fps = df_diversidad_INACTIVO["ECFP"].tolist()
+
+# Medir tiempo de ejecución
+t1 = time.time()
+bv_ids = mmp.LazyBitVectorPick(fps, len(fps), 500)
+t2 = time.time()
+
+print("Selección completada en %.2f segundos" % (t2 - t1))
+
+# Filtrar df_diversidad con los índices seleccionados
+df_seleccionados_Inactivo = df_diversidad_INACTIVO.iloc[bv_ids]
+
+# Mostrar los primeros resultados
+#guardar_csv(df_seleccionados_Inactivo, 'data/df_seleccionados_Inactivo.csv')
+
+#ESCOGER LOS ACITVOS
+
+df_diversidad_ACTIVO = df_diversidad[df_diversidad['Clasificacion_ATS'] == 1] #escoger solo los inactivos.
+
+print(type(df_diversidad_ACTIVO["ECFP"].iloc[0]))  # Tipo de dato del primer fingerprint
+
+import time
+from rdkit.SimDivFilters import MaxMinPicker
+
+# Inicializar el selector
+mmp = MaxMinPicker()
+
+# Extraer los fingerprints
+fps = df_diversidad_ACTIVO["ECFP"].tolist()
+
+# Medir tiempo de ejecución
+t1 = time.time()
+bv_ids = mmp.LazyBitVectorPick(fps, len(fps), 500)
+t2 = time.time()
+
+print("Selección completada en %.2f segundos" % (t2 - t1))
+
+
+# Filtrar df_diversidad con los índices seleccionados
+df_diversidad_ACTIVO = df_diversidad_ACTIVO.iloc[bv_ids]
+
+# Mostrar los primeros resultados
+#guardar_csv(df_diversidad_ACTIVO, 'data/df_diversidad_ACTIVO.csv')
+
+import matplotlib.pyplot as plt
+from rdkit import DataStructs
+
+# Lista para almacenar las similitudes de Tanimoto
+dist_hist = []
+
+# Comparar la similitud entre todas las moléculas seleccionadas
+for i in range(len(bv_ids)):
+    for j in range(i + 1, len(bv_ids)):
+        sim = DataStructs.TanimotoSimilarity(fps[bv_ids[i]], fps[bv_ids[j]])
+        dist_hist.append(sim)
+
+# Graficar el histograma de similitudes
+plt.hist(dist_hist, bins=20, edgecolor="black")
+plt.title("Distribución de Similitudes (MaxMin Picks)")
+plt.xlabel("Similaridad de Tanimoto")
+plt.ylabel("Frecuencia")
+plt.show()
+"""
+
+
+
+#Con las 1000 sustancias lo suficientemente diversas, se vuelve a pasar el  mejor modelo que fueron todas las variables, SVM
+
+df_diversidad_ACTIVO = leer_csv('data/df_diversidad_ACTIVO.csv')
+df_seleccionados_Inactivo = leer_csv('data/df_seleccionados_Inactivo.csv')
+
+df_balanceado = pd.concat([df_seleccionados_Inactivo, df_diversidad_ACTIVO])
+#print(df_balanceado)
+df_balanceado = df_balanceado.sample(frac=1, random_state=42).reset_index(drop=True)
+
+calcular_fingerprints_maccs(df_balanceado, 'SMILES')
+from rdkit.Chem import DataStructs
+MACCS_array = []
+for i in df_balanceado['MACCS']:
+    arr = np.zeros((0,), dtype=np.int8)
+    DataStructs.ConvertToNumpyArray(i, arr)
+    MACCS_array.append(arr)
+df_balanceado = pd.concat([df_balanceado, pd.DataFrame(MACCS_array)], axis  =1)
+
+
+
+
+#Debido a que parece que los fingerprints obtenidos no son suficientes para nuestra predicción a continuación se incorporan otros
+from modules.procesamiento.calculo_descriptores_moleculares import calcular_todos_los_descriptores
+mordred = calcular_todos_los_descriptores(df_balanceado, 'SMILES') # Aplica la función a cada fila
+#guardar_csv(mordred, 'data/mordred.csv')
+
+
+
+df_mordred = leer_csv('data/mordred.csv')
+mordred = df_mordred.iloc[:, 2239:2848]
+Fisicoquimicas_balanced = df_mordred[['LogP_scaled', 'Peso_Molecular_scaled', 'NumRotatableBonds_scaled', 'TPSA_scaled','Dobles_Enlaces_scaled' ]]
+print(mordred)
+columnas_con_nan = mordred.columns[mordred.isna().any()].tolist()
+print("Descriptores que tienen al menos un NaN:", columnas_con_nan)
+print(columnas_con_nan)
+# Eliminar esas columnas del DataFrame
+mordred = mordred.drop(columns=['VMcGowan', 'apol', 'bpol'])
+
 from sklearn.preprocessing import StandardScaler
 
-# Crear el escalador
 scaler = StandardScaler()
+mordred = mordred.copy()  # Crear una copia del DataFrame original
 
-# Aplicar escalado solo a las columnas necesarias
-#df_nuevasvariables = df.copy()
-df_nuevasvariables['Carga_Gasteiger_scaled'] = scaler.fit_transform(df_nuevasvariables[['Carga_Gasteiger']])
-print(df_nuevasvariables.columns)
+# Aplicar Z-score a todas las columnas numéricas
+mordred.iloc[:, :] = scaler.fit_transform(mordred)
+
+print("Se ha aplicado Z-score a todas las variables.")
+
+#ahora voy a separar los descriptores por caracteristicas para poder irlos incluyendo en los modelos
+
+
+mordred_scaled = leer_csv('data/mordred_scaled.csv')
+
+#columns_to_drop = ["GGI2", "GGI3","VSA_EState5","VSA_EState1","SlogP_VSA10","SlogP_VSA5","SMR_VSA5","C2SP3","AATSC0d",
+                   #"AATS0d","AATS0dv"]
+
+
+#mordred_scaled = mordred_scaled.drop(columns=columns_to_drop)
+#guardar_csv(mordred_scaled, 'data/mordred_scaled.csv')
+#mordred_scaled = leer_csv('data/mordred_scaled.csv')
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Calcular la matriz de correlación
+#correlation_matrix = pd.DataFrame(mordred_scaled).corr().reset_index()
+
+# Guardar la matriz de correlación en un archivo CSV
+#guardar_csv(correlation_matrix, "data/correlation_matrix.csv")
+
+Basados_en_cargas_parciales = mordred_scaled[["PEOE_VSA1", "PEOE_VSA2", "PEOE_VSA3", "PEOE_VSA5", "PEOE_VSA6", "PEOE_VSA7", "PEOE_VSA8",
+                                                "PEOE_VSA9", "PEOE_VSA10", "PEOE_VSA11", "PEOE_VSA12", "PEOE_VSA1"]]
+
+"""
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+import numpy as np
+
+# Aplicar PCA
+pca = PCA()
+pca.fit_transform(Basados_en_cargas_parciales)
+
+import numpy as np
+
+# Obtener la varianza explicada acumulada
+explained_variance_ratio = np.cumsum(pca.explained_variance_ratio_)
+
+# Graficar el codo
+plt.figure(figsize=(8,5))
+plt.plot(range(1, len(explained_variance_ratio) + 1), explained_variance_ratio, marker='o', linestyle='--')
+plt.xlabel('Número de Componentes Principales')
+plt.ylabel('Varianza Explicada Acumulada')
+plt.title('Método del Codo para Selección de Componentes')
+plt.grid()
+plt.show()
+"""
+
+#pca_opt = PCA(n_components=100)
+#mordred_pca = pca_opt.fit_transform(mordred_scaled)
+#mordred_pca = pd.DataFrame(mordred_pca)
+#guardar_csv(mordred_pca, 'data/mordred_pca.csv')
+
+
+
+
+
+#print(df_balanceado.columns)
+
+# Seleccionar las variables de interés
+#variables_fisicoquim = df_balanceado[['LogP_scaled', 'TPSA_scaled',
+             #'NumRotatableBonds_scaled', 'Peso_Molecular_scaled', 'Dobles_Enlaces_scaled']]
+
+#variab_fisico_electronic_mordred = pd.concat([mordred_pca , variables_fisicoquim], axis=1)
+
+# Calcular la matriz de correlación
+#corr_matrix = variab_fisico_electronic_mordred.corr()
+
+
+# Imprimir la matriz
+#guardar_csv(corr_matrix.reset_index(),'data/corr.csv')
+
+#ADICIONADO PREFIJOS
+
+
+from modules.procesamiento.calculo_fingerprints import  calcular_fingerprints_atom
+
+atom_pair = calcular_fingerprints_atom(df_balanceado['SMILES'])
+df_balanceado['atom_pair'] = atom_pair
+
+import numpy as np
+import pandas as pd
+
+atom_pair_array = []
+
+for fp in df_balanceado['atom_pair']:
+    if fp is not None:
+        on_bits = list(fp.GetOnBits())  # Obtiene los bits activados
+        arr = np.zeros(2048, dtype=np.int8)  # Vector de 2048 bits
+
+        for bit in on_bits:
+            if bit < 2048:  # Asegurar que el bit está dentro del rango permitido
+                arr[bit] = 1  # Marca el bit como activo
+
+        atom_pair_array.append(arr)
+    else:
+        atom_pair_array.append(np.zeros(2048, dtype=np.int8))  # Si no hay FP, agrega un vector vacío
+
+# Convertir a ame
+df_atom_pair = pd.DataFrame(atom_pair_array)
+df_atom_pair = df_atom_pair.add_prefix("atompair_")
+print(df_atom_pair)
+
+df_balanceado = pd.concat([df_balanceado, df_atom_pair ], axis=1)
+
 
 
 print('\n----------------')
-print('MODELOS ECFP Y FISICOQUIMICOS con gaiser')
+print('MODELOS ECFP Y MACCS fisicoquimicas BALANCEADO')
 print('----------------')
+df_balanceado = df_balanceado.drop(columns=['MACCS', 'SMILES', 'ECFP',
+                                                                'LogP', 'Peso_Molecular',	'NumHAcceptors',	'NumHDonors',
+                                                                'Dobles_Enlaces', 'Triples_Enlaces' ,	'Numero_hidroxilos',
+                                                                'Numero_carboxilos',	'MACCS',	'MACCS_array',	'ECFP',	'ECFP_array',	'TPSA',
+                                                                'NumRotatableBonds', 'NumHAcceptors_scaled',	'NumHDonors_scaled', 'atom_pair'])
+
+Atom_pair = df_balanceado.iloc[:, 2222:4274]
+print(Atom_pair)
+
+df_balanceado.rename(
+    columns={col: f"MACCS_{col}" for col in df_balanceado.columns[2055:2222]},
+    inplace=True
+)
+MACCS_balanced = df_balanceado.iloc[:, 2055:2222]
+ECFP_balanced = df_balanceado.iloc[:, 7:2054]
+ECFP_balanced = ECFP_balanced.add_prefix("ECFP_")
+Fisicoquimicas_balanced = df_balanceado.iloc[:, 2:6]
+mordred = mordred_scaled['FilterItLogS']
+mordred_fisicoquimicas = pd.concat([Fisicoquimicas_balanced, mordred, Basados_en_cargas_parciales], axis=1)
+# Calcular la matriz de correlación
+correlation_matrix = mordred_fisicoquimicas.corr().reset_index()
+#guardar_csv(pd.DataFrame(correlation_matrix), 'data/corr_matr_mord')
+#print(Fisicoquimicas.columns)
+
+columns_subset = pd.concat([MACCS_balanced, Atom_pair, Fisicoquimicas_balanced, mordred], axis=1)
+print(columns_subset.columns)
+
 from modules.procesamiento.modelos import entrenar_svm
-df_nuevasvariables.columns = df_nuevasvariables.columns.astype(str)
-df_nuevasvariables = df_nuevasvariables.drop(columns=['MACCS', 'SMILES', 'ECFP'])
-Fisicoquimicas = df_nuevasvariables[['LogP_scaled', 'TPSA_scaled',
-       'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
-       'Dobles_Enlaces_scaled', 'Carga_Gasteiger_scaled']]
-ECFP = df_nuevasvariables.iloc[:, 6:2054]
-MACCS = df_nuevasvariables.iloc[:, 2054:2222]
-MACCS = MACCS.add_prefix("MACCS_")
-#print(ECFP)
-columns_subset = pd.concat([ECFP, MACCS, Fisicoquimicas], axis=1)
+#print(columns_subset)
 columns_subset.columns = columns_subset.columns.astype(str)
 columnas_predictoras = columns_subset
-target = df_nuevasvariables["Clasificacion_ATS"]
+target = df_balanceado["Clasificacion_ATS"]
 X = columnas_predictoras
 y= target
-MSV_ECFP = entrenar_svm(X,y)
+
+
+MSV_MACCS_ECFP_fisicoquimicas = entrenar_svm(X,y)
+
+"""
+print('mejor modelo')
+
+from sklearn.svm import SVC
+from sklearn.model_selection import GridSearchCV
+X_train = columnas_predictoras
+y_train = target
+# Definir el espacio de búsqueda de hiperparámetros
+param_grid = {
+    'C': [0.1, 1, 10, 100],
+    'gamma': [0.01, 0.1, 1, 'scale'],
+    'class_weight': [None, 'balanced']
+}
+
+# Crear el modelo base
+svm_model = SVC(kernel='rbf', random_state=42)
+
+# Configurar GridSearchCV
+grid_search = GridSearchCV(svm_model, param_grid, cv=5, scoring='f1_weighted', n_jobs=-1)
+
+# Ajustar el modelo con los datos de entrenamiento
+grid_search.fit(X_train, y_train)
+
+# Mostrar los mejores hiperparámetros encontrados
+print("Mejores parámetros:", grid_search.best_params_)
+
+# Guardar el mejor modelo encontrado
+best_model = grid_search.best_estimator_
+
+
+
+from sklearn.model_selection import GridSearchCV
+import xgboost as xgb
+
+X_train = columnas_predictoras
+y_train = target
+
+# Definir el modelo base
+modelo_xgb = xgb.XGBClassifier(eval_metric="logloss", use_label_encoder=False)
+
+# Definir la cuadrícula de hiperparámetros a probar
+param_grid = {
+    'max_depth': [3, 4, 5, 6],  # Profundidad del árbol
+    'learning_rate': [0.01, 0.05, 0.1, 0.2],  # Tasa de aprendizaje
+    'n_estimators': [100, 200, 300]  # Número de árboles
+}
+
+# Configurar GridSearchCV
+grid_search = GridSearchCV(
+    modelo_xgb,
+    param_grid,
+    scoring='f1',  # Optimiza F1-score
+    cv=5,  # 5-fold cross-validation
+    verbose=1,
+    n_jobs=-1  # Usa todos los núcleos disponibles
+)
+
+# Ajustar el modelo con los datos
+grid_search.fit(X_train, y_train)
+
+# Mostrar los mejores hiperparámetros encontrados
+print("Mejores hiperparámetros:", grid_search.best_params_)
+"""
+
+
 
 print('\n----------------')
-print('MODELOS ECFP Y FISICOQUIMICOS sin gaiser')
+print('MODELOS ECFP Y MACCS fisicoquimicas_balanced')
 print('----------------')
-from modules.procesamiento.modelos import entrenar_svm
-#df_nuevasvariables.columns = df_nuevasvariables.columns.astype(str)
-#df_nuevasvariables = df_nuevasvariables.drop(columns=['MACCS', 'SMILES', 'ECFP'])
-Fisicoquimicas = df_nuevasvariables[['LogP_scaled', 'TPSA_scaled',
-       'NumRotatableBonds_scaled', 'Peso_Molecular_scaled',
-       'Dobles_Enlaces_scaled']]
-ECFP = df_nuevasvariables.iloc[:, 6:2054]
-#print(ECFP)
-columns_subset = pd.concat([ECFP, MACCS, Fisicoquimicas], axis=1)
-columns_subset.columns = columns_subset.columns.astype(str)
-columnas_predictoras = columns_subset
-target = df_nuevasvariables["Clasificacion_ATS"]
+
+from modules.procesamiento.modelos import entrenar_xgboost
+#columns_subset = pd.concat([ECFP_balanced, MACCS_balanced, mordred_fisicoquimicas], axis=1)
+#columns_subset.columns = columns_subset.columns.astype(str)
+#columnas_predictoras = columns_subset
+#target = df_balanceado["Clasificacion_ATS"]
+#X = columnas_predictoras
+#y= target
+#xgboost_MACCS_ECFP_fisicoquimicas_balanced = entrenar_xgboost(X,y)
+
+
+"""
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import classification_report
+
+# Definir el modelo base
+modelo_dt = DecisionTreeClassifier(random_state=42)
+
+# Definir la cuadrícula de hiperparámetros a probar
+param_grid = {
+    'max_depth': [3, 5, 10, None],  # Profundidad del árbol
+    'min_samples_split': [2, 5, 10],  # Mínimo de muestras para dividir un nodo
+    'min_samples_leaf': [1, 2, 5, 10],  # Mínimo de muestras en una hoja
+    'criterion': ['gini', 'entropy'],  # Función para medir impureza
+}
+
+# Configurar GridSearchCV
+grid_search = GridSearchCV(
+    modelo_dt,
+    param_grid,
+    scoring='f1',  # Optimiza F1-score
+    cv=5,  # 5-fold cross-validation
+    verbose=1,
+    n_jobs=-1  # Usa todos los núcleos disponibles
+)
+
+# Ajustar el modelo con los datos
+grid_search.fit(X, y)
+
+# Mostrar los mejores hiperparámetros encontrados
+print("Mejores hiperparámetros:", grid_search.best_params_)
+"""
+
+"""
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import GridSearchCV
+
+# Definir el modelo base
+modelo = RandomForestClassifier(random_state=42)
+
+# Definir el espacio de búsqueda de hiperparámetros
+param_grid = {
+    'n_estimators': [100, 200, 300],  # Número de árboles
+    'max_depth': [5, 10, 20, None],  # Profundidad del árbol
+    'min_samples_split': [2, 5, 10],  # Mínimo de muestras para dividir un nodo
+    'min_samples_leaf': [1, 2, 4],  # Mínimo de muestras en una hoja
+    'criterion': ['gini', 'entropy']  # Función de criterio
+}
+
+# Definir GridSearchCV
+grid_search = GridSearchCV(
+    modelo, param_grid, cv=5, scoring='accuracy', n_jobs=-1, verbose=1
+)
+
+# Entrenar el modelo
+grid_search.fit(X, y)
+
+# Mejor combinación de hiperparámetros
+print("Mejores hiperparámetros:", grid_search.best_params_)
+print("Mejor precisión:", grid_search.best_score_)
+"""
+
+
+
+print('***************************')
+print('MODELO BOSQUES ALEATORIOS ECFP, MACCS Y FISICOQUIMICOS')
+print('______________________________  ')
+from modules.procesamiento.modelos import entrenar_random_forest
 X = columnas_predictoras
 y= target
-MSV_ECFP = entrenar_svm(X,y)
+
+randomECFP_MACCS_FISICOQUIMICOS, confusion_matrix = entrenar_random_forest(X, y)
 
 
+
+print('***************************')
+print('MODELO ARBOL DE DECISION ECFP, MACCS Y FISICOQUIMICOS')
+print('______________________________  ')
+#columnas_predictoras = columnas_predictoras.astype(int)
+
+from modules.procesamiento.modelos import entrenar_xgboost
+columns_subset = pd.concat([ECFP_balanced, MACCS_balanced, Atom_pair, Fisicoquimicas_balanced, mordred], axis=1)
+columns_subset.columns = columns_subset.columns.astype(str)
+columnas_predictoras = columns_subset.columns
+columns_subset["Clasificacion_ATS"] = df_balanceado["Clasificacion_ATS"]
+#columns_subset.columns = columns_subset.columns.astype(str)
+target = "Clasificacion_ATS"
+# Llamar al modelo
+modeloECFP_MACCS_FISICOQUIMICAS, accuracy, cm, report = arbol_decision(columns_subset, columnas_predictoras, target)
