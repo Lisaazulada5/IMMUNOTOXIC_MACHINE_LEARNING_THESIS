@@ -174,10 +174,10 @@ def arbol_decision(df, columnas_predictoras, target, criterio='gini', max_depth=
     X = df[columnas_predictoras]
     y = df[target]
 
-    modelo = DecisionTreeClassifier(criterion="entropy", max_depth=5,
+    modelo = DecisionTreeClassifier(criterion="gini", max_depth=3,
                                     min_samples_split=2,
-                                    min_samples_leaf=5,
-                                    random_state=42) #, class_weight='balanced')
+                                    min_samples_leaf=3,
+                                    random_state=42, class_weight= 'balanced')
 
     modelo.fit(X, y)
     y_pred = modelo.predict(X)
@@ -192,7 +192,7 @@ def arbol_decision(df, columnas_predictoras, target, criterio='gini', max_depth=
     print(report)
 
     from sklearn.model_selection import StratifiedKFold, cross_val_score
-    cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+    cv = StratifiedKFold(n_splits=10, shuffle=True, random_state=42)
     scores = cross_val_score(modelo, X, y, cv=cv, scoring="roc_auc")
     print("\n______________________________")
     print("CROSS VALIDATION")
@@ -277,12 +277,12 @@ def entrenar_random_forest(X, y, n_estimators=100, random_state=42):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=random_state)
 
     # Inicializar y entrenar el modelo
-    modelo = RandomForestClassifier(criterion='entropy',  # Cálculo de la impureza
-    min_samples_leaf=2,  # Mínimo de muestras por hoja
-    min_samples_split=10,  # Mínimo de muestras para dividir un nodo
+    modelo = RandomForestClassifier(criterion='gini',  # Cálculo de la impureza
+    min_samples_leaf=1,  # Mínimo de muestras por hoja
+    min_samples_split=5,  # Mínimo de muestras para dividir un nodo
     n_estimators=300,  # Número de árboles
     random_state=random_state,  # Semilla para reproducibilidad
-    max_depth=None) # Profundidad máxima del árbol
+    max_depth=5, class_weight='balanced') # Profundidad máxima del árbol
 
     modelo.fit(X_train, y_train)
 
@@ -349,16 +349,18 @@ def entrenar_xgboost(X, y, test_size=0.2, random_state=42, cv=5):
 
 
     # Calcular scale_pos_weight (relación entre clases)
-    peso_clase = sum(y_train == 0) / sum(y_train == 1)
-    print(f"Peso de la clase minoritaria: {peso_clase:.2f}")
+    #peso_clase = sum(y_train == 0) / sum(y_train == 1)
+    #print(f"Peso de la clase minoritaria: {peso_clase:.2f}")
 
     # Configurar y entrenar modelo XGBoost
-    modelo = xgb.XGBClassifier(max_depth=3, learning_rate=0.05, n_estimators=100, eval_metric="logloss")
+    modelo = xgb.XGBClassifier(colsample_bytree = 1 , max_depth=15, learning_rate=0.01, n_estimators=200,
+                               eval_metric="logloss", scale_pos_weight = 1.48, subsample =  0.7, gamma = 0.2)
     modelo.fit(X_train, y_train)
 
     # Evaluación en test set
     y_pred = modelo.predict(X_test)
     reporte = classification_report(y_test, y_pred, output_dict=True)
+    cm = confusion_matrix(y_test, y_pred)
 
     # Validación cruzada
     skf = StratifiedKFold(n_splits=cv, shuffle=True, random_state=random_state)
@@ -371,13 +373,16 @@ def entrenar_xgboost(X, y, test_size=0.2, random_state=42, cv=5):
             print(f"\nClase {clase}:")
             for metrica, valor in valores.items():
                 print(f"  {metrica}: {valor:.4f}")
+
+    print("Matriz de confusión:")
+    print(confusion_matrix(y_test, y_pred))
     print('\n _______________________________________________')
     print('VALIDACIÓN CRUZADA')
     print('__________________________________________________')
     print(f"\n Puntajes F1 en cada fold de validación cruzada: {puntajes_f1}")
     print(f" F1 Score promedio: {puntajes_f1.mean():.4f}")
 
-    return modelo
+    return modelo, cm
 
 """
 MAQUINAS DE SOPORTE
@@ -531,3 +536,51 @@ def entrenar_knn(X, y, test_size=0.2, n_neighbors=5, random_state=42):
     reporte_clasificacion = classification_report(y_test, y_pred)
 
     return matriz_confusion, reporte_clasificacion
+
+
+from sklearn.model_selection import GridSearchCV
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import classification_report
+
+from sklearn.model_selection import GridSearchCV, StratifiedKFold
+
+
+def entrenar_modelo(modelo, param_grid, X, y, cv=10, scoring='f1'):
+    """
+    Realiza GridSearchCV para encontrar los mejores hiperparámetros de un modelo.
+
+    Parámetros:
+    - modelo: modelo base de scikit-learn (ej. DecisionTreeClassifier()).
+    - param_grid: diccionario con los hiperparámetros a evaluar.
+    - X: Variables predictoras.
+    - y: Variable objetivo.
+    - cv: Número de folds para validación cruzada (default=10).
+    - scoring: Métrica a optimizar (default='f1').
+
+    Retorna:
+    - Mejor modelo ajustado con los mejores hiperparámetros.
+    """
+
+    # Validación cruzada estratificada para evitar sobreajuste en clases desbalanceadas
+    skf = StratifiedKFold(n_splits=cv, shuffle=True, random_state=42)
+
+    grid_search = GridSearchCV(
+        modelo,
+        param_grid,
+        scoring=scoring,
+        cv=skf,
+        verbose=1,
+        n_jobs=-1
+    )
+
+    # Ajustar el modelo
+    grid_search.fit(X, y)
+
+    # Mejor modelo encontrado
+    mejor_modelo = grid_search.best_estimator_
+
+    print("Mejores hiperparámetros:", grid_search.best_params_)
+
+    return mejor_modelo
+
+

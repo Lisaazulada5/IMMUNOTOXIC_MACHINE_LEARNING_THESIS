@@ -2178,9 +2178,6 @@ test_data_fingerprints = pd.concat([test_data_fingerprints, pd.DataFrame(MACCS_a
 #test_data_fingerprints.columns = test_data_fingerprints.columns.astype(str) #convertimos las columnas a strings
 #print(test_data_fingerprints)
 
-
-"""
-"""
 #MODELADO CON FINGERPRINTS
 """
 print('______________________________  ')
@@ -2205,9 +2202,9 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
-"""
+
 #Prueba modelo con dataset prueba
-"""
+
 print('Prueba modelo con dataset prueba MACCS')
 print('--------------------------------')
 test_data_fingerprints = test_data_fingerprints.drop(columns=['MACCS', 'SMILES', 'ECFP'])
@@ -2263,9 +2260,9 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
-"""
+
 #Prueba modelo con dataset prueba
-"""
+
 print('Prueba modelo con dataset prueba MACCS y FISICOQUIMICOS')
 print('--------------------------------')
 test_data_fingerprints.columns = test_data_fingerprints.columns.astype(str)
@@ -2321,9 +2318,9 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
-"""
+
 #Prueba modelo con dataset prueba
-"""
+
 print('Prueba modelo con dataset prueba ECFP')
 print('--------------------------------')
 # Definir las columnas predictoras y la variable objetivo
@@ -2379,9 +2376,9 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
-"""
+
 #Prueba modelo con dataset prueba
-"""
+
 print('Prueba modelo con dataset prueba ECFP y FISICOQUIMICAS')
 print('--------------------------------')
 # Definir las columnas predictoras y la variable objetivo
@@ -2437,9 +2434,9 @@ if not os.path.exists(output_path):
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 
-"""
+
 #Prueba modelo con dataset prueba
-"""
+
 print('Prueba modelo con dataset prueba ECFP y MACCS')
 print('--------------------------------')
 # Definir las columnas predictoras y la variable objetivo
@@ -2493,10 +2490,28 @@ if not os.path.exists(output_path):
     print(f"Archivo generado: {output_path}")
 else:
     print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+"""
+#Escoger los mejores hiperparámetros para los modelos
+"""
+columnas_predictoras = train_data_fingerprints[columnas_predictoras]
+target = train_data_fingerprints['Clasificacion_ATS']
+from sklearn.model_selection import GridSearchCV
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import classification_report
+from modules.procesamiento.modelos import entrenar_modelo
+param_grid = {
+    'max_depth': [3, 5, 10, 15],
+    'min_samples_split': [2, 5, 10],
+    'min_samples_leaf': [1, 2, 5, 10],
+    'criterion': ['gini', 'entropy'],
+    'ccp_alpha': [0, 0.01, 0.1 ],
+    'class_weight': ['balanced', {0:1, 1:1.48}]
+}
+#modelo = DecisionTreeClassifier(random_state=42)  # ✅ Crear instancia
+#entrenar_modelo(modelo, param_grid, columnas_predictoras, target)
 
-"""
 #Prueba modelo con dataset prueba
-"""
+
 print('Prueba modelo con dataset prueba ECFP MACCS FISICOQUIMICAS')
 print('--------------------------------')
 # Definir las columnas predictoras y la variable objetivo
@@ -2505,8 +2520,8 @@ columns_subset_test = pd.concat([MACCS_test, ECFP_test, Fisicoquimicas_test], ax
 columnas_predictoras_test = columns_subset_test.columns.astype(str)
 #print(columnas_predictoras_test)
 #guardar_csv(columns_subset_test, 'data/columas_preductoras_test.csv')
-"""
-"""
+
+
 predict_data = test_data_fingerprints[columnas_predictoras_test]
 nuevas_predicciones = modeloECFP_MACCS_FISICOQUIMICAS.predict(predict_data)
 test_data_fingerprints['nuevas_predicciones_ECFPFMACCSFISICOQUIMICAS'] = nuevas_predicciones
@@ -2535,13 +2550,39 @@ print(f"Exactitud: {accuracy}")
 
 
 
-"""
+
 """
 #MODELADO DE BOSQUES ALEATORIOS
 """
+"""
+#Escoger los mejores hiperparámetros para los modelos
+"""
+"""
+columnas_predictoras = train_data_fingerprints[columnas_predictoras]
+target = train_data_fingerprints['Clasificacion_ATS']
+from sklearn.model_selection import GridSearchCV
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
+from modules.procesamiento.modelos import entrenar_modelo
+param_grid = {
+    'n_estimators': [100, 200, 300],  # Número de árboles
+    'max_depth': [3, 5, 10, 15],
+    'min_samples_split': [2, 5, 10],
+    'min_samples_leaf': [1, 2, 5, 10],
+    'criterion': ['gini', 'entropy'],
+    'ccp_alpha': [0, 0.01, 0.1],
+    'class_weight': ['balanced', {0:1, 1:1.48}]
+}
+#modelo = RandomForestClassifier(random_state=42)  # ✅ Crear instancia
+#entrenar_modelo(modelo, param_grid, columnas_predictoras, target)
+
 print('***************************')
-print('MODELO BOSQUES DE DECISION MACCS')
+print('MODELO BOSQUES ALEATORIOS MACCS')
 print('______________________________  ')
+
+"""
+#Escoger los mejores hiperparámetros para los modelos
+"""
 from modules.procesamiento.modelos import entrenar_random_forest
 train_data_fingerprints = train_data_fingerprints.drop(columns=['MACCS', 'SMILES', 'ECFP'])
 MACCS = train_data_fingerprints.iloc[:, 2054:2222]
@@ -2596,7 +2637,7 @@ print(f"F1-Score: {f1}")
 print(f"Exactitud: {accuracy}")
 
 print('***************************')
-print('MODELO BOSQUES DE DECISION MACCS y FISICOQUIMICOS')
+print('MODELO BOSQUES ALEATORIOS MACCS y FISICOQUIMICOS')
 print('______________________________  ')
 
 Fisicoquimicas = train_data_fingerprints.iloc[:, 1:6]
@@ -2654,7 +2695,7 @@ print(f"F1-Score: {f1}")
 print(f"Exactitud: {accuracy}")
 
 print('***************************')
-print('MODELO BOSQUES DE DECISION ECFP')
+print('MODELO BOSQUES ALEATORIOS ECFP')
 print('______________________________  ')
 ECFP = train_data_fingerprints.iloc[:, 6:2054]
 columnas_predictoras = ECFP
@@ -2707,7 +2748,7 @@ print(f"F1-Score: {f1}")
 print(f"Exactitud: {accuracy}")
 
 print('***************************')
-print('MODELO BOSQUES DE DECISION ECFP Y FISICOQUIMICOS')
+print('MODELO BOSQUES ALEATORIOS ECFP Y FISICOQUIMICOS')
 print('______________________________  ')
 columnas_predictoras = pd.concat([Fisicoquimicas, ECFP], axis=1)
 columnas_predictoras.columns =columnas_predictoras.columns.astype(str)
@@ -2761,7 +2802,7 @@ print(f"F1-Score: {f1}")
 print(f"Exactitud: {accuracy}")
 
 print('***************************')
-print('MODELO BOSQUES DE DECISION ECFP Y MACCS')
+print('MODELO BOSQUES ALEATORIOS ECFP Y MACCS')
 print('______________________________  ')
 columnas_predictoras = pd.concat([MACCS, ECFP], axis=1)
 columnas_predictoras.columns =columnas_predictoras.columns.astype(str)
@@ -2814,7 +2855,7 @@ print(f"F1-Score: {f1}")
 print(f"Exactitud: {accuracy}")
 
 print('***************************')
-print('MODELO BOSQUES DE DECISION ECFP, MACCS Y FISICOQUIMICOS')
+print('MODELO BOSQUES ALEATORIOS ECFP, MACCS Y FISICOQUIMICOS')
 print('______________________________  ')
 columnas_predictoras = pd.concat([MACCS, ECFP, Fisicoquimicas], axis=1)
 columnas_predictoras.columns =columnas_predictoras.columns.astype(str)
@@ -2868,12 +2909,9 @@ print(f"Exactitud: {accuracy}")
 """
 
 
-
-
-"""
 """
 #Se explora que el dataset sea diverso SIMILARIDAD DE TANIMOTO
-""" 
+
 print('____________________')
 print('\n Diversidad datos')
 print('\n ____________________')
@@ -2908,7 +2946,7 @@ fps = df_diversidad["ECFP"].tolist()
 
 # Medir tiempo de ejecución
 t1 = time.time()
-bv_ids = mmp.LazyBitVectorPick(fps, len(fps), 50)
+bv_ids = mmp.LazyBitVectorPick(fps, len(fps), 1701)
 t2 = time.time()
 
 print("Selección completada en %.2f segundos" % (t2 - t1))
@@ -2932,17 +2970,55 @@ for i in range(len(bv_ids)):
         dist_hist.append(sim)
 
 # Graficar el histograma de similitudes
-plt.hist(dist_hist, bins=20, edgecolor="black")
-plt.title("Distribución de Similitudes (MaxMin Picks)")
-plt.xlabel("Similaridad de Tanimoto")
-plt.ylabel("Frecuencia")
-plt.show()
+output_path = 'data/graficas/tanimoto_similarity.png'
+if not os.path.exists(output_path):
+    plt.hist(dist_hist, bins=20, edgecolor="black")
+    plt.title("Distribución de Similitudes (MaxMin Picks)")
+    plt.xlabel("Similaridad de Tanimoto")
+    plt.ylabel("Frecuencia")
+    plt.savefig(output_path, format="png", dpi=300)
+    plt.show()
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+
+from rdkit.Chem import DataStructs
+import numpy as np
+import pandas as pd
+
+# Lista de fingerprints pre-calculados (deben ser vectores de bits de RDKit)
+  # Aquí pones tus fingerprints
+
+# Crear matriz de similitud de Tanimoto
+size = len(fps)
+tanimoto_matrix = np.zeros((size, size))
+
+for i in range(size):
+    for j in range(size):
+        tanimoto_matrix[i, j] = DataStructs.TanimotoSimilarity(fps[i], fps[j])
+
+# Convertir a DataFrame para visualizar mejor
+tanimoto_matrix = pd.DataFrame(tanimoto_matrix)
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+output_path = 'data/graficas/tanimoto_similarity_matrix.png'
+if not os.path.exists(output_path):
+    plt.figure(figsize=(8,6))
+    sns.heatmap(tanimoto_matrix, cmap="coolwarm", annot=False)  # Puedes cambiar el colormap
+    plt.title("Tanimoto Similarity Matrix")
+    # Mostrar la gráfica
+    plt.savefig(output_path, format="png", dpi=300)
+    plt.show()
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
 """
 
 
 
 
-"""
 """
 #MODELO xgboost
 """
@@ -2954,7 +3030,7 @@ print('MODELOS xgboost')
 print('****************')
 from modules.procesamiento.modelos import entrenar_xgboost
 print('\n----------------')
-print('MODELOS MACCS')
+print('MODELOS xgboost MACCS')
 print('----------------')
 train_data_fingerprints = train_data_fingerprints.drop(columns=['MACCS', 'SMILES', 'ECFP'])
 MACCS = train_data_fingerprints.iloc[:, 2054:2222]
@@ -2963,11 +3039,56 @@ columnas_predictoras = MACCS
 target = train_data_fingerprints["Clasificacion_ATS"]
 X = columnas_predictoras
 y= target
-xgboost_MACCS = entrenar_xgboost(X,y)
+xgboost_MACCS, cm = entrenar_xgboost(X,y)
+
+
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_XGBOOST_MACCS.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(cm, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+#Prueba modelo con dataset prueba
+"""
+print('Prueba modelo con dataset prueba  MACCS ')
+print('--------------------------------')
+#print(test_data_fingerprints.columns)
+test_data_fingerprints = test_data_fingerprints.drop(columns=['MACCS', 'SMILES', 'ECFP'])
+#test_data_fingerprints.rename(columns=lambda col: f"MACCS_{col}" if col in test_data_fingerprints.iloc[:, 2054:2222] else col, inplace=True)
+MACCS_test = test_data_fingerprints.iloc[:, 2054:2222]
+#print(MACCS_test)
+predict_data = MACCS_test
+nuevas_predicciones = xgboost_MACCS.predict(predict_data)
+test_data_fingerprints['nuevas_prediccionesMACCS'] = nuevas_predicciones
+
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_prediccionesMACCS']
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
 
 
 print('\n----------------')
-print('MODELOS MACCS y Fisicoquimicas')
+print('MODELOS xgboost MACCS y Fisicoquimicas')
 print('----------------')
 
 Fisicoquimicas = train_data_fingerprints.iloc[:, 1:6]
@@ -2977,10 +3098,56 @@ columnas_predictoras = columns_subset
 target = train_data_fingerprints["Clasificacion_ATS"]
 X = columnas_predictoras
 y= target
-xgboost_MACCS_Fisicoquimicas = entrenar_xgboost(X,y)
+xgboost_MACCS_Fisicoquimicas, cm= entrenar_xgboost(X,y)
+
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_XGBOOST_MACCS_FISICOQUIMICOS.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(cm, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+"""
+#Prueba modelo con dataset prueba
+"""
+print('Prueba modelo con dataset prueba MACCS y FISICOQUIMICOS')
+print('--------------------------------')
+
+Fisicoquimicas_test = test_data_fingerprints.iloc[:, 1:6]
+columns_subset_test = pd.concat([Fisicoquimicas_test, MACCS_test], axis=1)
+columns_subset_test.columns = columns_subset_test.columns.astype(str)
+
+predict_data = columns_subset_test
+nuevas_predicciones = xgboost_MACCS_Fisicoquimicas.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_MACCS_FISICOQUIMICOS'] = nuevas_predicciones
+
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_MACCS_FISICOQUIMICOS']
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
+
+
 
 print('\n----------------')
-print('MODELOS ECFP')
+print('MODELOS xgboost ECFP')
 print('----------------')
 
 ECFP = train_data_fingerprints.iloc[:, 6:2054]
@@ -2988,10 +3155,53 @@ columnas_predictoras = ECFP
 target = train_data_fingerprints["Clasificacion_ATS"]
 X = columnas_predictoras
 y= target
-xgboost_ECFP = entrenar_xgboost(X,y)
+xgboost_ECFP, cm = entrenar_xgboost(X,y)
+
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_XGBOOST_ECFP.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(cm, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+#Prueba modelo con dataset prueba
+
+print('Prueba modelo con dataset prueba ECFP')
+print('--------------------------------')
+# Definir las columnas predictoras y la variable objetivo
+ECFP_test = test_data_fingerprints.iloc[:, 6:2054]
+#print(ECFP)
+columnas_predictoras_test = ECFP_test
+predict_data = columnas_predictoras_test
+nuevas_predicciones = xgboost_ECFP.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_ECFP'] = nuevas_predicciones
+
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_ECFP']
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
+
 
 print('\n----------------')
-print('MODELOS ECFP y Fisicoquimicos')
+print('MODELOS xgboost ECFP y Fisicoquimicos')
 print('----------------')
 
 columns_subset = pd.concat([Fisicoquimicas, ECFP], axis=1)
@@ -3000,10 +3210,52 @@ columnas_predictoras = columns_subset
 target = train_data_fingerprints["Clasificacion_ATS"]
 X = columnas_predictoras
 y= target
-xgboost_ECFP_Fisicoquimicos = entrenar_xgboost(X,y)
+xgboost_ECFP_Fisicoquimicos, cm = entrenar_xgboost(X,y)
+
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_XGBOOST_ECFP_FISICOQUIMICOS.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(cm, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+
+#Prueba modelo con dataset prueba
+
+print('Prueba modelo con dataset prueba ECFP y FISICOQUIMICAS')
+print('--------------------------------')
+# Definir las columnas predictoras y la variable objetivo
+columns_subset_test = pd.concat([Fisicoquimicas_test, ECFP_test], axis=1)
+columns_subset_test.columns = columns_subset_test.columns.astype(str)
+predict_data = columns_subset_test
+nuevas_predicciones = xgboost_ECFP_Fisicoquimicos.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_ECFPFISICOQUIMICAS'] = nuevas_predicciones
+
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_ECFPFISICOQUIMICAS']
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
 
 print('\n----------------')
-print('MODELOS ECFP Y MACCS ')
+print('MODELOS xgboost ECFP Y MACCS ')
 print('----------------')
 MACCS = MACCS.add_prefix("MACCS_")
 #print(MACCS)
@@ -3014,10 +3266,54 @@ target = train_data_fingerprints["Clasificacion_ATS"]
 #print(target)
 X = columnas_predictoras
 y= target
-xgboost_MACCS_ECFP = entrenar_xgboost(X,y)
+xgboost_MACCS_ECFP, cm = entrenar_xgboost(X,y)
+
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_XGBOOST_ECFP_MACCS.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(cm, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+#Prueba modelo con dataset prueba
+
+print('Prueba modelo con dataset prueba ECFP y MACCS')
+print('--------------------------------')
+# Definir las columnas predictoras y la variable objetivo
+MACCS_test = MACCS_test.add_prefix("MACCS_")
+columns_subset_test = pd.concat([ECFP_test, MACCS_test], axis=1)
+columns_subset_test.columns = columns_subset_test.columns.astype(str)
+columnas_predictoras_test = columns_subset_test
+
+predict_data = columns_subset_test
+nuevas_predicciones = xgboost_MACCS_ECFP.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_ECFPMACCS'] = nuevas_predicciones
+
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_ECFPMACCS']
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
 
 print('\n----------------')
-print('MODELOS ECFP Y MACCS fisicoquimicas')
+print('MODELOS xgboost ECFP Y MACCS fisicoquimicas')
 print('----------------')
 
 columns_subset = pd.concat([ECFP, MACCS, Fisicoquimicas], axis=1)
@@ -3026,8 +3322,80 @@ columnas_predictoras = columns_subset
 target = train_data_fingerprints["Clasificacion_ATS"]
 X = columnas_predictoras
 y= target
-xgboost_MACCS_ECFP_fisicoquimicas = entrenar_xgboost(X,y)
-"""
+xgboost_MACCS_ECFP_fisicoquimicas, cm = entrenar_xgboost(X,y)
+
+from modules.procesamiento.graficas import plot_confusion_matrix
+output_path = 'data/graficas/matriz_confusion_XGBOOST_ECFP_MACCS_Fisicoquimicos.png'
+if not os.path.exists(output_path):
+    class_names = ["Inactivo", "Activo"]
+    plot_confusion_matrix(cm, output_path, class_names)
+    print(f"Archivo generado: {output_path}")
+else:
+    print(f"El archivo {output_path} ya existe. No se ha procesado de nuevo.")
+
+#Prueba modelo con dataset prueba
+
+print('Prueba modelo con dataset prueba ECFP y MACCS +  Fisicoquimicas')
+print('--------------------------------')
+# Definir las columnas predictoras y la variable objetivo
+columns_subset_test = pd.concat([ECFP_test, MACCS_test, Fisicoquimicas_test], axis=1)
+columns_subset_test.columns = columns_subset_test.columns.astype(str)
+
+predict_data = columns_subset_test
+nuevas_predicciones = xgboost_MACCS_ECFP_fisicoquimicas.predict(predict_data)
+test_data_fingerprints['nuevas_predicciones_ECFPMACCSFISICOQUIMICAS'] = nuevas_predicciones
+
+#guardar_csv(test_data, 'data/predicion_arbol.csv')
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, ConfusionMatrixDisplay
+# Ya tienes las predicciones en la columna 'nuevas_predicciones' y las etiquetas reales en 'Clasificacion_ATS'
+y_true = test_data_fingerprints['Clasificacion_ATS']
+y_pred = test_data_fingerprints['nuevas_predicciones_ECFPMACCSFISICOQUIMICAS']
+# Matriz de confusión
+cm = confusion_matrix(y_true, y_pred)
+print("Matriz de Confusión:")
+print(cm)
+#Cálculo de métricas
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+accuracy = accuracy_score(y_true, y_pred)
+
+# Mostrar las métricas
+print(f"Precisión: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
+print(f"Exactitud: {accuracy}")
+
+
+
+
+#mejor modelo
+#columnas_predictoras_names = columnas_predictoras.columns
+#columnas_predictoras = train_data_fingerprints[columnas_predictoras_names]
+#target = train_data_fingerprints['Clasificacion_ATS']
+import xgboost as xgb
+from sklearn.model_selection import GridSearchCV
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import classification_report
+from modules.procesamiento.modelos import entrenar_modelo
+# Definir la grilla de hiperparámetros para XGBoost
+param_grid = {
+    'max_depth': [3, 5, 10, 15],
+    'learning_rate': [0.01, 0.1, 0.2],  # ✅ Tasa de aprendizaje
+    'n_estimators': [50, 100, 200],  # ✅ Número de árboles
+    'subsample': [0.7, 1.0],  # ✅ Submuestreo
+    'colsample_bytree': [0.7, 1.0],  # ✅ Características por árbol
+    'gamma': [0, 0.1, 0.2],  # ✅ Regularización
+    'scale_pos_weight': [1, 1.48]  # ✅ Para manejar clases desbalanceadas
+}
+# Crear instancia del modelo XGBoost
+modelo = xgb.XGBClassifier(random_state=42, use_label_encoder=False, eval_metric='logloss')
+
+# Entrenar el modelo usando la función personalizada
+#entrenar_modelo(modelo, param_grid, columnas_predictoras, target)
+
+
+
 
 """
 """
@@ -3385,7 +3753,7 @@ plt.show()
 """
 
 
-
+"""
 #Con las 1000 sustancias lo suficientemente diversas, se vuelve a pasar el  mejor modelo que fueron todas las variables, SVM
 
 df_diversidad_ACTIVO = leer_csv('data/df_diversidad_ACTIVO.csv')
@@ -3458,6 +3826,10 @@ import matplotlib.pyplot as plt
 
 Basados_en_cargas_parciales = mordred_scaled[["PEOE_VSA1", "PEOE_VSA2", "PEOE_VSA3", "PEOE_VSA5", "PEOE_VSA6", "PEOE_VSA7", "PEOE_VSA8",
                                                 "PEOE_VSA9", "PEOE_VSA10", "PEOE_VSA11", "PEOE_VSA12", "PEOE_VSA1"]]
+"""
+
+
+
 
 """
 import matplotlib.pyplot as plt
@@ -3509,7 +3881,7 @@ plt.show()
 
 #ADICIONADO PREFIJOS
 
-
+"""
 from modules.procesamiento.calculo_fingerprints import  calcular_fingerprints_atom
 
 atom_pair = calcular_fingerprints_atom(df_balanceado['SMILES'])
@@ -3582,6 +3954,7 @@ y= target
 
 
 MSV_MACCS_ECFP_fisicoquimicas = entrenar_svm(X,y)
+"""
 
 """
 print('mejor modelo')
@@ -3726,7 +4099,7 @@ print("Mejor precisión:", grid_search.best_score_)
 """
 
 
-
+"""
 print('***************************')
 print('MODELO BOSQUES ALEATORIOS ECFP, MACCS Y FISICOQUIMICOS')
 print('______________________________  ')
@@ -3735,9 +4108,9 @@ X = columnas_predictoras
 y= target
 
 randomECFP_MACCS_FISICOQUIMICOS, confusion_matrix = entrenar_random_forest(X, y)
+"""
 
-
-
+"""
 print('***************************')
 print('MODELO ARBOL DE DECISION ECFP, MACCS Y FISICOQUIMICOS')
 print('______________________________  ')
@@ -3752,3 +4125,4 @@ columns_subset["Clasificacion_ATS"] = df_balanceado["Clasificacion_ATS"]
 target = "Clasificacion_ATS"
 # Llamar al modelo
 modeloECFP_MACCS_FISICOQUIMICAS, accuracy, cm, report = arbol_decision(columns_subset, columnas_predictoras, target)
+"""
