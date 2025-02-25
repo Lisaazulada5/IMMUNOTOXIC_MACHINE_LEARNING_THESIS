@@ -82,7 +82,7 @@ def clasificar_ats(df, columna_ats='ATS'):
         raise ValueError(f"La columna '{columna_ats}' no existe en el DataFrame.")
 
     # Crear la nueva columna con base en la condición
-    df['Clasificacion_ATS'] = df[columna_ats].apply(lambda x: 'Activo' if x >= 0.15 else 'Inactivo')
+    df['Clasificacion_ATS'] = df[columna_ats].apply(lambda x: 'Activo' if x >= 0.10 else 'Inactivo')
     return df
 
 

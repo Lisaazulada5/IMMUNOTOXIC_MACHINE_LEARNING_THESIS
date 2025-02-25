@@ -196,3 +196,66 @@ y_pred = MSV_ECFP_2.predict(prueba_data)
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 print("Matriz de Confusión:")
 print(confusion_matrix(y_test, y_pred) if y_test is not None else "No hay etiquetas reales")
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split, StratifiedKFold, cross_val_score, GridSearchCV
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, roc_auc_score, roc_curve
+import numpy as np
+import matplotlib.pyplot as plt
+
+def arbol_decision(X, y, test_size=0.2, random_state=42):
+    # Separar datos en entrenamiento y prueba
+    X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                        test_size=test_size, random_state=random_state, stratify=y)
+
+    # Definir modelo base
+    modelo = DecisionTreeClassifier(random_state=random_state, class_weight='balanced')
+
+    # GridSearch para encontrar los mejores hiperparámetros
+    param_grid = {
+        'criterion': ['gini', 'entropy'],
+        'max_depth': [3, 5, 10, None],  
+        'min_samples_split': [2, 5, 10],  
+        'min_samples_leaf': [1, 2, 5],  
+        'ccp_alpha': [0.0, 0.001, 0.01]
+    }
+
+    grid_search = GridSearchCV(modelo, param_grid, cv=5, scoring='roc_auc', n_jobs=-1)
+    grid_search.fit(X_train, y_train)
+    modelo = grid_search.best_estimator_
+
+    # Evaluación en prueba
+    y_pred_test = modelo.predict(X_test)
+    y_pred_prob_test = modelo.predict_proba(X_test)[:, 1]
+    accuracy_test = accuracy_score(y_test, y_pred_test)
+    cm_test = confusion_matrix(y_test, y_pred_test)
+    report_test = classification_report(y_test, y_pred_test)
+
+    # Validación cruzada
+    cv = StratifiedKFold(n_splits=10, shuffle=True, random_state=random_state)
+    auc_scores = cross_val_score(modelo, X_train, y_train, cv=cv, scoring="roc_auc")
+
+    print(f"Mejores hiperparámetros: {grid_search.best_params_}")
+    print(f"Precisión en prueba: {accuracy_test:.4f}")
+    print("Matriz de confusión (Prueba):")
+    print(cm_test)
+    print("Reporte de clasificación (Prueba):")
+    print(report_test)
+    print("\n______________________________")
+    print("CROSS VALIDATION AUC-ROC")
+    print("______________________________")
+    print(f"AUC en cada fold: {auc_scores}")
+    print(f"AUC promedio: {np.mean(auc_scores)}")
+    print(f"Desviación estándar: {np.std(auc_scores)}")
+
+    # Graficar curva ROC
+    fpr, tpr, _ = roc_curve(y_test, y_pred_prob_test)
+    plt.figure(figsize=(7, 5))
+    plt.plot(fpr, tpr, color='blue', label=f'ROC curve (AUC = {roc_auc_score(y_test, y_pred_prob_test):.2f})')
+    plt.plot([0, 1], [0, 1], linestyle='--', color='gray')
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('Curva ROC')
+    plt.legend()
+    plt.show()
+
+    return modelo, accuracy_test, cm_test, report_test

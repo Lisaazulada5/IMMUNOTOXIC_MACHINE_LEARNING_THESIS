@@ -532,3 +532,51 @@ def plot_confusion_matrix(cm, ruta_guardado, class_names=None, cmap="Blues"):
     plt.title("Matriz de Confusión")
     plt.savefig(ruta_guardado, format="png", dpi=300)
     plt.show()
+
+
+import matplotlib.pyplot as plt
+from sklearn.metrics import roc_curve, auc
+
+
+def graficar_roc_multiple(modelos, X_test_list, y_test_list, etiquetas_modelos):
+    """
+    Función para graficar las curvas ROC de varios modelos con diferentes datos de entrada y salidas.
+
+    Parámetros:
+    - modelos: lista de modelos entrenados.
+    - X_test_list: lista de conjuntos de características de prueba (uno para cada modelo).
+    - y_test_list: lista de conjuntos de etiquetas de prueba (uno para cada modelo).
+    - etiquetas_modelos: lista de etiquetas para los modelos.
+    """
+    # Crear la figura del gráfico
+    plt.figure(figsize=(10, 8))
+
+    # Graficar la curva ROC para cada modelo
+    for modelo, X_test, y_test, etiqueta in zip(modelos, X_test_list, y_test_list, etiquetas_modelos):
+        # Obtener las probabilidades para la clase positiva (1)
+        y_prob = X_test
+
+        # Calcular las tasas de falsos positivos (FPR) y verdaderos positivos (TPR)
+        fpr, tpr, _ = roc_curve(y_test, y_prob)
+
+        # Calcular el AUC
+        roc_auc = auc(fpr, tpr)
+
+        # Graficar la curva ROC
+        plt.plot(fpr, tpr, label=f'{etiqueta} (AUC = {roc_auc:.2f})')
+
+    # Graficar la línea de aleatoriedad (diagonal)
+    plt.plot([0, 1], [0, 1], color='navy', linestyle='--')
+
+    # Añadir título, etiquetas y leyenda
+    plt.title('Curvas ROC de Modelos')
+    plt.xlabel('Tasa de Falsos Positivos (FPR)')
+    plt.ylabel('Tasa de Verdaderos Positivos (TPR)')
+    plt.legend(loc='lower right')
+    plt.grid(True)
+
+    # Mostrar el gráfico
+    plt.show()
+
+
+

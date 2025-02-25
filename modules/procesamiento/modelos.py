@@ -148,60 +148,76 @@ MODELO DE ÁRBOLES DE DECISION
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 import pandas as pd
-import numpy as np
+
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, roc_auc_score, roc_curve
+import matplotlib.pyplot as plt
 
 
-def arbol_decision(df, columnas_predictoras, target, criterio='gini', max_depth=None, min_samples_split=2,
-                   min_samples_leaf=1):
+def arbol_decision(X, y, test_size=0.2, random_state=42):
     """
-    Entrena un modelo de Árbol de Decisión y devuelve su rendimiento.
+    Entrena un modelo de Árbol de Decisión y lo evalúa con datos de prueba.
 
     Parámetros:
-    - df: DataFrame con los datos.
-    - columnas_predictoras: Lista con los nombres de las columnas predictoras.
-    - target: Nombre de la columna objetivo.
+    - X: DataFrame o array con las características.
+    - y: Serie o array con la variable objetivo.
     - criterio: 'gini' o 'entropy' para la función de evaluación del árbol.
     - max_depth: Profundidad máxima del árbol (None para sin restricción).
     - min_samples_split: Mínimo de muestras para dividir un nodo.
     - min_samples_leaf: Mínimo de muestras en una hoja.
+    - test_size: Proporción de datos usados para prueba (por defecto 20%).
+    - random_state: Semilla para la reproducibilidad.
 
     Retorna:
     - modelo: El modelo entrenado.
-    - accuracy: Precisión del modelo.
-    - cm: Matriz de confusión.
-    - report: Reporte de clasificación.
+    - accuracy_train: Precisión en el conjunto de entrenamiento.
+    - accuracy_test: Precisión en el conjunto de prueba.
+    - cm_test: Matriz de confusión en el conjunto de prueba.
+    - report_test: Reporte de clasificación en el conjunto de prueba.
     """
-    X = df[columnas_predictoras]
-    y = df[target]
+    # Separar datos en entrenamiento y prueba
+    X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                        test_size=test_size, random_state=random_state, stratify=y)
 
-    modelo = DecisionTreeClassifier(criterion="gini", max_depth=3,
+    # Definir y entrenar el modelo
+    modelo = DecisionTreeClassifier(criterion= 'entropy', max_depth=3,
                                     min_samples_split=2,
-                                    min_samples_leaf=3,
-                                    random_state=42, class_weight= 'balanced')
+                                    min_samples_leaf=10,
+                                    random_state=42, class_weight='balanced',
+                                    ccp_alpha=0.01)
 
-    modelo.fit(X, y)
-    y_pred = modelo.predict(X)
+    modelo.fit(X_train, y_train)
 
-    accuracy = accuracy_score(y, y_pred)
-    cm = confusion_matrix(y, y_pred)
-    report = classification_report(y, y_pred)
-    print(f"Precisión del modelo: {accuracy:.4f}")
-    print("Matriz de confusión:")
-    print(cm)
-    print("Reporte de clasificación:")
-    print(report)
+    # Evaluación en entrenamiento
+    y_pred_train = modelo.predict(X_train)
+    accuracy_train = accuracy_score(y_train, y_pred_train)
 
-    from sklearn.model_selection import StratifiedKFold, cross_val_score
-    cv = StratifiedKFold(n_splits=10, shuffle=True, random_state=42)
-    scores = cross_val_score(modelo, X, y, cv=cv, scoring="roc_auc")
+    # Evaluación en prueba
+    y_pred_test = modelo.predict(X_test)
+    accuracy_test = accuracy_score(y_test, y_pred_test)
+    cm_test = confusion_matrix(y_test, y_pred_test)
+    report_test = classification_report(y_test, y_pred_test)
+    y_pred_prob_test = modelo.predict_proba(X_test)[:, 1]
+
+    print(f"Precisión en entrenamiento: {accuracy_train:.4f}")
+    print(f"Precisión en prueba: {accuracy_test:.4f}")
+    print("Matriz de confusión (Prueba):")
+    print(cm_test)
+    print("Reporte de clasificación (Prueba):")
+    print(report_test)
+
+    # Validación cruzada
+    cv = StratifiedKFold(n_splits=10, shuffle=True, random_state=random_state)
+    auc_scores = cross_val_score(modelo, X_train, y_train, cv=cv, scoring="roc_auc")
+
     print("\n______________________________")
-    print("CROSS VALIDATION")
+    print("CROSS VALIDATION AUC-ROC")
     print("______________________________")
-    print(f"Precisión en cada fold: {scores}")
-    print(f"Precisión media: {np.mean(scores)}")
-    print(f"Desviación estándar: {np.std(scores)}")
+    print(f"AUC en cada fold: {auc_scores}")
+    print(f"AUC promedio: {np.mean(auc_scores)}")
+    print(f"Desviación estándar: {np.std(auc_scores)}")
 
-    return modelo, accuracy, cm, report
+    return modelo, accuracy_train, accuracy_test, cm_test, report_test, y_pred_prob_test, y_test
+
 
 """"
 REGLOG LOGIT CON SUMMARY PARA VER  VALOR P DE COEFICIENTES
@@ -278,17 +294,18 @@ def entrenar_random_forest(X, y, n_estimators=100, random_state=42):
 
     # Inicializar y entrenar el modelo
     modelo = RandomForestClassifier(criterion='gini',  # Cálculo de la impureza
-    min_samples_leaf=1,  # Mínimo de muestras por hoja
-    min_samples_split=5,  # Mínimo de muestras para dividir un nodo
-    n_estimators=300,  # Número de árboles
+    min_samples_leaf=5,  # Mínimo de muestras por hoja
+    min_samples_split=2,  # Mínimo de muestras para dividir un nodo
+    n_estimators=100,  # Número de árboles
     random_state=random_state,  # Semilla para reproducibilidad
-    max_depth=5, class_weight='balanced') # Profundidad máxima del árbol
+    max_depth=3, class_weight='balanced', ccp_alpha=  0.01) # Profundidad máxima del árbol
 
     modelo.fit(X_train, y_train)
 
     # Predicciones
     y_pred = modelo.predict(X_test)
     cm = confusion_matrix(y_test, y_pred)
+    y_pred_prob_test = modelo.predict_proba(X_test)[:, 1]
 
     # Evaluación
     #print("\n______________________________")
@@ -301,17 +318,17 @@ def entrenar_random_forest(X, y, n_estimators=100, random_state=42):
     print(classification_report(y_test, y_pred))
 
     # Validación cruzada
-    from sklearn.model_selection import StratifiedKFold, cross_val_score
-    cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-    scores = cross_val_score(modelo, X, y, cv=cv, scoring="roc_auc")
-    print("\n______________________________")
-    print("CROSS VALIDATION")
-    print("______________________________")
-    print(f"Precisión en cada fold: {scores}")
-    print(f"Precisión media: {np.mean(scores)}")
-    print(f"Desviación estándar: {np.std(scores)}")
+    cv = StratifiedKFold(n_splits=10, shuffle=True, random_state=random_state)
+    auc_scores = cross_val_score(modelo, X_train, y_train, cv=cv, scoring="roc_auc")
 
-    return modelo, cm
+    print("\n______________________________")
+    print("CROSS VALIDATION AUC-ROC")
+    print("______________________________")
+    print(f"AUC en cada fold: {auc_scores}")
+    print(f"AUC promedio: {np.mean(auc_scores)}")
+    print(f"Desviación estándar: {np.std(auc_scores)}")
+
+    return modelo, cm,y_pred_prob_test , y_test
 
 import xgboost as xgb
 from sklearn.model_selection import train_test_split
@@ -353,18 +370,20 @@ def entrenar_xgboost(X, y, test_size=0.2, random_state=42, cv=5):
     #print(f"Peso de la clase minoritaria: {peso_clase:.2f}")
 
     # Configurar y entrenar modelo XGBoost
-    modelo = xgb.XGBClassifier(colsample_bytree = 1 , max_depth=15, learning_rate=0.01, n_estimators=200,
-                               eval_metric="logloss", scale_pos_weight = 1.48, subsample =  0.7, gamma = 0.2)
+    modelo = xgb.XGBClassifier(colsample_bytree =1 , max_depth=5, learning_rate=0.1, n_estimators=100,
+                               eval_metric="logloss"  , gamma = 0.0, subsample = 0.7)
+                               #reg_alpha =0.0001907254857105348, reg_lambda = 1.4848771867376586e-05, scale_pos_weight = 1.98)
     modelo.fit(X_train, y_train)
 
     # Evaluación en test set
     y_pred = modelo.predict(X_test)
     reporte = classification_report(y_test, y_pred, output_dict=True)
     cm = confusion_matrix(y_test, y_pred)
+    y_pred_prob_test = modelo.predict_proba(X_test)[:, 1]
 
     # Validación cruzada
-    skf = StratifiedKFold(n_splits=cv, shuffle=True, random_state=random_state)
-    puntajes_f1 = cross_val_score(modelo, X, y, cv=skf, scoring=make_scorer(f1_score))
+    cv = StratifiedKFold(n_splits=10, shuffle=True, random_state=random_state)
+    auc_scores = cross_val_score(modelo, X_train, y_train, cv=cv, scoring="roc_auc")
 
     # 🔹 **Imprimir métricas dentro de la función**
     print("\n🔹 Reporte de Clasificación en Test Set:")
@@ -376,13 +395,14 @@ def entrenar_xgboost(X, y, test_size=0.2, random_state=42, cv=5):
 
     print("Matriz de confusión:")
     print(confusion_matrix(y_test, y_pred))
-    print('\n _______________________________________________')
-    print('VALIDACIÓN CRUZADA')
-    print('__________________________________________________')
-    print(f"\n Puntajes F1 en cada fold de validación cruzada: {puntajes_f1}")
-    print(f" F1 Score promedio: {puntajes_f1.mean():.4f}")
+    print("\n______________________________")
+    print("CROSS VALIDATION AUC-ROC")
+    print("______________________________")
+    print(f"AUC en cada fold: {auc_scores}")
+    print(f"AUC promedio: {np.mean(auc_scores)}")
+    print(f"Desviación estándar: {np.std(auc_scores)}")
 
-    return modelo, cm
+    return modelo, cm, y_pred_prob_test, y_test, X_train, X_test
 
 """
 MAQUINAS DE SOPORTE
@@ -394,7 +414,7 @@ import numpy as np
 from imblearn.over_sampling import SMOTE
 
 
-def entrenar_svm(X, y, test_size=0.2, random_state=42, cv=5):
+def entrenar_svm(X, y, test_size=0.2, random_state=42, cv=10):
     """
     Entrena un modelo SVM con kernel RBF, realiza validación cruzada y muestra métricas.
 
@@ -413,28 +433,39 @@ def entrenar_svm(X, y, test_size=0.2, random_state=42, cv=5):
     # Dividir datos en entrenamiento y prueba
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
 
-    # Aplicar SMOTE solo al conjunto de entrenamiento
-    #smote = SMOTE(random_state=random_state)
-    #X_train, y_train = smote.fit_resample(X_train, y_train)
-
     # Definir y entrenar el modelo SVM con kernel RBF
-    modelo = SVC(kernel='rbf', C=1, gamma='scale', random_state=random_state)
+    modelo = SVC(kernel='poly', C=10, gamma=0.001, coef0 = 0.5, degree = 5,   random_state=random_state, probability=True)
+    # Validación cruzada
+    from sklearn.model_selection import StratifiedKFold, cross_val_score
+    cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+    scores = cross_val_score(modelo, X, y, cv=cv, scoring="roc_auc")
+
+    # entrenar el modelo SVM con kernel RBF
     modelo.fit(X_train, y_train)
 
     # Predicción en test
     y_pred = modelo.predict(X_test)
+    reporte = classification_report(y_test, y_pred, output_dict=True)
+    cm = confusion_matrix(y_test, y_pred)
+    y_pred_prob_test = modelo.predict_proba(X_test)[:, 1]
 
     # Validación cruzada
-    scores = cross_val_score(modelo, X_train, y_train, cv=cv, scoring='roc_auc')
+    cv = StratifiedKFold(n_splits=10, shuffle=True, random_state=random_state)
+    auc_scores = cross_val_score(modelo, X_train, y_train, cv=cv, scoring="roc_auc")
 
     # Imprimir métricas
+    print(f"Precisión del modelo: {accuracy_score(y_test, y_pred):.4f}")
     print("Matriz de confusión")
-    cm = confusion_matrix(y_test, y_pred)
     print(cm)
     print("🔹 Reporte de Clasificación en Test Set:")
     print(classification_report(y_test, y_pred))
-    print(f"🔹 Validación Cruzada (F1 weighted, {cv}-fold): {np.mean(scores):.4f} ± {np.std(scores):.4f}")
-    return modelo
+    print("\n______________________________")
+    print("CROSS VALIDATION AUC-ROC")
+    print("______________________________")
+    print(f"AUC en cada fold: {auc_scores}")
+    print(f"AUC promedio: {np.mean(auc_scores)}")
+    print(f"Desviación estándar: {np.std(auc_scores)}")
+    return modelo, cm, y_pred_prob_test, y_test
 
 
 import tensorflow as tf
@@ -584,3 +615,55 @@ def entrenar_modelo(modelo, param_grid, X, y, cv=10, scoring='f1'):
     return mejor_modelo
 
 
+import optuna
+import xgboost as xgb
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
+
+
+# Función personalizada para calcular F1-Score
+def f1_eval(y_pred, dtrain):
+    y_true = dtrain.get_label()
+    y_pred = np.round(y_pred)  # Convertir probabilidades en clases binarias (0 o 1)
+    return "f1", f1_score(y_true, y_pred)
+
+
+
+# Función objetivo para la optimización bayesiana
+import optuna
+import xgboost as xgb
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import f1_score
+
+# Función personalizada para calcular F1-Score
+from sklearn.model_selection import cross_val_score
+from sklearn.metrics import f1_score
+from xgboost import XGBClassifier
+import numpy as np
+
+# Función de evaluación personalizada para F1-score en XGBoost
+def f1_eval(y_pred, dtrain):
+    y_true = dtrain.get_label()
+    y_pred = np.round(y_pred)  # Convertir probabilidades en clases binarias (0 o 1)
+    return "f1", f1_score(y_true, y_pred)
+
+def evaluar_modelo(params, X, y):
+    """Entrena y evalúa el modelo usando validación cruzada."""
+    model = XGBClassifier(**params, use_label_encoder=False)
+
+    scores = cross_val_score(model, X, y, cv=5, scoring="f1")  # Usando F1-score como métrica
+    return np.mean(scores)  # Retorna el promedio de F1-score
+
+def objective(trial, X, y):
+    params = {
+        "learning_rate": trial.suggest_float("learning_rate", 0.01, 0.3, log=True),  # Tasa de aprendizaje (queda igual)
+        "subsample": trial.suggest_float("subsample", 0.5, 1.0),  # Fracción de datos usada en cada árbol
+        "colsample_bytree": trial.suggest_float("colsample_bytree", 0.5, 1.0),  # Fracción de features por árbol
+        "gamma": trial.suggest_float("gamma", 1e-4, 1.0, log=True),  # Penalización en la creación de nodos
+        "reg_alpha": trial.suggest_float("reg_alpha", 1e-4, 5.0, log=True),  # Regularización L1 más ajustada
+        "reg_lambda": trial.suggest_float("reg_lambda", 1e-4, 5.0, log=True),  # Regularización L2 más ajustada
+        "max_depth": trial.suggest_int("max_depth", 3, 12),  # Profundidad del árbol (queda igual)
+        "n_estimators": trial.suggest_int("n_estimators", 50, 500, step=50),  # Número de árboles (queda igual)
+    }
+    return evaluar_modelo(params, X, y)

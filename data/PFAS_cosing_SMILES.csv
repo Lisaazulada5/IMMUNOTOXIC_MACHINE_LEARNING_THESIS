@@ -1,0 +1,123 @@
+Type;INCI Name/Substance Name;CAS No.;Annex/Ref;SMILES
+;PERFLUORO T-BUTYLCYCLOHEXANE;84808-64-0;;C1(C(C(C(C(C1(F)F)(F)F)(F)F)(F)F)(F)F)(C(C(F)(F)F)(C(F)(F)F)C(F)(F)F)F
+;PERFLUOROOCTYLETHYL TRIMETHOXYSILANE;83048-65-1;;CO[Si](CCC(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(OC)OC
+;PERFLUOROPROPANE;76-19-7;;C(C(F)(F)F)(C(F)(F)F)(F)F
+;PERFLUOROHEXYLETHYL TRIETHOXYSILANE;51851-37-7;;CCO[Si](CCC(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(OCC)OCC
+;PERFLUOROMETHYLDECALIN;51294-16-7;;C12(C(C(C(C(C1(C(F)(F)F)F)(F)F)(F)F)(F)F)(C(C(C(C2(F)F)(F)F)(F)F)(F)F)F)F
+;PERFLUORO DIMETHYLETHYLPENTANE;50285-18-2;;C(C(C(F)(F)F)(C(F)(F)F)F)(C(C(F)(F)F)(C(F)(F)F)F)(C(C(F)(F)F)(F)F)F
+;PERFLUOROCAPRYLYL BROMIDE;423-55-2;;C(C(C(C(C(F)(F)Br)(F)F)(F)F)(F)F)(C(C(C(F)(F)F)(F)F)(F)F)(F)F
+;Perfluorononan-1-oic acid [1] and its sodium [2] and ammonium [3] salts;375-95-1 ;II 1636;C(=O)(C(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)O
+;"Perfluoroheptanoic acid; tridecafluoroheptanoic acid";375-85-9;II 1705;C(=O)(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)O
+;PERFLUOROBUTYLCYCLOHEXANE;374-60-7;;C1(C(C(C(C(C1(F)F)(F)F)(F)F)(F)F)(F)F)(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)F
+;PERFLUOROHEXANE;355-42-0;;C(C(C(C(F)(F)F)(F)F)(F)F)(C(C(F)(F)F)(F)F)(F)F
+;PERFLUOROISOHEXANE;355-04-4;;C(C(C(C(F)(F)F)(F)F)(F)F)(C(F)(F)F)(C(F)(F)F)F
+;PERFLUOROMETHYLCYCLOHEXANE;355-02-2;;C1(C(C(C(C(C1(F)F)(F)F)(F)F)(F)F)(F)F)(C(F)(F)F)F
+;Perfluorooctanoic acid;335-67-1;II 1561;C(=O)(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)O
+;PERFLUOROHEPTANE;335-57-9;;C(C(C(C(F)(F)F)(F)F)(F)F)(C(C(C(F)(F)F)(F)F)(F)F)(F)F
+;PERFLUORODIMETHYLCYCLOHEXANE;335-27-3;;C1(C(C(C(C(C1(F)F)(F)F)(F)F)(C(F)(F)F)F)(F)F)(C(F)(F)F)F
+;PERFLUOROPERHYDROFLUORENE;307-08-4;;C12(C3(C(C(C1(C(C(C(C2(F)F)(F)F)(F)F)(F)F)F)(F)F)(C(C(C(C3(F)F)(F)F)(F)F)(F)F)F)F)F
+;PERFLUORODECALIN;306-94-5;;C12(C(C(C(C(C1(F)F)(F)F)(F)F)(F)F)(C(C(C(C2(F)F)(F)F)(F)F)(F)F)F)F
+;PERFLUOROPERHYDROPHENANTHRENE;306-91-2;;C12(C3(C(C(C(C1(C(C(C(C2(F)F)(F)F)(F)F)(F)F)F)(F)F)(F)F)(C(C(C(C3(F)F)(F)F)(F)F)(F)F)F)F)F
+;PERFLUOROCYCLOHEXYLMETHANOL;28788-68-3;;C(C1(C(C(C(C(C1(F)F)(F)F)(F)F)(F)F)(F)F)F)O
+;PERFLUOROHEXYL ETHYLPHOSPHONIC ACID;252237-40-4;;C(CP(=O)(O)O)C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F
+;PERFLUOROHEXYLETHYL DIMETHYLBUTYL ETHER;210896-25-6;;CC(C)CC(C)OCCC(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F
+;PERFLUOROMETHYLCYCLOPENTANE;1805-22-7;;C1(C(C(C(C1(F)F)(F)F)(F)F)(F)F)(C(F)(F)F)F
+;"Perfluorooctane sulfonic acid; heptadecafluorooctane-1-sulfonic acid [1]; Potassium perfluorooctanesulfonate; potassium heptadecafluorooctane-1-sulfonate [2]; Diethanolamine perfluorooctane sulfonate [3]; Ammonium perfluorooctane sulfonate; ammonium heptadecafluorooctanesulfonate [4]; Lithium perfluorooctane sulfonate; lithium heptadecafluorooctanesulfonate [5]";1763-23-1;II 1493;C(C(C(C(C(F)(F)S(=O)(=O)O)(F)F)(F)F)(F)F)(C(C(C(F)(F)F)(F)F)(F)F)(F)F
+;PERFLUOROOCTYLETHYL TRISILOXANE;163921-85-5;;C(C(C(C(C(F)(F)[Si](C(C(F)(F)F)(F)F)(O[Si](O[Si](F)(F)F)(F)F)F)(F)F)(F)F)(F)F)(C(C(C(F)(F)F)(F)F)(F)F)(F)F
+;METHYL PERFLUOROISOBUTYL ETHER;163702-08-7;;COC(C(C(F)(F)F)(C(F)(F)F)F)(F)F
+;METHYL PERFLUORO BUTYL/ISOBUTYL ETHER;163702-07-6;;COC(C(C(C(F)(F)F)(F)F)(F)F)(F)F
+;METHYL PERFLUOROBUTYL ETHER;163702-07-6;;COC(C(C(C(F)(F)F)(F)F)(F)F)(F)F
+;ETHYL PERFLUOROISOBUTYL ETHER;163702-06-5;;CCOC(C(C(F)(F)F)(C(F)(F)F)F)(F)F
+;ETHYL PERFLUOROBUTYL ETHER;163702-05-4;;CCOC(C(C(C(F)(F)F)(F)F)(F)F)(F)F
+;SODIUM PERFLUOROHEXYL ETHYLPHOSPHONATE;1189052-95-6;;C(CP(=O)(O)[O-])C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F.[Na+]
+;PERFLUOROPERHYDROBENZYL TETRALIN;116265-66-8;;C12(C(C(C(C(C1(F)F)(C(C3(C(C(C(C(C3(F)F)(F)F)(F)F)(F)F)(F)F)F)(F)F)F)(F)F)(F)F)(C(C(C(C2(F)F)(F)F)(F)F)(F)F)F)F
+;PERFLUOROPROPYLENE;116-15-4;;C(=C(F)F)(C(F)(F)F)F
+;PERFLUOROOCTYLETHYL TRIETHOXYSILANE;101947-16-4;;CCO[Si](CCC(C(C(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F)(OCC)OCC
+;C8-10 PERFLUOROALKYLETHYL ACRYLATE;65605-70-1;;C=CC(=O)OCCC(F)(F)F
+;CALCIUM MONOFLUOROPHOSPHATE;7789-74-4;III/29;[O-]P(=O)([O-])F.[Ca+2]
+;LITHIUM FLUORIDE;7789-24-4;;[Li+].[F-]
+;Potassium fluoride;7789-23-3;III 32;[F-].[K+]
+;STANNOUS FLUORIDE;7783-47-3;III/35;F[Sn]F
+;VINYLIDENE DIFLUORIDE;75-38-7;;C=C(F)F
+;FLUORESCENT BRIGHTENER 367;5089-22-5;;C1=CC=C2C(=C1)C(=CC=C2C3=NC4=CC=CC=C4O3)C5=NC6=CC=CC=C6O5
+;FLUORENONE;486-25-9;;C1=CC=C2C(=C1)C3=CC=CC=C3C2=O
+(*);fluorometholone;426-13-1;II 300;CC1CC2C3CCC(C3(CC(C2(C4(C1=CC(=O)C=C4)C)F)O)C)(C(=O)C)O
+;5-(2,4-Dioxo-1,2,3,4-tetrahydropyrimidine)-3-fluoro-2-hydroxymethylterahydrofuran;41107-56-6;II 1064;C1C(C(OC1N2C=CC(=O)NC2=O)CO)F
+;FLUORESCENT BRIGHTENER 230;27344-06-5;;C1=CC=C(C=C1)NC2=NC(=NC(=N2)N(CCC(=O)N)CCO)NC3=CC(=C(C=C3)C=CC4=C(C=C(C=C4)NC5=NC(=NC(=N5)NC6=CC=CC=C6)N(CCC(=O)N)CCO)S(=O)(=O)[O-])S(=O)(=O)[O-].[Na+].[Na+]
+(*);clobetasol propionate (USAN)(JAN);25122-46-7;II 300;CCC(=O)OC1(C(CC2C1(CC(C3(C2CCC4=CC(=O)C=CC43C)F)O)C)C)C(=O)CCl
+;Benzo[k]fluoranthene;207-08-9;II 642;C1=CC=C2C=C3C4=CC=CC5=C4C(=CC=C5)C3=CC2=C1
+(*);"cadmiumhexafluorosilicate(2-); cadmium fluorosilica";17010-21-8;II 68;[F-].[F-].[F-].[F-].[F-].[F-].[Si+4].[Cd+2]
+;MAGNESIUM FLUOROSILICATE;16949-65-8;III/43;F[Si-2](F)(F)(F)(F)F.[Mg+2]
+;POTASSIUM FLUOROSILICATE;16871-90-2;III/41;F[Si-2](F)(F)(F)(F)F.[K+].[K+]
+;5-Amino-4-fluoro-2-methylphenol sulfate, when used as a substance in hair dye products;163183-01-5;II 1222;CC1=CC(=C(C=C1O)N)F.CC1=CC(=C(C=C1O)N)F.OS(=O)(=O)O
+;5-AMINO-4-FLUORO-2-METHYLPHENOL SULFATE;163183-01-5;II/1222;CC1=CC(=C(C=C1O)N)F.CC1=CC(=C(C=C1O)N)F.OS(=O)(=O)O
+;FLUORESCENT BRIGHTENER 393;1533-45-5;;C1=CC=C2C(=C1)N=C(O2)C3=CC=C(C=C3)C=CC4=CC=C(C=C4)C5=NC6=CC=CC=C6O5
+;Flusilazole;85509-19-9;II 740;C[Si](CN1C=NC=N1)(C2=CC=C(C=C2)F)C3=CC=C(C=C3)F
+;Calcium fluoride;7789-75-5;III 30;[F-].[F-].[Ca+2]
+;Calcium monofluorophosphate;7789-74-4;III 29;[O-]P(=O)([O-])F.[Ca+2]
+;POTASSIUM FLUORIDE;7789-23-3;III/32;[F-].[K+]
+;Stannous Fluoride;7783-47-3;III 35;F[Sn]F
+(*);flunisolide;77326-96-6;II 300;CC1(OC2CC3C4CC(C5=CC(=O)C=CC5(C4C(CC3(C2(O1)C(=O)CO)C)O)C)F)C.CC1(OC2CC3C4CC(C5=CC(=O)C=CC5(C4C(CC3(C2(O1)C(=O)CO)C)O)C)F)C.O
+;Sodium fluoride;7681-49-4;III 31;[F-].[Na+]
+;SODIUM FLUORIDE;7681-49-4;III/31;[F-].[Na+]
+(*);fluocinolone acetonide;67-73-2;II 300;CC1(OC2CC3C4CC(C5=CC(=O)C=CC5(C4(C(CC3(C2(O1)C(=O)CO)C)O)F)C)F)C
+;Paramethasone (INN);53-33-8;II 186;CC1CC2C3CC(C4=CC(=O)C=CC4(C3C(CC2(C1(C(=O)CO)O)C)O)C)F
+;4-Amino-3-fluorophenol;399-95-1;II 1242;C1=CC(=C(C=C1O)F)N
+(*);desoximetasone;382-67-2;II 300;CC1CC2C3CCC4=CC(=O)C=CC4(C3(C(CC2(C1C(=O)CO)C)O)F)C
+;Octadecenyl- Ammonium Fluoride;36505-83-6;III 39;CCCCCCCCC=CCCCCCCCCN.F
+;FLUORESCENT BRIGHTENER 236;3333-62-8;;C1=CC=C(C=C1)C2=CC3=C(C=C(C=C3)N4N=C5C=CC6=CC=CC=C6C5=N4)OC2=O
+;PHENYLMETHYLSULFONYL FLUORIDE;329-98-6;;C1=CC=C(C=C1)CS(=O)(=O)F
+;PERFLUOROPERHYDROFLUORENE;307-08-4;;C12(C3(C(C(C1(C(C(C(C2(F)F)(F)F)(F)F)(F)F)F)(F)F)(C(C(C(C3(F)F)(F)F)(F)F)(F)F)F)F)F
+(*);clobetasol;25122-41-2;II 300;CC1CC2C3CCC4=CC(=O)C=CC4(C3(C(CC2(C1(C(=O)CCl)O)C)O)F)C
+;Benzo[j]fluoranthene;205-82-3;II 640;C1=CC=C2C(=C1)C=CC3=C2C4=CC=CC5=C4C3=CC=C5
+;4-FLUORO-6-METHYL-M-PHENYLENEDIAMINE SULFATE;173994-76-8;;CC1=CC(=C(C=C1N)N)F.O.OS(=O)(=O)O
+;Magnesium Fluorosilicate;16949-65-8;III 43;F[Si-2](F)(F)(F)(F)F.[Mg+2]
+;Ammonium fluorosilicate;16919-19-0;III 42;[NH4+].[NH4+].F[Si-2](F)(F)(F)(F)F
+;Sodium Fluorosilicate;16893-85-9;III 40;F[Si-2](F)(F)(F)(F)F.[Na+].[Na+]
+;Potassium Fluorosilicate;16871-90-2;III 41;F[Si-2](F)(F)(F)(F)F.[K+].[K+]
+(*);"fludroxycortide; Flurandrenolide [USAN]";1524-88-5;II 300;CC1(OC2CC3C4CC(C5=CC(=O)CCC5(C4C(CC3(C2(O1)C(=O)CO)C)O)C)F)C
+;Potassium monofluorophosphate;14104-28-0;III 28;[O-]P(=O)([O-])F.[K+].[K+]
+;"(2RS,3RS)-3-(2-Chlorophenyl)-2-(4-fluorophenyl)-[1H-1,2,4-triazol-1-yl)methyl]oxirane; Epoxiconazole";133855-98-8;II 663;C1=CC=C(C(=C1)C2C(O2)(CN3C=NC=N3)C4=CC=C(C=C4)F)Cl
+;"N-(5-chloro-2-isopropylbenzyl)-N-cyclopropyl-3-(difluoromethyl)-5-fluoro-1-methyl-1H-pyrazole-4-carboxamide; isoflucypram";1255734-28-1;II 1714;CC(C)C1=C(C=C(C=C1)Cl)CN(C2CC2)C(=O)C3=C(N(N=C3C(F)F)C)F
+;Ammonium fluoride;12125-01-8;III 33;[NH4+].[F-]
+;SYNTHETIC FLUORPHLOGOPITE;12003-38-2;;[O-2].[O-2].[O-2].[O-2].[O-2].[O-2].[O-2].[O-2].[O-2].[O-2].[F-].[F-].[Mg+2].[Mg+2].[Mg+2].[Al+3].[Si+4].[Si+4].[Si+4].[K+]
+;SODIUM MONOFLUOROPHOSPHATE;10163-15-2;III/27;[O-]P(=O)([O-])F.[Na+].[Na+]
+;Sodium monofluorophosphate;10163-15-2;III 27;[O-]P(=O)([O-])F.[Na+].[Na+]
+(*);"p-Fluorofentanyl; N-(4-Fluorophenyl)-N-(1-(2-phenylethyl)-4-piperidinyl)propanamide";90736-23-5;II 306;CCC(=O)N(C1CCN(CC1)CCC2=CC=CC=C2)C3=CC=C(C=C3)F
+(*);Cadmium fluoride;7790-79-6;II 68;F[Cd]F
+;CALCIUM FLUORIDE;7789-75-5;III/30;[F-].[F-].[Ca+2]
+(*);fluoxymesterone;76-43-7;II 37;CC12CCC(=O)C=C1CCC3C2(C(CC4(C3CCC4(C)O)C)O)F
+(*);Triamcinolone acetonide [JAN];76-25-5;II 300;CC1(OC2CC3C4CCC5=CC(=O)C=CC5(C4(C(CC3(C2(O1)C(=O)CO)C)O)F)C)C
+;Trifluperidol (INN);749-13-3;II 188;C1CN(CCC1(C2=CC(=CC=C2)C(F)(F)F)O)CCCC(=O)C3=CC=C(C=C3)F
+(*);clobetasone;54063-32-0;II 300;CC1CC2C3CCC4=CC(=O)C=CC4(C3(C(=O)CC2(C1(C(=O)CCl)O)C)F)C
+(*);fluprednisolone;53-34-9;II 300;CC12CC(C3C(C1CCC2(C(=O)CO)O)CC(C4=CC(=O)C=CC34C)F)O
+;Haloperidol (INN);52-86-8;II 185;C1CN(CCC1(C2=CC=C(C=C2)Cl)O)CCCC(=O)C3=CC=C(C=C3)F
+;Fluorouracil (INN);51-21-8;II 190;C1=C(C(=O)NC(=O)N1)F
+;"5-fluoro-1,3-dimethyl-N-[2-(4- methylpentan-2-yl) phenyl]-1H-pyrazole- 4-carboxamide; 2'- [(RS)-1,3-dimethylbutyl]-5-fluoro-1,3-dimethylpyrazole-4-carboxanilide; penflufen";494793-67-8;II 1674;CC1=NN(C(=C1C(=O)NC2=CC=CC=C2C(C)CC(C)C)F)C
+(*);clocortolone;4828-27-7;II 300;CC1CC2C3CC(C4=CC(=O)C=CC4(C3(C(CC2(C1C(=O)CO)C)O)Cl)C)F
+;SULINDAC;38194-50-2;;CC1=C(C2=C(C1=CC3=CC=C(C=C3)S(=O)C)C=CC(=C2)F)CC(=O)O
+(*);"fluclorolone acetonide; Flucloronide [USAN]";3693-39-8;II 300;CC1(OC2CC3C4CC(C5=CC(=O)C=CC5(C4(C(CC3(C2(O1)C(=O)CO)C)Cl)Cl)C)F)C
+(*);fluocinonide;356-12-7;II 300;CC(=O)OCC(=O)C12C(CC3C1(CC(C4(C3CC(C5=CC(=O)C=CC54C)F)F)O)C)OC(O2)(C)C
+;Amisulbrom (ISO)3-(3-bromo-6-fluoro-2-methylindol-1-ylsulfonyl)-N,N-dimethyl-1H-1,2,4-triazole-1-sulfonamide;348635-87-0;II 1623;CC1=C(C2=C(N1S(=O)(=O)C3=NN(C=N3)S(=O)(=O)N(C)C)C=C(C=C2)F)Br
+;Cetylamine Hydrofluoride;3151-59-5;III 36;CCCCCCCCCCCCCCCCN.F
+;Fluoresone (INN);2924-67-6;II 189;CCS(=O)(=O)C1=CC=C(C=C1)F
+(*);formocortal;2825-60-7;II 300;CC(=O)OCC(=O)C12C(CC3C1(CC(C4(C3CC(=C5C4(CCC(=C5)OCCCl)C)C=O)F)O)C)OC(O2)(C)C
+(*);Flugestone acetate (USAN);2529-45-5;II 194;CC(=O)C1(CCC2C1(CC(C3(C2CCC4=CC(=O)CCC43C)F)O)C)OC(=O)C
+(*);betamethasone valerate (USAN)(JAN);2152-44-5;II 300;CCCCC(=O)OC1(C(CC2C1(CC(C3(C2CCC4=CC(=O)C=CC43C)F)O)C)C)C(=O)CO
+(*);Fluperolone acetate [USAN];2119-75-7;II 300;CC(C(=O)C1(CCC2C1(CC(C3(C2CCC4=CC(=O)C=CC43C)F)O)C)O)OC(=O)C
+;2-Chloro-6-fluoro-phenol;2040-90-6;II 1477;C1=CC(=C(C(=C1)Cl)O)F
+;3-Chloro-4-(3-fluorobenzyloxy)aniline;202197-26-0;II 1520;C1=CC(=CC(=C1)F)COC2=C(C=C(C=C2)N)Cl
+(*);Butyrophenone, 4'-fluoro-4-(4-(o-methoxyphenyl)-1-piperazinyl)-, hydrochloride;17160-71-3;II 187;COC1=CC=CC=C1N2CC[NH+](CC2)CCCC(=O)C3=CC=C(C=C3)F.[Cl-]
+;AMMONIUM FLUOROSILICATE;16919-19-0;III/42;[NH4+].[NH4+].F[Si-2](F)(F)(F)(F)F
+;SODIUM FLUOROSILICATE;16893-85-9;III/40;F[Si-2](F)(F)(F)(F)F.[Na+].[Na+]
+(*);fluocortolone;152-97-6;II 300;CC1CC2C3CC(C4=CC(=O)C=CC4(C3C(CC2(C1C(=O)CO)C)O)C)F
+;2-[2-Hydroxy-3-(2-chlorophenyl)carbamoyl-1-naphthylazo]-7-[2-hydroxy-3-(3-methylphenyl)carbamoyl-1-naphthylazo]fluoren-9-one;151798-26-4;II 1156;CC1=CC(=CC=C1)NC(=O)C2=CC3=CC=CC=C3C(=C2O)N=NC4=CC5=C(C=C4)C6=C(C5=O)C=C(C=C6)N=NC7=C(C(=CC8=CC=CC=C87)C(=O)NC9=CC=CC=C9Cl)O
+;"2-(3,6-Dihydroxy-2,4,5,7-tetrabromoxanthen-9-yl)benzoic acid; Fluorescein, 2',4',5',7'-tetrabromo-;(Solvent Red 43), its disodium salt (Acid Red 87; CI 45380) and its aluminium salt (Pigment Red 90:1 Aluminium lake) when used as a substance in hair dye products";15086-94-9;II 1334;C1=CC=C2C(=C1)C(=O)OC23C4=CC(=C(C(=C4OC5=C(C(=C(C=C35)Br)O)Br)Br)O)Br
+;Fluanisone (INN);1480-19-9;II 187;COC1=CC=CC=C1N2CCN(CC2)CCCC(=O)C3=CC=C(C=C3)F
+;METHYLPYRIDINYL FLUOROMETHOXYBENZONITRILE DIMETHYLOXOTHIOOXOIMIDAZOLIDINE;1272719-08-0;;CC1=NC=C(C=C1)N2C(=S)N(C(=O)C2(C)C)C3=C(C(=C(C=C3)C#N)OC)F
+;AMMONIUM FLUORIDE;12125-01-8;III/33;[NH4+].[F-]
+;(4-Ethoxyphenyl)(3-(4-fluoro-3-phenoxyphenyl)propyl)dimethylsilane;105024-66-6;II 1409;CCOC1=CC=C(C=C1)[Si](C)(C)CCCC2=CC(=C(C=C2)F)OC3=CC=CC=C3
+;Flumioxazin;103361-09-7;II 736;C#CCN1C(=O)COC2=CC(=C(C=C21)N3C(=O)C4=C(C3=O)CCCC4)F
+;"Nickel difluoride [1]; Nickel dibromide [2]; Nickel diiodide [3]; Nickel potassium fluoride [4]";10028-18-9;II 1435;F[Ni]F
+;C8-10 PERFLUOROALKYLETHYL ACRYLATE;65605-70-1;;C=CC(=O)OCCC(F)(F)F
+;SOLVENT RED 48;13473-26-2;;C1=C2C(=C(C(=C1Br)O)Br)OC3=C(C(=C(C=C3C24C5=C(C(=C(C(=C5Cl)Cl)Cl)Cl)C(=O)O4)Br)O)Br
